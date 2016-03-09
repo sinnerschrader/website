@@ -1,11 +1,43 @@
 .hero{
-	padding: 180px 13%; // 56% 13%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: 90vh;
+	padding: 180px 13% 90px; // 56% 13%;
 	text-align: center;
 	color: @s2-white;
 	background: transparent url("http://placehold.it/1440x865/FF0354") no-repeat 50% 0;
 	background-size: cover;
+
+	@media @s2-mq-window-tablet {
+		display: block;
+		padding-top: 10px;
+		max-height: 760px;
+	}
+	@media @s2-mq-window-desktop {
+	}
 	
+
 	.h4{
-		margin-bottom: 30px; // TODO
+		margin-bottom: 10px; // TODO
+	}
+	
+	.h{
+		@media @s2-mq-window-tablet {
+			@pad: 140px;
+			position: absolute;
+			right: @pad;
+			bottom: @pad;
+			left: @pad;
+			text-align: left;
+			
+		}
+		@media @s2-mq-window-desktop {
+			@pad: 200px;
+			right: @pad;
+			bottom: @pad;
+			left: @pad;
+		}
 	}
 }
