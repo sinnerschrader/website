@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-DE" lang="de-DE">
+<head>
+  <% include './styleguide/pages/_partials/head.html' %>
+  <style type="text/css">
+    @font-face{font-family:"DIN Next W01";src:url(/sinnerschrader/static/fonts/d8b8889b-af70-4f3d-b86e-e0cf674dd069.eot?#iefix);src:url(/sinnerschrader/static/fonts/d8b8889b-af70-4f3d-b86e-e0cf674dd069.eot?#iefix) format("eot"),url(/sinnerschrader/static/fonts/02c54ffd-ffe5-4a1d-baf3-6f2f329e985e.woff) format("woff"),url(/sinnerschrader/static/fonts/be798c01-2b57-4464-b4f2-8fdda5148346.ttf) format("truetype"),url(/sinnerschrader/static/fonts/9286c432-d97d-4af1-8608-fbd7b9cb38a0.svg#9286c432-d97d-4af1-8608-fbd7b9cb38a0) format("svg");font-weight:100;font-style:normal}
+    @font-face{font-family:"DIN Next W01";src:url(/sinnerschrader/static/fonts/5423ac72-6b0a-4c94-9a87-c2947b897d66.eot?#iefix);src:url(/sinnerschrader/static/fonts/5423ac72-6b0a-4c94-9a87-c2947b897d66.eot?#iefix) format("eot"),url(/sinnerschrader/static/fonts/4da87afe-2c67-4636-8ab8-037775bf3111.woff) format("woff"),url(/sinnerschrader/static/fonts/fef7e1ed-bd30-41aa-822e-60f12737346a.ttf) format("truetype"),url(/sinnerschrader/static/fonts/7d74c48f-eb44-4482-beac-22633e05e964.svg#7d74c48f-eb44-4482-beac-22633e05e964) format("svg");font-weight:600;font-style:normal}
+    @font-face{font-family:"DIN Next W02";src:url(/sinnerschrader/static/fonts/48e5a0e1-2d56-46e5-8fc4-3d6d5c973cbf.eot?#iefix);src:url(/sinnerschrader/static/fonts/48e5a0e1-2d56-46e5-8fc4-3d6d5c973cbf.eot?#iefix) format("eot"),url(/sinnerschrader/static/fonts/07d62b21-8d7a-4c36-be86-d32ab1089972.woff) format("woff"),url(/sinnerschrader/static/fonts/c0050890-bbed-44b9-94df-2611d72dbb06.ttf) format("truetype"),url(/sinnerschrader/static/fonts/9f774d17-c03a-418e-a375-34f3beecbc7a.svg#9f774d17-c03a-418e-a375-34f3beecbc7a) format("svg");font-weight:200;font-style:normal}
+    @font-face{font-family:"DIN Next W02";src:url(/sinnerschrader/static/fonts/21159f5e-cd9e-408a-ba51-65510b4a13aa.eot?#iefix);src:url(/sinnerschrader/static/fonts/21159f5e-cd9e-408a-ba51-65510b4a13aa.eot?#iefix) format("eot"),url(/sinnerschrader/static/fonts/20007504-6ea2-4d68-93e4-f4769b5d9f14.woff) format("woff"),url(/sinnerschrader/static/fonts/1c35aab7-8ddd-402f-8976-1363134c3817.ttf) format("truetype"),url(/sinnerschrader/static/fonts/91c8307f-e301-4d44-b0f3-5cff17b3a554.svg#91c8307f-e301-4d44-b0f3-5cff17b3a554) format("svg");font-weight:400;font-style:normal}
+    @font-face{font-family:"DIN Next W02";src:url(/sinnerschrader/static/fonts/2cf657c7-a3a0-4365-8704-c88d1e7e7e59.eot?#iefix);src:url(/sinnerschrader/static/fonts/2cf657c7-a3a0-4365-8704-c88d1e7e7e59.eot?#iefix) format("eot"),url(/sinnerschrader/static/fonts/97b0cc11-9afb-4a2f-93b7-e1b5c40d80a6.woff) format("woff"),url(/sinnerschrader/static/fonts/2cfb9022-3dc0-4b24-8e91-2df7bd55dd37.ttf) format("truetype"),url(/sinnerschrader/static/fonts/7c8e4086-96df-4b91-905e-3b25c81d55a9.svg#7c8e4086-96df-4b91-905e-3b25c81d55a9) format("svg");font-weight:500;font-style:normal}
+    @font-face{font-family:"DIN Next W02";src:url(/sinnerschrader/static/fonts/50d13d4e-96c6-4412-a8fa-baa4814c5332.eot?#iefix);src:url(/sinnerschrader/static/fonts/50d13d4e-96c6-4412-a8fa-baa4814c5332.eot?#iefix) format("eot"),url(/sinnerschrader/static/fonts/109143ca-57fb-459c-9814-3a68f0245ac3.woff) format("woff"),url(/sinnerschrader/static/fonts/c9fa50e2-c243-451a-b91b-ee74f341d7a8.ttf) format("truetype"),url(/sinnerschrader/static/fonts/1201bd6f-15f5-4b51-9c6f-c5c4b35d31f5.svg#1201bd6f-15f5-4b51-9c6f-c5c4b35d31f5) format("svg");font-weight:700;font-style:normal}
+    html,body{height:100%;}
+    body {position:relative;margin:0;padding:0;font:normal normal normal 14px/18px "DIN Next W02", Tahoma, sans-serif;background:#ffffff;color:#000000;border:0 solid #555;border-width:25px 0 0 10px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+    a,a:hover{color:inherit;text-decoration: none;}
+    a[href^="#"],span{color:#ccc !important;}
+    .container{margin:28px 20px 20px 18px;padding: 0;max-width:none;}
+    .header{padding:0 0 15px;border-bottom:1px solid #555;margin:0 0 40px;text-transform:uppercase;}
+    .header h1{font-size:48px;line-height:48px;margin:0;font-family:"DIN Next W01", Tahoma, sans-serif;font-weight: 600;}
+    .header h2{font-size:22px;line-height:22px;margin:0;color:#A4A4A5;font-family:"DIN Next W01", Tahoma, sans-serif;font-weight: 100;}
+    @media screen and (min-width: 400px) {
+      .content ul{-webkit-column-count:2;-webkit-column-gap:50px;-webkit-column-rule:1px solid #555;-moz-column-count:2;-moz-column-gap:50px;-moz-column-rule:1px solid #363534;column-count:2;column-gap:50px;column-rule:1px solid #363534;}
+    }
+  </style>
+</head>
+
+<body>
+  <% content %>
+  <% include './styleguide/pages/_partials/scripts.html' %>
+</body>
+</html>

@@ -1,0 +1,4 @@
+/node_modules/
+/static/js/app.js
+/static/css/*.css
+/npm-debug.log

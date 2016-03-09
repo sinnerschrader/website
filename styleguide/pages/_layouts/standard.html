@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-DE" lang="de-DE">
+<head>
+  <% include './styleguide/pages/_partials/head.html' %>
+</head>
+
+<body class="<%- @bodyClass %>">
+  <% #include './styleguide/components/header/template.html' %>
+  <main class="main">
+    <% content %>
+  </main>
+  <% #include './styleguide/components/footer/template.html' %>
+</body>
+</html>

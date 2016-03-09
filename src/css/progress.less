@@ -1,0 +1,23 @@
+.progress{
+	&:after{
+		@width:125px;
+		position: absolute;
+		z-index: 25;
+		top: 50%;
+		left: 50%;
+		width: @width;
+		height: @width;
+		margin: @width / -2 0 0	 @width / -2;
+		content: "";
+		opacity: .6;
+		background: rgba(0,0,0,1) url("@{s2-image-path}/elements/el_loaddark.gif") no-repeat 50% 50%;
+		border-radius: 10px;
+		animation: showProgress 2s;
+		#s2-transition > .fade;
+	}
+}
+body.progress{
+	&:after{
+		position: fixed;
+	}
+}

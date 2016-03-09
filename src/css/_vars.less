@@ -1,0 +1,55 @@
+//base colors
+@s2-black              :    @s2-verydarkblue;
+@s2-red                :  rgb(255,   3,  84); // Vivid pink
+@s2-green              :  rgb(  3, 255, 183); // Vivid cyan - lime green
+@s2-blue               :  rgb( 69,   2, 218); // Vivid violet
+@s2-verydarkblue       :  rgb( 30,  33,  42); // Very dark (mostly black) blue
+@s2-grey               :  rgb(244, 247, 250); // Light grayish blue
+@s2-white              :  rgb(255, 255, 255); // White
+
+//color refs
+@s2-body               : @s2-white;
+
+//hover-colors
+@s2-black-hover        : lighten(@s2-black, 20%);
+@s2-white-hover        : darken(@s2-white, 20%);
+
+//grid
+@s2-headerHeight       :  100px;
+@s2-footerHeight       :  100px;
+
+@s2-pageTopPadding     :  0;
+@s2-pageBottomPadding  :  0;
+@s2-MinPageWidth       :  320px;
+@s2-MaxPageWidth       : 1440px;
+@s2-tabletPageWidth    :  400px;
+@s2-desktopPageWidth   :  768px;
+@s2-font-basesize      :   15px;
+@s2-base-lineheight    :   20px;
+@s2-base-letterspacing :    1px;
+@s2-paragraph-margin   :   @s2-base-lineheight;
+
+//mediaqueries
+@s2-mq-window-tablet       : ~`"screen and (min-width: @{s2-tabletPageWidth} )"`;
+@s2-mq-window-desktop      : ~`"screen and (min-width: @{s2-desktopPageWidth} )"`;
+//@s2-mq-device-smartphone : ~`"screen and (max-device-width: @{s2-tabletPageWidth} )"`;
+//@s2-mq-device-tablet     : ~`"screen and (max-device-width: @{s2-desktopPageWidth} )"`;
+//@s2-mq-landscape         : ~"and (orientation:landscape)";
+//@s2-mq-portrait          : ~"and (orientation:portrait)";
+
+//fonts
+@s2-font-base        : Arial,Verdana,sans-serif; // DIN
+@s2-font-high1       : Arial,Verdana,sans-serif; // Maison
+@s2-font-high2       : Times,serif;              // Noe
+
+//paths
+@s2-image-path       : "../../images";
+@s2-font-path        : "../../fonts";
+
+
+//timings
+@short                        : .2s;
+@medium                       : .5s;
+@long                         :  1s;
+@defaultTiming                : @short;
+@defaultEasing                : ease-out;
