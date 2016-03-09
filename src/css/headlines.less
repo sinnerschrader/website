@@ -36,41 +36,96 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 	}
 }
 
+.h2-1-s(){
+	font-family: @s2-font-high1;
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 32px;
+	letter-spacing: 0.44px;
+}
+.h2-1-m(){
+	font-size: 48px;
+	line-height: 52px;
+	letter-spacing: 1px;
+}
+.h2-1-l(){
+	font-size: 64px;
+	line-height: 68px;
+}
+.h2-1{
+	.h2-1-s;
+	@media @s2-mq-window-tablet {
+		.h2-1-m;
+	}
+	@media @s2-mq-window-desktop {
+		.h2-1-l;
+	}
+}
 
-		.h2-1{
-			font-family: @s2-font-high1;
-			font-weight: bold;
-			font-size: 48px;
-			line-height: 32px;
-			letter-spacing: 0.44px;
-			letter-spacing: 4px;
-		}
-		.h2-2{
-			font-family: @s2-font-high2;
-			font-weight: regular;
-			font-size: 24px;
-			line-height: 26px;
-			letter-spacing: 0.44px;
-		}
-		.h3{
-			font-family: @s2-font-high1;
-			font-weight: bold;
-			size: 18px;
-			letter-spacing: 0;
-			line-height: 24px;
-		}
-.h4-s{
+.h2-2-s(){
+	font-family: @s2-font-high2;
+	font-weight: regular;
+	font-size: 24px;
+	line-height: 26px;
+	letter-spacing: 0.44px;
+}
+.h2-2-m(){
+	font-size: 48px;
+	line-height: 48px;
+	letter-spacing: 1px;
+}
+.h2-2-l(){
+	font-size: 64px;
+	line-height: 68px;
+}
+.h2-2{
+	.h2-2-s;
+	@media @s2-mq-window-tablet {
+		.h2-2-m;
+	}
+	@media @s2-mq-window-desktop {
+		.h2-2-l;
+	}
+}
+
+.h3-s(){
+	font-family: @s2-font-high1;
+	font-weight: bold;
+	size: 18px;
+	line-height: 24px;
+	letter-spacing: 0;
+}
+.h3-m(){
+	font-size: 42px;
+	line-height: 36px;
+}
+.h3-l(){
+	font-size: 36px;
+	line-height: 48px;
+	letter-spacing: 1px;
+}
+.h3{
+	.h3-s;
+	@media @s2-mq-window-tablet {
+		.h3-m;
+	}
+	@media @s2-mq-window-desktop {
+		.h3-l;
+	}
+}
+
+.h4-s(){
 	font-family: @s2-font-high1;
 	font-size: 15px;
 	letter-spacing: 1px;
 	line-height: 20px;
 }
-.h4-m{
+.h4-m(){
 	font-size: 20px;
 	line-height: 36px;
 	letter-spacing: 0;
 }
-.h4-l{
+.h4-l(){
 	font-size: 24px;
 	line-height: 48px;
 	letter-spacing: 1px;
@@ -84,14 +139,3 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
 		.h4-l;
 	}
 }
-
-
-
-		.h5{
-			font-size:14px;
-			text-transform: uppercase;
-		}
-		.h6{
-			font-size:12px;
-			text-transform: uppercase;
-		}

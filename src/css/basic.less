@@ -9,16 +9,37 @@ html {
 	box-sizing: inherit;
 }
 
-body{
-	margin: 0;
-	padding: @s2-pageTopPadding 0 @s2-pageBottomPadding;
+.body-s(){
 	font-family: @s2-font-base;
 	font-size: @s2-font-basesize;
 	line-height: @s2-base-lineheight;
 	letter-spacing: @s2-base-letterspacing;
+}
+.body-m(){
+	font-size: 20px;
+	line-height: 32px;
+	letter-spacing: .6px;
+}
+.body-l(){
+	font-size: 24px;
+	line-height: 36px;
+}
+
+
+body{
+	margin: 0;
+	padding: @s2-pageTopPadding 0 @s2-pageBottomPadding;
 	color: @s2-black;
 	background: @s2-white;
 	text-rendering:  optimizeLegibility; // may cause render issues
+
+	.body-s;
+	@media @s2-mq-window-tablet {
+		.body-m;
+	}
+	@media @s2-mq-window-desktop {
+		.body-l;
+	}
 	
 	&::after{
 		position: absolute;
