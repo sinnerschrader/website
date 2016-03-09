@@ -5,10 +5,12 @@
 </head>
 
 <body class="<%- @bodyClass %>">
-  <% #include './styleguide/components/header/template.html' %>
-  <main class="main">
-    <% content %>
-  </main>
-  <% #include './styleguide/components/footer/template.html' %>
+	<div class="container">
+		<% #include './styleguide/components/header/template.html' %>
+		<main class="main">
+			<% content %>
+		</main>
+		<% #include './styleguide/components/footer/template.html' %>
+  </div>
 </body>
 </html>
