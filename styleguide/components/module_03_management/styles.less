@@ -2,17 +2,17 @@
 	padding: @s2-moduleGap-s-1;
 	background: linear-gradient(to top, transparent 0%, transparent 50px, @s2-grey 50px, @s2-grey 66%, transparent 66%, transparent 100%);
 	@media @s2-mq-window-tablet {
-		padding: @s2-moduleGap-m-1;
+		padding: @s2-moduleGap-m-1/2;
 		background: linear-gradient(to right, @s2-grey 0%, @s2-grey 120px, transparent 120px, transparent 100%);
 	}
 	@media @s2-mq-window-desktop {
-		padding: @s2-moduleGap-l-2;
+		padding: @s2-moduleGap-l-2/2;
 		background: linear-gradient(to right, @s2-grey 0%, @s2-grey 200px, transparent 200px, transparent 100%);
 	}
 
 	.cards{
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		overflow: hidden;
 		margin: 0 0 40px;
 		@media @s2-mq-window-tablet {
@@ -25,15 +25,14 @@
 			flex: 0 0 auto;
 			position: relative;
 			width: 100%;
+			min-width: 215px;
 			padding: 0 0 0 40px;
 			@media @s2-mq-window-tablet {
-				width: 100%/2.2;
-				margin-bottom: 60px;
 				max-width: 280px;
+				margin: 0 @s2-moduleGap-m-1/2 60px;
 			}
 			@media @s2-mq-window-desktop {
-				width: 100%/3.5;
-				min-width: 280px;
+				width: 100%/2.5;
 			}
 		}
 	}
