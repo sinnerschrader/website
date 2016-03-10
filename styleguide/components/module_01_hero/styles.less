@@ -8,36 +8,32 @@
 	text-align: center;
 	color: @s2-white;
 	background: transparent url("http://placehold.it/1440x865/FF0354") no-repeat 50% 0;
-	background-size: cover;
-
-	@media @s2-mq-window-tablet {
-		display: block;
-		padding-top: 10px;
-		max-height: 760px;
-	}
-	@media @s2-mq-window-desktop {
-	}
-	
+	background-size: cover;	
 
 	.h4{
 		margin-bottom: 10px; // TODO
 	}
 	
-	.h{
-		@media @s2-mq-window-tablet {
+	@media @s2-mq-window-tablet {
+		display: block;
+		padding-top: 10px;
+		max-height: 760px;
+		.h{
 			@pad: 140px;
 			position: absolute;
 			right: @pad;
 			bottom: @pad;
 			left: @pad;
 			text-align: left;
-			
 		}
-		@media @s2-mq-window-desktop {
+	}
+	@media @s2-mq-window-desktop {
+		.h{
 			@pad: 200px;
 			right: @pad;
 			bottom: @pad;
 			left: @pad;
 		}
 	}
+
 }

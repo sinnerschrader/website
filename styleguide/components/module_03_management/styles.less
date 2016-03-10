@@ -1,25 +1,12 @@
 .management{
 	padding: @s2-moduleGap-s-1;
 	background: linear-gradient(to top, transparent 0%, transparent 50px, @s2-grey 50px, @s2-grey 66%, transparent 66%, transparent 100%);
-	@media @s2-mq-window-tablet {
-		padding: @s2-moduleGap-m-1/2;
-		background: linear-gradient(to right, @s2-grey 0%, @s2-grey 120px, transparent 120px, transparent 100%);
-	}
-	@media @s2-mq-window-desktop {
-		padding: @s2-moduleGap-l-2/2;
-		background: linear-gradient(to right, @s2-grey 0%, @s2-grey 200px, transparent 200px, transparent 100%);
-	}
 
 	.cards{
 		display: flex;
 		justify-content: space-around;
 		overflow: hidden;
 		margin: 0 0 40px;
-		@media @s2-mq-window-tablet {
-			flex-wrap: wrap;
-		}
-		@media @s2-mq-window-desktop {
-		}
 
 		.card {
 			flex: 0 0 auto;
@@ -27,23 +14,11 @@
 			width: 100%;
 			min-width: 215px;
 			padding: 0 0 0 40px;
-			@media @s2-mq-window-tablet {
-				max-width: 280px;
-				margin: 0 @s2-moduleGap-m-1/2 60px;
-			}
-			@media @s2-mq-window-desktop {
-				width: 100%/2.5;
-			}
 		}
 	}
 	
 	.h{
 		margin-bottom: 5.6%;
-		@media @s2-mq-window-tablet {
-			text-align: center;
-		}
-		@media @s2-mq-window-desktop {
-		}
 	}
 	
 	.figcaption{
@@ -92,11 +67,6 @@
 		text-align: center;
 		display: flex;
 		justify-content: center;
-		@media @s2-mq-window-tablet {
-			display: none;
-		}
-		@media @s2-mq-window-desktop {
-		}
 		.item{
 			@dim: 6px;
 			display: inline-block;
@@ -110,4 +80,38 @@
 			}
 		}
 	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-1/2;
+		background: linear-gradient(to right, @s2-grey 0%, @s2-grey 120px, transparent 120px, transparent 100%);
+
+		.cards{
+			flex-wrap: wrap;
+			.card {
+				max-width: 280px;
+				margin: 0 @s2-moduleGap-m-1/2 60px;
+			}
+		}
+
+		.h{
+			text-align: center;
+		}
+
+		.pager{
+			display: none;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l-2/2;
+		background: linear-gradient(to right, @s2-grey 0%, @s2-grey 200px, transparent 200px, transparent 100%);
+
+		.cards {
+			.card{
+				width: 100%/2.5;
+			}
+		}
+
+	}
+
 }
