@@ -1,0 +1,80 @@
+html {
+	//font-size: 100%;       //corrects text resizing oddly in IE7 when body font-size is set using em units
+	text-size-adjust: 100%;  //prevents iOS text size adjust on orientation change w/o disabling user zoom
+	overflow-y: scroll;
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+form,
+fieldset,
+legend {
+	border: 0;
+	padding: 0;
+	margin: 0 ;
+}
+object {
+	display: block;
+}
+dl,dt,dd,ul,ol,li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img {
+	display: block;
+	border: 0;
+	image-rendering: optimizeQuality;
+	-ms-interpolation-mode: bicubic;
+}
+figure {
+	margin: 0;
+}
+b,strong {
+	font-weight: bold;
+}
+small {
+	font-size: 100%; //HTML5 <small> is semantic fineprint
+}
+object,embed {
+	outline: 0;
+}
+address {
+	font-style: normal;
+	//line-height: @s2-paragraph-margin;
+	margin: 0 0 @s2-paragraph-margin 0;
+}
+iframe {
+	display: block;
+	border: 0;
+	background: transparent;
+}
+table {
+	border-width: 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 100%;
+	caption {
+		text-align: left;
+	}
+	th,td {
+		padding: 0;
+		vertical-align: top;
+	}
+	th {
+		font-weight: normal;
+		text-align: left;
+	}
+}

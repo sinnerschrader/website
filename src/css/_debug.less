@@ -1,0 +1,18 @@
+body {
+	&::after {
+		content: "Smartphone";
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		padding: 5px;
+		background: #000;
+		color: #fff;
+		font-size: 24px;
+		@media @s2-mq-window-tablet {
+			content: "Tablet";
+		}
+		@media @s2-mq-window-desktop {
+			content: "Desktop";
+		}
+	}
+}

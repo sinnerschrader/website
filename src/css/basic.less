@@ -1,149 +1,45 @@
-html {
-	//font-size: 100%; //corrects text resizing oddly in IE7 when body font-size is set using em units
-	text-size-adjust: 100%; //prevents iOS text size adjust on orientation change w/o disabling user zoom
-	overflow-y: scroll;
-	box-sizing: border-box;
-}
+body {
+	padding: @s2-pageTopPadding 0 @s2-pageBottomPadding;
+	color: @s2-black;
+	background: @s2-white;
+	text-rendering: optimizeLegibility; // may cause render issues
 
-*, *:before, *:after {
-	box-sizing: inherit;
-}
-
-.body-s(){
 	font-family: @s2-font-base;
 	font-size: @s2-font-basesize;
 	line-height: @s2-base-lineheight;
 	letter-spacing: @s2-base-letterspacing;
-}
-.body-m(){
-	font-size: 20px;
-	line-height: 32px;
-	letter-spacing: .6px;
-}
-.body-l(){
-	font-size: 24px;
-	line-height: 36px;
-}
-
-
-body{
-	margin: 0;
-	padding: @s2-pageTopPadding 0 @s2-pageBottomPadding;
-	color: @s2-black;
-	background: @s2-white;
-	text-rendering:  optimizeLegibility; // may cause render issues
-
-	.body-s;
 	@media @s2-mq-window-tablet {
-		.body-m;
+		font-size: 20px;
+		line-height: 32px;
+		letter-spacing: .6px;
 	}
 	@media @s2-mq-window-desktop {
-		.body-l;
-	}
-	
-	&::after{
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		background: #000;
-		color: #fff;
-		padding: 5px;
 		font-size: 24px;
-		content: "Smartphone";
-		@media @s2-mq-window-tablet {
-			content: "Tablet";
-		}
-		@media @s2-mq-window-desktop {
-			content: "Desktop";
-		}
+		line-height: 36px;
 	}
 }
-a{
+
+a {
 	text-decoration: none;
 	color: inherit;
 	#s2-transition > .generic();
-	&:hover{
+	&:hover {
 		color: @s2-black-hover;
 	}
 }
-p{
-	margin: 0;
-	padding: 0;
-}
-.copy{
+
+.copy {
 	margin: 0 0 @s2-paragraph-margin 0;
 	hyphens: auto;
-	a{
-		text-decoration:underline;
-		&:hover{
+	a {
+		text-decoration: underline;
+		&:hover {
 		  text-decoration: none;
 		}
 	}
 }
-
-.scopy{
+.scopy {
 	font-size: 15px;
 	line-height: 20px;
 	letter-spacing: 1px;
-}
-
-form,
-fieldset,
-legend {
-	border: 0;
-	padding: 0;
-	margin:0 ;
-}
-object{
-	display:block;
-}
-dl,dt,dd,ul,ol,li{
-	margin:0;
-	padding:0;
-	list-style:none;
-}
-img{
-	display: block;
-	border:0;
-	image-rendering:optimizeQuality;
-	-ms-interpolation-mode: bicubic;
-}
-figure{
-	margin: 0;
-}
-b,strong{
-	font-weight:bold;
-}
-small{
-	font-size: 100%; //HTML5 <small> is semantic fineprint
-}
-object,embed{
-	outline:0;
-}
-address{
-	font-style:normal;
-	//line-height:@s2-paragraph-margin;
-	margin:0 0 @s2-paragraph-margin 0;
-}
-iframe{
-	display:block;
-	border:0;
-	background:transparent;
-}
-table{
-	border-width:0;
-	border-spacing:0;
-	border-collapse:collapse;
-	width:100%;
-	caption{
-		text-align:left;
-	}
-	th,td{
-		padding:0;
-		vertical-align:top;
-	}
-	th{
-		font-weight:normal;
-		text-align:left;
-	}
 }
