@@ -1,0 +1,104 @@
+.colleagues{
+
+	.cards{
+		display: flex;
+		overflow: hidden;
+
+		.item {
+			flex: 1 0 auto;
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%; // FIX IE 11
+			margin: 0 1px 0 0;
+			padding: @s2-moduleGap-s-1;
+			background: transparent url("http://placehold.it/1440x455/1C1F26") no-repeat 50%;
+			background-size: cover;
+		}
+		
+		.quote {
+			order: 2;
+			color: @s2-white;
+			.scopy{
+				color: @s2-green;
+			}
+			.copy {
+				display: none;
+			}
+		}
+		.card {
+			order: 1;
+			margin-bottom: @s2-moduleGap-s-1;
+		}
+		
+	}
+
+	.pager{
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		padding: 10px 0 @s2-moduleGap-s-1;
+		.item{
+			@dim: 6px;
+			display: inline-block;
+			background: @s2-grey;
+			border-radius: 100%;
+			width: @dim;
+			height: @dim;
+			margin: 0 5px;
+			&.active{
+				background-color: @s2-black;
+			}
+		}
+	}
+
+	@media @s2-mq-window-tablet {
+
+		.cards{
+			display: block;
+			.item {
+				width: auto;
+				margin: 0 0 1px;
+				padding: @s2-moduleGap-m-1;
+				flex-wrap: nowrap;
+			}
+
+			.quote {
+				padding-right: @s2-moduleGap-m-1;
+				order: initial;
+				.scopy{
+					margin-bottom: 20px;
+				}
+				.copy{
+					display: block;
+				}
+			}
+
+			.card{
+				order: initial;
+				margin-bottom: 0;
+			}
+		}
+
+
+		.pager{
+			display: none;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+
+		.cards {
+			.item {
+				padding: @s2-moduleGap-l-1 @s2-moduleGap-l-3;
+			}
+			
+			.quote {
+				.copy {
+					padding-right: @s2-moduleGap-l-1;
+				}
+			}
+		}
+
+	}
+
+}
