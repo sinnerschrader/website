@@ -1,0 +1,59 @@
+.card {
+	position: relative;
+	width: 100%;
+	min-width: 215px;
+	padding: 0 0 0 40px;
+
+	.figcaption{
+		color: @s2-darkgrey;
+		.sub{
+			color: @s2-black;
+		}
+	}	
+
+	.icont{
+		position: relative;
+		width: 100%;
+		padding: (100%*1.32) 0 0; // TODO
+	
+		.img{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: auto;
+		}
+	}
+	
+	.smn{
+		position: absolute;
+		left: 0;
+		top: 0;
+		li{
+			@dim: 20px;
+			display: block;
+			width: @dim;
+			height: @dim;
+			background: @s2-black;
+			margin: 0 0 2*@dim;
+			#s2-tools > .ir;
+
+			a{
+				display: block;
+				width: @dim;
+				height: @dim;
+			}
+		}
+	}
+	
+	@media @s2-mq-window-tablet {
+		max-width: 250px;
+	}
+
+	@media @s2-mq-window-desktop {
+		max-width: 280px;
+	}
+
+
+}
+

@@ -4,65 +4,20 @@
 
 	.cards{
 		display: flex;
-		justify-content: space-around;
 		overflow: hidden;
 		margin: 0 0 40px;
 
-		.card {
-			flex: 0 0 auto;
-			position: relative;
-			width: 100%;
-			min-width: 215px;
-			padding: 0 0 0 40px;
+		.item {
+			flex: 1 0 auto;
+			width: 100%; // FIX IE 11
+			margin: 0 @s2-moduleGap-s-1/2 0 0;
 		}
 	}
 	
 	.h{
 		margin-bottom: 5.6%;
 	}
-	
-	.figcaption{
-		color: @s2-darkgrey;
-		.sub{
-			color: @s2-black;
-		}
-	}	
 
-	.icont{
-		position: relative;
-		width: 100%;
-		padding: (100%*1.32) 0 0; // TODO
-		
-		.img{
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: auto;
-		}
-	}
-	
-	.smn{
-		position: absolute;
-		left: 0;
-		top: 0;
-		li{
-			@dim: 20px;
-			display: block;
-			width: @dim;
-			height: @dim;
-			background: @s2-black;
-			margin: 0 0 2*@dim;
-			#s2-tools > .ir;
-
-			a{
-				display: block;
-				width: @dim;
-				height: @dim;
-			}
-		}
-	}
-	
 	.pager{
 		text-align: center;
 		display: flex;
@@ -86,10 +41,14 @@
 		background: linear-gradient(to right, @s2-grey 0%, @s2-grey 120px, transparent 120px, transparent 100%);
 
 		.cards{
+			justify-content: space-around;
 			flex-wrap: wrap;
-			.card {
-				max-width: 280px;
+			.item {
+				width: auto;
 				margin: 0 @s2-moduleGap-m-1/2 60px;
+			}
+			.card{
+				margin: 0 auto;
 			}
 		}
 
@@ -105,12 +64,6 @@
 	@media @s2-mq-window-desktop {
 		padding: @s2-moduleGap-l-2/2;
 		background: linear-gradient(to right, @s2-grey 0%, @s2-grey 200px, transparent 200px, transparent 100%);
-
-		.cards {
-			.card{
-				width: 100%/2.5;
-			}
-		}
 
 	}
 
