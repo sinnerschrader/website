@@ -1,5 +1,5 @@
-.progress{
-	&:after{
+.progress {
+	&::after {
 		@width:125px;
 		position: absolute;
 		z-index: 25;
@@ -16,8 +16,9 @@
 		#s2-transition > .fade;
 	}
 }
-body.progress{
-	&:after{
+
+body.progress {
+	&::after {
 		position: fixed;
 	}
 }

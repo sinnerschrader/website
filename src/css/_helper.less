@@ -17,8 +17,8 @@
 // appearance —————————————————————————————————————————————————————————————————
 // Non-standard: https://developer.mozilla.org/de/docs/CSS/-moz-appearance
 
-#s2-appearance{
-	.no-search(){
+#s2-appearance {
+	.no-search() {
 		/* Non-Standard http://css-tricks.com/webkit-html5-search-inputs/ */
 		&::-webkit-search-cancel-button,
 		&::-webkit-search-decoration,
@@ -73,21 +73,21 @@
 // http://caniuse.com/#feat=css-transitions
 // https://developer.mozilla.org/en-US/docs/CSS/transition
 
-#s2-transition{
-	.generic(@val1:@defaultTiming,@val2:all,@val3:@defaultEasing){
-		@style:@val2 @val1 @val3;
+#s2-transition {
+	.generic(@val1:@defaultTiming,@val2:all,@val3:@defaultEasing) {
+		@style: @val2 @val1 @val3;
 		transition: @style;
 	}
-	.fade(@val1:@defaultTiming, @val2:@defaultEasing){
-		 @style:opacity @val1 @val2;
+	.fade(@val1:@defaultTiming, @val2:@defaultEasing) {
+		 @style: opacity @val1 @val2;
 		transition: @style;
 	}
-	.colors(@val1:@defaultTiming, @val2:@defaultEasing){
-		@style:background-color @val1 @val2, color @val1 @val2, border-color @val1 @val2;
+	.colors(@val1:@defaultTiming, @val2:@defaultEasing) {
+		@style: background-color @val1 @val2, color @val1 @val2, border-color @val1 @val2;
 		transition: @style;
 	}
-	.toggle(@val1:@defaultTiming, @val2:@defaultEasing){
-		@style:height @val1 @val2;
+	.toggle(@val1:@defaultTiming, @val2:@defaultEasing) {
+		@style: height @val1 @val2;
 		transition: @style;
 	}
 }
@@ -101,18 +101,18 @@
 
 .s2-reflection(@val:none) {
 	-webkit-box-reflect: @val;
-	/*Non-Standard
-	-moz-box-reflect: @val;
-	-ms-box-reflect: @val;
-	-o-box-reflect: @val;
-	box-reflect: @val;*/
+	// Non-Standard
+	// -moz-box-reflect: @val;
+	// -ms-box-reflect: @val;
+	// -o-box-reflect: @val;
+	// box-reflect:@ val;
 }
 
-#s2-reflection{
-	.none(){
+#s2-reflection {
+	.none() {
 		.s2-reflection();
 	}
-	.generic(@val){
+	.generic(@val) {
 		.s2-reflection(@val);
 	}
 }
@@ -125,12 +125,12 @@
 	-webkit-user-select: @val;
 	   -moz-user-select: @val;
 	    -ms-user-select: @val;
-	   /*-o-user-select: @val;*/
+	   //-o-user-select: @val;
 	        user-select: @val;
 }
 
-#s2-touch{
-	.none(){
+#s2-touch {
+	.none() {
 		.s2-touch(none);
 	}
 	.generic(@val) {
@@ -144,56 +144,56 @@
 // Firefox < 22, Internet Explorer 10 and Safari support an old incompatible draft version of the specification.
 // They have not been updated to support the final version.
 
-.s2-flexbox-display(){
+.s2-flexbox-display() {
 	display: -webkit-flex;
 	display: -moz-flex;	 // FF < 22
 	display: -ms-flex;
 	//display: -o-flex;
 	display: flex;
 }
-.s2-flexbox-basis(@val:auto){
+.s2-flexbox-basis(@val:auto) {
 	-webkit-flex-basis: @val;
 	-moz-flex-basis: @val;	// FF < 22
 	-ms-flex-basis: @val;
 	//-o-flex-basis: @val;
 	flex-basis: @val;
 }
-.s2-flexbox-direction(@val:row){
+.s2-flexbox-direction(@val:row) {
 	-webkit-flex-direction: @val;
 	-moz-flex-direction: @val;	// FF < 22
 	-ms-flex-direction: @val;
 	//-o-flex-direction: @val;
 	flex-direction: @val;
 }
-.s2-flexbox-wrap(@val:nowrap){
+.s2-flexbox-wrap(@val:nowrap) {
 	-webkit-flex-wrap: @val;
 	-moz-flex-wrap: @val;	 // FF < 22
 	-ms-flex-wrap: @val;
 	//-o-flex-wrap: @val;
 	flex-wrap: @val;
 }
-.s2-flexbox-flow(@val:~"row nowrap"){
+.s2-flexbox-flow(@val:~"row nowrap") {
 	-webkit-flex-flow: @val;
 	-moz-flex-flow: @val;	 // FF < 22
 	-ms-flex-flow: @val;
 	//-o-flex-flow: @val;
 	flex-flow: @val;
 }
-.s2-flexbox-grow(@val:0){
+.s2-flexbox-grow(@val:0) {
 	-webkit-flex-grow: @val;
 	-moz-flex-grow: @val;	 // FF < 22
 	-ms-flex-grow: @val;
 	//-o-flex-grow: @val;
 	flex-grow: @val;
 }
-.s2-flexbox-shrink(@val:1){
+.s2-flexbox-shrink(@val:1) {
 	-webkit-flex-shrink: @val;
 	-moz-flex-shrink: @val;	 // FF < 22
 	-ms-flex-shrink: @val;
 	//-o-flex-shrink: @val;
 	flex-shrink: @val;
 }
-.s2-flexbox-flex(@val:none){
+.s2-flexbox-flex(@val:none) {
 	-webkit-flex: @val;
 	-moz-flex: @val;	// FF < 20
 	-ms-flex: @val;
@@ -202,62 +202,62 @@
 }
 
 #s2-flexbox {
-	.display(){
+	.display() {
 		.s2-flexbox-display();
 	}
-	.basis{
-		.none(){
+	.basis {
+		.none() {
 			.s2-flexbox-basis();
 		}
-		.generic(@val){
+		.generic(@val) {
 			.s2-flexbox-basis(@val);
 		}
 	}
-	.direction{
-		.none(){
+	.direction {
+		.none() {
 				.s2-flexbox-direction();
 		}
-		.generic(@val){
+		.generic(@val) {
 				.s2-flexbox-direction(@val);
 		}
 	}
-	.wrap{
-		.none(){
+	.wrap {
+		.none() {
 			.s2-flexbox-wrap();
 		}
-		.generic(@val){
+		.generic(@val) {
 			.s2-flexbox-wrap(@val);
 		}
 	}
-	.flow{
-		.none(){
+	.flow {
+		.none() {
 			.s2-flexbox-flow();
 		}
-		.generic(@val){
+		.generic(@val) {
 			.s2-flexbox-flow(@val);
 		}
 	}
-	.grow{
-		.none(){
+	.grow {
+		.none() {
 			.s2-flexbox-grow();
 		}
-		.generic(@val){
+		.generic(@val) {
 			.s2-flexbox-grow(@val);
 		}
 	}
-	.shrink{
-		.none(){
+	.shrink {
+		.none() {
 			.s2-flexbox-shrink();
 		}
-		.generic(@val){
+		.generic(@val) {
 			.s2-flexbox-shrink(@val);
 		}
 	}
-	.flex{
-		.none(){
+	.flex {
+		.none() {
 			.s2-flexbox-flex();
 		}
-		.generic(@val){
+		.generic(@val) {
 			.s2-flexbox-flex(@val);
 		}
 	}
@@ -275,10 +275,10 @@
 }
 
 #s2-cursors {
-	.zoom-in(){
+	.zoom-in() {
 		.cursor-zoom()
 	}
-	.zoom-out(){
+	.zoom-out() {
 		.cursor-zoom(out)
 	}
 }
@@ -287,7 +287,7 @@
 // https://developer.mozilla.org/de/docs/CSS/font-family
 
 #s2-font {
-	.fontface(@val1,@val2,@val3:normal,@val4:normal){
+	.fontface(@val1,@val2,@val3:normal,@val4:normal) {
 		@font-face {
 			font-family: '@{val1}';
 			//src: url('@{s2-font-path}/@{val2}.eot');
@@ -307,7 +307,7 @@
 
 // tools ——————————————————————————————————————————————————————————————————————
 
-#s2-tools{
+#s2-tools {
 	.ir() {
 		font: 0/0 a;
 		text-shadow: none;
@@ -321,31 +321,31 @@
 		/* image-rs2acement (http://www.zeldman.com/2012/03/01/rs2acing-the-9999px-hack-new-image-rs2acement/) */
 	}
 
-	.bg(@val1,@val2:transparent){ /* usage: #s2-tools > .bg("/backgrounds/bg_img.png"[,#fff]); */
+	.bg(@val1,@val2:transparent) { /* usage: #s2-tools > .bg("/backgrounds/bg_img.png"[,#fff]); */
 		background: @val2 url("@{s2-image-path}@{val1}") no-repeat 0 0;
 	}
-	.bg-data(@val1,@val2:transparent){ /* usage: #s2-tools > .bg-data("/backgrounds/bg_img.png"[,#fff]); */
+	.bg-data(@val1,@val2:transparent) { /* usage: #s2-tools > .bg-data("/backgrounds/bg_img.png"[,#fff]); */
 		background: @val2 data-uri("@{s2-image-path}@{val1}") no-repeat 0 0;
 	}
 
-	.enableGPU(){
+	.enableGPU() {
 		-webkit-transform: translateZ(0);
 	}
-	.enableGPU2(){
+	.enableGPU2() {
 		-webkit-backface-visibility: hidden;
 	}
 
-	.noGap(){
+	.noGap() {
 		font-size: 0;
 		line-height: 0;
 	}
-	.reGap(@val1:@s2-font-basesize,@val2:@s2-base-lineheight){
+	.reGap(@val1:@s2-font-basesize,@val2:@s2-base-lineheight) {
 		font-size: @val1;
 		line-height: @val2;
 	}
 
-	#pointerevents{
-		.none(){
+	#pointerevents {
+		.none() {
 			display: none;
 			pointer-events: none;
 			.pointerevents &{
@@ -353,7 +353,7 @@
 				opacity: 0;
 			}
 		}
-		.auto(){
+		.auto() {
 			display: block;
 			pointer-events: auto;
 			.pointerevents &{
@@ -363,19 +363,19 @@
 	}
 
 
-	.fontsize(@val1,@val2){
+	.fontsize(@val1,@val2) {
 		.reGap(@val1,@val2);
 	}
 
 	.placeholder(@val:light-grey) {
-		// https://developer.mozilla.org/de/docs/CSS/:-moz-placeholder
+		// https://developer.mozilla.org/de/docs/CSS/: -moz-placeholder
 		&::-webkit-input-placeholder {
 			color: @val;
 		}
 		&::-moz-placeholder {
 			color: @val;
 		}
-		&:-ms-placeholder {
+		&::-ms-placeholder {
 			color: @val;
 		}
 		&::-o-placeholder {
@@ -386,23 +386,4 @@
 		}
 	}
 
-	.posabs(@val){
-		position: absolute;
-		top: @val;
-		right: @val;
-		bottom: @val;
-		left: @val;
-	}
-	.posabs(@val1, @val2){
-		position: absolute;
-		top: @val1;
-		left: @val2;
-	}
-	.posabs(@val1, @val2, @val3, @val4){
-		position: absolute;
-		top: @val1;
-		right: @val2;
-		bottom: @val3;
-		left: @val4;
-	}
 }
