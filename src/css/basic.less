@@ -30,7 +30,7 @@ a {
 }
 
 .copy {
-	margin: 0 0 @s2-paragraph-margin 0;
+	margin: 0 0 @s2-base-lineheight 0;
 	hyphens: auto;
 	a {
 		text-decoration: underline;
@@ -38,6 +38,13 @@ a {
 		  text-decoration: none;
 		}
 	}
+	@media @s2-mq-window-tablet {
+//		margin-bottom: 32px;
+	}
+	@media @s2-mq-window-desktop {
+//		margin-bottom: 36px;
+	}
+
 }
 .scopy {
 	font-size: 15px;
