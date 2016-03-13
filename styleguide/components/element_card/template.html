@@ -1,6 +1,6 @@
 <div class="card" <% unless @nestedvcard : %>itemscope="itemscope" itemtype="http://schema.org/Person"<% end %>>
 	<figure>
-		<div class="icont"><img itemprop="image" class="img" alt="Lorem Ipsum" src="http://placehold.it/280x370" width="280" height="370" /></div>
+		<% include './styleguide/components/element_image/template.html', { width: 280, height: 370, microformat: true } %>
 		<% if @caption : %>
 		<figcaption class="figcaption">
 			<h3 class="sub h4" itemprop="name">John Doe</h3>
