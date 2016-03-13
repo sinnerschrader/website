@@ -1,16 +1,17 @@
-<div class="card <% unless @nestedvcard : %>vcard<% end %>">
+<div class="card" <% unless @nestedvcard : %>itemscope="itemscope" itemtype="http://schema.org/Person"<% end %>>
 	<figure>
-		<div class="icont"><img class="img foto" alt="Lorem Ipsum" src="http://placehold.it/280x370" width="280" height="370" /></div>
+		<div class="icont"><img itemprop="image" class="img" alt="Lorem Ipsum" src="http://placehold.it/280x370" width="280" height="370" /></div>
 		<% if @caption : %>
 		<figcaption class="figcaption">
-			<h3 class="sub h4 fn">Matthias Schrader</h3>
-			<p class="scopy title">CEO</p>
+			<h3 class="sub h4" itemprop="name">John Doe</h3>
+			<p class="scopy" itemprop="jobTitle">CEO</p>
+			<meta content="John Doe Ltd" itemprop="worksFor" />
 		</figcaption>
 		<% end %>
 	</figure>
 	<ul class="smn">
-		<li><a href="#" class="linkedin url">LinkedIn</a></li>
-		<li><a href="#" class="xing url">Xing</a></li>
-		<li><a href="#" class="twitter url">Twitter</a></li>
+		<li><a href="https://linkedin.com/JohnDoe" class="linkedin" itemprop="url">LinkedIn</a></li>
+		<li><a href="https://xing.com/JohnDoe" class="xing" itemprop="url">Xing</a></li>
+		<li><a href="https://twitter.com/JohnDoe" class="twitter" itemprop="url">Twitter</a></li>
 	</ul>
 </div>
