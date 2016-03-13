@@ -1,0 +1,38 @@
+.investerrelations {
+	padding: @s2-moduleGap-s-1;
+	.h {
+		margin-bottom: @s2-moduleGap-s-1;
+	}
+	
+	.irsite {
+		margin-bottom: 2 * @s2-moduleGap-s-1;
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-1 @s2-moduleGap-m-3;
+		.h {
+			text-align: center;
+			margin-bottom: 2 * @s2-moduleGap-m-1;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		display: flex;
+		flex-wrap: wrap;
+		padding: @s2-moduleGap-l-1 @s2-moduleGap-l-3;
+
+		.h {
+			width: 100%;
+			margin-bottom: 2 * @s2-moduleGap-l-1;
+		}
+		
+		.about {
+			order: 2;
+			width: 50%;
+		}
+		.details {
+			order: 1;
+			width: 50%;
+		}
+	}
+}
