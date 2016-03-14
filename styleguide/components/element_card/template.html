@@ -1,6 +1,6 @@
 <div class="card" <% unless @nestedvcard : %>itemscope="itemscope" itemtype="http://schema.org/Person"<% end %>>
 	<figure>
-		<% include './styleguide/components/element_image/template.html', { width: 280, height: 370, microformat: true } %>
+		<div class="teaser"><% include './styleguide/components/element_image/template.html', { width: 280, height: 370, microformat: true } %></div>
 		<% if @caption : %>
 		<figcaption class="figcaption">
 			<h3 class="sub h4" itemprop="name">John Doe</h3>
