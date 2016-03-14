@@ -11,10 +11,13 @@
 		overflow: hidden;
 
 		.item {
-			flex: 1 0 auto;
-			width: 100%; // FIX IE 11
+			flex: 1 1 auto;
 			margin: 0 @s2-moduleGap-s-1/2 0 0;
 		}
+	}
+	
+	.teaser{
+		min-width: 217px;
 	}
 
 	.pager{
@@ -31,16 +34,14 @@
 		}
 
 		.cards{
-			justify-content: space-around;
+			justify-content: space-between;
 			flex-wrap: wrap;
 			.item {
-				width: auto;
+				flex-grow: 0;
 				margin: 0 @s2-moduleGap-m-1/2 60px;
 			}
-			.card{
-				margin: 0 auto;
-			}
 		}
+		
 
 		.pager{
 			display: none;
@@ -50,7 +51,7 @@
 	@media @s2-mq-window-desktop {
 		padding: @s2-moduleGap-l-2/2;
 		background: linear-gradient(to right, @s2-grey 0%, @s2-grey @s2-moduleGap-l-3, transparent @s2-moduleGap-l-3, transparent 100%);
-
+		
 	}
 
 }
