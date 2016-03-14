@@ -1,0 +1,102 @@
+.locations {
+	padding: @s2-moduleGap-s-1;
+	background: linear-gradient(to right, @s2-white 0%, @s2-white @s2-moduleGap-s-2, transparent @s2-moduleGap-s-2, transparent 100%),
+							linear-gradient(to bottom, @s2-white 0%, @s2-white 25%, transparent 25%, transparent 100%),
+							linear-gradient(to top, @s2-white 0%, @s2-white 35%, transparent 35%, transparent 100%),
+							@s2-grey;
+	
+	.h,
+	.loc {
+		margin-bottom: @s2-moduleGap-s-1;
+	}
+	.copy{}
+	.locnav{
+		display: flex;
+		justify-content: space-around;
+		.item{
+			padding: 10px;
+			flex: 1 0 auto;
+			cursor: pointer;
+			flex-grow: 0;
+			&:hover,
+			&.active{
+				&:extend(.link);
+			}
+		}
+	}
+	.locimg {
+		display: flex;
+		flex-direction: column;
+		.caption{
+			order: 2;
+			position: relative;
+			z-index: 1;
+		}
+		.teaser {
+			order: 1;
+			margin-bottom: -13%;
+		}
+	}
+	
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-1;
+		background: linear-gradient(to right, @s2-white 0%, @s2-white @s2-moduleGap-m-2, transparent @s2-moduleGap-m-2, transparent 100%),
+								linear-gradient(to bottom, @s2-white 0%, @s2-white @s2-moduleGap-m-2*2, transparent @s2-moduleGap-m-2*2, transparent 100%),
+								linear-gradient(to top, @s2-white 0%, @s2-white 20%, transparent 20%, transparent 100%),
+								@s2-grey;
+
+		.h,
+		.loc {
+			margin-bottom: @s2-moduleGap-m-1;
+		}
+		.h,
+		.sub{
+			text-align: center;
+		}
+		.caption{
+			padding-left: @s2-moduleGap-m-1;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		display: flex;
+		flex-direction: column;
+		padding: @s2-moduleGap-l-1 @s2-moduleGap-l-2;
+		background: linear-gradient(to right, @s2-white 0%, @s2-white 50%, transparent 50%, transparent 100%),
+								linear-gradient(to bottom, @s2-white 0%, @s2-white 155px, transparent 155px, transparent 100%),
+								linear-gradient(to top, @s2-white 0%, @s2-white @s2-moduleGap-l-2, transparent @s2-moduleGap-l-2, transparent 100%),
+								@s2-grey;
+
+		.h,
+		.loc {
+			order: 1;
+			margin-bottom: @s2-moduleGap-l-1;
+		}
+
+		.sub {
+			order: 4;
+			width: 68%;
+			margin-left: auto;
+		}
+
+		.locnav {
+			order: 2;
+		}
+
+		.locimg {
+			order: 3;
+			flex-direction: row;
+			.caption{
+				order: 1;
+				align-self: center;
+				flex: 1 1 auto;
+			}
+			.teaser{
+				order: 2;
+				width: 68%;
+				margin-bottom: @s2-moduleGap-l-1;
+			}
+		}
+
+	}
+}
