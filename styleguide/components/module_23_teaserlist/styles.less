@@ -1,0 +1,37 @@
+.mod-teaserlist {
+
+	.teaserlist {
+		.item {
+			margin-bottom: @s2-moduleGap-s-2;
+		}
+	}
+	
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-1;
+
+		.teaserlist {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		
+			.item {
+				flex: 1 1 auto;
+				width: 100%/2;
+				max-width: 312px;
+				margin-bottom: @s2-moduleGap-m-2;
+			}
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l-1 @s2-moduleGap-l-2;
+
+		.teaserlist {
+			.item {
+				width: 100%/3;
+				margin-bottom: @s2-moduleGap-l-2;
+			}
+		}
+	}
+
+}
