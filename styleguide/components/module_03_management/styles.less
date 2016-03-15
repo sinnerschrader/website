@@ -12,6 +12,7 @@
 
 		.item {
 			flex: 1 1 auto;
+			width: 100%; // FIX IE 11
 			margin: 0 @s2-moduleGap-s-1/2 0 0;
 		}
 	}
@@ -38,6 +39,7 @@
 			flex-wrap: wrap;
 			.item {
 				flex-grow: 0;
+				width: auto; // FIX IE 11
 				margin: 0 @s2-moduleGap-m-1/2 60px;
 			}
 		}
