@@ -1,17 +1,19 @@
 <section class="colleagues">
-	<ol class="cards">
-		<% for idx in [1..7] : %>
-		<li class="item invert" itemscope="itemscope" itemtype="http://schema.org/Person">
-			<blockquote class="quote">
-				<h3 class="sub h4" itemprop="name"><cite>John Doe</cite></h3>
-				<p class="scopy" itemprop="jobTitle">Mitarbeiter</p>
-				<meta content="SinnerSchrader Deutschland GmbH" itemprop="worksFor" />
-				<meta content="https://sinnerschrader.com" itemprop="url" />
-				<p class="copy">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna. Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
-			</blockquote>
-			<% include './styleguide/components/element_card/template.html', { caption: false, nestedvcard: true } %>
-		</li>
-		<% end %>
-	</ol>
+	<div class="frame">
+		<ol class="cards">
+			<% for idx in [1..7] : %>
+			<li class="item invert" itemscope="itemscope" itemtype="http://schema.org/Person">
+				<blockquote class="quote">
+					<h3 class="sub h4" itemprop="name"><cite>John Doe</cite></h3>
+					<p class="scopy" itemprop="jobTitle">Mitarbeiter</p>
+					<meta content="SinnerSchrader Deutschland GmbH" itemprop="worksFor" />
+					<meta content="https://sinnerschrader.com" itemprop="url" />
+					<p class="copy">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna. Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
+				</blockquote>
+				<% include './styleguide/components/element_card/template.html', { caption: false, nestedvcard: true } %>
+			</li>
+			<% end %>
+		</ol>
+	</div>
 	<% include './styleguide/components/element_pager/template.html' %>
 </section>
