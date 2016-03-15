@@ -1,8 +1,8 @@
 <%
-	max = @max || 8
+	items = @items || 8
 %>
 <ol class="pager">
-	<% for i in [1..max] : %>
+	<% for i in [1..items] : %>
 	<li class="item <%- if i is 1 then 'active' %>"></li>
 	<% end %>
 </ol>
