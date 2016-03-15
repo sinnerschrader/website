@@ -3,40 +3,21 @@
 	width: 100%;
 	padding: 0 0 0 40px;
 
-	.figcaption{
+	.figcaption {
 		color: @s2-darkgrey2;
-		.sub{
+		.sub {
 			color: @s2-black;
 		}
 	}
-	
-	.teaser{
-		min-width: 217px;
-	}
-	
-	.smn{
+
+	.smn {
 		position: absolute;
 		left: 0;
 		top: 0;
-		li{
-			@dim: 20px;
-			display: block;
-			width: @dim;
-			height: @dim;
-			background: @s2-black;
-			margin: 0 0 2*@dim;
-			#s2-tools > .ir;
-			
-			.invert & {
-				background: @s2-white;
-			}
-			
-			a{
-				display: block;
-				width: @dim;
-				height: @dim;
-			}
-		}
+	}
+	
+	.teaser {
+		min-width: 217px;
 	}
 	
 	@media @s2-mq-window-tablet {
@@ -53,4 +34,3 @@
 
 
 }
-

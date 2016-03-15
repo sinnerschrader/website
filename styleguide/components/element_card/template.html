@@ -10,9 +10,5 @@
 		</figcaption>
 		<% end %>
 	</figure>
-	<ul class="smn">
-		<li><a href="https://linkedin.com/JohnDoe" class="linkedin" itemprop="url">LinkedIn</a></li>
-		<li><a href="https://xing.com/JohnDoe" class="xing" itemprop="url">Xing</a></li>
-		<li><a href="https://twitter.com/JohnDoe" class="twitter" itemprop="url">Twitter</a></li>
-	</ul>
+	<% include './styleguide/components/element_smn/template.html', { items: 3, microformat: true } %>
 </div>
