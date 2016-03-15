@@ -1,10 +1,8 @@
+<%
+	max = @max || 8
+%>
 <ol class="pager">
-	<li class="item active"></li>
-	<li class="item"></li>
-	<li class="item"></li>
-	<li class="item"></li>
-	<li class="item"></li>
-	<li class="item"></li>
-	<li class="item"></li>
-	<li class="item"></li>
+	<% for i in [1..max] : %>
+	<li class="item <%- if i is 1 then 'active' %>"></li>
+	<% end %>
 </ol>
