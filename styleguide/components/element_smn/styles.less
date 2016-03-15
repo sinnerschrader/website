@@ -1,5 +1,5 @@
 .smn {
-	.item{
+	.nw{
 		@dim: 20px;
 		width: @dim;
 		height: @dim;
@@ -11,13 +11,12 @@
 			width: @dim;
 			height: @dim;
 		}
-		
-		.invert & {
-			background: @s2-white;
-		}
-		
-		&.networkid {
+
+		.networkid {
 			background: @s2-black; //TODO replace me with icon
+			.invert & {
+				background: @s2-white;
+			}
 		}
 	}
 }
