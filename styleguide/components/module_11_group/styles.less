@@ -1,0 +1,63 @@
+.group {
+	padding: @s2-moduleGap-s-1;
+	color: @s2-white;
+	background: @s2-black url('//image.sinnerschrader.com/2880x1100/00000000/333/%C2%A01440x550%C2%A0') no-repeat 50%;
+	background-size: cover;
+
+	.h {
+		margin-bottom: @s2-moduleGap-s-1;
+	}
+	
+	.units{
+		display: flex;
+		.unit{
+			flex: 1 0 auto;
+			width: 100%; // FIX IE 11
+			a {
+				display: block;
+			}
+		}
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-1 0 0;
+
+		.h,
+		.copy{
+			text-align: center;
+			margin: 0 @s2-moduleGap-m-1 @s2-moduleGap-m-1;
+		}
+		.copy{
+			margin: 0 @s2-moduleGap-m-1 @s2-moduleGap-m-2;
+		}
+		
+		.units {
+			background: @s2-black;
+			.unit {
+				flex: 1 0 auto;
+				width: auto; // FIX IE 11
+				&:nth-of-type(2n){
+					background: darken(@s2-black, 5%);
+				}
+			}
+		}
+		
+		.pager{
+			display: none;
+		}
+
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l-1 0 0;
+
+		.h {
+			margin-bottom: @s2-moduleGap-l-1;
+		}
+		.copy{
+			margin-bottom: @s2-moduleGap-l-2;
+		}
+
+	}
+
+}
