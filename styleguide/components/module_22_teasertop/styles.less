@@ -1,0 +1,45 @@
+.mod-teasertop {
+
+	.meta{
+		position: relative;
+		z-index: 1;
+		padding: @s2-moduleGap-s-1/2 @s2-moduleGap-s-1 0;
+		margin-top: -@s2-moduleGap-s-1;
+		margin-right: @s2-moduleGap-s-1;
+		background: @s2-white;
+		
+		.time {
+			display: block;
+		}
+		.cat {
+			color: @s2-darkgrey2;
+			margin-bottom: @s2-moduleGap-s-1;
+		}
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: 0 @s2-moduleGap-m-1;
+
+		.meta{
+			padding: @s2-moduleGap-m-1/2 @s2-moduleGap-m-1 0 0;
+			margin-top: -@s2-moduleGap-m-1;
+			margin-right: @s2-moduleGap-m-2;
+		}
+		.cat {
+			margin-bottom: @s2-moduleGap-m-1;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: 0 @s2-moduleGap-l-2;
+
+		.meta{
+			padding: @s2-moduleGap-l-1/2 @s2-moduleGap-l-1 0 @s2-moduleGap-l-2;
+			margin-top: -@s2-moduleGap-l-1;
+			margin-right: @s2-moduleGap-l-3;
+		}
+		.cat {
+			margin-bottom: @s2-moduleGap-l-1;
+		}
+	}
+}
