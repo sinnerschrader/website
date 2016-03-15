@@ -1,0 +1,39 @@
+.socialfellow {
+	padding: @s2-moduleGap-s-1;
+	text-align: center;
+	
+	.h {
+		display: inline-block;
+	}
+	
+	.smn {
+		display: inline-flex;
+		vertical-align: middle;
+		.item {
+			margin: 0 @s2-moduleGap-s-1/2 0;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-1;
+
+		.smn {
+			.item {
+				&:first-child {
+					margin-left: @s2-moduleGap-s-1;
+				}
+			}
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l-1;
+	}
+
+}
