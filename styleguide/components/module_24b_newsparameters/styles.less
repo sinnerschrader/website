@@ -1,0 +1,32 @@
+@import (once) "@{components}/module_24_newsdetail/styles";
+
+.mod-newsparameters {
+	margin: @s2-moduleGap-s-1/2 0;
+	padding: @s2-moduleGap-s-1;
+	background: @s2-lightgrey;
+	
+	.h {
+		margin-bottom: 10px;
+	}
+	.parameters {
+		.item{
+			margin-bottom: 5px;
+		}
+	}
+
+	@media @s2-mq-window-tablet {
+		margin: @s2-moduleGap-m-1/2 0;
+		padding: @s2-moduleGap-m-1;
+
+		.h {
+			margin-bottom: 15px;
+		}
+
+	}
+
+	@media @s2-mq-window-desktop {
+		margin: @s2-moduleGap-l-1 @s2-moduleGap-l-3;
+		padding: @s2-moduleGap-l-1 @s2-moduleGap-l-2;
+
+	}
+}
