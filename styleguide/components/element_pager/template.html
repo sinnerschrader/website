@@ -1,8 +1,9 @@
 <%
-	items = @items || 8
+	items  = @items || 8
+	active = @active || 1
 %>
 <ol class="pager">
 	<% for i in [1..items] : %>
-	<li class="item <%- if i is 1 then 'active' %>"></li>
+	<li class="item <%- if i is active then 'active' %>"></li>
 	<% end %>
 </ol>
