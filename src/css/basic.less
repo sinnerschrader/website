@@ -75,3 +75,32 @@ a {
 	color: @s2-white;
 	background: @s2-black;
 }
+
+.bulletlist {
+	li {
+		position: relative;
+		padding-left: 18px;
+		margin-bottom: 5px;
+		&::before {
+			display: inline-block;
+			content: "■";
+			position: absolute;
+			left: 0;
+			color: @s2-green;
+			font-size: 0.9em;
+			margin-top: -2px;
+		}
+		@media @s2-mq-window-tablet {
+			padding-left: 26px;
+			&::before {
+				font-size: 1.2em;
+			}
+		}
+
+		@media @s2-mq-window-desktop {
+			&::before {
+				font-size: 1.5em;
+			}
+		}
+	}
+}
