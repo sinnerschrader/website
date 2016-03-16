@@ -1,0 +1,17 @@
+.video{
+	position: relative;
+	&[data-ratio="0.5625"] {
+		padding-top: 56.25%;
+	}
+	&[data-ratio="0.1333"] {
+		padding-top: 13.33%;
+	}
+
+	iframe{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
