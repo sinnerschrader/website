@@ -1,0 +1,28 @@
+.mod-quotevideo {
+	position: relative;
+
+	.quote{
+		position: absolute;
+		left: @s2-moduleGap-s-1;
+		right: @s2-moduleGap-s-1;
+		bottom: @s2-moduleGap-s-1;
+	}
+
+
+	@media @s2-mq-window-tablet {
+		.quote{
+			left: @s2-moduleGap-m-2;
+			right: @s2-moduleGap-m-2;
+			bottom: @s2-moduleGap-m-1;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		.quote{
+			left: @s2-moduleGap-l-2;
+			right: @s2-moduleGap-l-3;
+			bottom: @s2-moduleGap-l-1;
+		}
+	}
+
+}
