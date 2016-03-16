@@ -1,0 +1,45 @@
+.mod-story3 {
+	padding: @s2-moduleGap-s-2 @s2-moduleGap-s-1;
+	background: @s2-black no-repeat 50% 0;
+	background-size: cover;
+	
+	.quote {
+		&::after {
+			display: block;
+			content: " ";
+			width: 10%;
+			border-bottom-width: 2px;
+			border-bottom-style: solid;
+			border-bottom-color: inherit;
+		}
+	}
+	.details {
+		margin-top: @s2-moduleGap-s-2;
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-2;
+		.details {
+			margin-top: @s2-moduleGap-m-3;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		display: flex;
+		padding: @s2-moduleGap-l-2;
+
+		.quote {
+			order: 2;
+			align-self: center;
+		}
+		.details {
+			flex: 1 0 auto;
+			order: 1;
+			width: 53%;
+			margin-top: 0;
+			padding-right: @s2-moduleGap-l-1;
+			align-self: center;
+		}
+
+	}
+}
