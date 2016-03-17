@@ -108,6 +108,19 @@ a {
 	}
 }
 
+.styleline {
+	p {
+		border-color: inherit;
+		&:last-of-type::after {
+			display: block;
+			content: " ";
+			width: 10%;
+			border-bottom-width: 2px;
+			border-bottom-style: solid;
+			border-bottom-color: inherit;
+		}
+	}
+}
 
 
 
