@@ -10,11 +10,11 @@
 		flex-wrap: wrap;
 		
 		.item {
-			flex: 0 1 50%;
-			width: 50%; // FIX IE 11
+			flex: 1 1 auto;
+			width: 100%/2; // FIX IE 11
 			height: 30px;
+			margin-bottom: @s2-moduleGap-s-2;
 			background: transparent no-repeat 50%;
-			margin-bottom: 50px;
 			background-size: auto 100%;
 			#s2-tools > .ir2;
 		}
@@ -25,15 +25,14 @@
 
 		.h {
 			text-align: center;
-			margin-bottom: 2 * @s2-moduleGap-m-1;
+			margin-bottom: @s2-moduleGap-m-1;
 		}
 
 		.clientslist {
 			.item {
 				height: 35px;
-				flex-basis: 25%;
-				width: 25%;
-				margin-bottom: 55px;
+				width: 100%/4;
+				margin-bottom: @s2-moduleGap-m-2;
 			}
 		}
 	}
@@ -42,14 +41,13 @@
 		padding: @s2-moduleGap-l-1 @s2-moduleGap-l-3;
 
 		.h {
-			width: 100%;
-			margin-bottom: 2 * @s2-moduleGap-l-1;
+			margin-bottom: @s2-moduleGap-l-2;
 		}
 
 		.clientslist {
 			.item {
 				height: 55px;
-				margin-bottom: 100px;
+				margin-bottom: @s2-moduleGap-l-2;
 			}
 		}
 	}
