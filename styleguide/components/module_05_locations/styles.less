@@ -6,35 +6,34 @@
 							@s2-lightgrey;
 	
 	.h,
-	.loc {
-		margin-bottom: @s2-moduleGap-s-1;
+	.city {
+		margin-bottom: @s2-moduleGap-s-1/2;
 	}
-	.copy{}
-	.locnav{
+	
+	.copy {
+	}
+	
+	.locnav {
 		display: flex;
 		justify-content: space-around;
-		.item{
-			padding: 10px;
-			flex: 1 0 auto;
-			cursor: pointer;
-			flex-grow: 0;
-			&:hover,
-			&.active{
-				&:extend(.link);
-			}
+		.item {
+			flex: 1 1 auto;
+			padding: @s2-moduleGap-s-1/3 0;
+			text-align: center;
 		}
 	}
-	.locimg {
+
+	.figure {
 		display: flex;
 		flex-direction: column;
-		.caption{
+		.caption {
 			order: 2;
 			position: relative;
 			z-index: 1;
 		}
 		.teaser {
 			order: 1;
-			margin-bottom: -13%;
+			margin-bottom: -@s2-moduleGap-s-1;
 		}
 	}
 	
@@ -45,17 +44,27 @@
 								linear-gradient(to top, @s2-white 0%, @s2-white 20%, transparent 20%, transparent 100%),
 								@s2-lightgrey;
 
-		.h,
-		.loc {
+		.h {
 			margin-bottom: @s2-moduleGap-m-1;
 		}
+		.city {
+			margin-bottom: @s2-moduleGap-m-1/2;
+		}
+
 		.h,
-		.sub{
+		.sub {
 			text-align: center;
 		}
-		.caption{
-			padding-left: @s2-moduleGap-m-1;
+
+		.figure {
+			.caption {
+				padding-left: @s2-moduleGap-m-1;
+			}
+			.teaser {
+				margin-bottom: -@s2-moduleGap-m-2;
+			}
 		}
+		
 	}
 
 	@media @s2-mq-window-desktop {
@@ -67,31 +76,36 @@
 								linear-gradient(to top, @s2-white 0%, @s2-white @s2-moduleGap-l-2, transparent @s2-moduleGap-l-2, transparent 100%),
 								@s2-lightgrey;
 
-		.h,
-		.loc {
+		.h {
 			order: 1;
 			margin-bottom: @s2-moduleGap-l-1;
+		}
+
+		.city {
+			margin-bottom: @s2-moduleGap-l-1/2;
 		}
 
 		.sub {
 			order: 4;
 			width: 68%;
 			margin-left: auto;
+			margin-bottom: 0;
 		}
 
 		.locnav {
 			order: 2;
 		}
 
-		.locimg {
+		.figure {
 			order: 3;
 			flex-direction: row;
-			.caption{
+			.caption {
 				order: 1;
-				align-self: center;
 				flex: 1 1 auto;
+				align-self: center;
+				padding-left: 0;
 			}
-			.teaser{
+			.teaser {
 				order: 2;
 				width: 68%;
 				margin-bottom: @s2-moduleGap-l-1;

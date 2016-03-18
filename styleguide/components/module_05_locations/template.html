@@ -1,14 +1,9 @@
 <section class="mod-locations">
 	<h2 class="h h2-1">Standorte</h2>
 	<p class="sub copy">Perle an der Elbe. Heimathafen von SinnerSchrader.</p>
-	<ol class="locnav">
-		<li class="item active">Hamburg</li>
-		<li class="item">München</li>
-		<li class="item">Frankfurt</li>
-	</ol>
-	<figure class="locimg" data-location="hamburg">
+	<figure class="figure" data-location="hamburg">
 		<figcaption class="caption">
-			<h3 class="loc h3">Hamburg</h3>
+			<h3 class="city h3">Hamburg</h3>
 			<h4 class="h4">SinnerSchrader</h4>
 			<p class="copy">
 				Völckersstr. 38<br />
@@ -17,6 +12,13 @@
 			</p>
 			<% include './styleguide/components/element_button/template.html', { label: 'Zum Office' } %>
 		</figcaption>
-		<div class="teaser"><% include './styleguide/components/element_image/template.html', { width: 810, height: 530 } %></div>
+		<div class="teaser">
+			<ol class="locnav">
+				<li class="item active"><span class="link">Hamburg</span></li>
+				<li class="item"><span class="link">München</span></li>
+				<li class="item"><span class="link">Frankfurt</span></li>
+			</ol>
+			<% include './styleguide/components/element_image/template.html', { width: 810, height: 530 } %>
+		</div>
 	</figure>
 </section>
