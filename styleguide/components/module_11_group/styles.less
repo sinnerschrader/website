@@ -23,11 +23,16 @@
 
 		.h,
 		.copy{
+			padding: 0 @s2-moduleGap-m-1;
 			text-align: center;
-			margin: 0 @s2-moduleGap-m-1 @s2-moduleGap-m-1;
 		}
-		.copy{
-			margin: 0 @s2-moduleGap-m-1 @s2-moduleGap-m-2;
+
+		.h {
+			margin-bottom: @s2-moduleGap-m-1;
+		}
+		
+		.copy {
+			margin-bottom: @s2-moduleGap-m-2;
 		}
 		
 		.units {
@@ -35,8 +40,11 @@
 			.item {
 				flex: 1 0 auto;
 				width: auto; // FIX IE 11
-				&:nth-of-type(2n){
+				&:nth-of-type(2){
 					background: @s2-darkblack;
+				}
+				.img {
+					background: transparent;
 				}
 			}
 		}
@@ -50,10 +58,16 @@
 	@media @s2-mq-window-desktop {
 		padding: @s2-moduleGap-l-1 0 0;
 
+		.h,
+		.copy{
+			padding: 0 @s2-moduleGap-l-3;
+		}
+
 		.h {
 			margin-bottom: @s2-moduleGap-l-1;
 		}
-		.copy{
+		
+		.copy {
 			margin-bottom: @s2-moduleGap-l-2;
 		}
 
