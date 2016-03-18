@@ -1,4 +1,4 @@
-.mod-contact{
+.mod-contact {
 	display: flex;
 	flex-wrap: wrap;
 	padding: @s2-moduleGap-s-1;
@@ -7,19 +7,18 @@
 							@s2-lightgrey;
 
 	
-	.h{
+	.h {
 		order: 1;
 		margin-bottom: @s2-moduleGap-s-1;
 	}
-	.details{
+
+	.details {
 		order: 3;
-		.sub{
-			margin-bottom: 10px;
-		}
-		.scopy{
+		.scopy {
 			margin-bottom: @s2-moduleGap-s-1;
 		}
 	}
+
 	.card {
 		order: 2;
 		margin-bottom: 50px;
@@ -32,22 +31,28 @@
 								linear-gradient(to top, @s2-white 0%, @s2-white @s2-moduleGap-m-1, transparent @s2-moduleGap-m-1, transparent 100%),
 								@s2-lightgrey;
 
-		.h{
-			margin-bottom: @s2-moduleGap-m-1;
+		.h {
 			width: 100%;
+			margin-bottom: @s2-moduleGap-m-1;
 			text-align: center;
 		}
-		.details{
-			padding-right: @s2-moduleGap-m-1;
-			align-self: center;
-			width: 50%
+
+		.details,
+		.card {
+			flex: 1 1 auto;
+			width: 50%;
 		}
-		.card{
+
+		.details {
+			padding-left: @s2-moduleGap-m-1;
+			align-self: center;
+		}
+		.card {
 			margin-bottom: 0;
-			width: 50%
 		}
 		
 	}
+
 	@media @s2-mq-window-desktop {
 		padding: @s2-moduleGap-l-2 @s2-moduleGap-l-3;
 		background: linear-gradient(to bottom, @s2-white 0%, @s2-white 25%, transparent 25%, transparent 100%),
@@ -55,14 +60,16 @@
 								linear-gradient(to top, @s2-white 0%, @s2-white @s2-moduleGap-l-1, transparent @s2-moduleGap-l-1, transparent 100%),
 								@s2-lightgrey;		
 
-		.h{
+		.h {
 			margin-bottom: @s2-moduleGap-l-1;
 		}
 		.details {
+			padding-left: 0;
+			padding-right: @s2-moduleGap-l-1;
 			order: 2;
 		}
 		
-		.card{
+		.card {
 			order: 3;
 		}
 		
