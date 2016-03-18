@@ -1,39 +1,28 @@
 .mod-hero{
 	position: relative;
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
-	height: 90vh;
-	padding: 180px 13% 90px; // 56% 13%;
+	justify-content: flex-end;
+	height: 85vh;
+	padding: @s2-moduleGap-s-1;
 	text-align: center;
-	color: @s2-white;
-	background: @s2-red url("https://image.sinnerschrader.com/2880x1730/BA0237/520127/ 1440x865 ") no-repeat 50% 0;
+	background: @s2-red no-repeat 50% 0;
 	background-size: cover;	
 
-	.h4{
-		margin-bottom: 10px; // TODO
+	.sub{
+		margin-bottom: @s2-moduleGap-s-1/2;
 	}
 	
 	@media @s2-mq-window-tablet {
-		display: block;
-		padding-top: 10px;
+		padding: @s2-moduleGap-m-1 @s2-moduleGap-m-2 @s2-moduleGap-m-2;
 		max-height: 760px;
+		justify-content: space-between;
 		.h{
-			@pad: @s2-moduleGap-m-3;
-			position: absolute;
-			right: @pad;
-			bottom: @pad;
-			left: @pad;
 			text-align: left;
 		}
 	}
 	@media @s2-mq-window-desktop {
-		.h{
-			@pad: @s2-moduleGap-l-3;
-			right: @pad;
-			bottom: @pad;
-			left: @pad;
-		}
+		padding: @s2-moduleGap-l-1 @s2-moduleGap-l-3 @s2-moduleGap-l-3;
 	}
 
 }
