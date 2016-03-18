@@ -1,5 +1,5 @@
 .mod-quotetext {
-	padding: @s2-moduleGap-s-2 @s2-moduleGap-s-2 @s2-moduleGap-s-2 @s2-moduleGap-s-1;
+	padding: @s2-moduleGap-s-2 @s2-moduleGap-s-1;
 	
 	.quote {
 		&::after {
@@ -10,14 +10,20 @@
 			border-bottom-style: solid;
 			border-bottom-color: inherit;
 		}
+		.cite {
+			color: inherit;
+		}
+		:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	@media @s2-mq-window-tablet {
-		padding: @s2-moduleGap-m-3 @s2-moduleGap-m-3 @s2-moduleGap-m-3 @s2-moduleGap-m-2;
+		padding: @s2-moduleGap-m-3 @s2-moduleGap-m-2;
 	}
 
 	@media @s2-mq-window-desktop {
-		padding: @s2-moduleGap-l-3 @s2-moduleGap-l-3 @s2-moduleGap-l-3 @s2-moduleGap-l-2;
+		padding: @s2-moduleGap-l-3 @s2-moduleGap-l-2;
 
 	}
 }
