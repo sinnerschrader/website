@@ -10,7 +10,7 @@
 			flex-wrap: wrap;
 			margin: 0 1px 0 0;
 			padding: @s2-moduleGap-s-1;
-			background: @s2-darkblack url("https://image.sinnerschrader.com/2880x910/1C1F26/15171D/ 1440x455 ") no-repeat 50%;
+			background: @s2-darkblack no-repeat 50%;
 			background-size: cover;
 		}
 		
@@ -39,17 +39,16 @@
 		.cards{
 			display: block;
 			.item {
-				width: auto;
 				margin: 0 0 1px;
 				padding: @s2-moduleGap-m-1;
-				flex-wrap: nowrap;
+				flex-wrap: initial;
 			}
 
 			.quote {
 				padding-right: @s2-moduleGap-m-1;
 				order: initial;
 				.scopy{
-					margin-bottom: 20px;
+					margin-bottom: @s2-moduleGap-m-1/2;
 				}
 				.copy{
 					display: block;
@@ -61,7 +60,6 @@
 				margin-bottom: 0;
 			}
 		}
-
 
 		.pager{
 			display: none;
@@ -76,8 +74,9 @@
 			}
 			
 			.quote {
-				.copy {
-					padding-right: @s2-moduleGap-l-1;
+				padding-right: @s2-moduleGap-l-2;
+				.scopy{
+					margin-bottom: @s2-moduleGap-l-1/2;
 				}
 			}
 		}
