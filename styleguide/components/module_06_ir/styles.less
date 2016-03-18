@@ -1,19 +1,26 @@
 .mod-investerrelations {
 	padding: @s2-moduleGap-s-1;
+
 	.h {
 		margin-bottom: @s2-moduleGap-s-1;
 	}
 	
-	.irsite {
+	.about {
 		margin-bottom: @s2-moduleGap-s-2;
 	}
 
 	@media @s2-mq-window-tablet {
 		padding: @s2-moduleGap-m-1 @s2-moduleGap-m-3;
+
 		.h {
+			margin-bottom: @s2-moduleGap-m-1;
 			text-align: center;
-			margin-bottom: 2 * @s2-moduleGap-m-1;
 		}
+
+		.about {
+			margin-bottom: @s2-moduleGap-m-2;
+		}
+
 	}
 
 	@media @s2-mq-window-desktop {
@@ -23,16 +30,22 @@
 
 		.h {
 			width: 100%;
-			margin-bottom: 2 * @s2-moduleGap-l-1;
+			margin-bottom: @s2-moduleGap-l-1;
 		}
 		
-		.about {
-			order: 2;
+		.about,
+		.details {
 			width: 50%;
 		}
+
+		.about {
+			order: 2;
+			margin-bottom: 0;
+			align-self: flex-start;
+		}
+
 		.details {
 			order: 1;
-			width: 50%;
 		}
 	}
 }
