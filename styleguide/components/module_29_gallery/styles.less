@@ -1,7 +1,5 @@
 .mod-gallery {
-	position: relative;
-	padding: @s2-moduleGap-s-1 0	;
-	background: @s2-lightgrey;
+	padding: @s2-moduleGap-s-1 0;
 	
 	.images {
 		display: flex;
@@ -9,8 +7,7 @@
 
 		.item {
 			flex: 1 0 auto;
-			width: 100%;
-			
+			width: 100%; // FIX IE 11
 		}
 	}
 	
@@ -21,14 +18,18 @@
 	}
 	
 	@media @s2-mq-window-tablet {
+		position: relative;
 		padding: @s2-moduleGap-m-1;
 		
 		.images {
 			.item {
 				position: relative;
 				.caption{
-					opacity: 0;
-					display: flex;
+					display: none;
+					.pointer-events & {
+						display: flex;
+						opacity: 0;
+					}
 					align-items: center;
 					position: absolute;
 					top: 0;
@@ -42,7 +43,10 @@
 				}
 				&.selected {
 					.caption {
-						opacity: 1;
+						display: flex;
+						.pointer-events & {
+							opacity: 1;
+						}
 					}
 				}
 			}
@@ -75,7 +79,7 @@
 		
 		.info,
 		.pager {
-			margin: 10px 10px 0;
+			margin: @s2-moduleGap-m-1/3 @s2-moduleGap-m-1/3 0;
 		}
 		
 		.info {
@@ -87,22 +91,22 @@
 		.pager{
 			justify-content: flex-end;
 			padding: 0;
-			counter-reset: section; 
+			counter-reset: slide; 
 			.item {
 				width: initial;
 				height: initial;
 				margin: initial;
 				background: initial;
-				counter-increment: section;
+				counter-increment: slide;
 				&.active{
 					&::after {
-						content: counter(section);
+						content: counter(slide);
 						color: @s2-black;
 					}
 				}
 			}
 			&::after {
-				content: " / " counter(section);
+				content: " / " counter(slide);
 			}
 		}
 	}
@@ -110,72 +114,19 @@
 	@media @s2-mq-window-desktop {
 		padding: @s2-moduleGap-l-1;
 
+		.info,
+		.pager {
+			margin: @s2-moduleGap-l-1/5 @s2-moduleGap-l-1/5 0;
+		}
+
 		.images {
 			.item {
-			.caption{
-				padding-left: @s2-moduleGap-l-3;
-				padding-right: @s2-moduleGap-l-2;
+				.caption{
+					padding-left: @s2-moduleGap-l-3;
+					padding-right: @s2-moduleGap-l-2;
 				}
 			}
 		}
 	}
 
 }
-
-
-
-
-//	<li class="item" data-caption="Lorem ipsum sit dolor amet">
-//		<% include './styleguide/components/element_image/template.html', { width: 1240, height: 725, label: i + ': 1240x725' } %>
-//	</li>
-
-//	@media @s2-mq-window-tablet {
-//		.images {
-//			.item {
-//				position: relative;
-//				&::before,
-//				&::after {
-//					content: "";
-//					position: absolute;
-//					z-index: 1;
-//					opacity: 0;
-//					#s2-transition > .generic();
-//				}
-//				&::before{
-//					top: 0;
-//					right: 0;
-//					bottom: 0;
-//					left: 0;
-//					background: fade(@s2-white, 80%);
-//				}
-//				&::after {
-//					content: attr(data-caption);
-//					position: absolute;
-//					top: 50%;
-//					left: @s2-moduleGap-m-1;
-//					right: @s2-moduleGap-m-2;
-//					transform: translateY(-50%);
-//					.h1;
-//				}
-//				&.selected {
-//					&::before,
-//					&::after {
-//						opacity: 1;
-//					}
-//				}
-//			}
-//		}
-//	}
-//	}
-
-//	@media @s2-mq-window-desktop {
-//		.images {
-//			.item {
-//				&::after {
-//					left: @s2-moduleGap-l-3;
-//					right: @s2-moduleGap-l-2;
-//				}
-//			}
-//		}
-//	}
-

@@ -1,6 +1,6 @@
 <section class="mod-gallery">
 	<div class="frame">
-		<ul class="images" style="transform: translate(-<%- 100*1 %>%)">
+		<ul class="images" style="transform: translate(-<%- 100*1 %>%)"> <!-- move slides here :) -->
 			<% for i in [1..7] : %>
 			<li class="item">
 				<figure class="figure">
@@ -15,6 +15,6 @@
 		<li class="prev">Zurück</li>
 		<li class="next">Zurück</li>
 	</div>
-	<div class="info">Info</div>  <!-- data-opened="⨉" -->
+	<div class="info">Info</div>
 	<% include './styleguide/components/element_pager/template.html', { active: 2 } %>
 </section>
