@@ -64,6 +64,10 @@ a {
 	text-transform: uppercase;
 }
 
+.cite {
+	color: @s2-darkgrey;
+}
+
 .link{
 	display: inline-block;
 	border-bottom: 2px solid @s2-black;
@@ -114,14 +118,28 @@ a {
 .styleline {
 	p {
 		border-color: inherit;
-		&:last-of-type::after {
-			display: block;
-			content: " ";
-			width: 10%;
-			border-bottom-width: 2px;
-			border-bottom-style: solid;
-			border-bottom-color: inherit;
+		&:last-of-type {
+			margin-bottom: @s2-moduleGap-s-1/2;
+			&::after {
+				display: block;
+				content: " ";
+				width: 10%;
+				border-bottom-width: 2px;
+				border-bottom-style: solid;
+				border-bottom-color: inherit;
+			}
 		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	@media @s2-mq-window-tablet {
+		margin-bottom: @s2-moduleGap-m-1/2;
+	}
+
+	@media @s2-mq-window-desktop {
+		margin-bottom: @s2-moduleGap-l-1/2;
 	}
 }
 
@@ -133,4 +151,7 @@ a {
 }
 .sctnbgclr {
 	background-color: @s2-green;
+}
+.sctntxtclr {
+	color: @s2-green;
 }
