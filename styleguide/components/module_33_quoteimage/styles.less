@@ -4,13 +4,6 @@
 
 	.quote{
 		margin: 0 @s2-moduleGap-s-1 @s2-moduleGap-s-2;
-		p:last-of-type {
-			margin-bottom: @s2-moduleGap-s-1;
-		}
-		.cite {
-			color: @s2-darkgrey;
-			text-transform: uppercase;
-		}
 	}
 	
 	.teaser {
@@ -32,10 +25,8 @@
 
 		.quote{
 			margin: 0 @s2-moduleGap-m-3 @s2-moduleGap-m-3;
-			p:last-of-type {
-				margin-bottom: @s2-moduleGap-m-1;
-			}
 		}
+
 		.teaser {
 			margin: @s2-moduleGap-m-1 0 0 @s2-moduleGap-m-3 * 2;
 			&::before {
@@ -48,23 +39,22 @@
 	@media @s2-mq-window-desktop {
 		display: flex;
 		flex-direction: row;
-		padding: @s2-moduleGap-l-2 0 0 0;
+		padding: @s2-moduleGap-l-2 0;
 
-		.quote{
-			flex: 1 1 auto;
-			align-self: center;
-			position: relative;
-			z-index: 1;
-			width: 50%;
-			margin: 0;
-			transform: translateX(@s2-moduleGap-l-2);
-			p:last-of-type {
-				margin-bottom: @s2-moduleGap-l-1;
-			}
-		}
+		.quote,
 		.teaser {
 			flex: 1 1 auto;
 			width: 50%;
+		}
+
+		.quote {
+			align-self: center;
+			position: relative;
+			z-index: 1;
+			margin: 0;
+			transform: translateX(@s2-moduleGap-l-2);
+		}
+		.teaser {
 			margin: @s2-moduleGap-l-1 0 0 0;
 			&::before {
 				top: -@s2-moduleGap-l-1;
