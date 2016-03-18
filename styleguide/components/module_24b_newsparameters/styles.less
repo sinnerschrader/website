@@ -6,11 +6,15 @@
 	background: @s2-lightgrey;
 	
 	.h {
-		margin-bottom: 10px;
+		margin-bottom: @s2-moduleGap-s-1/2;
 	}
+
 	.parameters {
 		.item{
 			margin-bottom: 5px;
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 
@@ -19,14 +23,17 @@
 		padding: @s2-moduleGap-m-1;
 
 		.h {
-			margin-bottom: 15px;
+			margin-bottom: @s2-moduleGap-m-1/2;
 		}
 
 	}
 
 	@media @s2-mq-window-desktop {
 		margin: @s2-moduleGap-l-1 @s2-moduleGap-l-3;
-		padding: @s2-moduleGap-l-1 @s2-moduleGap-l-2;
+		padding: @s2-moduleGap-l-1;
 
+		.h {
+			margin-bottom: @s2-moduleGap-l-1/2;
+		}
 	}
 }
