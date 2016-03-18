@@ -3,12 +3,12 @@
 	text-align: center;
 	
 	.h {
-		display: inline-block;
+		margin-bottom: @s2-moduleGap-s-1/2;
 	}
-	
+
 	.smn {
-		display: inline-flex;
-		vertical-align: middle;
+		justify-content: center;
+
 		.nw {
 			margin: 0 @s2-moduleGap-s-1/2 0;
 			&:first-child {
@@ -23,10 +23,16 @@
 	@media @s2-mq-window-tablet {
 		padding: @s2-moduleGap-m-1;
 
+		.h {
+			display: inline;
+		}
+	
 		.smn {
+			display: inline-flex;
+			vertical-align: middle;
 			.nw {
 				&:first-child {
-					margin-left: @s2-moduleGap-s-1;
+					margin-left: @s2-moduleGap-s-1/2;
 				}
 			}
 		}

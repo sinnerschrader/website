@@ -1,9 +1,10 @@
+@smnDim: 20px;
 .smn {
+	display: flex;
 	.nw{
 		@dim: 20px;
 		width: @dim;
 		height: @dim;
-		margin: 0 0 2*@dim;
 		#s2-tools > .ir;
 		
 		a{
@@ -19,5 +20,16 @@
 			}
 		}
 	}
+
+	@media @s2-mq-window-tablet {
+		.nw{
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		.nw{
+		}
+	}
+
 }
 

@@ -5,28 +5,16 @@
 	background: @s2-red;
 	
 	.smn {
-		display: flex;
 		justify-content: space-between;
-
-		.nw {
-			margin: 0 @s2-moduleGap-s-1/2 0;
-			&:first-child {
-				margin-left: 0;
-			}
-			&:last-child {
-				margin-right: 0;
-			}
-		}
 	}
 
 	@media @s2-mq-window-tablet {
 		padding: @s2-moduleGap-m-1 @s2-moduleGap-m-3;
-
 	}
 
 	@media @s2-mq-window-desktop {
 		position: fixed;
-		bottom: 0;
+		top: 20%;
 		right: 0;
 		z-index: 1;
 		padding: @s2-moduleGap-l-1/2;
