@@ -24,7 +24,7 @@
 		.images {
 			.item {
 				position: relative;
-				.caption{
+				.caption {
 					display: none;
 					.pointer-events & {
 						display: flex;
@@ -71,7 +71,7 @@
 				#s2-tools > .ir;
 			}
 			
-			.disabled{
+			.disabled {
 				background: @s2-darkgrey;
 				pointer-events: none;
 			}
@@ -88,7 +88,7 @@
 			text-decoration: underline;
 		}
 		
-		.pager{
+		.pager {
 			justify-content: flex-end;
 			padding: 0;
 			counter-reset: slide; 
@@ -98,7 +98,7 @@
 				margin: initial;
 				background: initial;
 				counter-increment: slide;
-				&.active{
+				&.active {
 					&::after {
 						content: counter(slide);
 						color: @s2-black;
@@ -121,7 +121,7 @@
 
 		.images {
 			.item {
-				.caption{
+				.caption {
 					padding-left: @s2-moduleGap-l-3;
 					padding-right: @s2-moduleGap-l-2;
 				}
