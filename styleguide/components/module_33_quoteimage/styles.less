@@ -21,7 +21,7 @@
 	}
 
 	@media @s2-mq-window-tablet {
-		padding: @s2-moduleGap-m-2 0 0 0;
+		padding-top: @s2-moduleGap-m-2;
 
 		.quote{
 			margin: 0 @s2-moduleGap-m-3 @s2-moduleGap-m-3;
@@ -31,6 +31,7 @@
 			margin: @s2-moduleGap-m-1 0 0 @s2-moduleGap-m-3 * 2;
 			&::before {
 				top: -@s2-moduleGap-m-1;
+				left: @s2-moduleGap-m-3;
 				height: @s2-moduleGap-m-1;
 			}
 		}
@@ -39,7 +40,7 @@
 	@media @s2-mq-window-desktop {
 		display: flex;
 		flex-direction: row;
-		padding: @s2-moduleGap-l-2 0;
+		padding-top: @s2-moduleGap-l-2;
 
 		.quote,
 		.teaser {
@@ -58,6 +59,7 @@
 			margin: @s2-moduleGap-l-1 0 0 0;
 			&::before {
 				top: -@s2-moduleGap-l-1;
+				left: @s2-moduleGap-l-3;
 				height: @s2-moduleGap-l-1;
 			}
 		}
