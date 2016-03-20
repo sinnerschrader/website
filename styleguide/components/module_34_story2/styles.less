@@ -5,8 +5,7 @@
 	.details {
 		position: relative;
 		z-index: 1;
-		margin-right: @s2-moduleGap-s-1;
-		margin-left: @s2-moduleGap-s-1;
+		margin: 0 @s2-moduleGap-s-1
 	}
 	
 	.h{
@@ -15,22 +14,21 @@
 	
 	.teaser {
 		width: 50%;
-		margin: -45% 0 0 auto;
+		margin: -33% 0 0 auto;
 	}
 
 	@media @s2-mq-window-tablet {
 		padding: @s2-moduleGap-m-2 0 0;
 
 		.details {
-			margin-right: @s2-moduleGap-m-2;
-			margin-left: @s2-moduleGap-m-2;
+			margin: 0 @s2-moduleGap-m-3 0 @s2-moduleGap-m-2;
 		}
 		.h{
 			margin-bottom: @s2-moduleGap-m-1;
 		}
 	
 		.teaser {
-			margin: -10% 0 0 auto;
+			margin-top: -10%;
 		}
 	}
 
@@ -41,8 +39,13 @@
 		.details {
 			flex: 1 1 auto;
 			align-self: center;
-			margin: 0;
-			padding: 0 @s2-moduleGap-l-1 0 @s2-moduleGap-l-2;
+			margin: @s2-moduleGap-l-1 0 @s2-moduleGap-l-1 @s2-moduleGap-l-2;
+			.h{
+				margin-bottom: @s2-moduleGap-l-1;
+			}
+			.copy {
+				padding-right: @s2-moduleGap-l-2;
+			}
 		}
 		
 		.h {
@@ -52,7 +55,8 @@
 		.teaser {
 			flex: 1 0 auto;
 			margin: 0;
-			width: 545px;
+			width: 33%;
+			max-width: 545px;
 		}
 	}
 
