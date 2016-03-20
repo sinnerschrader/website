@@ -3,32 +3,38 @@
 	background: @s2-darkblack no-repeat 50% 0;
 	background-size: cover;
 	
-	.details {
-		margin-top: @s2-moduleGap-s-2;
+	.quote {
+		margin-bottom: @s2-moduleGap-s-2;
+		.cite {
+			color: inherit;
+			font-family: @s2-font-base;
+		}
 	}
 
 	@media @s2-mq-window-tablet {
-		padding: @s2-moduleGap-m-2;
-		.details {
-			margin-top: @s2-moduleGap-m-3;
+		padding: @s2-moduleGap-m-2 @s2-moduleGap-m-1;
+
+		.quote {
+			margin-bottom: @s2-moduleGap-m-3;
 		}
 	}
 
 	@media @s2-mq-window-desktop {
 		display: flex;
-		padding: @s2-moduleGap-l-2;
+		padding: @s2-moduleGap-l-2 @s2-moduleGap-l-2;
 
 		.quote {
 			order: 2;
 			align-self: center;
+			width: 47%;
+			margin-bottom: 0;
 		}
 		.details {
-			flex: 1 0 auto;
+			flex: 1 1 auto;
 			order: 1;
-			width: 53%;
-			margin-top: 0;
-			padding-right: @s2-moduleGap-l-1;
 			align-self: center;
+			width: 53%;
+			padding-right: @s2-moduleGap-l-1;
 		}
 
 	}
