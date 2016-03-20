@@ -1,18 +1,19 @@
 .mod-navigation {
-	@navDim: 22px;
+	@navDotDim: 22px;
+	@headerHeight: 2 * @s2-moduleGap-s-1 + @navDotDim;
 	padding: @s2-moduleGap-s-1;
 
 	.logo,
-	.h {
+	.h{
 		position: absolute;
 		top: @s2-moduleGap-s-1;
-		z-index: 10;
 	}
 
 	.logo {
 		@width: 131px;
 		@height: 22px;
 		left: @s2-moduleGap-s-1;
+		z-index: 10;
 		background: @s2-darkblack;
 		width: @width;
 		height: @height;
@@ -29,7 +30,7 @@
 	}
 	
 	.nav {
-		@dim: @navDim;
+		@dim: @navDotDim;
 		width: @dim;
 		height: @dim;
 		margin: 0 0 0 auto;
@@ -50,10 +51,12 @@
 		bottom: 0;
 		left: 0;
 		z-index: 9;
-		padding-top: @s2-moduleGap-s-2 * 2;
-		background: fade(@s2-black, 95%);
+		padding-top: @headerHeight + 10;
 		text-align: right;
 		#s2-transition > .generic();
+		background: linear-gradient(to bottom, @s2-darkblack 0%, @s2-darkblack @headerHeight, transparent @headerHeight, transparent 100%),
+								linear-gradient(to left, @s2-darkblack 0%, @s2-darkblack @headerHeight, transparent @headerHeight, transparent 100%),
+								fade(@s2-black, 95%);
 		.item {
 			flex: 0 0 auto;
 			position: relative;
@@ -66,11 +69,9 @@
 					position: absolute;
 					right: 0;
 					top: 50%;
-					display: inline-block;
 					width: @dim;
 					height: @dim;
 					background: @s2-white;
-					margin-top: 1px;
 					transform: translateY(-50%);
 				}
 			}
@@ -78,6 +79,18 @@
 				flex: 1 0 auto;
 				align-self: top;
 			}
+		}
+		&::after {
+			@dim: @navDotDim;
+			content: "";
+			position: absolute;
+			top: @s2-moduleGap-s-1;
+			right: @s2-moduleGap-s-1;
+			width: @dim;
+			height: @dim;
+			margin: 0 0 0 auto;
+			border-radius: 100%;
+			background: @s2-white;
 		}
 	}
 	
@@ -99,25 +112,15 @@
 	}
 	
 	&.open {
+		.logo {
+			position: fixed;
+		}
 		.mainnav {
 			display: flex;
 			justify-content: space-between;
 			flex-direction: column;
 			.pointer-events & {
 				opacity: 1;
-			}
-			&::after {
-				@dim: @navDim;
-				content: "";
-				position: absolute;
-				z-index: 1;
-				top: @s2-moduleGap-s-1;
-				right: @s2-moduleGap-s-1;
-				width: @dim;
-				height: @dim;
-				margin: 0 0 0 auto;
-				border-radius: 100%;
-				background: @s2-white;
 			}
 		}
 		.logo {
@@ -126,7 +129,8 @@
 	}
 
 	@media @s2-mq-window-tablet {
-		@navDim: 34px;
+		@navDotDim: 34px;
+		@headerHeight: 2 * @s2-moduleGap-m-1 + @navDotDim;
 		padding: @s2-moduleGap-m-1;
 
 		.logo,
@@ -150,13 +154,16 @@
 		}
 	
 		.nav {
-			@dim: @navDim;
+			@dim: @navDotDim;
 			width: @dim;
 			height: @dim;
 		}
 
 		.mainnav {
-			padding-top: @s2-moduleGap-m-3;
+			padding-top: @headerHeight + 10;
+			background: linear-gradient(to bottom, @s2-darkblack 0%, @s2-darkblack @headerHeight, transparent @headerHeight, transparent 100%),
+									linear-gradient(to left, @s2-darkblack 0%, @s2-darkblack @headerHeight, transparent @headerHeight, transparent 100%),
+									fade(@s2-black, 95%);
 			.item {
 				margin-bottom: @s2-moduleGap-m-1/2;
 				padding-right: @s2-moduleGap-m-1;
@@ -168,6 +175,13 @@
 					}
 				}
 			}
+			&::after {
+				@dim: @navDotDim;
+				top: @s2-moduleGap-m-1;
+				right: @s2-moduleGap-m-1;
+				width: @dim;
+				height: @dim;
+			}
 		}
 
 		.smn {
@@ -176,19 +190,6 @@
 			justify-content: flex-end;
 			.nw {
 				margin-left: 20px;
-			}
-		}
-
-
-		&.open {
-			.mainnav {
-				&::after {
-					@dim: @navDim;
-					top: @s2-moduleGap-m-1;
-					right: @s2-moduleGap-m-1;
-					width: @dim;
-					height: @dim;
-				}
 			}
 		}
 
