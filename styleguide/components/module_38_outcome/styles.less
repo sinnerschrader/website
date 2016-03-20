@@ -6,20 +6,19 @@
 	text-align: center;
 	background: transparent no-repeat 50% 100%;
 	background-size: cover;
-	//clip-path: polygon(100% 27%, 0 100%, 100% 100%);
 	
-&::before {
-	content: "";
-	position: absolute;
-	z-index: 1;
-	left: 50%;
-	bottom: 50%;
-	width: 300%;
-	height: 100%;
-	background: @s2-white;
-	transform: translateX(-50%) rotate(@rotate);
-	transform-origin: 50% 100%;
-}
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		left: 50%;
+		bottom: 50%;
+		width: 300%;
+		height: 100%;
+		background: @s2-white;
+		transform: translateX(-50%) rotate(@rotate);
+		transform-origin: 50% 100%;
+	}
 	
 	.h,
 	.figures,
@@ -44,21 +43,15 @@
 			}
 		}
 		.fig {
+			font-family: @s2-font-high1;
 			font-size: 90px;
 			line-height: normal;
 			font-weight: bold;
 		}
 	}
-	
-	.copy {
-	}
 
 	@media @s2-mq-window-tablet {
 		padding: @s2-moduleGap-m-1 @s2-moduleGap-m-2;
-
-		&::before {
-			bottom: 66%;
-		}
 
 		.h {
 			margin-bottom: @s2-moduleGap-m-2;
@@ -92,13 +85,11 @@
 				font-size: 180px;
 			}
 		}
-	
-		.copy {
-		}
 	}
 
 	@media @s2-mq-window-desktop {
 		padding: @s2-moduleGap-l-1 @s2-moduleGap-l-2;
+
 		&::before {
 			left: auto;
 			right: 0;
@@ -112,14 +103,9 @@
 		}
 		
 		.figures {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
 			margin-bottom: @s2-moduleGap-l-1;
 			
 			.item {
-				flex: 1 1 auto;
-				width: 50%;
 				margin-bottom: @s2-moduleGap-l-1;
 
 				&:nth-of-type(2n + 2) {
@@ -136,7 +122,7 @@
 		}
 	
 		.copy {
-			padding: 0 @s2-moduleGap-l-3;
+			padding: 0 @s2-moduleGap-l-2;
 		}
 	}
 
