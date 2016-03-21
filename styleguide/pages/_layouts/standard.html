@@ -6,11 +6,11 @@
 
 <body class="<%- @bodyClass %>">
 	<div class="container">
-		<% #include './styleguide/components/header/template.html' %>
+		<% content 'header' %>
 		<main class="main">
 			<% content %>
 		</main>
-		<% #include './styleguide/components/footer/template.html' %>
-  </div>
+		<% content 'footer' %>
+	</div>
 </body>
 </html>
