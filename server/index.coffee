@@ -41,9 +41,9 @@ if app.get('env') is 'production'
   credentials = 
     's2-2016'  : 'stillDay0ne'
 
-	app.use(basicAuth( (user, pass) ->
-		return credentials[user] and credentials[user] is pass;
-	))
+  app.use(basicAuth( (user, pass) ->
+    return credentials[user] and credentials[user] is pass;
+  ))
 
 app.use(require('./router'))
 
