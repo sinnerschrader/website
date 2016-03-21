@@ -5,6 +5,8 @@ compression  = require('compression')
 bodyParser   = require('body-parser')
 favicon      = require('serve-favicon')
 
+basicAuth    = require('basic-auth-connect');
+
 cons         = require('consolidate')
 path         = require('path')
 
@@ -29,11 +31,19 @@ app.use(express.static(path.join(__dirname, '../static')))
 app.use('/js/app.js',    jsCompiler.middleware(path.join(__dirname, '../src/js/app.coffee'), app.get('env') isnt 'production'))
 app.use('/css/app.css', cssCompiler.middleware(path.join(__dirname, '../src/css', 'app.'+config.css.engine), app.get('env') isnt 'production'))
 
-if process.env.NODE_ENV is 'development'
+if app.get('env') is 'development'
   app.use(morgan('dev'))
   app.use(errorhandler())
 else
   app.use(morgan('short'))
+
+if app.get('env') is 'production'
+  credentials = 
+    's2-2016'  : 'stillDay0ne'
+
+	app.use(basicAuth( (user, pass) ->
+		return credentials[user] and credentials[user] is pass;
+	))
 
 app.use(require('./router'))
 
