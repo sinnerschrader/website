@@ -8,8 +8,7 @@
 			width: 100%; // FIX IE 11
 			display: flex;
 			flex-wrap: wrap;
-			margin: 0 1px 0 0;
-			padding: @s2-moduleGap-s-1;
+			padding: @s2-moduleGap-s-1 @s2-moduleGap-s-1 @s2-moduleGap-s-1 * 2;
 			background: @s2-darkblack no-repeat 50% 0/cover;
 		}
 		
@@ -30,7 +29,7 @@
 	}
 
 	.pager {
-		padding-bottom: @s2-moduleGap-s-1;
+		margin-top: -@s2-moduleGap-s-1 * 1.2;
 	}
 
 	@media @s2-mq-window-tablet {
@@ -38,7 +37,6 @@
 		.cards {
 			display: block;
 			.item {
-				margin: 0 0 1px;
 				padding: @s2-moduleGap-m-1;
 				flex-wrap: initial;
 			}
