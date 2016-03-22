@@ -1,13 +1,18 @@
 .mod-navigation {
-	position: relative;
-	@navDotDim: 22px;
-	@headerHeight: 2 * @s2-moduleGap-s-1 + @navDotDim;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	height: @s2-headerHeight-s;
 	padding: @s2-moduleGap-s-1;
+	background: fade(@s2-white, 97%);
+	#s2-tools > .enableGPU();
 
 	.logo,
 	.h {
 		position: absolute;
-		top: @s2-moduleGap-s-1;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 
 	.logo {
@@ -31,7 +36,7 @@
 	}
 	
 	.nav {
-		@dim: @navDotDim;
+		@dim: @s2-burgerHeight-s;
 		width: @dim;
 		height: @dim;
 		margin: 0 0 0 auto;
@@ -52,11 +57,11 @@
 		bottom: 0;
 		left: 0;
 		z-index: 4;
-		padding-top: @headerHeight + 10;
+		padding-top: @s2-headerHeight-s + 10;
 		text-align: right;
 		#s2-transition > .generic();
-		background: linear-gradient(to bottom, @s2-darkblack 0%, @s2-darkblack @headerHeight, transparent @headerHeight, transparent 100%),
-								linear-gradient(to left, @s2-darkblack 0%, @s2-darkblack @headerHeight, transparent @headerHeight, transparent 100%),
+		background: linear-gradient(to bottom, @s2-darkblack 0%, @s2-darkblack @s2-headerHeight-s, transparent @s2-headerHeight-s, transparent 100%),
+								linear-gradient(to left, @s2-darkblack 0%, @s2-darkblack @s2-headerHeight-s, transparent @s2-headerHeight-s, transparent 100%),
 								fade(@s2-black, 95%);
 		.item {
 			flex: 0 0 auto;
@@ -82,7 +87,7 @@
 			}
 		}
 		&::after {
-			@dim: @navDotDim;
+			@dim: @s2-burgerHeight-s;
 			content: "";
 			position: absolute;
 			top: @s2-moduleGap-s-1;
@@ -130,14 +135,8 @@
 	}
 
 	@media @s2-mq-window-tablet {
-		@navDotDim: 34px;
-		@headerHeight: 2 * @s2-moduleGap-m-1 + @navDotDim;
 		padding: @s2-moduleGap-m-1;
-
-		.logo,
-		.h {
-			top: @s2-moduleGap-m-1;
-		}
+		height: @s2-headerHeight-m;
 
 		.logo {
 			left: @s2-moduleGap-s-1;
@@ -155,15 +154,15 @@
 		}
 	
 		.nav {
-			@dim: @navDotDim;
+			@dim: @s2-burgerHeight-m;
 			width: @dim;
 			height: @dim;
 		}
 
 		.mainnav {
-			padding-top: @headerHeight + 10;
-			background: linear-gradient(to bottom, @s2-darkblack 0%, @s2-darkblack @headerHeight, transparent @headerHeight, transparent 100%),
-									linear-gradient(to left, @s2-darkblack 0%, @s2-darkblack @headerHeight, transparent @headerHeight, transparent 100%),
+			padding-top: @s2-headerHeight-m + 10;
+			background: linear-gradient(to bottom, @s2-darkblack 0%, @s2-darkblack @s2-headerHeight-m, transparent @s2-headerHeight-m, transparent 100%),
+									linear-gradient(to left, @s2-darkblack 0%, @s2-darkblack @s2-headerHeight-m, transparent @s2-headerHeight-m, transparent 100%),
 									fade(@s2-black, 95%);
 			.item {
 				margin-bottom: @s2-moduleGap-m-1/2;
@@ -177,7 +176,7 @@
 				}
 			}
 			&::after {
-				@dim: @navDotDim;
+				@dim: @s2-burgerHeight-m;
 				top: @s2-moduleGap-m-1;
 				right: @s2-moduleGap-m-1;
 				width: @dim;
@@ -197,7 +196,7 @@
 	}
 
 	@media @s2-mq-window-desktop {
-
+		max-width: @s2-MaxPageWidth;
 	}
 
 }

@@ -1,5 +1,5 @@
 body {
-	padding: @s2-pageTopPadding 0 @s2-pageBottomPadding;
+	padding: @s2-pageTopPadding-s 0 0;
 	color: @s2-black;
 	background: @s2-white;
 	text-rendering: optimizeLegibility; // may cause render issues
@@ -10,6 +10,7 @@ body {
 	line-height: @s2-base-lineheight;
 	letter-spacing: @s2-base-letterspacing;
 	@media @s2-mq-window-tablet {
+		padding-top: @s2-pageTopPadding-m;
 		font-size: @s2-font-basesize + 2;
 		line-height: @s2-base-lineheight + 2;
 //		font-size: 20px;
