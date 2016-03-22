@@ -21,11 +21,16 @@
 @s2-white-hover        : darken(@s2-white, 20%);
 
 //grid
-@s2-headerHeight       :  100px;
-@s2-footerHeight       :  100px;
+@s2-burgerHeight-s     : 22px;
+@s2-burgerHeight-m     : 34px;
+@s2-headerHeight-s     : @s2-moduleGap-s * 2 + @s2-burgerHeight-s;
+@s2-headerHeight-m     : @s2-moduleGap-m * 2 + @s2-burgerHeight-m;
+//@s2-headerHeight-l     : @s2-moduleGap-l * 2 + @s2-burgerHeight;
 
-@s2-pageTopPadding     :  0;
-@s2-pageBottomPadding  :  0;
+@s2-pageTopPadding-s   : @s2-headerHeight-s;
+@s2-pageTopPadding-m   : @s2-headerHeight-m;
+//@s2-pageBottomPadding-s  : 0;
+//@s2-pageBottomPadding-m  : 0;
 
 @s2-moduleGap-s        : 30px;
 @s2-moduleGap-s-1      : 1 * @s2-moduleGap-s;
