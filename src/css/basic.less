@@ -69,11 +69,19 @@ a {
 }
 
 .link {
+	position: relative;
 	display: inline-block;
-	border-bottom: 2px solid @s2-black;
-	//margin-bottom: 10px;
-	padding-bottom: 2px;
+	font-weight: bold;
 	word-break: break-all;
+	&::after{
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 2px;
+		background: @s2-black;
+	}
 }
 
 .frame {
