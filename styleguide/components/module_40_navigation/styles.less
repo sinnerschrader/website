@@ -1,7 +1,7 @@
 .mod-navigation {
 	position: fixed;
 	top: 0;
-	z-index: 1;
+	z-index: 4;
 	width: 100%;
 	height: @s2-headerHeight-s;
 	padding: @s2-moduleGap-s-1;
@@ -20,7 +20,6 @@
 		@width: 131px;
 		@height: 22px;
 		left: @s2-moduleGap-s-1;
-		z-index: 5;
 		background: @s2-darkblack;
 		width: @width;
 		height: @height;
@@ -38,12 +37,14 @@
 	
 	.nav {
 		@dim: @s2-burgerHeight-s;
+		position: relative;
 		width: @dim;
 		height: @dim;
 		margin: 0 0 0 auto;
 		border-radius: 100%;
 		background: @s2-darkblack;
 		transition: inherit;
+		cursor: pointer;
 	}
 	
 	.mainnav {
@@ -56,9 +57,9 @@
 		position: fixed;
 		top: 0;
 		right: 0;
-		bottom: 0;
 		left: 0;
-		z-index: 4;
+		z-index: -1;
+		height: 100vh;
 		padding-top: @s2-headerHeight-s + 10;
 		text-align: right;
 		transition: inherit;
@@ -87,18 +88,6 @@
 				flex: 1 0 auto;
 				align-self: top;
 			}
-		}
-		&::after {
-			@dim: @s2-burgerHeight-s;
-			content: "";
-			position: absolute;
-			top: @s2-moduleGap-s-1;
-			right: @s2-moduleGap-s-1;
-			width: @dim;
-			height: @dim;
-			margin: 0 0 0 auto;
-			border-radius: 100%;
-			background: @s2-white;
 		}
 	}
 	
@@ -135,6 +124,7 @@
 	}
 	
 	&.open {
+		&:extend(.spotlight all);
 		.logo {
 			position: fixed;
 		}
