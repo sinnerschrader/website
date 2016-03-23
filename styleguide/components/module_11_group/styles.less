@@ -11,8 +11,14 @@
 		.item {
 			flex: 1 0 auto;
 			width: 100%; // FIX IE 11
+			&:nth-of-type(2) {
+				background: @s2-darkblack;
+			}
 			a {
 				display: block;
+			}
+			.img {
+				background: transparent;
 			}
 		}
 	}
@@ -39,12 +45,6 @@
 			.item {
 				flex: 1 0 auto;
 				width: auto; // FIX IE 11
-				&:nth-of-type(2) {
-					background: @s2-darkblack;
-				}
-				.img {
-					background: transparent;
-				}
 			}
 		}
 		
