@@ -5,7 +5,7 @@
 	width: 100%;
 	height: @s2-headerHeight-s;
 	padding: @s2-moduleGap-s-1;
-	background: fade(@s2-white, 97%);
+	#s2-transition > .generic();
 	#s2-tools > .enableGPU();
 
 	.logo,
@@ -13,6 +13,7 @@
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
+		transition: inherit;
 	}
 
 	.logo {
@@ -42,6 +43,7 @@
 		margin: 0 0 0 auto;
 		border-radius: 100%;
 		background: @s2-darkblack;
+		transition: inherit;
 	}
 	
 	.mainnav {
@@ -59,7 +61,7 @@
 		z-index: 4;
 		padding-top: @s2-headerHeight-s + 10;
 		text-align: right;
-		#s2-transition > .generic();
+		transition: inherit;
 		background: linear-gradient(to bottom, @s2-darkblack 0%, @s2-darkblack @s2-headerHeight-s, transparent @s2-headerHeight-s, transparent 100%),
 								linear-gradient(to left, @s2-darkblack 0%, @s2-darkblack @s2-headerHeight-s, transparent @s2-headerHeight-s, transparent 100%),
 								fade(@s2-black, 95%);
@@ -117,6 +119,21 @@
 		}
 	}
 	
+	&.contrast {
+		background: @s2-white;
+	}
+	
+	&.spotlight {
+		background: @s2-black;
+		.logo,
+		.nav {
+			background: @s2-white;
+		}
+		.h {
+			color: @s2-white;
+		}
+	}
+	
 	&.open {
 		.logo {
 			position: fixed;
@@ -128,9 +145,6 @@
 			.pointer-events & {
 				opacity: 1;
 			}
-		}
-		.logo {
-			background: @s2-white;
 		}
 	}
 
