@@ -2,7 +2,7 @@
 
 This is the SinnerSchrader "s2 Website" Project.
 
-## Starting the protype
+## Starting the Prototype Server
 
 ### Get the most stable NodeJS-Server
 
