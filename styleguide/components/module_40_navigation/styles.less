@@ -48,11 +48,7 @@
 	}
 	
 	.mainnav {
-		display: none;
-		.pointer-events & {
-			display: block;
-			opacity: 0;
-		}
+		#s2-tools > #pointerevents > .none(flex);
 		overflow-y: auto;
 		position: fixed;
 		top: 0;
@@ -129,12 +125,9 @@
 			position: fixed;
 		}
 		.mainnav {
-			display: flex;
 			justify-content: space-between;
 			flex-direction: column;
-			.pointer-events & {
-				opacity: 1;
-			}
+			#s2-tools > #pointerevents > .auto(flex);
 		}
 	}
 

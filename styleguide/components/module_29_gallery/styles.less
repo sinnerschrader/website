@@ -25,11 +25,7 @@
 			.item {
 				position: relative;
 				.caption {
-					display: none;
-					.pointer-events & {
-						display: flex;
-						opacity: 0;
-					}
+					#s2-tools > #pointerevents > .none(flex);
 					align-items: center;
 					position: absolute;
 					top: 0;
@@ -43,10 +39,7 @@
 				}
 				&.selected {
 					.caption {
-						display: flex;
-						.pointer-events & {
-							opacity: 1;
-						}
+						#s2-tools > #pointerevents > .auto(flex);
 					}
 				}
 			}
