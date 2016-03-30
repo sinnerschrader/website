@@ -292,7 +292,7 @@
 			font-family: '@{val1}';
 			//src: url('@{s2-font-path}/@{val2}.eot');
 			//src: url('@{s2-font-path}/@{val2}.eot?#iefix')  format('embedded-opentype'), // IE ≤ 8
-			//	 url('@{s2-font-path}/@{val2}.woff')        format('woff'),                // 
+			//	 url('@{s2-font-path}/@{val2}.woff')        format('woff'),                //
 			//	 url('@{s2-font-path}/@{val2}.ttf')         format('truetype'),            // Android ≤ 4.3
 			//	 url('@{s2-font-path}/@{val2}.svg#@{val2}') format('svg');                 // iOS ≤ 6
 
@@ -345,19 +345,19 @@
 	}
 
 	#pointerevents {
-		.none() {
+		.none(@val:block) {
 			display: none;
-			pointer-events: none;
-			.pointerevents &{
-				display: block;
+			.s2-csspointerevents & {
+				display: @val;
 				opacity: 0;
+				pointer-events: none;
 			}
 		}
-		.auto() {
-			display: block;
-			pointer-events: auto;
-			.pointerevents &{
+		.auto(@val:block) {
+			display: @val;
+			.s2-csspointerevents & {
 				opacity: 1;
+				pointer-events: auto;
 			}
 		}
 	}
