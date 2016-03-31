@@ -36,7 +36,8 @@
     "grunt-cli": "0.1.13",
     "grunt-modernizr": "1.0.2",
     "grunt-smaller": "0.2.1",
-    "nodemon": "1.9.1"
+    "nodemon": "1.9.1",
+    "npm-check-updates": "^2.6.1"
   },
   "repository": {
     "type": "git",
