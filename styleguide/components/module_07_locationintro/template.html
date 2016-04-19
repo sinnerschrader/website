@@ -1,18 +1,37 @@
-<section class="mod-locationintro" itemscope="itemscope" itemtype="http://schema.org/Corporation">
+<section class="mod-locationintro">
 	<div class="details">
-		<p itemprop="description" class="copy">Gegründet als Start-up, gewachsen zu einem der führenden Digitalagenturen Europas – ohne das Start-up-Feeling zu verlieren.</p>
-		<div class="copy address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-			<h2 itemprop="name" class="sub h4">SinnerSchrader</h2>
-			<span itemprop="streetAddress">Völckerstr. 38</span><br />
-			<span itemprop="postalCode">22765 <span itemprop="addressLocality">Hamburg</span></span>
-			<meta content="Deutschland" itemprop="addressCountry" /><br />
+		<p class="copy">Gegründet als Start-up, gewachsen zu einem der führenden Digitalagenturen Europas – ohne das Start-up-Feeling zu verlieren.</p>
+		<div class="copy address">
+			<h2 class="sub h4">SinnerSchrader</h2>
+			Völckerstr. 38<br />
+			22765 Hamburg<br /><br />
+			+49 40 39 88 55 - 0
 		</div>
-		<span itemprop="telephone">+49 40 39 88 55 - 0</span>
-		<meta content="https://sinnerschrader.com" itemprop="url" />
 	</div>
 	<div class="teaser"><% include './styleguide/components/element_image/template.html', { width: 439, height: 580 } %></div>
 	<p class="h3 emails">
-		<a href="#" class="link" itemprop="email">info@sinnerschrader.com</a>
-		<a href="#" class="link" itemprop="email">hh@sinnerschrader.jobs</a>
+		<a href="#" class="link">info@sinnerschrader.com</a>
+		<a href="#" class="link">hh@sinnerschrader.jobs</a>
 	</p>
 </section>
+
+<% block 'json-ld' : %>
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "Corporation",
+		"name": "SinnerSchrader",
+		"description": "Gegründet als Start-up, gewachsen zu einem der führenden Digitalagenturen Europas – ohne das Start-up-Feeling zu verlieren.",
+		"url": "https://sinnerschrader.com",
+		"email": [ "info@sinnerschrader.com", "hh@sinnerschrader.com"],
+		"telephone": "+49 40 39 88 55-0",
+		"address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Völckersstr. 38",
+			"addressLocality": "Hamburg",
+			"postalCode": "22765",
+			"addressCountry": "Deutschland"
+		}
+	}
+	</script>
+<% end %>
