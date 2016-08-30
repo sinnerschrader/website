@@ -25,7 +25,7 @@ app.use(compression())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-app.use(favicon(path.join(__dirname, '../static/images/favicons/fi_favicon.ico')))
+app.use(favicon(path.join(__dirname, '../static/images/favicons/favicon.ico')))
 app.use(express.static(path.join(__dirname, '../static')))
 
 app.use('/js/app.js',    jsCompiler.middleware(path.join(__dirname, '../src/js/app.coffee'), app.get('env') isnt 'production'))
@@ -38,7 +38,7 @@ else
   app.use(morgan('short'))
 
 if app.get('env') is 'production'
-  credentials = 
+  credentials =
     's2-2016'  : 'stillDay0ne'
 
   app.use(basicAuth( (user, pass) ->
