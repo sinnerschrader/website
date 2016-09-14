@@ -2,12 +2,19 @@
 	display: inline-block;
 	min-width: 175px;
 	padding: 0 10px;
-	border: 2px solid @s2-blue;
+	border: 2px solid currentColor;
 	line-height: 40px;
 	text-align: center;
 	color: @s2-blue;
 	&:hover {
 		background: @s2-blue;
 		color: @s2-white;
+	}
+
+	.invert & {
+		color: @s2-white;
+		&:hover {
+			background: fade(@s2-white, 25%);
+		}
 	}
 }
