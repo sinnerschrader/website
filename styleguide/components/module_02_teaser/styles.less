@@ -1,31 +1,19 @@
-.mod-jump {
-	position: relative;
-	z-index: 1;
-	padding: @s2-moduleGap-m-1 @s2-moduleGap-s-2 @s2-moduleGap-s-1;
-	text-align: center;
-	background: @s2-red no-repeat 50% 0/cover;
+@import (once) "@{components}/module_01_hero/styles";
+@import (once) "@{components}/element_button/styles";
 
-	.h {
-		margin-bottom: @s2-moduleGap-s-1;
-	}
+.mod-jump {
+	&:extend(.mod-hero all);
 
 	@media @s2-mq-window-tablet {
-		padding: @s2-moduleGap-m-2 @s2-moduleGap-m-2 @s2-moduleGap-m-2;
-
-		.h,
 		.copy{
 			margin-bottom: @s2-moduleGap-m-2;
 		}
 	}
 
 	@media @s2-mq-window-desktop {
-		padding: @s2-moduleGap-l-2 @s2-moduleGap-l-2 @s2-moduleGap-l-2;
-
-		.h {
-			margin-bottom: 0;
-		}
 		.copy{
 			margin-bottom: @s2-moduleGap-l-1;
 		}
 	}
+
 }
