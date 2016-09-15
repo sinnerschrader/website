@@ -1,7 +1,8 @@
 .card {
 	position: relative;
 	width: 100%;
-	padding: 0 0 0 40px;
+	padding: 0 20px 0 40px;
+	background: linear-gradient(to bottom, transparent 0%, transparent @smnDim*2, @s2-lightgrey @smnDim*2, @s2-lightgrey 100%);
 
 	.figcaption {
 		color: @s2-darkgrey2;
@@ -12,8 +13,9 @@
 
 	.smn {
 		position: absolute;
+		top: @smnDim;
 		left: 0;
-		top: 0;
+		transform: translateX(50%);
 		flex-direction: column;
 		.nw {
 			margin-bottom: @smnDim;
@@ -22,12 +24,11 @@
 			}
 		}
 	}
-	
+
 	.teaser {
-		min-width: 217px;
 		max-width: 280px;
 	}
-	
+
 	@media @s2-mq-window-tablet {
 		.teaser {
 			max-width: 250px;
