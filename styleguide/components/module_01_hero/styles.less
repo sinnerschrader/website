@@ -1,25 +1,28 @@
 .mod-hero {
-	@saveArea: @s2-pageTopPadding-s + @s2-moduleGap-s-1;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	height: ~"calc(100vh - @{saveArea})";
-	padding: @s2-moduleGap-s-1;
+	position: relative;
+	z-index: 1;
+	padding: @s2-moduleGap-m-1 @s2-moduleGap-s-2 @s2-moduleGap-s-1;
 	text-align: center;
-	background: @s2-red no-repeat fixed 50% 0/cover;
+	background: @s2-red no-repeat 50% 0/cover;
+
+	.h {
+		margin-bottom: @s2-moduleGap-s-1;
+	}
 
 	@media @s2-mq-window-tablet {
-		@saveArea: @s2-pageTopPadding-m + @s2-moduleGap-m-1;
-		padding: @s2-moduleGap-m-1 @s2-moduleGap-m-2 @s2-moduleGap-m-2;
-		height: ~"calc(100vh - @{saveArea})";
-		.h {
-			text-align: left;
+		padding: @s2-moduleGap-m-2 @s2-moduleGap-m-2 @s2-moduleGap-m-2;
+
+		.h{
+			margin-bottom: @s2-moduleGap-m-2;
 		}
 	}
+
 	@media @s2-mq-window-desktop {
-		@saveArea: @s2-pageTopPadding-l + @s2-moduleGap-l-1;
-		padding: @s2-moduleGap-l-1 @s2-moduleGap-l-3 @s2-moduleGap-l-3;
-		height: ~"calc(100vh - @{saveArea})";
+		padding: @s2-moduleGap-l-2 @s2-moduleGap-l-2 @s2-moduleGap-l-2;
+
+		.h {
+			margin-bottom: 0;
+		}
 	}
 
 }
