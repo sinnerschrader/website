@@ -4,7 +4,7 @@
   <% include './styleguide/pages/_partials/head.html' %>
 </head>
 
-<body class="<%- @bodyClass %>">
+<body class="<%- @bodyClass %> <%- @themeClass || 'theme1' %>">
 	<div class="container">
 		<% content 'header' %>
 		<main class="main">
