@@ -5,6 +5,7 @@ const globby = require('globby');
 const sander = require('sander');
 const camelcase = require('camelcase');
 const uppercaseFirst = require('upper-case-first');
+const babel = require('babel-core');
 
 const React = require('react'); // eslint-disable-line no-unused-vars
 const ReactDOM = require('react-dom/server');
@@ -51,44 +52,47 @@ globby(['src/pages/**/*.html', '!src/pages/**/*2.html'])
 	.then(() => console.log('Done.'))
 	.catch(err => logError(err));
 
+function createReactComponent(lazyComponents, filepath, code) {
+	const name = uppercaseFirst(camelcase(path.basename(filepath, '.html')));
+	const options = {
+		plugins: ['transform-react-jsx']
+	};
+	const compCode = babel.transform(code, options).code.replace(/;?$/, '');
+
+	const sandbox = new Proxy({
+		React,
+		name: undefined
+	}, {
+		get: function (target, name) {
+			if (lazyComponents[name]) {
+				return lazyComponents[name];
+			}
+			return target[name];
+		}
+	});
+	vm.runInNewContext(`${name} = (props) => (${compCode})`, sandbox);
+
+	return {
+		name,
+		Component: sandbox[name]
+	};
+}
+
 function createReactComponents() {
+	// Create component object here and add all components when created to have the reference already and
+	// resolve against it during runtime
+	const lazyComponents = {};
 	return globby(['src/react/**/*.html'])
 		.then(filepaths => {
 			return Promise.all(filepaths.map(filepath => {
 				return sander.readFile(filepath)
-					.then(content => {
-						const name = uppercaseFirst(camelcase(path.basename(filepath, '.html')));
-						// Transform JSX
-						const code = `
-							const babel = require('babel-core');
-							const options = {
-								plugins: ['transform-react-jsx']
-							};
-							${name} = babel.transform(\`${content.toString()}\`, options).code;
-						`;
-						const sandbox = {
-							require,
-							name: undefined
-						};
-						vm.runInNewContext(code, sandbox, {filename: filepath});
-
-						const sandbox2 = {
-							React,
-							name: undefined
-						};
-						vm.runInNewContext(`${name} = (props) => (${sandbox[name].replace(/;$/, '')})`, sandbox2);
-
-						return {
-							name,
-							Component: sandbox2[name]
-						};
-					});
+					.then(content => createReactComponent(lazyComponents, filepath, content.toString()));
 			}))
 			.then(components => {
 				return components.reduce((all, comp) => {
 					all[comp.name] = comp.Component;
 					return all;
-				}, {});
+				}, lazyComponents);
 			});
 		});
 }
@@ -101,21 +105,13 @@ globby(['src/pages/**/*2.html'])
 					return sander.readFile(filepath)
 						.then(content => {
 							// Transform JSX
-							const code = `
-								const babel = require('babel-core');
-								const options = {
-									plugins: ['transform-react-jsx']
-								};
-								__jsx__ = '__html__ = ' + babel.transform(\`${content.toString()}\`, options).code;
-							`;
-							const sandbox = {
-								require,
-								__jsx__: undefined
+							const options = {
+								plugins: ['transform-react-jsx']
 							};
-							vm.runInNewContext(code, sandbox);
+							const pageCode = '__html__ = ' + babel.transform(content.toString(), options).code;
 
 							// Eval JSX
-							const sandbox2 = Object.assign(
+							const sandbox = Object.assign(
 								{},
 								components,
 								{
@@ -123,10 +119,10 @@ globby(['src/pages/**/*2.html'])
 									__html__: ''
 								}
 							);
-							vm.runInNewContext(sandbox.__jsx__, sandbox2);
+							vm.runInNewContext(pageCode, sandbox);
 
 							// Render HTML
-							const html = ReactDOM.renderToStaticMarkup(sandbox2.__html__);
+							const html = ReactDOM.renderToStaticMarkup(sandbox.__html__);
 
 							const dest = path.join('dist', filepath.replace(/src\/pages/, ''));
 							return sander.writeFile(dest, html);
