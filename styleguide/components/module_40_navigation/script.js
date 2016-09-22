@@ -6,8 +6,14 @@
   var contrastMode  = 0;
   var oldScrollPos  = 0
   var newScrollPos  = 0
-  var breakPoint    = document.querySelector('.mod-hero').offsetHeight;
+  var modHeroElement = document.querySelector('.mod-hero');
   var modNavigation = document.querySelector('.mod-navigation');
+
+  if (!modHeroElement || !modNavigation) {
+    return;
+  }
+
+  var breakPoint = modHeroElement.offsetHeight;
 
   function check(timestamp) {
     oldScrollPos = newScrollPos;
@@ -41,11 +47,20 @@
 })();
 
 (function toggleNavState(){
-
   var body          = document.body;
   var container     = document.querySelector('.container')
   var modNavigation = document.querySelector('.mod-navigation');
+
+  if (!container || !modNavigation) {
+    return;
+  }
+
   var navToggle     = modNavigation.querySelector('.nav');
+
+  if (!navToggle) {
+    return;
+  }
+
   var oldScrollPos  = 0;
   var defaultStyleContainer, defaultStyleBody;
 
