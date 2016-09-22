@@ -1,0 +1,32 @@
+.mod-follow {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	min-height: 150px;
+	padding: @s2-moduleGap-s-1;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	.h {
+		width: 100%;
+		margin-bottom: @s2-moduleGap-s-1/2 - 20;
+	}
+}
+
+@media @s2-mq-window-tablet {
+	min-height: 140px;
+	.mod-follow {
+		padding: @s2-moduleGap-m-1;
+		.h {
+			width: auto;
+			margin-bottom: 0;
+			margin-right: @s2-moduleGap-m-1/2;
+		}
+	}
+}
+
+@media @s2-mq-window-desktop {
+	.mod-follow {
+		padding: @s2-moduleGap-l-1;
+	}
+}
