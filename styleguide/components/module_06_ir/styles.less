@@ -4,9 +4,9 @@
 	.h {
 		margin-bottom: @s2-moduleGap-s-1;
 	}
-	
+
 	.about {
-		margin-bottom: @s2-moduleGap-s-2;
+		margin-bottom: @s2-moduleGap-s-1;
 	}
 
 	@media @s2-mq-window-tablet {
@@ -14,11 +14,15 @@
 
 		.h {
 			margin-bottom: @s2-moduleGap-m-1;
-			text-align: center;
+		}
+
+		.about,
+		.details {
+			padding-left: @s2-moduleGap-m-2;
 		}
 
 		.about {
-			margin-bottom: @s2-moduleGap-m-2;
+			margin-bottom: @s2-moduleGap-m-1;
 		}
 
 	}
@@ -32,10 +36,11 @@
 			width: 100%;
 			margin-bottom: @s2-moduleGap-l-1;
 		}
-		
+
 		.about,
 		.details {
 			width: 50%;
+			padding-left: 0;
 		}
 
 		.about {
