@@ -35,6 +35,9 @@
   "main": "server.js",
   "devDependencies": {
     "browserify": "^13.0.0",
+    "babel-core": "^6.14.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "camelcase": "^3.0.0",
     "globby": "^6.0.0",
     "grunt": "0.4.5",
     "grunt-cli": "1.1.0",
@@ -42,8 +45,11 @@
     "grunt-smaller": "0.2.1",
     "nodemon": "1.9.1",
     "npm-check-updates": "^2.6.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
     "sander": "^0.5.1",
     "watchify": "^3.7.0",
+    "upper-case-first": "^1.1.2",
     "xo": "^0.16.0"
   },
   "repository": {

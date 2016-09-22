@@ -1,0 +1,10 @@
+<section className="mod-hero invert" style={{backgroundImage: "url('//placehold.it/2880x560/A60139/730028/&text=1440x865')"}}>
+	<p className="h h1">Lorem ipsum dolor sit amet, consectet.</p>
+	<p className="copy">Lorem ipsum</p>
+	{
+	props.button &&
+		<div className="buttonrow">
+			<ElementButton label={props.buttonLabel} buttonHref={props.buttonHref}/>
+		</div>
+	}
+</section>
