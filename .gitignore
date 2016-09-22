@@ -3,3 +3,5 @@
 /static/css/*.css
 /npm-debug.log
 dist/
+
+*.idea
