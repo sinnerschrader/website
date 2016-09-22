@@ -96,6 +96,21 @@ a {
 	background: @s2-darkblack;
 }
 
+.blend {
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: inherit;
+		mix-blend-mode: multiply;
+		pointer-events: none;
+	}
+}
+
 .bulletlist {
 	li {
 		position: relative;
