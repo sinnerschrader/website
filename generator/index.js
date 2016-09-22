@@ -52,7 +52,7 @@ globby(['src/pages/**/*.html', '!src/pages/**/*2.html'])
 	.then(() => console.log('Done.'))
 	.catch(err => logError(err));
 
-function createReactComponent(lazyComponents, filepath, code) {
+function createReactComponent(lazyComponentRegistry, filepath, code) {
 	const name = uppercaseFirst(camelcase(path.basename(filepath, '.html')));
 	const options = {
 		plugins: ['transform-react-jsx']
@@ -64,8 +64,8 @@ function createReactComponent(lazyComponents, filepath, code) {
 		name: undefined
 	}, {
 		get: function (target, name) {
-			if (lazyComponents[name]) {
-				return lazyComponents[name];
+			if (lazyComponentRegistry[name]) {
+				return lazyComponentRegistry[name];
 			}
 			return target[name];
 		}
@@ -81,18 +81,18 @@ function createReactComponent(lazyComponents, filepath, code) {
 function createReactComponents() {
 	// Create component object here and add all components when created to have the reference already and
 	// resolve against it during runtime
-	const lazyComponents = {};
+	const lazyComponentRegistry = {};
 	return globby(['src/react/**/*.html'])
 		.then(filepaths => {
 			return Promise.all(filepaths.map(filepath => {
 				return sander.readFile(filepath)
-					.then(content => createReactComponent(lazyComponents, filepath, content.toString()));
+					.then(content => createReactComponent(lazyComponentRegistry, filepath, content.toString()));
 			}))
 			.then(components => {
 				return components.reduce((all, comp) => {
 					all[comp.name] = comp.Component;
 					return all;
-				}, lazyComponents);
+				}, lazyComponentRegistry);
 			});
 		});
 }
