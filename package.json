@@ -32,12 +32,15 @@
   "description": "This is the SinnerSchrader 's2 3' Project. It enables all S2 Frontend Developers to start quickly a new project hazzle-free with the basic stuff.",
   "main": "server.js",
   "devDependencies": {
+    "globby": "^6.0.0",
     "grunt": "0.4.5",
     "grunt-cli": "1.1.0",
     "grunt-modernizr": "1.0.2",
     "grunt-smaller": "0.2.1",
     "nodemon": "1.9.1",
-    "npm-check-updates": "^2.6.1"
+    "npm-check-updates": "^2.6.1",
+    "sander": "^0.5.1",
+    "xo": "^0.16.0"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="s2-no-js" lang="de-DE">
 <head>
-  <% include './styleguide/pages/_partials/head.html' %>
+  <% include './styleguide/pages/_partials/head.html', { base: @base } %>
 </head>
 
 <body class="<%- @bodyClass %> <%- @themeClass || 'theme1' %>">
@@ -12,6 +12,5 @@
 		</main>
 		<% content 'footer' %>
 	</div>
-	<% include './styleguide/pages/_partials/scripts.html' %>
 </body>
 </html>
