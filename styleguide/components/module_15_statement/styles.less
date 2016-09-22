@@ -1,0 +1,53 @@
+.mod-statement {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	padding: @s2-moduleGap-s-2 @s2-moduleGap-s-1;
+
+	background: @s2-verydarkblue;
+	color: @s2-white;
+
+	.copy {
+		padding: 0 0 @s2-moduleGap-s-1 0;
+	}
+
+	.quote {
+		position: relative;
+		padding-bottom: @s2-moduleGap-s-1;
+
+		&::after {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			display: block;
+			content: "";
+			width: 50px;
+			height: 3px;
+		}
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-2;
+
+		.copy,
+		.quote {
+			padding-bottom: @s2-moduleGap-m-1;
+		}
+
+		.quote {
+			&::after {
+				width: 100px;
+			}
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l-2;
+
+		.copy,
+		.quote {
+			padding-bottom: @s2-moduleGap-l-1;
+		}
+	}
+}
