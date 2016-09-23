@@ -171,7 +171,7 @@ a {
 	}
 }
 
-.icon{
+.icon {
 	font-family: s2websiteicons;
 }
 
@@ -179,4 +179,12 @@ a {
 // don't be overwritten
 .is-active {
 	display: block !important;
+}
+
+.footer {
+	max-width: 425px;
+	margin: 0 auto;
+	@media @s2-mq-window-tablet {
+		max-width: @s2-MaxPageWidth;
+	}
 }
