@@ -2,25 +2,31 @@
 	{
 	!props.withMap &&
 		<div className="locations-wrapper">
+			<input type="radio" name="location" hidden id="hamburg" className="location-check" checked />
+			<input type="radio" name="location" hidden id="berlin" className="location-check" />
+			<input type="radio" name="location" hidden id="frankfurt" className="location-check" />
+			<input type="radio" name="location" hidden id="munich" className="location-check" />
+			<input type="radio" name="location" hidden id="prague" className="location-check" />
+
 			<ol className="locnav">
 				<li className="locnav-item">
-					<button className="link locnav-btn js_chooseLocation" data-location="berlin">Berlin</button>
+					<label className="link locnav-btn locnav-btn-berlin" htmlFor="berlin">Berlin</label>
 				</li>
 				<li className="locnav-item">
-					<button className="link locnav-btn js_chooseLocation" data-location="frankfurt">Frankfurt</button>
+					<label className="link locnav-btn locnav-btn-frankfurt" htmlFor="frankfurt">Frankfurt</label>
 				</li>
 				<li className="locnav-item">
-					<button className="link locnav-btn is-active js_chooseLocation" data-location="hamburg">Hamburg</button>
+					<label className="link locnav-btn locnav-btn-hamburg" htmlFor="hamburg">Hamburg</label>
 				</li>
 				<li className="locnav-item">
-					<button className="link locnav-btn js_chooseLocation" data-location="munich">München</button>
+					<label className="link locnav-btn locnav-btn-munich" htmlFor="munich">München</label>
 				</li>
 				<li className="locnav-item">
-					<button className="link locnav-btn js_chooseLocation" data-location="prague">Prag</button>
+					<label className="link locnav-btn locnav-btn-prague" htmlFor="prague">Prag</label>
 				</li>
 			</ol>
 
-			<div className="location-address is-active" data-location="hamburg">
+			<div className="location-address location-hamburg">
 				<h3 className="city h3">Hamburg</h3>
 				<ol className="location-address-list">
 					<li className="location-address-item">
@@ -49,7 +55,8 @@
 					</li>
 				</ol>
 			</div>
-			<div className="location-address" data-location="berlin">
+
+			<div className="location-address location-berlin">
 				<h3 className="city h3">Berlin</h3>
 				<h4 className="h4">SinnerSchrader</h4>
 				<p className="copy">
@@ -58,7 +65,7 @@
 					+49 40 39 88 55 - 0
 				</p>
 			</div>
-			<div className="location-address" data-location="frankfurt">
+			<div className="location-address location-frankfurt">
 				<h3 className="city h3">Frankfurt</h3>
 				<h4 className="h4">SinnerSchrader</h4>
 				<p className="copy">
@@ -67,7 +74,7 @@
 					+49 40 39 88 55 - 0
 				</p>
 			</div>
-			<div className="location-address" data-location="munich">
+			<div className="location-address location-munich">
 				<h3 className="city h3">München</h3>
 				<h4 className="h4">SinnerSchrader</h4>
 				<p className="copy">
@@ -76,7 +83,7 @@
 					+49 40 39 88 55 - 0
 				</p>
 			</div>
-			<div className="location-address" data-location="prague">
+			<div className="location-address location-prague">
 				<h3 className="city h3">Prag</h3>
 				<h4 className="h4">SinnerSchrader</h4>
 				<p className="copy">
@@ -91,28 +98,33 @@
 	props.withMap &&
 		<div>
 			<h2 className="h h2-1">Locations</h2>
-			<figure className="figure" data-location="hamburg">
+			<figure className="figure">
+				<input type="radio" name="location" hidden id="hamburg" className="location-check" checked />
+				<input type="radio" name="location" hidden id="berlin" className="location-check" />
+				<input type="radio" name="location" hidden id="frankfurt" className="location-check" />
+				<input type="radio" name="location" hidden id="munich" className="location-check" />
+				<input type="radio" name="location" hidden id="prague" className="location-check" />
+
 				<ol className="locnav locnav-highlight">
 					<li className="locnav-item">
-						<button className="link locnav-btn js_chooseLocation" data-location="berlin">Berlin</button>
+						<label className="link locnav-btn locnav-btn-berlin" htmlFor="berlin">Berlin</label>
 					</li>
 					<li className="locnav-item">
-						<button className="link locnav-btn js_chooseLocation" data-location="frankfurt">Frankfurt</button>
+						<label className="link locnav-btn locnav-btn-frankfurt" htmlFor="frankfurt">Frankfurt</label>
 					</li>
 					<li className="locnav-item">
-						<button className="link locnav-btn is-active js_chooseLocation" data-location="hamburg">Hamburg</button>
+						<label className="link locnav-btn locnav-btn-hamburg" htmlFor="hamburg">Hamburg</label>
 					</li>
 					<li className="locnav-item">
-						<button className="link locnav-btn js_chooseLocation" data-location="munich">München</button>
+						<label className="link locnav-btn locnav-btn-munich" htmlFor="munich">Munich</label>
 					</li>
 					<li className="locnav-item">
-						<button className="link locnav-btn js_chooseLocation" data-location="prague">Prag</button>
+						<label className="link locnav-btn locnav-btn-prague" htmlFor="prague">Prague</label>
 					</li>
 				</ol>
 				<a
 					data-marker="Völckersstr. 38"
-					data-location="hamburg"
-					className="map is-active"
+					className="map map-hamburg"
 					href="https://www.google.de/maps/place/SinnerSchrader/@53.5570936,9.9264012,15z"
 					target="_blank"
 					>
@@ -124,8 +136,7 @@
 				</a>
 				<a
 					data-marker="Friedenstraße 91"
-					data-location="berlin"
-					className="map"
+					className="map map-berlin"
 					href="https://www.google.de/maps/place/SinnerSchrader+Mobile+GmbH/@52.522018,13.43695,15z"
 					target="_blank"
 					>
@@ -137,8 +148,7 @@
 				</a>
 				<a
 					data-marker="Schackstraße 3"
-					data-location="munich"
-					className="map"
+					className="map map-munich"
 					href="https://www.google.de/maps/place/SinnerSchrader/@48.1520709,11.5837607,15z"
 					target="_blank"
 					>
@@ -150,8 +160,7 @@
 				</a>
 				<a
 					data-marker="U Pergamenky 1522/2"
-					data-location="prague"
-					className="map"
+					className="map map-prague"
 					href="https://www.google.de/maps/place/SinnerSchrader/@50.1084454,14.4526135,15z"
 					target="_blank"
 					>
@@ -163,8 +172,7 @@
 				</a>
 				<a
 					data-marker="Hanauer Landstraße 181"
-					data-location="frankfurt"
-					className="map"
+					className="map map-frankfurt"
 					href="https://www.google.de/maps/place/SinnerSchrader/@50.113685,8.7171673,15z"
 					target="_blank"
 					>
@@ -174,8 +182,7 @@
 						url="https://maps.googleapis.com/maps/api/staticmap?center=50.113685,8.7171673&zoom=15&scale=2&size=640x640&style=feature:all|saturation:-100|visibility:simplified&style=feature:poi|element:labels|visibility:off"
 						/>
 				</a>
-				<figcaption>
-					<div className="location-address is-active" data-location="hamburg">
+					<div className="location-address location-hamburg">
 						<h3 className="city h3">Hamburg</h3>
 						<h4 className="h4">SinnerSchrader</h4>
 						<p className="copy">
@@ -198,7 +205,7 @@
 							+49 40 39 88 55 - 0
 						</p>
 					</div>
-					<div className="location-address" data-location="berlin">
+					<div className="location-address location-berlin" data-location="berlin">
 						<h3 className="city h3">Berlin</h3>
 						<h4 className="h4">SinnerSchrader</h4>
 						<p className="copy">
@@ -207,7 +214,7 @@
 							+49 40 39 88 55 - 0
 						</p>
 					</div>
-					<div className="location-address" data-location="frankfurt">
+					<div className="location-address location-frankfurt">
 						<h3 className="city h3">Frankfurt</h3>
 						<h4 className="h4">SinnerSchrader</h4>
 						<p className="copy">
@@ -216,7 +223,7 @@
 							+49 40 39 88 55 - 0
 						</p>
 					</div>
-					<div className="location-address" data-location="munich">
+					<div className="location-address location-munich">
 						<h3 className="city h3">München</h3>
 						<h4 className="h4">SinnerSchrader</h4>
 						<p className="copy">
@@ -225,7 +232,7 @@
 							+49 40 39 88 55 - 0
 						</p>
 					</div>
-					<div className="location-address" data-location="prague">
+					<div className="location-address location-prague">
 						<h3 className="city h3">Prag</h3>
 						<h4 className="h4">SinnerSchrader</h4>
 						<p className="copy">
@@ -234,7 +241,6 @@
 							+49 40 39 88 55 - 0
 						</p>
 					</div>
-				</figcaption>
 			</figure>
 		</div>
 	}
