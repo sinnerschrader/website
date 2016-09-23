@@ -31,7 +31,7 @@
     "build:all": "npm run build:js && npm run build:css && npm run build:pages",
     "build:js": "mkdirp dist/static/js && browserify --entry src/js/main.js --outfile dist/static/js/app.js",
     "build:css": "mkdirp dist/static/css && lessc --strict-math=on --clean-css='advanced' --autoprefix='last 2 versions,ie >= 9,Firefox ESR,ChromeAndroid >= 4.3' src/css/app.less > dist/static/css/app.css",
-    "build:pages": "node generator",
+    "build:pages": "schlump --src-statics static --dest-statics dist/static",
     "build:watch": "chokidar \"src/**/*\" \"styleguide/**/*\" --initial --command \"npm run build:all\"",
     "serve": "browser-sync start --config bs-config.js"
   },
@@ -52,6 +52,7 @@
     "react-dom": "^15.3.2",
     "rimraf": "^2.5.4",
     "sander": "^0.5.1",
+    "schlump": "^0.5.0",
     "semver": "^5.3.0",
     "upper-case-first": "^1.1.2",
     "watchify": "^3.7.0",
