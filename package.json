@@ -45,6 +45,7 @@
     "camelcase": "^3.0.0",
     "chokidar-cli": "^1.2.0",
     "globby": "^6.0.0",
+    "gray-matter": "^2.0.2",
     "mkdirp": "^0.5.1",
     "nodemon": "1.9.1",
     "react": "^15.3.2",

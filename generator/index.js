@@ -8,6 +8,7 @@ const babel = require('babel-core');
 const React = require('react');
 const ReactDOM = require('react-dom/server');
 const semver = require('semver');
+const matter = require('gray-matter');
 
 if (!semver.satisfies(process.version, '>=6')) {
 	console.error('At least node 6 is required');
@@ -38,8 +39,9 @@ function transformJsx(code) {
 }
 
 function createReactComponent(lazyComponentRegistry, filepath, code) {
+	const parsed = matter(code);
 	const name = uppercaseFirst(camelcase(path.basename(filepath, '.html')));
-	const compCode = transformJsx(code);
+	const compCode = transformJsx(parsed.content);
 
 	const sandbox = new Proxy({
 		React,
@@ -85,6 +87,7 @@ function renderPages(filepaths, components) {
 		console.log(`... ${filepath}`);
 		return sander.readFile(filepath)
 			.then(content => {
+				const parsed = matter(content.toString());
 				const sandbox = Object.assign(
 					{},
 					components,
@@ -93,7 +96,7 @@ function renderPages(filepaths, components) {
 						__html__: undefined
 					}
 				);
-				vm.runInNewContext('__html__ = ' + transformJsx(content.toString()), sandbox);
+				vm.runInNewContext('__html__ = ' + transformJsx(parsed.content), sandbox);
 				return '<!DOCTYPE html>' + ReactDOM.renderToStaticMarkup(sandbox.__html__);
 			})
 			.then(html => sander.writeFile(getDestinationPath(filepath), html));
