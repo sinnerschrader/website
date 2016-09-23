@@ -1,15 +1,24 @@
-<div class="card">
+---
+name: ElementCard
+---
+<div className="card">
 	<figure>
-		<div class="teaser"><% include './styleguide/components/element_image/template.html', { width: 280, height: 370 } %></div>
-		<% if @caption : %>
-		<figcaption class="figcaption">
-			<h3 class="sub h5">John Doe</h3>
-			<p class="scopy">Mitarbeiter</p>
-		</figcaption>
-		<% end %>
+		<div className="teaser">
+			<ElementImage
+				width={280}
+				height={370}
+				/>
+		</div>
+		{
+		props.caption &&
+			<figcaption className="figcaption">
+				<h3 className="sub h5">John Doe</h3>
+				<p className="scopy">Mitarbeiter</p>
+			</figcaption>
+		}
 	</figure>
-	<% include './styleguide/components/element_smn/template.html', { items: 3 } %>
-	<script type="application/ld+json">
+	<SocialMediaNetwork/>
+	<script type="application/ld+json" dangerouslySetInnerHTML={{__html: `
 	{
 		"@context": "http://schema.org",
 		"@type": "Person",
@@ -28,5 +37,6 @@
 			"addressCountry": "Deutschland"
 		}
 	}
+	`}}>
 	</script>
 </div>
