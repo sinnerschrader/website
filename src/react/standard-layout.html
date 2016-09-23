@@ -1,0 +1,12 @@
+<html lang="de-DE">
+<Head base={props.base}/>
+<body className={props.bodyClass || ''}>
+	<div className="container">
+		{props.header}
+		<main className="main">
+			{props.children}
+		</main>
+		{props.footer}
+	</div>
+</body>
+</html>

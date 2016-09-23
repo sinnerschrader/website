@@ -1,28 +1,31 @@
-<%
-  @bodyClass = ""
-  @base = "."
-%>
-<% extend './styleguide/pages/_layouts/standard.html' %>
+<StandardLayout base=".">
+	<Hero
+		buttonLabel="More on this"
+		buttonHref="#"
+		copy="They bond with customers, reshape user behaviours and transform business reality."
+		headline="We deliver transformational products."
+		imageSrc="//placehold.it/2880x560&text=default"
+		imageSrcSetS="//placehold.it/425x640&text=default-s"
+		imageSrcSetM="//placehold.it/1024x756&text=default-m"
+		imageSrcSetL="//placehold.it/2880x560&text=default-l"
+		imageWidth={2880}
+		imageHeight={560}
+		/>
+	<Hero
+		image="//placehold.it/2880x560/4502da/730028/&text=1440x865"
+		buttonLabel="What drives us"
+		buttonHref="#"
+		/>
+	<Hero imageUrl="//placehold.it/2880x560/4502da/730028/&text=1440x865"
+		buttonLabel="Join us" buttonHref="#" />
+	<Hero imageUrl="//placehold.it/2880x560/4502da/730028/&text=1440x865"
+		buttonLabel="See our work" buttonHref="#" />
+	<Hero imageUrl="//placehold.it/2880x560/4502da/730028/&text=1440x865"
+		buttonLabel="How we work" buttonHref="#" />
+	<Hero imageUrl="//placehold.it/2880x560/4502da/730028/&text=1440x865"
+		buttonLabel="See case" buttonHref="#" />
+	<Hero imageUrl="//placehold.it/2880x560/4502da/730028/&text=1440x865"
+		buttonLabel="That's NEXT" buttonHref="#" />
 
-<% include './styleguide/components/module_01_hero/template.html',
-	{ button: {label: 'More on this', href: 'sub/page.html'} } %>
-
-<% include './styleguide/components/module_01_hero/template.html',
-	{ button: {label: 'What drives us', href: '#'} } %>
-
-<% include './styleguide/components/module_01_hero/template.html',
-	{ button: {label: 'Join us', href: '#'} } %>
-
-<% include './styleguide/components/module_01_hero/template.html',
-	{ button: {label: 'See our work', href: '#'} } %>
-
-<% include './styleguide/components/module_01_hero/template.html',
-	{ button: {label: 'How we work', href: '#'} } %>
-
-<% include './styleguide/components/module_01_hero/template.html',
-	{ button: {label: 'See case', href: '#'} } %>
-
-<% include './styleguide/components/module_01_hero/template.html',
-	{ button: {label: 'That\'s NEXT', href: '#'} } %>
-
-<% include './styleguide/components/module_09_follow/template.html' %>
+	<Follow/>
+</StandardLayout>
