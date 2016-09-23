@@ -3,7 +3,7 @@
 	overflow: hidden;
 	position: relative;
 	padding: @s2-moduleGap-s-1 @s2-moduleGap-s-1;
-	background: transparent url('@{s2-image-path}/contents/cn_no1.svg') no-repeat 50% 70%/65% auto;
+	background: url('@{s2-image-path}/contents/cn_no1.svg') no-repeat 50% 70%/65% auto;
 
 	&::before {
 		content: "";
@@ -13,7 +13,7 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background: linear-gradient(150deg, @s2-lightgrey 0%, @s2-lightgrey 50%, transparent 50%, transparent 100%);
+		background: linear-gradient(150deg, @s2-lightgrey 0%, @s2-lightgrey 50%, transparent 50%, transparent 100%), @s2-white;
 	}
 
 	.sub {
