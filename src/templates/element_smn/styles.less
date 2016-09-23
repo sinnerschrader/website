@@ -3,22 +3,22 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
-.nw {
-	&:extend(.icon);
-	@dim: 20px;
-	font-size: @dim;
-	text-align: center;
-	color: @s2-darkblack;
-	.invert & {
-		color: @s2-white;
-	}
-	.network {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: inherit;
-		width: (@dim*2);
-		height: (@dim*2);
+	.item {
+		&:extend(.icon);
+		@dim: 20px;
+		font-size: @dim;
+		text-align: center;
+		color: @s2-darkblack;
+		.invert & {
+			color: @s2-white;
+		}
+		.network {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: inherit;
+			width: (@dim*2);
+			height: (@dim*2);
+		}
 	}
 }
