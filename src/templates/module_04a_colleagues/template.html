@@ -1,0 +1,45 @@
+---
+name: Colleagues
+---
+<section className="mod-colleagues">
+	<div className="frame">
+		<ol className="cards">
+			{
+			props.children &&
+				React.Children.map(props.children, child => (
+					<li className="item invert" style={{backgroundImage: "url('//placehold.it/2880x910/1C1F26/15171D/&text=1440x455');"}}>
+						<blockquote className="quote">
+							<h3 className="sub h4"><cite>John Doe</cite></h3>
+							<p className="scopy">Mitarbeiter</p>
+							<p className="copy">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna. Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
+						</blockquote>
+						<ElementCard/>
+						<script type="application/ld+json" dangerouslySetInnerHTML={{__html: `
+						{
+							"@context": "http://schema.org",
+							"@type": "Person",
+							"name": "Katharina Knigge",
+							"jobTitle": "Head of New Business",
+							"worksFor": "SinnerSchrader Deutschland GmbH",
+							"url": "https://sinnerschrader.com",
+							"email": "info@sinnerschrader.com",
+							"telephone": "+49 40 39 88 55-801",
+							"address": {
+								"@type": "PostalAddress",
+								"streetAddress": "Völckersstr. 38",
+								"addressLocality": "Hamburg",
+								"postalCode": "22765",
+								"addressCountry": "Deutschland"
+							}
+						}
+						`}}>
+						</script>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+	<ElementPager>
+		{props.children}
+	</ElementPager>
+</section>
