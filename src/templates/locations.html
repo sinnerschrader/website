@@ -1,7 +1,7 @@
-<div>
+<section className={'mod-locations ' + (props.withMap ? 'mod-locations-map' : '')} data-locations>
 	{
 	!props.withMap &&
-		<section className="mod-locations" data-locations>
+		<div className="locations-wrapper">
 			<ol className="locnav">
 				<li className="locnav-item">
 					<button className="link locnav-btn js_chooseLocation" data-location="berlin">Berlin</button>
@@ -85,11 +85,11 @@
 					+49 40 39 88 55 - 0
 				</p>
 			</div>
-		</section>
+		</div>
 	}
 	{
 	props.withMap &&
-		<section className="mod-locations mod-locations-map" data-locations>
+		<div>
 			<h2 className="h h2-1">Locations</h2>
 			<figure className="figure" data-location="hamburg">
 				<ol className="locnav locnav-highlight">
@@ -236,6 +236,6 @@
 					</div>
 				</figcaption>
 			</figure>
-		</section>
+		</div>
 	}
-</div>
+</section>
