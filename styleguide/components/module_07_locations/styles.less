@@ -2,6 +2,8 @@
 // version 2 = > mod-locations-map
 
 .mod-locations {
+	position: relative;
+	z-index: 1;
 	padding: @s2-moduleGap-s-3 @s2-moduleGap-s-1 @s2-moduleGap-s-2 0;
 	background-color: @s2-lightgrey;
 
@@ -52,24 +54,16 @@
 	}
 
 	.locnav-btn {
-		display: block;
+		display: inline-block;
 		padding: 5px 0;
 
 		color: inherit;
 		font-size: inherit;
 		text-transform: uppercase;
+		cursor: pointer;
 
 		&:after {
 			display: none;
-		}
-
-		&.is-active {
-			font-weight: bold;
-
-			&:after {
-				display: block;
-				background-color: currentColor;
-			}
 		}
 	}
 
@@ -218,10 +212,10 @@
 
 		.location-address-item {
 			display: inline-block;
+			width: 100%;
+			margin-bottom: (@s2-moduleGap-l-1/2);
 			vertical-align: top;
 			break-inside: avoid;
-
-			margin-bottom: (@s2-moduleGap-l-1/2);
 		}
 
 		// map version
@@ -239,9 +233,8 @@
 			padding-left: 0;
 		}
 
-
 		.map {
-			width: calc(60% ~'-' @s2-moduleGap-l-1);
+			flex: 1 0 60%;
 			margin-top: @s2-moduleGap-l-2;
 			margin-right: @s2-moduleGap-l-1;
 			margin-bottom: 0;
@@ -253,8 +246,34 @@
 			}
 		}
 
-		.caption {
+		.location-address {
 			width: 40%;
+		}
+	}
+}
+
+// pure css location menu
+.generate-location(hamburg);
+.generate-location(berlin);
+.generate-location(munich);
+.generate-location(frankfurt);
+.generate-location(prague);
+
+.generate-location(@n) {
+	#@{n}:checked {
+		& ~ .location-@{n} {
+			display: block;
+		}
+
+		& ~ .map-@{n} {
+			display: block;
+		}
+
+		& ~ .locnav .locnav-btn-@{n} {
+			&:after {
+				display: block;
+				background-color: currentColor;
+			}
 		}
 	}
 }
