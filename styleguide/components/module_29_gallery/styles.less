@@ -1,6 +1,6 @@
 .mod-gallery {
 	padding: @s2-moduleGap-s-1 0;
-	
+
 	.images {
 		display: flex;
 		#s2-transition > .generic();
@@ -10,17 +10,17 @@
 			width: 100%; // FIX IE 11
 		}
 	}
-	
-	.controls, 
+
+	.controls,
 	.caption,
 	.info {
 		display: none;
 	}
-	
+
 	@media @s2-mq-window-tablet {
 		position: relative;
 		padding: @s2-moduleGap-m-1;
-		
+
 		.images {
 			.item {
 				position: relative;
@@ -44,11 +44,11 @@
 				}
 			}
 		}
-		
+
 		.controls {
 			position: absolute;
-			left: @s2-moduleGap-m-1/2;
-			right: @s2-moduleGap-m-1/2;
+			left: (@s2-moduleGap-m-1/2);
+			right: (@s2-moduleGap-m-1/2);
 			bottom: 50%;
 			display: flex;
 			justify-content: space-between;
@@ -63,28 +63,28 @@
 				background: @s2-darkblack;
 				#s2-tools > .ir;
 			}
-			
+
 			.disabled {
 				background: @s2-darkgrey;
 				pointer-events: none;
 			}
 		}
-		
+
 		.info,
 		.pager {
-			margin: @s2-moduleGap-m-1/3 @s2-moduleGap-m-1/3 0;
+			margin: (@s2-moduleGap-m-1/3) (@s2-moduleGap-m-1/3) 0;
 		}
-		
+
 		.info {
 			display: block;
 			position: absolute;
 			text-decoration: underline;
 		}
-		
+
 		.pager {
 			justify-content: flex-end;
 			padding: 0;
-			counter-reset: slide; 
+			counter-reset: slide;
 			.item {
 				width: initial;
 				height: initial;
@@ -109,7 +109,7 @@
 
 		.info,
 		.pager {
-			margin: @s2-moduleGap-l-1/5 @s2-moduleGap-l-1/5 0;
+			margin: (@s2-moduleGap-l-1/5) (@s2-moduleGap-l-1/5) 0;
 		}
 
 		.images {

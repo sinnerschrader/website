@@ -8,10 +8,10 @@
 			width: 100%; // FIX IE 11
 			display: flex;
 			flex-wrap: wrap;
-			padding: @s2-moduleGap-s-1 @s2-moduleGap-s-1 @s2-moduleGap-s-1 * 2;
+			padding: @s2-moduleGap-s-1 @s2-moduleGap-s-1 (@s2-moduleGap-s-1 * 2);
 			background: @s2-darkblack no-repeat 50% 0/cover;
 		}
-		
+
 		.quote {
 			order: 2;
 			.scopy {
@@ -25,11 +25,11 @@
 			order: 1;
 			margin-bottom: @s2-moduleGap-s-1;
 		}
-		
+
 	}
 
 	.pager {
-		margin-top: -@s2-moduleGap-s-1 * 1.2;
+		margin-top: (-@s2-moduleGap-s-1 * 1.2);
 	}
 
 	@media @s2-mq-window-tablet {
@@ -45,7 +45,7 @@
 				padding-right: @s2-moduleGap-m-1;
 				order: initial;
 				.scopy {
-					margin-bottom: @s2-moduleGap-m-1/2;
+					margin-bottom: (@s2-moduleGap-m-1/2);
 				}
 				.copy {
 					display: block;
@@ -69,11 +69,11 @@
 			.item {
 				padding: @s2-moduleGap-l-1 @s2-moduleGap-l-3;
 			}
-			
+
 			.quote {
 				padding-right: @s2-moduleGap-l-2;
 				.scopy {
-					margin-bottom: @s2-moduleGap-l-1/2;
+					margin-bottom: (@s2-moduleGap-l-1/2);
 				}
 			}
 		}
