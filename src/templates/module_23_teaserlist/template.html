@@ -1,0 +1,15 @@
+---
+name: TeaserList
+---
+<section className="mod-teaserlist">
+	<ol className="teaserlist">
+		{
+		props.children &&
+			React.Children.map(props.children, child => (
+				<li className="item">
+					{child}
+				</li>
+			))
+		}
+	</ol>
+</section>
