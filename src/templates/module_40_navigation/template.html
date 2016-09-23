@@ -1,3 +1,6 @@
+---
+name: Navigation
+---
 <header className="mod-navigation-container">
 	<div className="mod-navigation sctnbgclr">
 		<input type="checkbox" id="navigation-state" data-navigation-state/>
@@ -10,42 +13,44 @@
 			</svg>
 		</a>
 		<label className="burger" title="Show navigation" htmlFor="navigation-state">
-			Show Navigation
-			<svg className="svg" width="30" height="24" viewBox="0 0 30 24">
-				<title>Navigation</title>
-				<desc>Enable sinnerschrader.com Navigation</desc>
-				<path d="M28.6 0h-27.2c-.5 0-1 .5-1 1v1.9c0 .5.5 1 1 1h27.2c.5 0 1-.5 1-1v-1.9c0-.5-.4-1-1-1zM28.6 20.1h-27.2c-.5 0-1 .5-1 1v1.9c0 .5.5 1 1 1h27.2c.5 0 1-.5 1-1v-1.9c0-.6-.4-1-1-1zM28.6 10.1h-27.2c-.5 0-1 .5-1 1v2c0 .5.5 1 1 1h27.2c.5 0 1-.5 1-1v-2c0-.6-.4-1-1-1z"/>
-			</svg>
+			<div className="layer-wrapper">
+				<span className="layer"/>
+				<span className="layer"/>
+				<span className="layer"/>
+				<span className="layer"/>
+			</div>
 		</label>
-		{/*
+		{
 			<nav className="nav">
-				<ul className="mainnav invert h3">
-					<li className="item active">
-						<a href="#">Still day one</a>
+				<ul className="mainnav">
+					<li className="mainnav-item sctntxtclr">
+						<a href="#">About</a>
+						<ul className="aboutnav">
+							<li className="aboutnav-item">
+								<a href="#">Why</a>
+							</li>
+							<li className="aboutnav-item">
+								<a href="#">How</a>
+							</li>
+							<li className="aboutnav-item">
+								<a href="#">What</a>
+							</li>
+							<li className="aboutnav-item">
+								<a href="#">Who</a>
+							</li>
+						</ul>
 					</li>
-					<li className="item">
-						<a href="#">Unternehmen</a>
+					<li className="mainnav-item">
+						<a href="#">Talent</a>
 					</li>
-					<li className="item">
-						<a href="#">Arbeitsmodell</a>
+					<li className="mainnav-item">
+						<a href="#">Work</a>
 					</li>
-					<li className="item">
-						<a href="#">Karriere</a>
-					</li>
-					<li className="item">
-						<a href="#">Kontakt</a>
-					</li>
-					<li className="item last">
-						<a href="#">News</a>
-					</li>
-					<li className="item meta scopy">
-						<a href="#" class="link">Impressum</a>
-					</li>
-					<li className="item">
-						<ElementSmn/>
+					<li className="mainnav-item">
+						<a href="#">Contact</a>
 					</li>
 				</ul>
 			</nav>
-		*/}
+		}
 	</div>
 </header>
