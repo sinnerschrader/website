@@ -2,8 +2,26 @@
 name: SocialMediaNetwork
 ---
 <ul className="smn">
-	<li className="nw"><a href="#" title="Follow SinnerSchrader" className="network"></a></li>
-	<li className="nw"><a href="#" title="Follow SinnerSchrader" className="network"></a></li>
-	<li className="nw"><a href="#" title="Follow SinnerSchrader" className="network"></a></li>
-	<li className="nw"><a href="#" title="Follow SinnerSchrader" className="network"></a></li>
+	{
+	(props.twitterUrl && props.twitterTitle) &&
+		<li className="nw"><a href={props.twitterUrl} title={props.twitterTitle} className="network"></a></li>
+	}
+	{
+	(props.facebookUrl && props.facebookTitle) &&
+		<li className="nw"><a href={props.facebookUrl} title={props.facebookTitle} className="network"></a></li>
+	}
+	{
+	(props.googlePlusUrl && props.googlePlusTitle) &&
+		<li className="nw"><a href={props.googlePlusUrl} title={props.googlePlusTitle} className="network"></a></li>
+	}
+	{
+	(props.youtubeUrl && props.youtubeTitle) &&
+		<li className="nw"><a href={props.youtubeUrl} title={props.youtubeTitle} className="network"></a></li>
+	}
+	{
+	props.children &&
+		React.Children.map(props.children, child => (
+			<li className="nw">{child}</li>
+		))
+	}
 </ul>
