@@ -7,8 +7,14 @@ const uppercaseFirst = require('upper-case-first');
 const babel = require('babel-core');
 const React = require('react');
 const ReactDOM = require('react-dom/server');
+const semver = require('semver');
 
 const cssCompiler = require('../server/lib/css-compiler');
+
+if (!semver.satisfies(process.version, '>=6')) {
+	console.error('At least node 6 is required');
+	process.exit(1); // eslint-disable-line xo/no-process-exit
+}
 
 function createCss() {
 	console.log(`Generating css...`);
