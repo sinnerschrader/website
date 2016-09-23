@@ -18,25 +18,17 @@ name: ElementCard
 		}
 	</figure>
 	<SocialMediaNetwork/>
-	<script type="application/ld+json" dangerouslySetInnerHTML={{__html: `
-	{
-		"@context": "http://schema.org",
-		"@type": "Person",
-		"name": "John Doe",
-		"jobTitle": "Mitarbeiter",
-		"worksFor": "SinnerSchrader Deutschland GmbH",
-		"url": ["https://sinnerschrader.com", "https://facebook.com/john.doe", "https://twitter.com/john.doe", "https://xing.com/john.doe"],
-		"email": "info@sinnerschrader.com",
-		"telephone": "+49 40 39 88 55-0",
-		"image": "//placehold.it/280x370/",
-		"address": {
-			"@type": "PostalAddress",
-			"streetAddress": "Völckersstr. 38",
-			"addressLocality": "Hamburg",
-			"postalCode": "22765",
-			"addressCountry": "Deutschland"
-		}
-	}
-	`}}>
-	</script>
+	<Schema
+		name="John Doe"
+		jobTitle="Mitarbeiter"
+		worksFor="SinnerSchrader Deutschland GmbH"
+		urls={["https://sinnerschrader.com", "https://facebook.com/john.doe", "https://twitter.com/john.doe", "https://xing.com/john.doe"]}
+		email=""
+		telephone=""
+		image=""
+		streetAddress="Völckersstr. 38"
+		addressLocality="Hamburg"
+		postalCode="22765"
+		addressCountry="Deutschland"
+		/>
 </div>

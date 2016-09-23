@@ -1,0 +1,24 @@
+---
+name: Schema
+---
+<script type="application/ld+json" dangerouslySetInnerHTML={{__html: `
+{
+	"@context": "http://schema.org",
+	"@type": "Person",
+	"name": "${props.name}",
+	"jobTitle": "${props.jobTitle}",
+	"worksFor": "${props.worksFor}",
+	"url": ["${(props.urls || []).join('", "')}"],
+	"email": "${props.email}",
+	"telephone": "${props.telephone}",
+	"image": "${props.image}",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "${props.streetAddress}",
+		"addressLocality": "${props.addressLocality}",
+		"postalCode": "${props.postalCode}",
+		"addressCountry": "${props.addressCountry}"
+	}
+}
+`}}>
+</script>
