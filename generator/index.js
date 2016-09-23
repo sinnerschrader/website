@@ -17,7 +17,7 @@ if (!semver.satisfies(process.version, '>=6')) {
 const src = {
 	less: 'src/css/app.less',
 	pages: 'src/pages/**/*.html',
-	templates: 'src/react/**/*.html',
+	templates: 'src/templates/**/*.html',
 	static: 'static'
 };
 const dest = {
