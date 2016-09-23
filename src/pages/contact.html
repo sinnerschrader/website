@@ -2,5 +2,44 @@
 route: /contact
 ---
 <StandardLayout base="..">
-	Contact
+	<Hero
+		buttonHref="./sub/page.html"
+		buttonLabel="More on this"
+		copy="They bond with customers, reshape user behaviours and transform business reality."
+		headline="We deliver transformational products."
+		imageHeight={560}
+		imageSrcL="../static/images/backgrounds/module_01_hero_desk_about_what_r.jpg"
+		imageSrcM=".,/static/images/backgrounds/module_01_hero_lap_about_what_r.jpg"
+		imageSrcS="../static/images/backgrounds/module_01_hero_palm_about_what_r.jpg"
+		imageWidth={2880}
+		invert
+		theme="blue"
+	/>
+	<ContactList>
+		<div>
+			<h4 class="h h4">New Talent</h4>
+			Peggy Hutchison<br/>
+			+49 40 39 88 55 0<br/>
+			<a href="mailto:me@sinnerschrader.com">me@sinnerschrader.com</a>
+		</div>
+		<div>
+			<h4 class="h h4">New Business</h4>
+			Peggy Hutchison<br/>
+			+49 40 39 88 55 0<br/>
+			<a href="mailto:me@sinnerschrader.com">me@sinnerschrader.com</a>
+		</div>
+		<div>
+			<h4 class="h h4">Press</h4>
+			Peggy Hutchison<br/>
+			+49 40 39 88 55 0<br/>
+			<a href="mailto:me@sinnerschrader.com">me@sinnerschrader.com</a>
+		</div>
+		<div>
+			<h4 class="h h4">IR</h4>
+			Peggy Hutchison<br/>
+			+49 40 39 88 55 0<br/>
+			<a href="mailto:me@sinnerschrader.com">me@sinnerschrader.com</a>
+		</div>
+	</ContactList>
+	<Locations withMap={true}/>
 </StandardLayout>
