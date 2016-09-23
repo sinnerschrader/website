@@ -2,5 +2,30 @@
 route: /about/how
 ---
 <StandardLayout base="../..">
-	About -> How
+	<Hero
+		buttonHref="./sub/page.html"
+		buttonLabel="More on this"
+		copy="They bond with customers, reshape user behaviours and transform business reality."
+		headline="We deliver transformational products."
+		imageHeight={560}
+		imageSrcL="./static/images/backgrounds/module_01_hero_desk_about_what_r.jpg"
+		imageSrcM="./static/images/backgrounds/module_01_hero_lap_about_what_r.jpg"
+		imageSrcS="./static/images/backgrounds/module_01_hero_palm_about_what_r.jpg"
+		imageWidth={2880}
+		invert
+		theme="blue"
+		/>
+	<Story1/>
+	<Infographic1/>
+	<Story1/>
+	<QuoteImage/>
+	<Story3/>
+	<Image
+		imageSrcSetS="../../static/images/contents/module_11_About_How_Image_Mobile.jpg"
+		imageSrcSetM="../../static/images/contents/module_11_About_How_Image_Tablet.jpg"
+		imageSrcSetL="../../static/images/contents/module_11_About_How_Image_Desktop.jpg"
+		imageSrc="../../static/images/contents/module_11_About_How_Image_Mobile.jpg"
+		/>
+	<Story1/>
+	<Locations withMap={false}/>
 </StandardLayout>
