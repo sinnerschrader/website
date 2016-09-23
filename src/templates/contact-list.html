@@ -1,0 +1,13 @@
+<section className="mod-contactlist">
+	<h2 className="h h2-1">Talk to us!</h2>
+	<ul className="contacts">
+		{
+		props.children &&
+			React.Children.map(props.children, child => (
+				<li className="item">
+					{child}
+				</li>
+			))
+		}
+	</ul>
+</section>

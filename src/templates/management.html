@@ -1,0 +1,18 @@
+<section className="mod-management">
+	<h2 className="h h2-2">Lorem ipsum <span className="sctntxtclr">dolor</span> sit amet</h2>
+	<div className="frame">
+		<ol className="cards">
+			{
+			props.children &&
+				React.Children.map(props.children, child => (
+					<li className="item">
+						{child}
+					</li>
+				))
+			}
+		</ol>
+	</div>
+	<ElementPager>
+		{props.children}
+	</ElementPager>
+</section>

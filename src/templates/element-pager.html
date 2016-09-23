@@ -1,0 +1,8 @@
+<ol className="pager">
+	{
+	props.children &&
+		React.Children.map(props.children, (child, index) => (
+			<li className="item"></li>
+		))
+	}
+</ol>
