@@ -1,0 +1,8 @@
+<section className="mod-image">
+	<picture>
+		<source srcset={props.imageSrcSetS} media="(max-width: 720px)" />
+		<source srcset={props.imageSrcSetM} media="(max-width: 1024px)" />
+		<source srcset={props.imageSrcSetL} media="(min-width: 1024px)" />
+		<img src={props.imageSrc} className="img" alt="" />
+	</picture>
+</section>
