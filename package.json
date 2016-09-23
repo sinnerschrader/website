@@ -14,8 +14,8 @@
   },
   "scripts": {
     "start": "npm run serve",
+    "prebuild": "rimraf dist/** && mkdirp dist",
     "build": "npm run build:all",
-    "prebuild:all": "rimraf dist/** && mkdirp dist",
     "build:all": "npm run build:js && npm run build:css && npm run build:pages",
     "build:js": "mkdirp dist/static/js && browserify --entry src/js/main.js --outfile dist/static/js/app.js",
     "build:css": "mkdirp dist/static/css && lessc --strict-math=on --clean-css='advanced' --autoprefix='last 2 versions,ie >= 9,Firefox ESR,ChromeAndroid >= 4.3' src/css/app.less > dist/static/css/app.css",
