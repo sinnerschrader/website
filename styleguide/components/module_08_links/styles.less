@@ -1,0 +1,120 @@
+.mod-links {
+	display: flex;
+	flex-wrap: wrap;
+	padding: @s2-moduleGap-s-1;
+	background-color: @s2-lightgrey;
+
+	.h {
+		margin-bottom: @s2-moduleGap-s-1;
+
+		text-transform: uppercase;
+	}
+
+	.newsletter {
+		flex: 1 0 100%;
+		margin-bottom: @s2-moduleGap-s-1;
+	}
+
+	.input {
+		background-color: transparent;
+		border: 0;
+		font-size: inherit;
+	}
+
+	.label {
+		display: block;
+		position: relative;
+		padding: 5px;
+		border-bottom: 1px solid @s2-darkgrey;
+	}
+
+	.submit-btn {
+		position: absolute;
+		right: 0;
+		bottom: 5px;
+
+		@dim: 15px;
+		width: @dim*2;
+		height: @dim*2;
+
+		&:extend(.icon);
+		font-size: @dim;
+		color: @s2-darkgrey;
+		font-weight: normal;
+		text-align: right;
+
+	}
+
+	.conf,
+	.linklist {
+		flex: 1 0 50%;
+	}
+
+	.conf-logo {
+		display: inline-block;
+		margin: 0 (@s2-moduleGap-s-1/2) @s2-moduleGap-s-1 0;
+		vertical-align: top;
+	}
+
+	.linklist-link {
+		display: inline-block;
+		padding: 0 0 10px 0;
+		text-transform: uppercase;
+		&:extend(.h4);
+
+		&::before {
+			display: inline-block;
+			content: "\e909";
+			&:extend(.icon);
+			padding: 0 5px 0 0;
+			color: @s2-darkgrey;
+			font-size: 15px;
+			font-weight: normal;
+		}
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-1;
+
+		.h {
+			margin-bottom: @s2-moduleGap-m-1;
+		}
+
+		.newsletter {
+			margin-bottom: @s2-moduleGap-m-1;
+		}
+
+		.conf {
+			flex: 1 0 auto;
+		}
+
+		.linklist {
+			flex: 0 0 auto;
+		}
+
+		.linklist-link {
+			&::before {
+				padding-right: 15px;
+			}
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l-1;
+
+		.h {
+			margin-bottom: @s2-moduleGap-l-1;
+		}
+
+		.newsletter {
+			margin-bottom: @s2-moduleGap-l-1;
+		}
+
+		.newsletter,
+		.conf,
+		.linklist {
+			flex: 1 0 33.333%;
+			padding-right: @s2-moduleGap-l-1;
+		}
+	}
+}
