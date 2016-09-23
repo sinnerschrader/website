@@ -15,23 +15,54 @@
 		margin-bottom: @s2-moduleGap-s-1;
 	}
 
+	@inputspace: 8px;
+
 	.input {
 		background-color: transparent;
 		border: 0;
 		font-size: inherit;
+		width: 100%;
+		transition: border .25s ease-in;
+
+		&:focus {
+			outline: 0;
+
+			+ .input-field {
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.input-field {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		border-bottom: 1px solid @s2-darkgrey;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -1px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			transition: width .5s ease-in;
+		}
 	}
 
 	.label {
 		display: block;
 		position: relative;
-		padding: 5px;
-		border-bottom: 1px solid @s2-darkgrey;
+		padding: @inputspace;
 	}
 
 	.submit-btn {
 		position: absolute;
 		right: 0;
-		bottom: 5px;
+		bottom: @inputspace;
 
 		@dim: 15px;
 		width: @dim*2;
@@ -115,6 +146,10 @@
 		.linklist {
 			flex: 1 0 33.333%;
 			padding-right: @s2-moduleGap-l-1;
+		}
+
+		.linklist-link {
+			padding-bottom: 20px;
 		}
 	}
 }
