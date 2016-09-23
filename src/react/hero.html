@@ -1,12 +1,55 @@
-<section
-		className="mod-hero invert"
-		style={{backgroundImage: "url('" + props.imageUrl + "')"}}>
-	<p className="h h1">{props.headline || 'headline'}</p>
-	<p className="copy">{props.copy || 'copy'}</p>
+<section className="mod-hero invert">
 	{
-	props.buttonLabel &&
-		<div className="buttonrow">
-			<ElementButton label={props.buttonLabel} href={props.buttonHref}/>
-		</div>
+		props.imageSrc &&
+			<picture
+				className="blend-picture blend"
+				role="presentation"
+				>
+				{
+					props.imageSrcSetS &&
+						<source
+							media="(max-width: 719px)"
+							srcSet={props.imageSrcSetS}
+							/>
+				}
+				{
+					props.imageSrcSetM &&
+						<source
+							media="(min-width: 720px) and (max-width: 1023px)"
+							srcSet={props.imageSrcSetM}
+							/>
+				}
+				{
+					props.imageSrcSetL &&
+						<source
+							media="(min-width: 1024px)"
+							srcSet={props.imageSrcSetL}
+							/>
+				}
+				<img
+					className="blend-image"
+					sizes={props.imageSizes}
+					src={props.imageSrc}
+					srcSet={props.imageSrcSet}
+					/>
+			</picture>
+	}
+	{
+		props.headline &&
+			<p className="h h1">
+				{props.headline}
+			</p>
+	}
+	{
+		props.copy &&
+			<p className="copy">
+				{props.copy}
+			</p>
+	}
+	{
+		(props.buttonLabel && props.buttonHref) &&
+			<div className="buttonrow">
+				<ElementButton label={props.buttonLabel} href={props.buttonHref}/>
+			</div>
 	}
 </section>
