@@ -1,4 +1,5 @@
-@components : "../../styleguide/components";
+@components : "../templates";
+@components_old : "../../styleguide/components";
 
 @import "_debug"; //REMOVE ME LATER
 
@@ -19,44 +20,43 @@
 // component styles
 
 // elemeents
-@import "@{components}/element_card/styles";
-@import "@{components}/element_pager/styles";
-@import "@{components}/element_image/styles";
-@import "@{components}/element_button/styles";
-@import "@{components}/element_smn/styles";
-@import "@{components}/element_video/styles";
+@import "@{components_old}/element_card/styles";
+@import "@{components_old}/element_pager/styles";
+@import "@{components_old}/element_image/styles";
+@import "@{components_old}/element_button/styles";
+@import "@{components_old}/element_smn/styles";
+@import "@{components_old}/element_video/styles";
 
 // modules
 @import "./navigation.less";
 @import "@{components}/module_01_hero/styles";
-@import "@{components}/module_03_management/styles";
-@import "@{components}/module_04_contactlist/styles";
-//@import "@{components}/module_04a_colleagues/styles"; NOT FOR LAUNCH
-//@import "@{components}/module_04b_contact/styles"; NOT FOR LAUNCH
-@import "@{components}/module_06_ir/styles";
-@import "@{components}/module_07_locations/styles";
-@import "@{components}/module_08_links/styles";
-@import "@{components}/module_09_follow/styles";
+@import "@{components_old}/module_03_management/styles";
+@import "@{components_old}/module_04_contactlist/styles";
+//@import "@{components_old}/module_04a_colleagues/styles"; NOT FOR LAUNCH
+//@import "@{components_old}/module_04b_contact/styles"; NOT FOR LAUNCH
+@import "@{components_old}/module_06_ir/styles";
+@import "@{components_old}/module_07_locations/styles";
+@import "@{components_old}/module_09_follow/styles";
 @import "@{components}/module_10_clients/styles";
-@import "@{components}/module_11_image/styles";
-@import "@{components}/module_14_screencast/styles";
-@import "@{components}/module_15_statement/styles";
-@import "@{components}/module_18_infographic3/styles";
-@import "@{components}/module_19_quoteimage/styles";
-@import "@{components}/module_23_teaser/styles";
-@import "@{components}/module_22_teasertop/styles";
-@import "@{components}/module_23_teaserlist/styles";
-@import "@{components}/module_24_newsdetail/styles";
-@import "@{components}/module_24a_newsimage/styles";
-@import "@{components}/module_24b_newsparameters/styles";
-@import "@{components}/module_24c_newsquote/styles";
-// @import "@{components}/module_24d_newshead/styles";
-@import "@{components}/module_24e_newscopy/styles";
-@import "@{components}/module_29_gallery/styles";
-//@import "@{components}/module_30_statement1/styles";
-@import "@{components}/module_31_quotetext/styles";
-@import "@{components}/module_34_story2/styles";
-@import "@{components}/module_35_story3/styles";
+@import "@{components_old}/module_11_image/styles";
+@import "@{components_old}/module_14_screencast/styles";
+@import "@{components_old}/module_15_statement/styles";
+@import "@{components_old}/module_18_infographic3/styles";
+@import "@{components_old}/module_19_quoteimage/styles";
+@import "@{components_old}/module_23_teaser/styles";
+@import "@{components_old}/module_22_teasertop/styles";
+@import "@{components_old}/module_23_teaserlist/styles";
+@import "@{components_old}/module_24_newsdetail/styles";
+@import "@{components_old}/module_24a_newsimage/styles";
+@import "@{components_old}/module_24b_newsparameters/styles";
+@import "@{components_old}/module_24c_newsquote/styles";
+// @import "@{components_old}/module_24d_newshead/styles";
+@import "@{components_old}/module_24e_newscopy/styles";
+@import "@{components_old}/module_29_gallery/styles";
+//@import "@{components_old}/module_30_statement1/styles";
+@import "@{components_old}/module_31_quotetext/styles";
+@import "@{components_old}/module_34_story2/styles";
+@import "@{components_old}/module_35_story3/styles";
 
 // instead of separated responsive.less / print.less files
 // styles can be generated via media query / selector bubbling
