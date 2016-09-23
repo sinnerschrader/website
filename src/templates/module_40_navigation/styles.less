@@ -108,7 +108,7 @@
 	height: 100%;
 	margin: 40px auto;
 	padding: 40px 12px 80px;
-	overflow: auto;
+	overflow: hidden;
 	@media @s2-mq-window-tablet {
 		max-width: @s2-MaxPageWidth;
 		padding: 40px 30px 40px 30px;
@@ -185,6 +185,9 @@
 		transform: none;
 		transition: background-color 300ms ease-in-out;
 		background-color: fadeout(#16181e, 25%);
+		.mainnav {
+			overflow: auto;
+		}
 		.mainnav-item {
 			a {
 				opacity: 1;
