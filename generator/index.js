@@ -16,17 +16,29 @@ if (!semver.satisfies(process.version, '>=6')) {
 	process.exit(1); // eslint-disable-line xo/no-process-exit
 }
 
+const src = {
+	less: 'src/css/app.less',
+	pages: 'src/pages/**/*.html',
+	templates: 'src/react/**/*.html',
+	static: 'static'
+};
+const dest = {
+	dist: 'dist',
+	css: 'dist/static/css/app.css',
+	static: 'dist/static'
+};
+
 function createCss() {
 	console.log(`Generating css...`);
 	return new Promise((resolve, reject) => {
-		cssCompiler.build(path.join(__dirname, '../src/css', 'app.less'), (err, css) => {
+		cssCompiler.build(path.join(process.cwd(), src.less), (err, css) => {
 			if (err) {
 				return reject(err);
 			}
 			resolve(css);
 		});
 	})
-	.then(css => sander.writeFile('dist/static/css/app.css', css));
+	.then(css => sander.writeFile(path.join(process.cwd(), dest.css), css));
 }
 
 function getDestinationPath(filepath) {
@@ -67,7 +79,7 @@ function createReactComponents() {
 	// Create component object here and add all components when created to have the reference already and
 	// resolve against it during runtime
 	const lazyComponentRegistry = {};
-	return globby(['src/react/**/*.html'])
+	return globby([src.templates])
 		.then(filepaths => {
 			return Promise.all(filepaths.map(filepath => {
 				return sander.readFile(filepath)
@@ -108,11 +120,11 @@ function logError(err) {
 	throw err;
 }
 
-sander.rimraf('dist')
-	.then(() => sander.copydir('static').to('dist/static'))
+sander.rimraf(path.join(process.cwd(), dest.dist))
+	.then(() => sander.copydir(path.join(process.cwd(), src.static)).to(path.join(process.cwd(), dest.static)))
 	.then(() => createReactComponents())
 	.then(components =>
-		globby(['src/pages/**/*.html'])
+		globby([src.pages])
 			.then(filepaths => renderPages(filepaths, components))
 	.then(() => createCss())
 	.then(() => console.log('Done.')))
