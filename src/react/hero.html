@@ -1,6 +1,8 @@
-<section className="mod-hero invert" style={{backgroundImage: "url('//placehold.it/2880x560/A60139/730028/&text=1440x865')"}}>
-	<p className="h h1">Lorem ipsum dolor sit amet, consectet.</p>
-	<p className="copy">Lorem ipsum</p>
+<section
+		className="mod-hero invert"
+		style={{backgroundImage: "url('" + props.imageUrl + "')"}}>
+	<p className="h h1">{props.headline || 'headline'}</p>
+	<p className="copy">{props.copy || 'copy'}</p>
 	{
 	props.buttonLabel &&
 		<div className="buttonrow">
