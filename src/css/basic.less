@@ -105,12 +105,12 @@ a {
 		bottom: 0;
 		left: 0;
 		background: inherit;
-		mix-blend-mode: multiply;
 		pointer-events: none;
-	}
-
-	.mdz-no-mixblendmode & {
 		opacity: .6;
+		@supports (mix-blend-mode: multiply) {
+			mix-blend-mode: multiply;
+			opacity: 1;
+		}
 	}
 }
 
