@@ -20,17 +20,23 @@ function createCss() {
 			resolve(css);
 		});
 	})
-	.then(css => {
-		return sander.writeFile('dist/css/app.css', css);
-	});
+	.then(css => sander.writeFile('dist/css/app.css', css));
+}
+
+function getDestinationPath(filepath) {
+	return path.join('dist', filepath.replace(/src\/pages/, ''));
+}
+
+function transformJsx(code) {
+	const options = {
+		plugins: ['transform-react-jsx']
+	};
+	return babel.transform(code, options).code.replace(/;?$/, '');
 }
 
 function createReactComponent(lazyComponentRegistry, filepath, code) {
 	const name = uppercaseFirst(camelcase(path.basename(filepath, '.html')));
-	const options = {
-		plugins: ['transform-react-jsx']
-	};
-	const compCode = babel.transform(code, options).code.replace(/;?$/, '');
+	const compCode = transformJsx(code);
 
 	const sandbox = new Proxy({
 		React,
@@ -71,32 +77,23 @@ function createReactComponents() {
 }
 
 function renderPages(filepaths, components) {
+	console.log(`Generating css...`);
 	return Promise.all(filepaths.map(filepath => {
+		console.log(`... ${filepath}`);
 		return sander.readFile(filepath)
 			.then(content => {
-				// Transform JSX
-				const options = {
-					plugins: ['transform-react-jsx']
-				};
-				const pageCode = '__html__ = ' + babel.transform(content.toString(), options).code;
-
-				// Eval JSX
 				const sandbox = Object.assign(
 					{},
 					components,
 					{
 						React,
-						__html__: ''
+						__html__: undefined
 					}
 				);
-				vm.runInNewContext(pageCode, sandbox);
-
-				// Render HTML
-				const html = '<!DOCTYPE html>' + ReactDOM.renderToStaticMarkup(sandbox.__html__);
-
-				const dest = path.join('dist', filepath.replace(/src\/pages/, ''));
-				return sander.writeFile(dest, html);
-			});
+				vm.runInNewContext('__html__ = ' + transformJsx(content.toString()), sandbox);
+				return '<!DOCTYPE html>' + ReactDOM.renderToStaticMarkup(sandbox.__html__);
+			})
+			.then(html => sander.writeFile(getDestinationPath(filepath), html));
 	}));
 }
 
@@ -105,10 +102,12 @@ function logError(err) {
 	throw err;
 }
 
-createReactComponents()
+sander.rimraf('dist')
+	.then(() => sander.copydir('static').to('dist/static'))
+	.then(() => createReactComponents())
 	.then(components =>
 		globby(['src/pages/**/*.html'])
 			.then(filepaths => renderPages(filepaths, components))
-			.then(() => console.log('Done.')))
 	.then(() => createCss())
+	.then(() => console.log('Done.')))
 	.catch(err => logError(err));
