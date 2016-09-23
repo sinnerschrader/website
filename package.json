@@ -1,31 +1,19 @@
 {
   "name": "s2",
+  "description": "This is the SinnerSchrader 's2 3' Project. It enables all S2 Frontend Developers to start quickly a new project hazzle-free with the basic stuff.",
   "version": "v3.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@git.sinnerschrader.com:helgri/website2016.git"
+  },
+  "author": "SinnerSchrader",
+  "license": "MIT",
+  "private": true,
   "engines": {
     "node": ">=6"
   },
-  "dependencies": {
-    "body-parser": "1.15.0",
-    "browserify": "13.0.0",
-    "coffee-script": "1.10.0",
-    "coffeeify": "2.0.1",
-    "compression": "1.6.1",
-    "consolidate": "0.14.0",
-    "ect": "0.5.9",
-    "errorhandler": "1.4.3",
-    "express": "4.13.4",
-    "less": "2.7.1",
-    "less-plugin-autoprefix": "1.5.1",
-    "less-plugin-clean-css": "1.5.1",
-    "morgan": "1.7.0",
-    "request": "2.69.0",
-    "serve-favicon": "2.3.0",
-    "uglify-js": "2.6.2",
-    "basic-auth-connect": "1.0.0"
-  },
   "scripts": {
     "start": "npm run serve",
-    "server": "NODE_ENV=development nodemon --ignore static server.js",
     "build": "npm run build:all",
     "prebuild:all": "rimraf dist/** && mkdirp dist",
     "build:all": "npm run build:js && npm run build:css && npm run build:pages",
@@ -35,8 +23,6 @@
     "build:watch": "chokidar \"src/**/*\" \"styleguide/**/*\" --initial --command \"npm run build:all\"",
     "serve": "browser-sync start --config bs-config.js"
   },
-  "description": "This is the SinnerSchrader 's2 3' Project. It enables all S2 Frontend Developers to start quickly a new project hazzle-free with the basic stuff.",
-  "main": "server.js",
   "devDependencies": {
     "babel-core": "^6.14.0",
     "babel-plugin-transform-react-jsx": "^6.8.0",
@@ -46,6 +32,9 @@
     "chokidar-cli": "^1.2.0",
     "globby": "^6.0.0",
     "gray-matter": "^2.0.2",
+    "less": "2.7.1",
+    "less-plugin-autoprefix": "1.5.1",
+    "less-plugin-clean-css": "1.5.1",
     "mkdirp": "^0.5.1",
     "nodemon": "1.9.1",
     "react": "^15.3.2",
@@ -57,18 +46,5 @@
     "upper-case-first": "^1.1.2",
     "watchify": "^3.7.0",
     "xo": "^0.16.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@git.sinnerschrader.com:helgri/website2016.git"
-  },
-  "author": "SinnerSchrader",
-  "license": "MIT",
-  "private": true,
-  "config": {
-    "css": {
-      "comment": "supported engine: less scss",
-      "engine": "less"
-    }
   }
 }
