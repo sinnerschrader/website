@@ -4,7 +4,7 @@
 	justify-content: center;
 	display: flex;
 	flex-direction: column;
-	padding: @s2-moduleGap-s;
+	padding: @s2-moduleGap-s*2 @s2-moduleGap-s @s2-moduleGap-s @s2-moduleGap-s;
 	overflow: hidden;
 	text-align: center;
 	background: @s2-red no-repeat 50% 0/cover;
@@ -20,7 +20,7 @@
 		z-index: 2;
 	}
 
-	@media screen and (min-height: 320px) {
+	@media screen and (min-height: 400px) {
 		height: 90vh;
 	}
 
@@ -42,17 +42,52 @@
 .blend-picture {
 	position: absolute;
 	top: 0;
-	left: 50%;
-	height: 50%;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	z-index: 0;
 	width: auto;
-	min-width: 100%;
-	min-height: 100%;
+	width: 100%;
+	min-height: 90vh;
 	background-color: inherit;
-	transform: translate(-50%, 0);
+	.picture-s,
+	.picture-m,
+	.picture-l,
+	.motive {
+		width: 100%;
+		height: 100%;
+	}
+	.motive {
+		background-size: cover;
+		background-position: left center;
+	}
+	.picture-m,
+	.picture-l {
+		display: none;
+	}
+	@media @s2-mq-window-tablet {
+		.picture-s {
+			display: none;
+		}
+		.picture-m {
+			display: block;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		.picture-s,
+		.picture-m {
+			display: none;
+		}
+		.picture-l {
+			display: block;
+		}
+	}
 }
 
 .blend-image {
-	min-height: 100%;
-	margin: 0 auto;
+	width: 100%;
+	height: auto;
+	user-select: none;
+	user-drag: none;
 }

@@ -12,7 +12,6 @@
 
 // common styles
 @import "basic";
-@import "themes";
 @import "headlines";
 @import "container";
 @import "main";
@@ -28,7 +27,7 @@
 @import "@{components}/element_video/styles";
 
 // modules
-@import "@{components}/module_40_navigation/styles";
+@import "./navigation.less";
 @import "@{components}/module_01_hero/styles";
 @import "@{components}/module_03_management/styles";
 @import "@{components}/module_04_contactlist/styles";
@@ -60,3 +59,5 @@
 
 // instead of separated responsive.less / print.less files
 // styles can be generated via media query / selector bubbling
+
+@import "themes";
