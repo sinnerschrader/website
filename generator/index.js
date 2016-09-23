@@ -28,7 +28,11 @@ const dest = {
 };
 
 function getDestinationPath(filepath) {
-	return path.join('dist', filepath.replace(/src\/pages/, ''));
+	let dest = path.join('dist', filepath.replace(/src\/pages/, ''));
+	if (!path.extname(dest)) {
+		dest += '/index.html';
+	}
+	return dest;
 }
 
 function transformJsx(code) {
@@ -40,7 +44,7 @@ function transformJsx(code) {
 
 function createReactComponent(lazyComponentRegistry, filepath, code) {
 	const parsed = matter(code);
-	const name = uppercaseFirst(camelcase(path.basename(filepath, '.html')));
+	const name = parsed.data.name || uppercaseFirst(camelcase(path.basename(filepath, '.html')));
 	const compCode = transformJsx(parsed.content);
 
 	const sandbox = new Proxy({
@@ -85,9 +89,11 @@ function renderPages(filepaths, components) {
 	console.log(`Generating css...`);
 	return Promise.all(filepaths.map(filepath => {
 		console.log(`... ${filepath}`);
+		let meta;
 		return sander.readFile(filepath)
 			.then(content => {
 				const parsed = matter(content.toString());
+				meta = parsed.data;
 				const sandbox = Object.assign(
 					{},
 					components,
@@ -99,7 +105,7 @@ function renderPages(filepaths, components) {
 				vm.runInNewContext('__html__ = ' + transformJsx(parsed.content), sandbox);
 				return '<!DOCTYPE html>' + ReactDOM.renderToStaticMarkup(sandbox.__html__);
 			})
-			.then(html => sander.writeFile(getDestinationPath(filepath), html));
+			.then(html => sander.writeFile(getDestinationPath(meta.route || filepath), html));
 	}));
 }
 
