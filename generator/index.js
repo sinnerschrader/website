@@ -20,7 +20,7 @@ function createCss() {
 			resolve(css);
 		});
 	})
-	.then(css => sander.writeFile('dist/css/app.css', css));
+	.then(css => sander.writeFile('dist/static/css/app.css', css));
 }
 
 function getDestinationPath(filepath) {
