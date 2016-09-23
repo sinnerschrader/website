@@ -3,10 +3,11 @@ name: Hero
 ---
 <section
 	className={`mod-hero ${props.invert ? 'invert' : ''}`}
+	data-explode={props.explode}
 	data-theme={props.theme}
 	>
 	<div
-		className="blend-picture blend"
+		className={`blend-picture ${props.blend ? 'blend' : ''}`}
 		role="presentation"
 		>
 		{
