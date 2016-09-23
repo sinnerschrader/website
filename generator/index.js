@@ -9,8 +9,6 @@ const React = require('react');
 const ReactDOM = require('react-dom/server');
 const semver = require('semver');
 
-const cssCompiler = require('../server/lib/css-compiler');
-
 if (!semver.satisfies(process.version, '>=6')) {
 	console.error('At least node 6 is required');
 	process.exit(1); // eslint-disable-line xo/no-process-exit
@@ -27,19 +25,6 @@ const dest = {
 	css: 'dist/static/css/app.css',
 	static: 'dist/static'
 };
-
-function createCss() {
-	console.log(`Generating css...`);
-	return new Promise((resolve, reject) => {
-		cssCompiler.build(path.join(process.cwd(), src.less), (err, css) => {
-			if (err) {
-				return reject(err);
-			}
-			resolve(css);
-		});
-	})
-	.then(css => sander.writeFile(path.join(process.cwd(), dest.css), css));
-}
 
 function getDestinationPath(filepath) {
 	return path.join('dist', filepath.replace(/src\/pages/, ''));
@@ -120,12 +105,10 @@ function logError(err) {
 	throw err;
 }
 
-sander.rimraf(path.join(process.cwd(), dest.dist))
-	.then(() => sander.copydir(path.join(process.cwd(), src.static)).to(path.join(process.cwd(), dest.static)))
+sander.copydir(path.join(process.cwd(), src.static)).to(path.join(process.cwd(), dest.static))
 	.then(() => createReactComponents())
 	.then(components =>
 		globby([src.pages])
 			.then(filepaths => renderPages(filepaths, components))
-	.then(() => createCss())
 	.then(() => console.log('Done.')))
 	.catch(err => logError(err));
