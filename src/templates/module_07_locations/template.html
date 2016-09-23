@@ -1,8 +1,11 @@
+---
+name: Locations
+---
 <section className={'mod-locations ' + (props.withMap ? 'mod-locations-map' : '')} data-locations>
 	{
 	!props.withMap &&
 		<div className="locations-wrapper">
-			<input type="radio" name="location" hidden id="hamburg" className="location-check" checked />
+			<input type="radio" name="location" hidden id="hamburg" className="location-check" defaultChecked />
 			<input type="radio" name="location" hidden id="berlin" className="location-check" />
 			<input type="radio" name="location" hidden id="frankfurt" className="location-check" />
 			<input type="radio" name="location" hidden id="munich" className="location-check" />
@@ -99,7 +102,7 @@
 		<div>
 			<h2 className="h h2-1">Locations</h2>
 			<figure className="figure">
-				<input type="radio" name="location" hidden id="hamburg" className="location-check" checked />
+				<input type="radio" name="location" hidden id="hamburg" className="location-check" defaultChecked />
 				<input type="radio" name="location" hidden id="berlin" className="location-check" />
 				<input type="radio" name="location" hidden id="frankfurt" className="location-check" />
 				<input type="radio" name="location" hidden id="munich" className="location-check" />
