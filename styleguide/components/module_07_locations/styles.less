@@ -1,0 +1,261 @@
+// version 1 = > mod-locations
+// version 2 = > mod-locations-map
+
+.mod-locations {
+	padding: @s2-moduleGap-s-3 @s2-moduleGap-s-1 @s2-moduleGap-s-2 0;
+	background-color: @s2-lightgrey;
+
+	.h {
+		margin: 0 0 @s2-moduleGap-s-1;
+	}
+
+	.city {
+		margin-bottom: @s2-moduleGap-s-1;
+	}
+
+	.location-address {
+		position: relative;
+		z-index: 20;
+
+		padding: 0 0 0 @s2-moduleGap-s-3;
+		margin-top: -15px;
+	}
+
+	.location-address-item {
+		margin-bottom: @s2-moduleGap-s-1/2;
+	}
+
+	// locNav
+	.locnav {
+		display: inline-block;
+		z-index: 10;
+
+		padding: @s2-moduleGap-s-1;
+
+		background-color: @s2-locnav-bg;
+		color: @s2-locnav-color;
+
+		&:extend(.h4);
+	}
+
+	.locnav-highlight {
+		background-color: @s2-locnav-bg-highlight;
+		color: @s2-locnav-color-highlight;
+	}
+
+	.locnav-item {
+		padding: 0 0 5px 0;
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	.locnav-btn {
+		display: block;
+		padding: 5px 0;
+
+		color: inherit;
+		font-size: inherit;
+		text-transform: uppercase;
+
+		&:after {
+			display: none;
+		}
+
+		&.is-active {
+			font-weight: bold;
+
+			&:after {
+				display: block;
+				background-color: currentColor;
+			}
+		}
+	}
+
+	.location-address {
+		display: none;
+	}
+
+	// map version
+	&-map {
+		padding-top: @s2-moduleGap-s-1;
+		padding-right: 0;
+		padding-left: @s2-moduleGap-s-1;
+
+		background-color: @s2-white;
+
+		.locnav {
+			position: absolute;
+			top: 0;
+			left: -@s2-moduleGap-s-1;
+		}
+	}
+
+	.figure {
+		position: relative;
+		padding: @s2-moduleGap-s-2 0 0 @s2-moduleGap-s-1;
+	}
+
+	.map {
+		position: relative;
+		display: none;
+		margin: 0 0 @s2-moduleGap-s-1 0;
+
+		line-height: 40px;
+		color: @s2-white;
+		white-space: nowrap;
+
+		&::before,
+		&::after {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 1;
+			background: @s2-darkblack;
+		}
+
+		&::before {
+			content: attr(data-marker);
+			margin-top: -16px;
+			padding: 0 20px;
+			transform: translate(-50%,-100%);
+		}
+
+		&::after {
+			@dim: 10px;
+			content: "";
+			width: @dim;
+			height: @dim;
+			border-radius: 100%;
+			transform: translate(-50%,-50%);
+		}
+	}
+	
+	@media @s2-mq-window-tablet {
+		display: flex;
+		justify-content: space-between;
+		padding-top: @s2-moduleGap-m-2;
+		padding-right: @s2-moduleGap-m-1;
+		padding-bottom: @s2-moduleGap-m-2;
+		
+		.h
+		.city {
+			margin-bottom: @s2-moduleGap-m-1/2;
+		}
+
+		.locnav {
+			padding: @s2-moduleGap-m-1;
+		}
+
+		.locnav-item {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		.location-address {
+			padding-top: @s2-moduleGap-m-2;
+			padding-left: 0;
+			margin: 0;
+			flex: 0 0 64%;
+		}
+
+		.location-address-item {
+			margin-bottom: @s2-moduleGap-m-1/2;
+		}
+
+		// map version
+		&-map {
+			display: block;
+			padding: @s2-moduleGap-m-1;
+
+			.locnav {
+				left: -@s2-moduleGap-m-1;
+			}
+		}
+
+		.figure {
+			padding-top: @s2-moduleGap-m-2;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		padding-top: @s2-moduleGap-l-2;
+		padding-right: @s2-moduleGap-l-1;
+		padding-bottom: @s2-moduleGap-l-2;
+
+		.locnav {
+			margin-top: @s2-moduleGap-l-1;
+		}
+
+		.locnav {
+			padding: @s2-moduleGap-l-1;
+		}
+
+		.locnav-item {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		.h {
+			margin-bottom: @s2-moduleGap-l-1;
+		}
+
+		.city {
+			margin-bottom: @s2-moduleGap-l-1;
+		}
+
+		.location-address {
+			padding-top: 0;
+		}
+
+		.location-address-list {
+			columns: 2;
+		}
+
+		.location-address-item {
+			display: inline-block;
+			vertical-align: top;
+			break-inside: avoid;
+
+			margin-bottom: @s2-moduleGap-l-1/2;
+		}
+
+		// map version
+		&-map {
+			padding: @s2-moduleGap-l-1 @s2-moduleGap-l-2;
+
+			.locnav {
+				left: -@s2-moduleGap-l-2;
+			}
+		}
+
+		.figure {
+			display: flex;
+			padding-top: 0;
+			padding-left: 0;
+		}
+
+
+		.map {
+			width: calc(60% ~'-' @s2-moduleGap-l-1);
+			margin-top: @s2-moduleGap-l-2;
+			margin-right: @s2-moduleGap-l-1;
+			margin-bottom: 0;
+
+			&::after {
+				@dim: 12px;
+				width: @dim;
+				height: @dim;
+			}
+		}
+
+		.caption {
+			width: 40%;
+		}
+	}
+}
+
+
+
+
