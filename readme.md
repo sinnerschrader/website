@@ -14,7 +14,7 @@ nave use stable
 
 ```shell
 npm install
-npm run build:all
+npm run build
 ```
 
 This step is only required once.
@@ -22,7 +22,7 @@ This step is only required once.
 ### Run the Server
 
 ```shell
-npm run serve
+npm start
 ```
 
 open [http://localhost:3000]()
@@ -31,7 +31,7 @@ open [http://localhost:3000]()
 
 ```shell
 npm run build:watch
-npm run serve
+npm start
 ```
 
 Afterwards open your editor and start hacking.
