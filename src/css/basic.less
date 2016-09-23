@@ -6,8 +6,8 @@ html {
 	letter-spacing: @s2-base-letterspacing;
 	@media @s2-mq-window-tablet {
 		padding-top: @s2-pageTopPadding-m;
-		font-size: @s2-font-basesize + 2;
-		line-height: @s2-base-lineheight + 2;
+		font-size: (@s2-font-basesize + 2);
+		line-height: (@s2-base-lineheight + 2);
 		//font-size: 20px;
 		//line-height: 32px;
 		//letter-spacing: .6px;
@@ -148,7 +148,7 @@ a {
 	p {
 		border-color: inherit;
 		&:last-of-type {
-			margin-bottom: @s2-moduleGap-s-1/2;
+			margin-bottom: (@s2-moduleGap-s-1/2);
 			&::after {
 				display: block;
 				content: " ";
@@ -164,11 +164,11 @@ a {
 	}
 
 	@media @s2-mq-window-tablet {
-		margin-bottom: @s2-moduleGap-m-1/2;
+		margin-bottom: (@s2-moduleGap-m-1/2);
 	}
 
 	@media @s2-mq-window-desktop {
-		margin-bottom: @s2-moduleGap-l-1/2;
+		margin-bottom: (@s2-moduleGap-l-1/2);
 	}
 }
 

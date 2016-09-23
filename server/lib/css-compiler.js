@@ -34,6 +34,7 @@ function buildLess(src, debug, done) {
       paths             : [path.dirname(src)],
       sourceMap         : debug,
       outputSourceFiles : debug,
+      strictMath        : true,
       ieCompat          : false,
       plugins           : [autoprefix,cleanCss]
     };
