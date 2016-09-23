@@ -1,6 +1,21 @@
-// TODO ENTER THEMES
+[data-theme="black"] {
+	.sctnbrdrclr {
+		border-color: @s2-darkblack;
+	}
+	.sctnbgclr,
+	.blend {
+		background-color: @s2-darkblack;
+	}
+	.sctnbgclrAfter::after {
+		background-color: @s2-darkblack;
+	}
+	.sctntxtclr {
+		color: @s2-darkblack;
+	}
+}
 
-.theme1 {
+
+[data-theme="green"] {
 	.sctnbrdrclr {
 		border-color: @s2-green;
 	}
@@ -13,5 +28,38 @@
 	}
 	.sctntxtclr {
 		color: @s2-green;
+	}
+}
+
+[data-theme="blue"] {
+	.sctnbrdrclr {
+		border-color: @s2-blue;
+	}
+	.sctnbgclr,
+	.blend {
+		background-color: @s2-blue;
+	}
+	.sctnbgclrAfter::after {
+		background-color: @s2-blue;
+	}
+	.sctntxtclr {
+		color: @s2-blue;
+	}
+}
+
+
+[data-theme="red"] {
+	.sctnbrdrclr {
+		border-color: @s2-red;
+	}
+	.sctnbgclr,
+	.blend {
+		background-color: @s2-red;
+	}
+	.sctnbgclrAfter::after {
+		background-color: @s2-red;
+	}
+	.sctntxtclr {
+		color: @s2-red;
 	}
 }

@@ -1,7 +1,10 @@
 ---
 name: Hero
 ---
-<section className="mod-hero invert">
+<section
+	className={`mod-hero ${props.invert ? 'invert' : ''}`}
+	data-theme={props.theme}
+	>
 	<div
 		className="blend-picture blend"
 		role="presentation"
