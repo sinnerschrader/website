@@ -164,6 +164,32 @@
 .aboutnav-item {
 	font-size: 28px;
 	line-height: 42px;
+	a {
+		transform: translate(30%, 20%);
+		opacity: 0;
+		transition: 200ms ease-in-out transform,
+			150ms ease-in-out opacity;
+	}
+	&:first-child {
+		a {
+			transition-delay: 85ms;
+		}
+	}
+	&:nth-child(2) {
+		a {
+			transition-delay: 135ms;
+		}
+	}
+	&:nth-child(3) {
+		a {
+			transition-delay: 185ms;
+		}
+	}
+	&:nth-child(4) {
+		a {
+			transition-delay: 235ms;
+		}
+	}
 }
 
 [data-navigation-state]:checked {

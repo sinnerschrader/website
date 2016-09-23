@@ -105,12 +105,12 @@ a {
 		bottom: 0;
 		left: 0;
 		background: inherit;
-		mix-blend-mode: multiply;
 		pointer-events: none;
-	}
-
-	.mdz-no-mixblendmode & {
 		opacity: .6;
+		@supports (mix-blend-mode: multiply) {
+			mix-blend-mode: multiply;
+			opacity: 1;
+		}
 	}
 }
 
@@ -171,7 +171,7 @@ a {
 	}
 }
 
-.icon{
+.icon {
 	font-family: s2websiteicons;
 }
 
@@ -179,4 +179,12 @@ a {
 // don't be overwritten
 .is-active {
 	display: block !important;
+}
+
+.footer {
+	max-width: 425px;
+	margin: 0 auto;
+	@media @s2-mq-window-tablet {
+		max-width: @s2-MaxPageWidth;
+	}
 }
