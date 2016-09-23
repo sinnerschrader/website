@@ -2,13 +2,24 @@
 name: Clients
 ---
 <section className="mod-clients invert">
-	<h2 className="h h2-2">Kunden</h2>
+	{
+		props.headline &&
+			<h2 className="h h2-2">
+				{props.headline}
+			</h2>
+	}
 	<ul className="clientslist">
-		<li className="item" style={{backgroundImage: "url('//placehold.it/110x110/fff/000/&text=55x55')"}}>Marke</li>
-		<li className="item" style={{backgroundImage: "url('//placehold.it/110x110/fff/000/&text=55x55')"}}>Marke</li>
-		<li className="item" style={{backgroundImage: "url('//placehold.it/110x110/fff/000/&text=55x55')"}}>Marke</li>
-		<li className="item" style={{backgroundImage: "url('//placehold.it/220x110/fff/000/&text=110x55')"}}>Marke</li>
-		<li className="item" style={{backgroundImage: "url('//placehold.it/220x110/fff/000/&text=110x55')"}}>Marke</li>
-		<li className="item" style={{backgroundImage: "url('//placehold.it/220x110/fff/000/&text=110x55')"}}>Marke</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_deutschebank.svg')"}}>Deutsche Bank</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_tui.svg')"}}>Tui</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_bmw.svg')"}}>BMW</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_audi.svg')"}}>Audi</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_ergo.svg')"}}>Ergo</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_vw.svg')"}}>VW</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_leica.svg')"}}>Leica</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_unitymedia.svg')"}}>Unitymedia</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_allianz.svg')"}}>Allianz</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_telefonica.svg')"}}>Telefonica</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_mcdonalds.svg')"}}>McDonalds</li>
+		<li className="item" style={{backgroundImage: "url('./static/images/logos/lg_comdirect.svg')"}}>comdirect</li>
 	</ul>
 </section>
