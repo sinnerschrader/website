@@ -8,11 +8,11 @@ name: StandardLayout
 		<Navigation/>
 		<main className="main">
 			{props.children}
-			<footer>
-				<Links base={props.base}/>
-				<Follow/>
-			</footer>
 		</main>
+		<footer>
+			<Links base={props.base}/>
+			<Follow/>
+		</footer>
 	</div>
 	<script src={props.base + '/static/js/app.js'}></script>
 </body>
