@@ -1,2 +1,35 @@
 .mod-story1 {
+	position: relative;
+	padding: @s2-moduleGap-s-2 @s2-moduleGap-s-1 @s2-moduleGap-s-3;
+	background: linear-gradient(-20deg, @s2-lightgrey 0%, @s2-lightgrey 50%, transparent 50%, transparent 100%), @s2-white;
+
+	.h {
+		margin-bottom: @s2-moduleGap-s-2;
+	}
+
+	.copy {
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-2 @s2-moduleGap-m-1 @s2-moduleGap-m-3;
+		.h {
+			margin-bottom: @s2-moduleGap-m-2;
+		}
+		.copy {
+			padding-left:  @s2-moduleGap-m-2;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l-2 @s2-moduleGap-l-1 @s2-moduleGap-l-3;
+		.h {
+			width: 60%;
+			margin-bottom: auto 0 @s2-moduleGap-l-2 0;
+		}
+		.copy {
+			width: 60%;
+			margin: 0 0 0 auto;
+			padding-left:  0;
+		}
+	}
 }
