@@ -1,15 +1,27 @@
 .mod-hero {
+	overflow: hidden;
 	position: relative;
 	z-index: 1;
-	justify-content: center;
+	padding: @s2-moduleGap-s;
+	min-height: 90vh;
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
-	padding: (@s2-moduleGap-s*2) @s2-moduleGap-s @s2-moduleGap-s @s2-moduleGap-s;
-	overflow: hidden;
 	text-align: center;
 	background-repeat: no-repeat;
 	background-position: 50% 0;
 	background-size: cover;
+
+	&[data-explode] {
+		padding: 60px 30px;
+		.h {
+			margin-bottom: auto;
+		}
+	}
+
+	&[data-halfling] {
+		height: 45vh;
+	}
 
 	.h {
 		margin-bottom: @s2-moduleGap-s-1;
@@ -22,19 +34,8 @@
 		z-index: 2;
 	}
 
-	@media screen and (min-height: 400px) {
-		height: 90vh;
-	}
-
-	@media screen and (min-height: 100px) {
-		height: 75vh;
-	}
-
-	@media screen and (min-height: 1200px) {
-		height: 60vh;
-	}
-
 	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m;
 		.h,
 		.copy {
 			margin-bottom: @s2-moduleGap-m-1;
@@ -42,6 +43,7 @@
 	}
 
 	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l;
 		.h,
 		.copy {
 			margin-bottom: @s2-moduleGap-l-1;
