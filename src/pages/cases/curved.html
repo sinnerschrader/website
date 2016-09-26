@@ -2,5 +2,37 @@
 route: /cases/curved
 ---
 <StandardLayout base="../..">
-	Work -> CURVED
+	<Hero
+		buttonHref="./sub/page.html"
+		buttonLabel="More on this"
+		copy="They bond with customers, reshape user behaviours and transform business reality."
+		headline="Curved"
+		imageHeight={560}
+		imageSrcL="../../static/images/backgrounds/module_02_teaser-2/module_01_hero_desk_curved_r.jpg"
+		imageSrcM=".,/../static/images/backgrounds/module_02_teaser-2/module_01_hero_lap_curved_r.jpg"
+		imageSrcS="../../static/images/backgrounds/module_02_teaser-2/module_01_hero_palm_curved_r.jpg"
+		imageWidth={2880}
+		invert
+		blend
+		theme="green"
+		/>
+	<Case1/>
+	<Story2/>
+	<Image
+		imageSrcSetS="../../static/images/contents/module_10_bild_palm_curved.jpg"
+		imageSrcSetM="../../static/images/contents/module_10_bild_lap_curved"
+		imageSrcSetL="../../static/images/contents/module_10_bild_desk_curved.jpg"
+		imageSrc="../../static/images/contents/module_10_bild_palm_curved.jpg"
+		/>
+	<Story3
+		headline="headline"
+		meta="meta"
+		copy="copy"
+		/>
+	<Screencast/>
+	<Story1
+		headline="headline"
+		copy="copy"
+		/>
+	<Locations withMap={false}/>
 </StandardLayout>
