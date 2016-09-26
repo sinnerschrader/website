@@ -1,6 +1,9 @@
 ---
 name: Quote
 ---
-<section className="mod-quote">
-	TODO: Quote
+<section className={'mod-quote' + (props.invert ? ' invert' : '')}>
+	<blockquote className="quote h2-1 styleline sctntxtclr">
+		<p className="copy">Lorem ipsum dolor sit amet</p>
+		<cite className="cite xscopy">Project: Credit: Author</cite>
+	</blockquote>
 </section>
