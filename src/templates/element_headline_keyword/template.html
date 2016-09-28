@@ -1,8 +1,11 @@
 ---
 name: HeadlineKeyword
 ---
-<h2 className="h h2-2">
-	{props.headlineBeforeKeyword}
-	<span className="sctntxtclr"> {props.headlineKeyword}</span>
-	{props.headlineAfterKeyword}
-</h2>
+<props.Tagname className={props.className}>
+	{props.headline.split('_$')[0]}
+	{
+	props.headline.split('_$').length > 1 &&
+		<span className="sctntxtclr">{props.headline.split('_$')[1]}</span>
+	}
+	{props.headline.split('_$')[2]}
+</props.Tagname>

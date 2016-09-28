@@ -17,12 +17,12 @@ name: Case1
 		imageSrc={props.imageSrcSetS}
 		/>
 	{
-		props.headlineKeyword &&
+		props.headline &&
 		<HeadlineKeyword
-			headlineBeforeKeyword={props.headlineBeforeKeyword}
-			headlineKeyword={props.headlineKeyword}
-			headlineAfterKeyword={props.headlineAfterKeyword}
-		/>
+			Tagname="h2"
+			className="h h2-2"
+			headline={props.headline}
+			/>
 	}
 	<p className="copy copyRight">
 	{
