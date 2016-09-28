@@ -1,0 +1,36 @@
+---
+name: Case1
+---
+<section className={'mod-case1' + (props.invert ? ' invert' : '')} data-theme={props.theme}>
+	<p className="copy copyTop">
+		{
+			props.intro &&
+			<strong>{props.intro}</strong>
+		}
+		{props.copy}
+	</p>
+
+	<ResponsiveImage
+		imageSrcSetS={props.imageSrcSetS}
+		imageSrcSetM={props.imageSrcSetM}
+		imageSrcSetL={props.imageSrcSetL}
+		imageSrc={props.imageSrcSetS}
+		/>
+	{
+		props.headline &&
+		<HeadlineKeyword
+			Tagname="h2"
+			className="h h2-2"
+			headline={props.headline}
+			/>
+	}
+	<p className="copy copyRight">
+	{
+		props.introAfterImage &&
+		<strong>{props.introAfterImage}</strong>
+	}
+	{
+		props.copyAfterImage
+	}
+	</p>
+</section>

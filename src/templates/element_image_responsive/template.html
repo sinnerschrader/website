@@ -1,0 +1,9 @@
+---
+name: ResponsiveImage
+---
+<picture className="imgResponsive">
+	<source srcSet={props.imageSrcSetS} media="(max-width: 720px)" />
+	<source srcSet={props.imageSrcSetM} media="(max-width: 1024px)" />
+	<source srcSet={props.imageSrcSetL} media="(min-width: 1024px)" />
+	<img src={props.imageSrc} className="img" alt="" />
+</picture>
