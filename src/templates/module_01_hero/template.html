@@ -32,15 +32,19 @@ name: Hero
 	</div>
 	{
 		props.headline &&
-			<p className="h h1">
-				{props.headline}
-			</p>
+			<Text
+				Tagname="p"
+				className="h h2-1"
+				text={props.headline}
+				/>
 	}
 	{
 		props.copy &&
-			<p className="copy">
-				{props.copy}
-			</p>
+			<Text
+				Tagname="p"
+				className="copy"
+				text={props.copy}
+				/>
 	}
 	{
 		(props.buttonLabel && props.buttonHref) &&

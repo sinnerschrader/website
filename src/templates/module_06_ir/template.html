@@ -2,11 +2,24 @@
 name: InvestorRelations
 ---
 <section className="mod-investerrelations">
-	<h2 className="h h2-2">Investor Relations</h2>
+	{
+	props.headline &&
+	<Text
+		Tagname="h2"
+		className="h h2-2"
+		text={props.headline}
+		/>
+	}
 	<div className="about">
-		<p className="copy">
-			<span className="h5">SinnerSchrader AG shares (WKN 514 190 / ISIN DE0005141907) were admitted to the Frankfurt Stock Exchange in 1999.</span> They are traded in the Regulated Market subsection and since 2003 in the Prime Standard section. Trust, transparency and constancy are the guidelines for shareholder relations at SinnerSchrader. They are based on the rules of good and transparent corporate governance, in accordance with the standards laid down in the German Corporate Governance Code.
-		</p>
+		{
+		props.textBold &&
+			<Text
+				Tagname="p"
+				className="copy"
+				text={props.textBold}
+				bold
+				/>
+		}
 		<p className="copy">
 			All relevant information on SinnerSchrader shares is available at<br />
 			<a href="https://sinnerschrader.ag" className="h4 link" target="_blank">sinnerschrader.ag</a>

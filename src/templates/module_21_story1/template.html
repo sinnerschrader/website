@@ -4,10 +4,18 @@ name: Story1
 <section className="mod-story1">
 	{
 		props.headline &&
-			<h2 className="h h2-2">{props.headline}</h2>
+		<Text
+			Tagname="h2"
+			className="h h2-2"
+			text={props.headline}
+			/>
 	}
 	{
 		props.copy &&
-			<p className="copy">{props.copy}</p>
+		<Text
+			Tagname="p"
+			className="copy"
+			text={props.copy}
+			/>
 	}
 </section>

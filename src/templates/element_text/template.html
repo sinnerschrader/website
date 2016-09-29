@@ -1,0 +1,15 @@
+---
+name: Text
+---
+<props.Tagname className={props.className}>
+		{props.text.split('_$')[0]}
+		{
+		props.text.split('_$').length > 1 && props.highlight &&
+			<span className="sctntxtclr">{props.text.split('_$')[1]}</span>
+		}
+		{
+		props.text.split('_$').length > 1 && props.bold &&
+			<strong>{props.text.split('_$')[1]}</strong>
+		}
+		{props.text.split('_$')[2]}
+</props.Tagname>
