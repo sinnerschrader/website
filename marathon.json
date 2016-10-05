@@ -1,0 +1,38 @@
+{
+  "id": "/freie-radikale/website2016",
+  "instances": 2,
+  "cpus": 0.25,
+  "mem": 128,
+  "disk": 1000,
+  "constraints":[
+    [
+      "hostname",
+      "GROUP_BY"
+    ]
+  ],
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "szops/freie-radikale-website2016:latest",
+      "forcePullImage": true,
+      "network": "BRIDGE",
+      "portMappings":[
+        {
+          "containerPort": 80,
+          "servicePort": 49876,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  },
+  "env":{
+		"BASIC": "/",
+    "HTTPUSER": "${HTTPUSER}"
+  },
+  "labels": {
+    "CONNECTORS":"[\"https://www.sinnerschrader.io:49876\"]"
+  },
+  "uris":[
+    "file:///etc/docker.tar.gz"
+  ]
+}

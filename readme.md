@@ -60,3 +60,21 @@ The projects supports the S2 default Browsermatrix:
 
 * Autoprefixer for CSS (NodeJS and Grunt)
 * ClosureCompiler and Uglify for JS/CSS (Grunt)
+
+------------------------------------------------------------------
+
+## Docker + Mesos deployment
+
+Run docker container:
+
+```shell
+docker build --tag <docker-tag> .
+docker run -it --rm -e "BASIC=/" -e "HTTPUSER=user;pass" -p 8080:80 <docker-tag>
+```
+
+Deploy docker container to mesos cluster:
+
+```shell
+docker push <docker-tag>
+HTTPUSER="user;pass" envsubst < marathon.json |curl -X POST http://<marathon-host>:8080/v2/apps -d @- -H "Content-type: application/json"
+```
