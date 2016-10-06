@@ -20,4 +20,29 @@
     <docker.image>szops/${project.artifactId}:${project.version}</docker.image>
   </properties>
 
+  <repositories>
+    <repository>
+      <id>repo.sinnerschrader.com</id>
+      <url>https://repo.sinnerschrader.com/repository/szz-internal-group/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.sinnerschrader.com</id>
+      <url>https://repo.sinnerschrader.com/repository/szz-internal-group/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
 </project>
