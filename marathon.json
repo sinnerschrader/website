@@ -27,7 +27,7 @@
   },
   "env":{
 		"BASIC": "/",
-    "HTTPUSER": "${HTTPUSER}"
+    "HTTPUSER": "${env.HTTPUSER}"
   },
   "labels": {
     "CONNECTORS":"[\"http://www.sinnerschrader.io:49876\"]"

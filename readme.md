@@ -78,3 +78,9 @@ Deploy docker container to mesos cluster:
 docker push <docker-tag>
 HTTPUSER="user;pass" envsubst < marathon.json |curl -X POST http://<marathon-host>:8080/v2/apps -d @- -H "Content-type: application/json"
 ```
+
+## Use Maven as alternativ
+
+```shell
+HTTPUSER="<username>;<password>" mvn package -P frontend,docker,marathon,twiri
+```

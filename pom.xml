@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.sinnerschrader</groupId>
+    <artifactId>docker-build-and-mesos-deployment</artifactId>
+    <version>0.0.19-SNAPSHOT</version>
+    <relativePath />
+  </parent>
+
+  <groupId>freie-radikale</groupId>
+  <artifactId>freie-radikale-website2016</artifactId>
+  <version>latest</version>
+
+  <properties>
+    <node.version>v6.7.0</node.version>
+    <npm.version>3.10.3</npm.version>
+    <npm.run.command>build</npm.run.command>
+    <docker.image>szops/${project.artifactId}:${project.version}</docker.image>
+  </properties>
+
+</project>

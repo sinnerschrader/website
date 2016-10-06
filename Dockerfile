@@ -1,2 +1,2 @@
 FROM dperson/nginx
-COPY dist /srv/www
+COPY . /srv/www
