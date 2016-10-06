@@ -30,7 +30,7 @@
     "HTTPUSER": "${HTTPUSER}"
   },
   "labels": {
-    "CONNECTORS":"[\"https://www.sinnerschrader.io:49876\"]"
+    "CONNECTORS":"[\"http://www.sinnerschrader.io:49876\"]"
   },
   "uris":[
     "file:///etc/docker.tar.gz"
