@@ -12,6 +12,7 @@
   <groupId>freie-radikale</groupId>
   <artifactId>freie-radikale-website2016</artifactId>
   <version>latest</version>
+  <packaging>pom</packaging>
 
   <properties>
     <node.version>v6.7.0</node.version>
