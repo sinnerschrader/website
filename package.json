@@ -20,7 +20,10 @@
     "build:js": "mkdirp dist/static/js && browserify --entry src/js/main.js --outfile dist/static/js/app.js",
     "build:css": "mkdirp dist/static/css && lessc --strict-math=on --clean-css='advanced' --autoprefix='last 2 versions, not ie < 11, last 2 ChromeAndroid versions, last 2 Android versions, last 1 ExplorerMobile versions' src/css/app.less > dist/static/css/app.css",
     "build:pages": "schlump --src-statics static --dest-statics dist/static",
-    "build:watch": "chokidar \"src/**/*\" \"styleguide/**/*\" --initial --command \"npm run build:all\"",
+    "build:watch": "npm run build:watch:js & npm run build:watch:css & npm run build:watch:pages",
+    "build:watch:js": "chokidar \"src/js/**/*\" --initial --command \"npm run build:js\"",
+    "build:watch:css": "chokidar \"src/**/*.less\" --initial --command \"npm run build:css\"",
+    "build:watch:pages": "chokidar \"src/pages/**/*\" \"src/templates/**/*.html\" \"src/helpers/**/*\" --initial --command \"npm run build:pages\"",
     "serve": "browser-sync start --config bs-config.js"
   },
   "devDependencies": {
