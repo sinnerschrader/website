@@ -3,15 +3,13 @@ name: Text
 ---
 <props.Tagname className={props.className}>
 	{helpers.highlight(props.text).map((part, index) => {
-		if (index % 2 === 1) {
-			if (props.highlight) {
-				return <span className="sctntxtclr">{part}</span>
-			}
-			if (props.bold) {
-				return <strong>{part}</strong>;
-			}
-			return part;
+		switch (part[1]) {
+			case '`':
+				return <span key={index} className="sctntxtclr">{part[0]}</span>
+			case '*':
+				return <strong key={index}>{part[0]}</strong>;
+			default:
+				return part[0];
 		}
-		return part;
 	})}
 </props.Tagname>
