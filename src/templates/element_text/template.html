@@ -2,14 +2,16 @@
 name: Text
 ---
 <props.Tagname className={props.className}>
-		{props.text.split('_$')[0]}
-		{
-		props.text.split('_$').length > 1 && props.highlight &&
-			<span className="sctntxtclr">{props.text.split('_$')[1]}</span>
+	{helpers.highlight(props.text).map((part, index) => {
+		if (index % 2 === 1) {
+			if (props.highlight) {
+				return <span className="sctntxtclr">{part}</span>
+			}
+			if (props.bold) {
+				return <strong>{part}</strong>;
+			}
+			return part;
 		}
-		{
-		props.text.split('_$').length > 1 && props.bold &&
-			<strong>{props.text.split('_$')[1]}</strong>
-		}
-		{props.text.split('_$')[2]}
+		return part;
+	})}
 </props.Tagname>
