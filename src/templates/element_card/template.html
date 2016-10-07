@@ -3,12 +3,15 @@ name: ElementCard
 ---
 <div className="card">
 	<figure>
-		<div className="teaser">
-			<ElementImage
-				width={280}
-				height={370}
-				/>
-		</div>
+		{
+		false &&
+			<div className="teaser">
+				<ElementImage
+					width={280}
+					height={370}
+					/>
+			</div>
+		}
 		{
 		props.caption &&
 			<figcaption className="figcaption">
