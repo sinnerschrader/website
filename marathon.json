@@ -26,6 +26,7 @@
     }
   },
   "env":{
+		"BUILD": "${env.BUILD_NUMBER}",
 		"BASIC": "/",
     "HTTPUSER": "${env.HTTPUSER}"
   },
