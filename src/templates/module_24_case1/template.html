@@ -1,7 +1,7 @@
 ---
 name: Case1
 ---
-<section className={'mod-case1' + (props.invert ? ' invert' : '')} data-theme={props.theme}>
+<section className={helpers.classNames({'mod-case1': true, invert: props.invert})} data-theme={props.theme}>
 	{
 		props.text1 &&
 		<Text

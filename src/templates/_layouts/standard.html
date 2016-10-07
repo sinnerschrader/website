@@ -3,7 +3,7 @@ name: StandardLayout
 ---
 <html lang="de-DE">
 <Head base={props.base}/>
-<body className={props.bodyClass || ''} data-theme={props.theme}>
+<body className={helpers.classNames({bodyClass: props.bodyClass})} data-theme={props.theme}>
 	<div className="container">
 		<Navigation/>
 		<main className="main">

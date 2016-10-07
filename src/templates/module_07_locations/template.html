@@ -1,7 +1,7 @@
 ---
 name: Locations
 ---
-<section className={'mod-locations ' + (props.withMap ? 'mod-locations-map' : '')} data-locations>
+<section className={helpers.classNames({'mod-locations': true, 'mod-locations-map': props.withMap})} data-locations>
 	{
 	!props.withMap &&
 		<div className="locations-wrapper">

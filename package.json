@@ -33,6 +33,7 @@
     "browserify": "^13.1.0",
     "camelcase": "^3.0.0",
     "chokidar-cli": "^1.2.0",
+    "classnames": "^2.2.5",
     "globby": "^6.0.0",
     "gray-matter": "^2.0.2",
     "less": "2.7.1",

@@ -2,13 +2,13 @@
 name: Hero
 ---
 <section
-	className={`mod-hero ${props.invert ? 'invert' : ''}`}
+	className={helpers.classNames({'mod-hero': true, 'invert': props.invert})}
 	data-explode={props.explode}
 	data-halfling={props.halfling}
 	data-theme={props.theme}
 	>
 	<div
-		className={`blend-picture ${props.blend ? 'blend' : ''}`}
+		className={helpers.classNames({'blend-picture': true, blend: props.blend})}
 		role="presentation"
 		>
 		{

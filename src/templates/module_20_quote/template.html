@@ -1,7 +1,7 @@
 ---
 name: Quote
 ---
-<section className={'mod-quote' + (props.invert ? ' invert' : '')}>
+<section className={helpers.classNames({'mod-quote': true, invert: props.invert})}>
 	<blockquote className="quote h2-1 styleline sctntxtclr">
 		{
 			props.copy &&
