@@ -1,37 +1,35 @@
 ---
 route: /about/who
 ---
-<StandardLayout base="../..">
+<StandardLayout base="../.." theme="blue">
 	<Hero
-		buttonHref="./sub/page.html"
-		buttonLabel="More on this"
-		copy="They bond with customers, reshape user behaviours and transform business reality."
-		headline="We deliver transformational products."
-		imageHeight={560}
-		imageSrcL="../../static/images/backgrounds/module_01_hero_desk_about_what_r.jpg"
-		imageSrcM=".,/../static/images/backgrounds/module_01_hero_lap_about_what_r.jpg"
-		imageSrcS="../../static/images/backgrounds/module_01_hero_palm_about_what_r.jpg"
+		headline="All about us."
+		copy="Get to know our most important thinkers, our offices and a selection of our clients."
+		imageSrcL="../../static/images/backgrounds/module_01_hero_desk_about_who_r.jpg"
+		imageSrcM=".,/../static/images/backgrounds/module_01_hero_lap_about_who_r.jpg"
+		imageSrcS="../../static/images/backgrounds/module_01_hero_palm_about_who_r.jpg"
 		imageWidth={2880}
+		imageHeight={560}
 		invert
-		theme="blue"
+		blend
 	/>
 	<Infographic3/>
-	<Infographic1/>
-	<Clients/>
+	<Clients base="../../"/>
 	<Management
-		headline="Management _$headline_$"
+		headline="The folks supporting our `great` teams."
 		>
-		<ElementCard/>
-		<ElementCard/>
-		<ElementCard/>
-		<ElementCard/>
-		<ElementCard/>
-		<ElementCard/>
-		<ElementCard/>
+		<ElementCard
+			name="Matthias Schrader"
+			jobTitle="CEO"
+			/>
+		<ElementCard
+			name="Thomas Dyckhoff"
+			jobTitle="CFO"
+			/>
 	</Management>
+	<Locations withMap={true} />
 	<InvestorRelations
 		headline="Investor Relations"
-		textBold="_$SinnerSchrader AG shares (WKN 514 190 / ISIN DE0005141907) were admitted to the Frankfurt Stock Exchange in 1999._$ They are traded in the Regulated Market subsection and since 2003 in the Prime Standard section. Trust, transparency and constancy are the guidelines for shareholder relations at SinnerSchrader. They are based on the rules of good and transparent corporate governance, in accordance with the standards laid down in the German Corporate Governance Code."
+		textBold="*SinnerSchrader AG shares (WKN 514 190 / ISIN DE0005141907) were admitted to the Frankfurt Stock Exchange in 1999.* They are traded in the Regulated Market subsection and since 2003 in the Prime Standard section. Trust, transparency and constancy are the guidelines for shareholder relations at SinnerSchrader. They are based on the rules of good and transparent corporate governance, in accordance with the standards laid down in the German Corporate Governance Code."
 		/>
-	<Locations withMap={true} />
 </StandardLayout>

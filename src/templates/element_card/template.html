@@ -7,31 +7,23 @@ name: ElementCard
 		false &&
 			<div className="teaser">
 				<ElementImage
+					url={props.imageUrl}
 					width={280}
 					height={370}
 					/>
 			</div>
 		}
 		{
-		props.caption &&
+		props.name && props.jobTitle &&
 			<figcaption className="figcaption">
-				<h3 className="sub h5">John Doe</h3>
-				<p className="scopy">Mitarbeiter</p>
+				<h3 className="sub h5">{props.name}</h3>
+				<p className="scopy">{props.jobTitle}</p>
 			</figcaption>
 		}
 	</figure>
 	<SocialMediaNetwork/>
 	<Schema
-		name="John Doe"
-		jobTitle="Mitarbeiter"
-		worksFor="SinnerSchrader Deutschland GmbH"
-		urls={["https://sinnerschrader.com", "https://facebook.com/john.doe", "https://twitter.com/john.doe", "https://xing.com/john.doe"]}
-		email=""
-		telephone=""
-		image=""
-		streetAddress="Völckersstr. 38"
-		addressLocality="Hamburg"
-		postalCode="22765"
-		addressCountry="Deutschland"
+		name={props.name}
+		jobTitle={props.jobTitle}
 		/>
 </div>
