@@ -1,17 +1,21 @@
 .mod-story2 {
 	padding: @s2-moduleGap-s-2 0 0;
 	background-color: @s2-white;
-	
+
+	&.gradient {
+		background: linear-gradient(-20deg, @s2-lightgrey 0%, @s2-lightgrey 50%, transparent 50%, transparent 100%), @s2-white;
+	}
+
 	.details {
 		position: relative;
 		z-index: 1;
 		margin: 0 @s2-moduleGap-s-1
 	}
-	
+
 	.h {
 		margin-bottom: @s2-moduleGap-s-1;
 	}
-	
+
 	.teaser {
 		width: 50%;
 		margin: -33% 0 0 auto;
@@ -26,7 +30,7 @@
 		.h {
 			margin-bottom: @s2-moduleGap-m-1;
 		}
-	
+
 		.teaser {
 			margin-top: -10%;
 		}
@@ -35,7 +39,7 @@
 	@media @s2-mq-window-desktop {
 		display: flex;
 		padding: 0;
-		
+
 		.details {
 			flex: 1 1 auto;
 			align-self: center;
@@ -47,11 +51,11 @@
 				padding-right: @s2-moduleGap-l-2;
 			}
 		}
-		
+
 		.h {
 			margin-bottom: @s2-moduleGap-l-1;
 		}
-		
+
 		.teaser {
 			flex: 1 0 auto;
 			margin: 0;

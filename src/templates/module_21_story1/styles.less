@@ -1,13 +1,14 @@
 .mod-story1 {
 	position: relative;
 	padding: @s2-moduleGap-s-2 @s2-moduleGap-s-1 @s2-moduleGap-s-3;
-	background: linear-gradient(-20deg, @s2-lightgrey 0%, @s2-lightgrey 50%, transparent 50%, transparent 100%), @s2-white;
+	background: @s2-white;
+
+	&.gradient {
+		background: linear-gradient(-20deg, @s2-lightgrey 0%, @s2-lightgrey 50%, transparent 50%, transparent 100%), @s2-white;
+	}
 
 	.h {
 		margin-bottom: @s2-moduleGap-s-2;
-	}
-
-	.copy {
 	}
 
 	@media @s2-mq-window-tablet {

@@ -1,7 +1,7 @@
 ---
 name: Story3
 ---
-<section className="mod-story3 invert">
+<section className={helpers.classNames({'mod-story3': true, 'invert': props.invert})} data-theme={props.theme}>
 	<blockquote className="quote h2-2 styleline sctnbrdrclr">
 		{
 			props.headline &&

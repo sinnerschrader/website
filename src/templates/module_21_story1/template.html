@@ -1,7 +1,7 @@
 ---
 name: Story1
 ---
-<section className="mod-story1">
+<section className={helpers.classNames({'mod-story1': true, gradient: props.gradient})} data-theme={props.theme}>
 	{
 		props.headline &&
 		<Text

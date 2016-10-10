@@ -1,15 +1,44 @@
 ---
 name: Story2
 ---
-<section className="mod-story2">
+<section className={helpers.classNames({'mod-story2': true, gradient: props.gradient})} data-theme={props.theme}>
 	<div className="details">
-		<h2 className="h h2-1">Germany's most successful technology and gadget magazine</h2>
-		<h3 className="sub h4">Lorem ipsum dolor sit amet, consetuer adipiscing.</h3>
-		<p className="copy">Aenean commodo ligula eget dolor penatibus et magnis dis parturient montes, nascetur ridiculus mussem. </p>
-		<p className="copy">Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+		{
+			props.headline &&
+				<Text
+					Tagname="h2"
+					className="h h2-1"
+					text={props.headline}
+					/>
+		}
+		{
+			props.subline &&
+				<Text
+					Tagname="h3"
+					className="sub h4"
+					text={props.subline}
+					/>
+		}
+		{
+			props.copy1 &&
+				<Text
+					Tagname="p"
+					className="copy"
+					text={props.copy1}
+					/>
+		}
+		{
+			props.copy2 &&
+				<Text
+					Tagname="p"
+					className="copy"
+					text={props.copy2}
+					/>
+		}
 	</div>
 	<div className="teaser">
 		<ElementImage
+			url={props.imageUrl}
 			width={545}
 			height={720}
 			bgcolor="D0E33A"
