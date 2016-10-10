@@ -1,5 +1,5 @@
 module.exports = function (text) {
-	return splitText(text, allRanges(text, ['*', '`']));
+	return text ? splitText(text, allRanges(text, ['*', '`'])) : [];
 };
 
 function splitText(text, ranges) {

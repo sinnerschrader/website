@@ -5,17 +5,29 @@ name: Story3
 	<blockquote className="quote h2-2 styleline sctnbrdrclr">
 		{
 			props.headline &&
-				<p className="copy">{props.headline}</p>
+				<Text
+					Tagname="p"
+					className="copy"
+					text={props.headline}
+					/>
 		}
 		{
 			props.meta &&
-				<cite className="cite xscopy">{props.meta}</cite>
+				<Text
+					Tagname="cite"
+					className="cite xscopy"
+					text={props.meta}
+					/>
 		}
 	</blockquote>
 	<div className="details">
 		{
 			props.copy &&
-				<p className="copy">{props.copy}</p>
+				<Text
+					Tagname="p"
+					className="copy"
+					text={props.copy}
+					/>
 		}
 	</div>
 </section>
