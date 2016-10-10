@@ -1,6 +1,45 @@
 ---
 route: /cases/ep-guide
 ---
-<StandardLayout base="../..">
-	Work -> EP Guide
+<StandardLayout base="../.." theme="green">
+	<Hero
+		headline="We enhanced the theme park experience."
+		copy="Having fun at Europa-Park even without roller coasters."
+		imageSrcL="../../static/images/contents/module_01_hero_desk_epguide_r.jpg"
+		imageSrcM="../../static/images/contents/module_01_hero_lap_epguide_r.jpg"
+		imageSrcS="../../static/images/contents/module_01_hero_palm_epguide_r.jpg"
+		imageWidth={2880}
+		imageHeight={560}
+		blend
+		invert
+		/>
+	<Story2
+		copy1="*Europa-Park in Germay is one of the largest theme parks in Europe.* Each year almost 5 million people go for the fun, thrill and entertainment. But theme park experiences were no longer just about the rollercoaster ride. As customers increasingly expected digitally enhanced services, Europa-Park needed to boost the whole park experience boost the whole park experience – and their app could no longer support this."
+		copy2="They asked SinnerSchrader to collaborate  to find new ways to deliver more value to the customer with a relaunch of the app."
+		imageUrl="../../static/images/contents/module_25_case2_desk_ep.jpg"
+		invert
+		/>
+	<Story3
+		headline="Go, `Go`, Go content."
+		copy="*Customers told us they felt somewhat anxious and frantic when in a theme park.* There was so much to do in so little time. We asked ourselves, what if we could escort them through the park to help alleviate their concerns? So we built a contextualised news feed that pushed relevant notifications throughout their journey, such as hotel bookings, shortest waiting lines and closest restaurants, to help make customers’ experiences more simple and less frantic."
+		invert
+		/>
+	{/*<Case3/>*/}
+	{/*<Gallery/>*/}
+	<Image
+		imageSrcSetS="../../../static/images/contents/module_10_bild_palm_ep.jpg"
+		imageSrcSetM="../../../static/images/contents/module_10_bild_lap_ep.jpg"
+		imageSrcSetL="../../../static/images/contents/module_10_bild_desk_ep.jpg"
+		imageSrc="../../../static/images/contents/module_10_bild_palm_ep.jpg"
+		/>
+	<Story1
+		headline="Tackling `complexity` with collaboration."
+		copy="*One of the greatest challenge of the project was to integrate 200+ backend systems.* Second to this, was to create an app that was self updateable without the need to install a new version. This technically complicated task, not only required a large team of highly skilled developers, but a collaborative and communicative interdisciplinary team, from both sides of the partnership."
+		gradient
+		/>
+	<Quote
+		copy="The Europa-Park app is a truly transformative product. By equipping customers with contextualised content, it changed the way they experienced the theme park, giving them more time for fun without franticness."
+		cite="Sven Schmiede"
+		/>
+	<Locations withMap={true}/>
 </StandardLayout>
