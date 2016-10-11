@@ -1,5 +1,5 @@
 .mod-story2 {
-	padding: @s2-moduleGap-s-2 0 0;
+	padding: @s2-moduleGap-m 0 @s2-moduleGap-xl;
 	background-color: @s2-white;
 
 	&.gradient {
@@ -11,60 +11,58 @@
 	}
 
 	.details {
-		position: relative;
-		z-index: 1;
-		margin: 0 @s2-moduleGap-s-1
+		box-sizing: border-box;
+		display: inline-block;
+		width: 75%;
+		padding:  0 @s2-moduleGap-s;
+		vertical-align: top;
 	}
 
 	.h {
-		margin-bottom: @s2-moduleGap-s-1;
+		margin-bottom: @s2-moduleGap-l;
 	}
 
 	.teaser {
-		width: 50%;
-		margin: -33% 0 0 auto;
+		display: inline-block;
+		width: 25%;
+		margin-top: (-@s2-moduleGap-m - @s2-moduleDisrupter-s);
 	}
 
 	@media @s2-mq-window-tablet {
-		padding: @s2-moduleGap-m-2 0 0;
+		padding: @s2-moduleGap-xl 0 140px;
 
 		.details {
-			margin: 0 @s2-moduleGap-m-3 0 @s2-moduleGap-m-2;
+			padding:  0 @s2-moduleGap-l-2 0 @s2-moduleGap-l;
 		}
+
 		.h {
-			margin-bottom: @s2-moduleGap-m-1;
+			margin-bottom: 95px;
 		}
 
 		.teaser {
-			margin-top: -10%;
+			margin-top: (-@s2-moduleGap-xl - @s2-moduleDisrupter-m);
 		}
 	}
 
 	@media @s2-mq-window-desktop {
-		display: flex;
-		padding: 0;
 
 		.details {
-			flex: 1 1 auto;
-			align-self: center;
-			margin: @s2-moduleGap-l-1 0 @s2-moduleGap-l-1 @s2-moduleGap-l-2;
-			.h {
-				margin-bottom: @s2-moduleGap-l-1;
-			}
-			.copy {
-				padding-right: @s2-moduleGap-l-2;
-			}
+			width: 70%;
+			padding:  0 @s2-moduleGap-l-3 0 @s2-moduleGap-l-2;
 		}
 
 		.h {
-			margin-bottom: @s2-moduleGap-l-1;
+			margin-bottom: 190px;
+		}
+
+		.copy {
+			max-width: 500px;
+			margin-left: 30%;
 		}
 
 		.teaser {
-			flex: 1 0 auto;
-			margin: 0;
-			width: 33%;
-			max-width: 545px;
+			width: 30%;
+			margin-top: (-@s2-moduleGap-xl - @s2-moduleDisrupter-m);
 		}
 	}
 
