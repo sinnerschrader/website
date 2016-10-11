@@ -1,12 +1,23 @@
 .mod-screencast {
-	margin: -@s2-moduleGap-s 0 0;
+	display: flex;
+	flex-direction: column;
 	background-color: @s2-white;
 
+	.disruptor {
+		margin-top: -32px;
+		margin-right: 3vw;
+	}
+
 	@media @s2-mq-window-tablet {
-		margin: -@s2-moduleGap-m 0 0 @s2-moduleGap-m-3;
+		.disruptor {
+			margin-top: -48px;
+		}
 	}
 
 	@media @s2-mq-window-desktop {
-		margin: -@s2-moduleGap-l 0 0 @s2-moduleGap-l-3;
+		.disruptor {
+			margin-top: -64px;
+			margin-left: 15vw;
+		}
 	}
 }
