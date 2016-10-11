@@ -11,10 +11,11 @@ name: QuoteImage
 		<cite className="cite xscopy">{props.credits}</cite>
 	</blockquote>
 	<div className="teaser sctnbgclr">
-		<ElementImage
-			url={props.imageUrl}
-			width={750}
-			height={630}
+		<ResponsiveImage
+			imageSrcSetS={props.imageSrcSetS}
+			imageSrcSetM={props.imageSrcSetM}
+			imageSrcSetL={props.imageSrcSetL}
+			imageSrc={props.imageUrl}
 			/>
 	</div>
 </section>
