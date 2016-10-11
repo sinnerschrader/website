@@ -1,2 +1,89 @@
 .mod-infographic1 {
+	min-height: 90vh;
+	padding: @s2-moduleGap-s-1;
+	background: url('@{s2-image-path}/elements/infographic1.svg');
+	background-position: 50% 10%;
+	background-repeat: no-repeat;
+	background-size: 75%;
+
+	.copy {
+		display: none;
+		margin: 25px 0 25px 50px;
+		color: @s2-darkgrey;
+	}
+
+	.listMenu {
+		padding-top: 264px;
+	}
+
+	.listMenuLabel {
+		&:extend(.h3);
+	}
+
+	.listMenuInput {
+		&:checked {
+			& ~ .copy {
+				display: block;
+			}
+
+			& + .listMenuLabel {
+				text-decoration: underline;
+				color: @s2-white;
+			}
+		}
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-1;
+		background-position: 50% 20%;
+		background-size: 50%;
+
+		.listMenu {
+			padding: 264px 0 0;
+		}
+
+		.listMenuEntry {
+			display: flex;
+		}
+
+		.listMenuLabel {
+			width: 50%;
+			margin: 0;
+			padding: 0 20px 0 0;
+			text-align: right;
+		}
+
+		.copy {
+			width: 50%;
+			margin: 0;
+			padding: 0 0 0 20px;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l-1;
+		background-position: 30% 20%;
+		background-size: 35%;
+
+		.listMenu {
+			padding: 64px 0 0 15vw;
+		}
+
+		.listMenuEntry {
+			display: flex;
+		}
+
+		.listMenuLabel {
+			width: 50%;
+			margin: 0;
+			padding: 0 20px 0 0;
+			text-align: right;
+		}
+
+		.copy {
+			width: 50%;
+			margin: 0;
+			padding: 0 0 0 20px;
+		}
+	}
 }

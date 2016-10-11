@@ -1,0 +1,12 @@
+---
+name: Infographic1ListEntry
+---
+<li className="listMenuEntry">
+	<input type="radio" hidden name="listMenuI" className="listMenuInput" id={props.id} />
+	<label className="listMenuLabel sctntxtclr" htmlFor={props.id}>
+		{props.label}
+	</label>
+	<ul className="copy">
+		{props.children}
+	</ul>
+</li>
