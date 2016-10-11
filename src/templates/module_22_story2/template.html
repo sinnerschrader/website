@@ -37,12 +37,11 @@ name: Story2
 		}
 	</div>
 	<div className="teaser">
-		<ElementImage
-			url={props.imageUrl}
-			width={545}
-			height={720}
-			bgcolor="D0E33A"
-			fgcolor="FFF"
+		<ResponsiveImage
+			imageSrcSetS={props.imageSrcS}
+			imageSrcSetM={props.imageSrcM}
+			imageSrcSetL={props.imageSrcL}
+			imageSrc={props.imageSrcM}
 			/>
 	</div>
 </section>

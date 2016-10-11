@@ -1,5 +1,6 @@
 .mod-story2 {
-	padding: @s2-moduleGap-s-2 0 0;
+	min-height: 90vh;
+	padding: @s2-moduleGap-m 0 77px;
 	background-color: @s2-white;
 
 	&.gradient {
@@ -13,7 +14,9 @@
 	.details {
 		position: relative;
 		z-index: 1;
-		margin: 0 @s2-moduleGap-s-1
+		display: inline-block;
+		width: 75%;
+		padding:  0 @s2-moduleGap-s;
 	}
 
 	.h {
@@ -21,8 +24,9 @@
 	}
 
 	.teaser {
-		width: 50%;
-		margin: -33% 0 0 auto;
+		display: inline-block;
+		width: 25%;
+		margin-top: (-@s2-moduleGap-m - @s2-moduleDisrupter-s);
 	}
 
 	@media @s2-mq-window-tablet {
