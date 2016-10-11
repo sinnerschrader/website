@@ -4,7 +4,7 @@ name: Navigation
 <header className="mod-navigation-container">
 	<div className="mod-navigation sctnbgclr">
 		<input type="checkbox" id="navigation-state" data-navigation-state/>
-		<a className="logo" href="/" title="">
+		<a className="logo" href={props.base} title="">
 			SinnerSchrader
 			<svg className="svg" width="130" height="18" viewBox="0 0 130 18">
 				<title>SinnerSchrader</title>
@@ -27,27 +27,27 @@ name: Navigation
 						<a href="#">About</a>
 						<ul className="aboutnav">
 							<li className="aboutnav-item">
-								<a href="/about/why/">Why</a>
+								<a href={props.base + '/about/why/'}>Why</a>
 							</li>
 							<li className="aboutnav-item">
-								<a href="/about/how/">How</a>
+								<a href={props.base + '/about/how/'}>How</a>
 							</li>
 							<li className="aboutnav-item">
-								<a href="/about/what/">What</a>
+								<a href={props.base + '/about/what/'}>What</a>
 							</li>
 							<li className="aboutnav-item">
-								<a href="/about/who/">Who</a>
+								<a href={props.base + '/about/who/'}>Who</a>
 							</li>
 						</ul>
 					</li>
 					<li className="mainnav-item">
-						<a href="/talent/">Talent</a>
+						<a href={props.base + '/talent/'}>Talent</a>
 					</li>
 					<li className="mainnav-item">
-						<a href="/work/">Work</a>
+						<a href={props.base + '/work/'}>Work</a>
 					</li>
 					<li className="mainnav-item">
-						<a href="/contact/">Contact</a>
+						<a href={props.base + '/contact/'}>Contact</a>
 					</li>
 				</ul>
 			</nav>

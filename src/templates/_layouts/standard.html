@@ -5,7 +5,7 @@ name: StandardLayout
 <Head base={props.base}/>
 <body className={helpers.classNames({bodyClass: props.bodyClass})} data-theme={props.theme}>
 	<div className="container">
-		<Navigation/>
+		<Navigation base={props.base}/>
 		<main className="main">
 			{props.children}
 		</main>
