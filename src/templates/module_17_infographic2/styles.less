@@ -1,3 +1,24 @@
 .mod-infographic2 {
+	display: flex;
+	flex-direction: column;
+	padding: @s2-moduleGap-s-2 @s2-moduleGap-s-1;
 	background-color: @s2-white;
+
+	.headline {
+		margin-bottom: @s2-moduleGap-s-1;
+	}
+
+	.subline {
+		margin: 0 0 @s2-moduleGap-s-1 25%;
+	}
+
+	.graphic {
+		margin-bottom: @s2-moduleGap-s-1;
+	}
+
+	@media @s2-mq-window-tablet {
+		.text {
+			margin: 0 0 @s2-moduleGap-s-1 25%;
+		}
+	}
 }
