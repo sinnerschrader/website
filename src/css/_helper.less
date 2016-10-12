@@ -286,18 +286,28 @@
 // font ———————————————————————————————————————————————————————————————————————
 // https://developer.mozilla.org/de/docs/CSS/font-family
 
+//-- The third parameter defines if the WOFF2 format
+//-- is the available in font files.
+//-- 0 === WOFF2 it's not available
+//-- 1 === WOFF & WOFF2 are avilable
+//-- 1 is default.
+
 #s2-font {
-	.fontface(@val1,@val2,@val3:normal,@val4:normal) {
+	.fontface(@val1; @val2; @bool: 1; @val3:normal; @val4:normal) {
 		@font-face {
 			font-family: '@{val1}';
-			//src: url('@{s2-font-path}/@{val2}.eot');
-			//src: url('@{s2-font-path}/@{val2}.eot?#iefix')  format('embedded-opentype'), // IE ≤ 8
-			//	 url('@{s2-font-path}/@{val2}.woff')        format('woff'),                //
-			//	 url('@{s2-font-path}/@{val2}.ttf')         format('truetype'),            // Android ≤ 4.3
-			//	 url('@{s2-font-path}/@{val2}.svg#@{val2}') format('svg');                 // iOS ≤ 6
 
-			src:    url('@{s2-font-path}/@{val2}.woff2')       format('woff2'),
-					url('@{s2-font-path}/@{val2}.woff')         format('woff');
+			.choose-format () when (@bool = 0) {
+				src: url('@{s2-font-path}/@{val2}.woff') format('woff');
+			}
+
+			.choose-format () when (@bool = 1) {
+				src: url('@{s2-font-path}/@{val2}.woff2') format('woff2'),
+				     url('@{s2-font-path}/@{val2}.woff') format('woff');
+			}
+
+			.choose-format();
+
 			font-weight: @val3;
 			font-style: @val4;
 		}
