@@ -1,0 +1,36 @@
+.mod-case3 {
+	display: flex;
+	flex-wrap: wrap;
+	padding: @s2-moduleGap-s @s2-moduleGap-s @s2-moduleGap-s-3;
+	background-color: @s2-white;
+
+	&.gradient {
+		background: linear-gradient(-20deg, transparent 0%, transparent 33%, @s2-lightgrey 33%, @s2-lightgrey 66%, transparent 66%, transparent 100%), @s2-white;
+	}
+
+	&.invert {
+		background-color: @s2-black;
+	}
+
+	.disruptor {
+		align-self: flex-end;
+		width: 50%;
+		margin: -@s2-moduleDisrupter-s @s2-moduleGap-s 0 -@s2-moduleGap-s;
+	}
+
+	.headline {
+		align-self: flex-end;
+		width: 50%;
+	}
+
+	.copy {
+		margin-top: @s2-moduleGap-s-2;
+	}
+
+	@media @s2-mq-window-tablet {
+		margin: @s2-moduleDisrupter-s @s2-moduleGap-s-2 0 @s2-moduleGap-s-2;
+	}
+
+	@media @s2-mq-window-desktop {
+	}
+}
