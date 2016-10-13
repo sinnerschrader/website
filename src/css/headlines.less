@@ -7,28 +7,28 @@ h1, h2, h3, h4, h5, h6,
 	line-height: normal;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6 {}
 
 .h1 {
 	font-family: @s2-font-high1;
 	font-weight: bold;
-	font-size: 42px;
-	line-height: 42px;
+	font-size: @s2-h1-size;
+	line-height: @s2-h1-size;
 	//letter-spacing: 1px;
 	letter-spacing: -2px;
 	hyphens: auto;
+
 	@media @s2-mq-window-tablet {
-		font-size: 60px;
-		line-height: 60px;
+		font-size: @s2-h1-size-tablet;
+		line-height: @s2-h1-size-tablet;
 		//letter-spacing: 0;
 	}
+
 	@media @s2-mq-window-desktop {
-		font-size: 90px;
-		line-height: 90px;
+		font-size: @s2-h1-size-desktop;
+		line-height: @s2-h1-size-desktop;
 		//letter-spacing: 1.41px;
 
 		font-family: Trebuchet MS, sans-serif;
-		font-size: 73px;
 		letter-spacing: -0.3px;
 		line-height: 90px;
 		word-spacing: 1px;
@@ -38,17 +38,19 @@ h1, h2, h3, h4, h5, h6,
 .h2-1 {
 	font-family: @s2-font-high1;
 	font-weight: bold;
-	font-size: 28px;
+	font-size: @s2-h2-1-size;
 	line-height: 32px;
 	//letter-spacing: 0.44px;
 	letter-spacing: -2px;
+
 	@media @s2-mq-window-tablet {
-		font-size: 48px;
+		font-size: @s2-h2-1-size-tablet;
 		line-height: 52px;
 		//letter-spacing: 1px;
 	}
+
 	@media @s2-mq-window-desktop {
-		font-size: 64px;
+		font-size: @s2-h2-1-size-tablet;
 		line-height: 68px;
 	}
 }
@@ -56,16 +58,16 @@ h1, h2, h3, h4, h5, h6,
 .h2-2 {
 	font-family: @s2-font-high2;
 	font-weight: regular;
-	font-size: 32px;
+	font-size: @s2-h2-2-size;
 	line-height: 40px;
 	letter-spacing: .6px;
 	@media @s2-mq-window-tablet {
-		font-size: 48px;
-		line-height: 48px;
+		font-size: @s2-h2-2-size-tablet;
+		line-height: @s2-h2-2-size-tablet;
 		letter-spacing: 1px;
 	}
 	@media @s2-mq-window-desktop {
-		font-size: 64px;
+		font-size: @s2-h2-2-size-desktop;
 		line-height: 68px;
 	}
 }
@@ -73,15 +75,15 @@ h1, h2, h3, h4, h5, h6,
 .h3 {
 	font-family: @s2-font-high1;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: @s2-h3-size;
 	line-height: 24px;
 	letter-spacing: 0;
 	@media @s2-mq-window-tablet {
-		font-size: 28px;
+		font-size: @s2-h3-size-tablet;
 		line-height: 36px;
 	}
 	@media @s2-mq-window-desktop {
-		font-size: 36px;
+		font-size: @s2-h3-size-desktop;
 		line-height: 48px;
 		//letter-spacing: 1px;
 	}
@@ -90,17 +92,17 @@ h1, h2, h3, h4, h5, h6,
 .h4 {
 	font-family: @s2-font-high1;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: @s2-h4-size;
 	line-height: 20px;
 	//letter-spacing: 1px;
 	letter-spacing: 0;
 	@media @s2-mq-window-tablet {
-		font-size: 20px;
+		font-size: @s2-h4-size-tablet;
 		line-height: 28px;
 		//letter-spacing: 0;
 	}
 	@media @s2-mq-window-desktop {
-		font-size: 24px;
+		font-size: @s2-h4-size-desktop;
 		line-height: 32px;
 		//letter-spacing: 1px;
 	}
