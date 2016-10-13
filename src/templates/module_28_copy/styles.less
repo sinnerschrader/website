@@ -1,0 +1,44 @@
+.mod-copy {
+	padding: @s2-moduleGap-s @s2-moduleGap-s-2;
+	background-color: @s2-white;
+
+	&.gradient {
+		background: linear-gradient(-20deg, transparent 0%, transparent 33%, @s2-lightgrey 33%, @s2-lightgrey 66%, transparent 66%, transparent 100%), @s2-white;
+	}
+
+	.h {
+		padding-bottom: @s2-moduleGap-s;
+		text-align: right;
+	}
+
+	.introduction {
+		padding-bottom: @s2-moduleGap-s;
+	}
+
+	.mod-copy-block {
+		padding-bottom: @s2-moduleGap-s;
+
+		.h {
+			padding-bottom: 0;
+			text-align: left;
+		}
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m @s2-moduleGap-m-2;
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l @s2-moduleGap-l-2;
+
+		.introduction {
+			margin: 0 @s2-moduleGap-l-2;
+			padding-bottom: @s2-moduleGap-l;
+		}
+
+		.mod-copy-block {
+			margin: 0 @s2-moduleGap-l-2;
+		}
+	}
+
+}
