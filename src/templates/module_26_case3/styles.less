@@ -1,7 +1,7 @@
 .mod-case3 {
 	display: flex;
 	flex-wrap: wrap;
-	padding: @s2-moduleGap-s @s2-moduleGap-s @s2-moduleGap-s-3;
+	padding: 0 @s2-moduleGap-s @s2-moduleGap-s-2;
 	background-color: @s2-white;
 
 	&.gradient {
@@ -28,9 +28,39 @@
 	}
 
 	@media @s2-mq-window-tablet {
-		margin: @s2-moduleDisrupter-s @s2-moduleGap-s-2 0 @s2-moduleGap-s-2;
+		padding: 0 @s2-moduleGap-m @s2-moduleGap-m-2;
+
+		.disruptor {
+			margin: -@s2-moduleDisrupter-m @s2-moduleGap-m 0 -@s2-moduleGap-m;
+		}
 	}
 
 	@media @s2-mq-window-desktop {
+		position: relative;
+		min-height: ~"calc(1080 / 610 * 100vw / 2)";
+		display: block;
+		padding: 0 @s2-moduleGap-l-2 @s2-moduleGap-l-2 @s2-moduleGap-l-2;
+
+		.disruptor {
+			position: absolute;
+			min-height: 90vh;
+			margin: -@s2-moduleDisrupter-l @s2-moduleGap-l-2 0 -@s2-moduleGap-l-2;
+		}
+
+		.headline {
+			margin-left: ~"calc(50% + @{s2-moduleGap-l})";
+			padding-top: @s2-moduleGap-l-3;
+			width: auto;
+		}
+
+		.copy {
+			margin-left: ~"calc(50% + @{s2-moduleGap-l})";
+			width: auto;
+		}
 	}
+
+	@media screen and (min-width: @s2-MaxPageWidth ) {
+		min-height: ~"calc(1080 / 610 * 1440px / 2)";
+	}
+
 }
