@@ -1,11 +1,8 @@
-// version 1 = > mod-locations
-// version 2 = > mod-locations-map
-
 .mod-locations {
 	position: relative;
 	z-index: 1;
-	padding: @s2-moduleGap-s-3 @s2-moduleGap-s-1 @s2-moduleGap-s-2 0;
-	background-color: @s2-lightgrey;
+	padding: @s2-moduleGap-s-1 0 @s2-moduleGap-s-2 @s2-moduleGap-s-1;
+	background-color: @s2-white;
 
 	.h {
 		margin: 0 0 @s2-moduleGap-s-1;
@@ -27,9 +24,12 @@
 		margin-bottom: (@s2-moduleGap-s-1/2);
 	}
 
-	// locNav
 	.locnav {
 		display: inline-block;
+
+		position: absolute;
+		top: 0;
+		left: -@s2-moduleGap-s-1;
 		z-index: 10;
 
 		padding: @s2-moduleGap-s-1;
@@ -38,11 +38,6 @@
 		color: @s2-locnav-color;
 
 		&:extend(.h4);
-	}
-
-	.locnav-highlight {
-		background-color: @s2-locnav-bg-highlight;
-		color: @s2-locnav-color-highlight;
 	}
 
 	.locnav-item {
@@ -69,21 +64,6 @@
 
 	.location-address {
 		display: none;
-	}
-
-	// map version
-	&-map {
-		padding-top: @s2-moduleGap-s-1;
-		padding-right: 0;
-		padding-left: @s2-moduleGap-s-1;
-
-		background-color: @s2-white;
-
-		.locnav {
-			position: absolute;
-			top: 0;
-			left: -@s2-moduleGap-s-1;
-		}
 	}
 
 	.figure {
@@ -127,9 +107,8 @@
 	}
 
 	@media @s2-mq-window-tablet {
-		padding-top: @s2-moduleGap-m-2;
-		padding-right: @s2-moduleGap-m-1;
-		padding-bottom: @s2-moduleGap-m-2;
+		display: block;
+		padding: @s2-moduleGap-m-1;
 
 		.locations-wrapper {
 			display: flex;
@@ -142,6 +121,7 @@
 		}
 
 		.locnav {
+			left: -@s2-moduleGap-m-1;
 			padding: @s2-moduleGap-m-1;
 		}
 
@@ -161,31 +141,16 @@
 			margin-bottom: (@s2-moduleGap-m-1/2);
 		}
 
-		// map version
-		&-map {
-			display: block;
-			padding: @s2-moduleGap-m-1;
-
-			.locnav {
-				left: -@s2-moduleGap-m-1;
-			}
-		}
-
 		.figure {
 			padding-top: @s2-moduleGap-m-2;
 		}
 	}
 
 	@media @s2-mq-window-desktop {
-		padding-top: @s2-moduleGap-l-2;
-		padding-right: @s2-moduleGap-l-1;
-		padding-bottom: @s2-moduleGap-l-2;
+		padding: @s2-moduleGap-l-1 @s2-moduleGap-l-2;
 
 		.locnav {
-			margin-top: @s2-moduleGap-l-1;
-		}
-
-		.locnav {
+			left: -@s2-moduleGap-l-2;
 			padding: @s2-moduleGap-l-1;
 		}
 
@@ -216,15 +181,6 @@
 			margin-bottom: (@s2-moduleGap-l-1/2);
 			vertical-align: top;
 			break-inside: avoid;
-		}
-
-		// map version
-		&-map {
-			padding: @s2-moduleGap-l-1 @s2-moduleGap-l-2;
-
-			.locnav {
-				left: -@s2-moduleGap-l-2;
-			}
 		}
 
 		.figure {
