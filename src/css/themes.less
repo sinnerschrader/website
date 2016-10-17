@@ -1,26 +1,14 @@
-[data-theme="black"], [data-theme] [data-theme="black"] {
-	.sctnbrdrclr {
-		border-color: @s2-darkblack;
-	}
-	.sctnbgclr,
-	.blend {
-		background-color: @s2-darkblack;
-	}
-	.sctnbgclrAfter::after {
-		background-color: @s2-darkblack;
-	}
-	.sctntxtclr {
-		color: @s2-darkblack;
-	}
-}
-
 [data-theme="white"], [data-theme] [data-theme="white"] {
 	.sctnbrdrclr {
 		border-color: @s2-white;
 	}
 	.sctnbgclr,
-	.blend {
+	.blend,
+	.button:hover {
 		background-color: @s2-white;
+	}
+	.button:hover {
+		border-color: @s2-white;
 	}
 	.sctnbgclrAfter::after {
 		background-color: @s2-white;
@@ -30,14 +18,18 @@
 	}
 }
 
-
 [data-theme="green"], [data-theme] [data-theme="green"] {
 	.sctnbrdrclr {
 		border-color: @s2-green;
 	}
 	.sctnbgclr,
-	.blend {
+	.blend,
+	.button:hover {
 		background-color: @s2-green;
+	}
+	.button:hover {
+		color: @s2-black;
+		border-color: @s2-green;
 	}
 	.sctnbgclrAfter::after {
 		background-color: @s2-green;
@@ -52,8 +44,12 @@
 		border-color: @s2-blue;
 	}
 	.sctnbgclr,
-	.blend {
+	.blend,
+	.button:hover {
 		background-color: @s2-blue;
+	}
+	.button:hover {
+		border-color: @s2-blue;
 	}
 	.sctnbgclrAfter::after {
 		background-color: @s2-blue;
@@ -68,8 +64,12 @@
 		border-color: @s2-red;
 	}
 	.sctnbgclr,
-	.blend {
+	.blend,
+	.button:hover {
 		background-color: @s2-red;
+	}
+	.button:hover {
+		border-color: @s2-red;
 	}
 	.sctnbgclrAfter::after {
 		background-color: @s2-red;
