@@ -37,6 +37,7 @@
 
 	@media @s2-mq-window-desktop {
 		position: relative;
+		// This is video aspect ratio in relation to half viewport width
 		min-height: ~"calc(1080 / 610 * 100vw / 2)";
 		display: block;
 		padding: 0 @s2-moduleGap-l-2 @s2-moduleGap-l-2 @s2-moduleGap-l-2;
@@ -60,7 +61,8 @@
 	}
 
 	@media screen and (min-width: @s2-MaxPageWidth ) {
-		min-height: ~"calc(1080 / 610 * 1440px / 2)";
+		// This is video aspect ratio in relation to half viewport width
+		min-height: ~"calc(1080 / 610 * @{@s2-MaxPageWidth} / 2)";
 	}
 
 }
