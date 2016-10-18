@@ -1,0 +1,19 @@
+---
+name: Case2
+---
+<section className={helpers.classNames({'mod-case2': true, invert: props.invert})}>
+	<Text
+		Tagname="p"
+		className="copy"
+		text={props.copy}
+		/>
+
+	<div className="image">
+		<ResponsiveImage
+			imageSrcSetS={props.imageSrcSetS}
+			imageSrcSetM={props.imageSrcSetM}
+			imageSrcSetL={props.imageSrcSetL}
+			imageSrc={props.imageSrcSetS}
+			/>
+	</div>
+</section>

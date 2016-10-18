@@ -1,0 +1,34 @@
+.mod-case2 {
+	display: flex;
+	flex-direction: column;
+	min-height: 90vh;
+	padding: @s2-moduleGap-s-2 @s2-moduleGap-s 0 @s2-moduleGap-s;
+
+	.image {
+		margin-left: -@s2-moduleGap-s;
+		width: 228px;
+		align-self: flex-start;
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-2 @s2-moduleGap-m 0 @s2-moduleGap-m;
+
+		.image {
+			width: 391px;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l-2 @s2-moduleGap-l 0 @s2-moduleGap-l;
+		flex-direction: row-reverse;
+
+		.copy {
+			padding-left: @s2-moduleGap-l;
+		}
+
+		.image {
+			flex: 0 0 auto;
+			width: 500px;
+		}
+	}
+}
