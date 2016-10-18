@@ -1,0 +1,24 @@
+.mod-case2 {
+	display: flex;
+	flex-direction: column;
+	min-height: 90vh;
+	padding: @s2-moduleGap-s-2 @s2-moduleGap-s 0 @s2-moduleGap-s;
+
+	.image {
+		margin-left: -@s2-moduleGap-s;
+		align-self: flex-start;
+	}
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-m-2 @s2-moduleGap-m 0 @s2-moduleGap-m;
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: @s2-moduleGap-l-2 @s2-moduleGap-l 0 @s2-moduleGap-l;
+		flex-direction: row-reverse;
+
+		.copy {
+			padding-left: @s2-moduleGap-l;
+		}
+	}
+}
