@@ -3,7 +3,7 @@
 	position: relative;
 	z-index: 1;
 	padding: @s2-moduleGap-s;
-	min-height: 90vh;
+	min-height: 65vh;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -17,6 +17,10 @@
 		.h {
 			margin-bottom: auto;
 		}
+	}
+
+	&[data-teaser] {
+		min-height: 90vh;
 	}
 
 	&[data-halfling] {
