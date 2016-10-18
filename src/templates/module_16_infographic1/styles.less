@@ -1,5 +1,6 @@
 .mod-infographic1 {
 	padding: @s2-moduleGap-s-1;
+	min-height: 80vh;
 	background: url('@{s2-image-path}/elements/infographic1.svg');
 	background-position: 50% 10%;
 	background-repeat: no-repeat;
@@ -8,7 +9,7 @@
 	.copy {
 		display: none;
 		margin: 25px 0 25px 50px;
-		color: @s2-darkgrey;
+		color: @s2-white;
 	}
 
 	.listMenu {
@@ -42,6 +43,7 @@
 		}
 
 		.listMenuEntry {
+			position: relative;
 			display: flex;
 		}
 
@@ -53,6 +55,8 @@
 		}
 
 		.copy {
+			position: absolute;
+			left: 50%;
 			width: 50%;
 			margin: 0;
 			padding: 0 0 0 20px;
