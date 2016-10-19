@@ -55,7 +55,7 @@ function expandRanges(text, ranges) {
 			result.push(ranges[i]);
 			// Add range for inner text
 			if ((i + 1) < n && (ranges[i][1] + 1 < ranges[i + 1][0])) {
-				result.push([ranges[i][1] + 1, ranges[i + 1][0]]);
+				result.push([ranges[i][1], ranges[i + 1][0]]);
 			}
 		}
 		// Add range for trailing text
