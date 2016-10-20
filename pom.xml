@@ -18,8 +18,38 @@
     <node.version>v6.7.0</node.version>
     <npm.version>3.10.3</npm.version>
     <npm.run.command>build</npm.run.command>
+    <frontend.src>dist</frontend.src>
     <docker.image>szops/${project.artifactId}:${project.version}</docker.image>
   </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.7</version>
+        <executions>
+          <execution>
+            <id>copy-nginx-config</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/docker-build</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}</directory>
+                  <includes>
+                    <include>nginx.conf</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
   <repositories>
     <repository>
