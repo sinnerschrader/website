@@ -1,8 +1,122 @@
-.imgResponsive {
-	.img {
-		background-color: transparent;
-		width: 100%;
-		height: auto;
-		max-width: 1200px;
+.responsive-image {
+	background-color: @s2-lightgrey;
+}
+
+.responsive-image[data-freeform] {
+	background-color: transparent;
+}
+
+.responsive-image[data-ratio],
+.responsive-image[data-ratio-s],
+.responsive-image[data-ratio-m],
+.responsive-image[data-ratio-l] {
+	position: relative;
+	overflow: hidden;
+}
+
+.responsive-image[data-ratio],
+.responsive-image[data-ratio-s],
+.responsive-image[data-ratio-m],
+.responsive-image[data-ratio-l] {
+	.responsive-image__picture,
+	.responsive-image__image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
 	}
+}
+
+.responsive-image[data-ratio="0.26"],
+.responsive-image[data-ratio-s="0.26"] {
+	padding-bottom: 384% // 432x1649 => 0,26 => 384%
+}
+
+.responsive-image[data-ratio="0.6"],
+.responsive-image[data-ratio-s="0.6"] {
+	padding-bottom: 172.5% // 456x770 => 0.59 => ~172.5%
+}
+
+.responsive-image[data-ratio="1"],
+.responsive-image[data-ratio-s="1"] {
+	padding-bottom: 100%
+}
+.responsive-image[data-ratio="1.1"],
+.responsive-image[data-ratio-s="1.1"] {
+	padding-bottom: 87%; // 750x656 => 1.14 => ~87%
+}
+.responsive-image[data-ratio="1.33"],
+.responsive-image[data-ratio-s="1.33"] {
+	padding-bottom: 75%; // 325x243 => 1.33 => ~75%
+}
+.responsive-image[data-ratio="1.4"],
+.responsive-image[data-ratio-s="1.4"] {
+	padding-bottom: 71%; // 750x536 => 1.4 => 71.42%
+}
+.responsive-image[data-ratio="1.4"],
+.responsive-image[data-ratio-s="1.4"] {
+	padding-bottom: 71%; // 750x536 => 1.4 => 71.42%
+}
+.responsive-image[data-ratio="1.86"],
+.responsive-image[data-ratio-s="1.86"] {
+	padding-bottom: 53%; // 1536/824 => 1.86 => 53.75%
+}
+.responsive-image[data-ratio="1.89"],
+.responsive-image[data-ratio-s="1.89"] {
+	padding-bottom: 52%; // 1536/824 => 1.86 => 52.91%
+}
+
+@media @s2-mq-window-tablet {
+	.responsive-image[data-ratio-m="0.6"] {
+		padding-bottom: 168% // 456x770 => 0.59 => ~168%
+	}
+	.responsive-image[data-ratio-m="1"] {
+		padding-bottom: 100%
+	}
+	.responsive-image[data-ratio-m="1.1"] {
+		padding-bottom: 87%; // 750x656 => 1.14 => ~87%
+	}
+	.responsive-image[data-ratio-m="1.33"] {
+		padding-bottom: 76%; // 325x243 => 1.33 => 76%
+	}
+	.responsive-image[data-ratio-m="1.4"] {
+		padding-bottom: 71%; // 750x536 => 1.4 => 71.42%
+	}
+	.responsive-image[data-ratio-m="1.86"] {
+		padding-bottom: 53%; // 1536/824 => 1.86 => 53.75%
+	}
+	.responsive-image[data-ratio-m="1.89"] {
+		padding-bottom: 52%; // 1536/824 => 1.86 => 52.91%
+	}
+}
+
+@media @s2-mq-window-desktop {
+	.responsive-image[data-ratio-l="0.6"] {
+		padding-bottom: 168% // 456x770 => 0.59 => ~168%
+	}
+	.responsive-image[data-ratio-l="1"] {
+		padding-bottom: 100%
+	}
+	.responsive-image[data-ratio-l="1.1"] {
+		padding-bottom: 87%; // 750x656 => 1.14 => ~87%
+	}
+	.responsive-image[data-ratio-l="1.33"] {
+		padding-bottom: 76%; // 325x243 => 1.33 => 76%
+	}
+	.responsive-image[data-ratio-l="1.4"] {
+		padding-bottom: 71%; // 750x536 => 1.4 => 71.42%
+	}
+	.responsive-image[data-ratio-l="1.86"] {
+		padding-bottom: 53%; // 1536/824 => 1.86 => 53.75%
+	}
+	.responsive-image[data-ratio-l="1.89"] {
+		padding-bottom: 52%; // 1536/824 => 1.86 => 52.91%
+	}
+}
+
+.responsive-image .responsive-image__picture,
+.responsive-image .responsive-image__image {
+	width: 100%;
+	height: auto;
 }

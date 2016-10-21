@@ -26,14 +26,12 @@
 
 	.locnav {
 		display: inline-block;
-
 		position: absolute;
 		top: 0;
 		left: -@s2-moduleGap-s-1;
 		z-index: 10;
-
+		width: 250px;
 		padding: @s2-moduleGap-s-1;
-
 		background-color: @s2-locnav-bg;
 		color: @s2-locnav-color;
 
@@ -41,6 +39,7 @@
 	}
 
 	.locnav-item {
+		min-height: 35px;
 		padding: 0 0 5px 0;
 
 		&:last-child {
@@ -223,6 +222,9 @@
 
 		& ~ .map-@{n} {
 			display: block;
+			img {
+				display: block;
+			}
 		}
 
 		& ~ .locnav .locnav-btn-@{n} {

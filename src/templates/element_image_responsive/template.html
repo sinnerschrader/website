@@ -1,9 +1,45 @@
 ---
 name: ResponsiveImage
 ---
-<picture className="imgResponsive">
-	<source srcSet={props.imageSrcSetS} media="(max-width: 720px)" />
-	<source srcSet={props.imageSrcSetM} media="(max-width: 1024px)" />
-	<source srcSet={props.imageSrcSetL} media="(min-width: 1024px)" />
-	<img src={props.imageSrc} className="img" alt="" />
-</picture>
+<div
+	className="responsive-image"
+	data-freeform={props.freeForm}
+	data-ratio={props.ratio}
+	data-ratio-s={props.ratioS}
+	data-ratio-m={props.ratioM}
+	data-ratio-l={props.ratioL}
+	>
+	{
+		props.imageSrcSetS ||
+		props.imageSrcSetM ||
+		props.imageSrcSetL ?
+			<picture className="responsive-image__picture">
+				{
+					props.imageSrcSetS &&
+						<source srcSet={props.imageSrcSetS} media="(max-width: 719px)"/>
+				}
+				{
+					props.imageSrcSetM &&
+						<source srcSet={props.imageSrcSetM} media="(min-width: 720px)"/>
+				}
+				{
+					props.imageSrcSetL &&
+						<source srcSet={props.imageSrcSetL} media="(min-width: 1024px)"/>
+				}
+				<img
+					alt={props.alt}
+					className="responsive-image__image"
+					sizes={props.imageSizes}
+					src={props.imageSrc}
+					srcSet={props.imageSrcSet}
+					/>
+			</picture> :
+			<img
+				alt={props.alt}
+				className="responsive-image__image"
+				sizes={props.imageSizes}
+				src={props.imageSrc}
+				srcSet={props.imageSrcSet}
+				/>
+	}
+</div>
