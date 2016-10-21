@@ -2,7 +2,6 @@
 /static/js/app.js
 /static/css/*.css
 /npm-debug.log
-dist/
 /node
 /target
 .DS_Store*

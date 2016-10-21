@@ -19,13 +19,13 @@ module.exports = {
 			port: 8080
 		}
 	},
-	files: 'dist',
+	files: 'docs',
 	watchOptions: {},
 	server: true,
 	proxy: false,
 	port: 3000,
 	middleware: false,
-	serveStatic: ['dist'],
+	serveStatic: ['docs'],
 	ghostMode: {
 		clicks: true,
 		scroll: true,

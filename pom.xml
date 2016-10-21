@@ -18,7 +18,7 @@
     <node.version>v6.7.0</node.version>
     <npm.version>3.10.3</npm.version>
     <npm.run.command>build</npm.run.command>
-    <frontend.src>dist</frontend.src>
+    <frontend.src>docs</frontend.src>
     <docker.image>szops/${project.artifactId}:${project.version}</docker.image>
   </properties>
 
