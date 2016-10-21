@@ -3,6 +3,11 @@
 	flex-direction: column;
 	padding: @s2-moduleGap-s-2 @s2-moduleGap-s 0 @s2-moduleGap-s;
 
+	.copy {
+		margin: 0;
+		padding-bottom: @s2-moduleGap-s-2;
+	}
+
 	.image {
 		margin-left: -@s2-moduleGap-s;
 		width: 228px;
@@ -10,9 +15,15 @@
 	}
 
 	@media @s2-mq-window-tablet {
-		padding: @s2-moduleGap-m-2 @s2-moduleGap-m 0 @s2-moduleGap-m;
+		padding: @s2-moduleGap-m-2 @s2-moduleGap-m-2 0 @s2-moduleGap-m-2;
+
+		.copy {
+			margin: 0;
+			padding-bottom: @s2-moduleGap-m-2;
+		}
 
 		.image {
+			margin-left: -@s2-moduleGap-m-2;
 			width: 391px;
 		}
 	}
@@ -22,6 +33,7 @@
 		flex-direction: row-reverse;
 
 		.copy {
+			margin: 0 0 @s2-base-lineheight 0;
 			padding-left: @s2-moduleGap-l-2;
 		}
 
