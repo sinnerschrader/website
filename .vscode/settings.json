@@ -1,4 +1,10 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-	"xo.enable": true
+	"xo.enable": true,
+	"search.exclude": {
+		"**/docs": true,
+		"**/target": true,
+		"**/node_modules": true,
+		"**/bower_components": true
+	}
 }
