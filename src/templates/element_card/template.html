@@ -3,16 +3,14 @@ name: ElementCard
 ---
 <div className="card">
 	<figure>
-		{
-		false &&
-			<div className="teaser">
-				<ElementImage
-					url={props.imageUrl}
-					width={280}
-					height={370}
-					/>
-			</div>
-		}
+		<div className="teaser">
+			<ElementImage
+				url={props.url}
+				width={560}
+				height={750}
+				/>
+		</div>
+
 		{
 		props.name && props.jobTitle &&
 			<figcaption className="figcaption">
@@ -21,7 +19,14 @@ name: ElementCard
 			</figcaption>
 		}
 	</figure>
-	<SocialMediaNetwork/>
+	<SocialMediaNetwork
+		twitterUrl={props.twitterUrl}
+		twitterTitle={props.twitterTitle}
+		xingUrl={props.xingUrl}
+		xingTitle={props.xingTitle}
+		linkedInUrl={props.linkedInUrl}
+		linkedInTitle={props.linkedInTitle}
+		 />
 	<Schema
 		name={props.name}
 		jobTitle={props.jobTitle}
