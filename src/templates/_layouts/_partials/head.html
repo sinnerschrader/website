@@ -72,7 +72,10 @@ name: Head
 		type="image/x-icon"
 		/>
 
-	<link rel="dns-prefetch" href="https://www.sinnerschrader.com"/>
-	<link rel="preconnect" href="https://www.sinnerschrader.com"/>
+	<link rel="preload" href={props.base + '/static/fonts/maisonweb-bold.woff2'}/>
+	<link rel="preload" href={props.base + '/static/css/font.css'}/>
 	<link rel="preload" href={props.base + '/static/css/app.css'}/>
+	<link rel="preconnect" href="https://sinnerschrader.com"/>
+	<link rel="preconnect" href="https://sinnerschrader.jobs"/>
+	<link rel="preconnect" href="https://sinnerschrader.news"/>
 </head>
