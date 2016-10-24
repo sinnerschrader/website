@@ -24,7 +24,7 @@
     "build:watch": "npm run build:watch:js & npm run build:watch:css & npm run build:watch:pages",
     "build:watch:js": "chokidar \"src/js/**/*\" --initial --command \"npm run build:js\"",
     "build:watch:css": "chokidar \"src/**/*.less\" --initial --command \"npm run build:css:app && npm run build:css:fonts\"",
-    "build:watch:pages": "chokidar \"src/pages/**/*\" \"src/templates/**/*.html\" \"src/helpers/**/*\" --initial --command \"npm run build:pages\"",
+    "build:watch:pages": "chokidar \"src/pages/**/*\" \"src/templates/**/*.html\" \"src/helpers/**/*\" \"static/**\" --initial --command \"npm run build:pages\"",
     "serve": "browser-sync start --config bs-config.js"
   },
   "devDependencies": {
