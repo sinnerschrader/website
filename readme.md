@@ -2,6 +2,8 @@
 
 This is the SinnerSchrader "s2 Website" Project.
 
+[![Build Status](https://travis-ci.org/sinnerschrader/sinnerschrader-website.svg?branch=master)](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
+
 ## Starting the Prototype Server
 
 ### Get the most stable NodeJS-Server
