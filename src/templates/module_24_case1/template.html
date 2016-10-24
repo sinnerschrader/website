@@ -11,13 +11,19 @@ name: Case1
 			bold
 			/>
 	}
-
-	<ResponsiveImage
-		imageSrcSetS={props.imageSrcSetS}
-		imageSrcSetM={props.imageSrcSetM}
-		imageSrcSetL={props.imageSrcSetL}
-		imageSrc={props.imageSrcSetS}
-		/>
+	<div className="mod-case1__image">
+		<ResponsiveImage
+			freeForm
+			imageSrcSetS={props.imageSrcSetS}
+			imageSrcSetM={props.imageSrcSetM}
+			imageSrcSetL={props.imageSrcSetL}
+			imageSrc={props.imageSrcSetS}
+			ratio={props.imageRatio}
+			ratioS={props.imageRatioS}
+			ratioM={props.imageRatioM}
+			ratioL={props.imageRatioL}
+			/>
+	</div>
 	{
 		props.headline &&
 		<Text

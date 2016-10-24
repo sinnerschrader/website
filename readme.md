@@ -79,8 +79,22 @@ docker push <docker-tag>
 HTTPUSER="user;pass" envsubst < marathon.json |curl -X POST http://<marathon-host>:8080/v2/apps -d @- -H "Content-type: application/json"
 ```
 
-## Use Maven as alternativ
+## Use Maven as alternative
 
 ```shell
 HTTPUSER="<username>;<password>" mvn package -P frontend,docker,marathon,twiri
+```
+
+## Image conversion and optimization scripts
+
+* interlace
+
+```shell
+./scripts/interlace.sh
+
+# Convert hero backgrounds to progressive jpgs
+./scripts/interlace.sh  "static/images/backgrounds/**/*.jpg jpg"
+
+# Convert static maps to interlaced png
+./scripts/interlace.sh  "static/images/contents/sinnerschrader-*.png png"
 ```
