@@ -4,6 +4,15 @@ name: StandardLayout
 <html lang="de-DE">
 <Head host={props.host} href={props.href} base={props.base} title={props.title}/>
 <body className={helpers.classNames({bodyClass: props.bodyClass})} data-theme={props.theme}>
+	{/*<!-- Google Tag Manager (noscript) -->*/}
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMRX7Q"
+			height="0"
+			width="0"
+			style={{display:'none', visibility:'hidden'}}>
+		</iframe>
+	</noscript>
+	{/*<!-- End Google Tag Manager (noscript) -->*/}
 	<div className="container">
 		<Navigation base={props.base}/>
 		<main className="main">

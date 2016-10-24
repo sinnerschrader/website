@@ -2,6 +2,9 @@
 name: Head
 ---
 <head>
+	{/*<!-- Google Tag Manager -->*/}
+	<script dangerouslySetInnerHTML={helpers.googleTagManager()} />
+	{/*<!-- End Google Tag Manager -->*/}
 	<link rel="canonical" href={props.host + props.href} />
 	<meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
 	<meta charSet="UTF-8" />
