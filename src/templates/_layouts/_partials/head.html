@@ -39,6 +39,14 @@ name: Head
 		].join(' ')}
 		/>
 
+	<link rel="preload" href={props.base + '/static/fonts/maisonweb-bold.woff2'} as="font" type="font/woff2"/>
+	<link rel="preload" href={props.base + '/static/css/font.css'} as="style"/>
+	<link rel="preload" href={props.base + '/static/css/app.css'} as="style"/>
+	<link rel="dns-prefetch" href={props.host}/>
+	<link rel="preconnect" href={props.host}/>
+	<link rel="preconnect" href="https://sinnerschrader.jobs"/>
+	<link rel="preconnect" href="https://sinnerschrader.news"/>
+
 	<link
 		rel="stylesheet"
 		href={props.base + '/static/css/fonts.css'}
@@ -49,106 +57,67 @@ name: Head
 		href={props.base + '/static/css/app.css'}
 		media="screen,print"
 		/>
-
 	<link
 		rel="icon"
 		href={props.base + '/static/images/favicons/48x48.png'}
 		sizes="48x48"
 		/>
-  <link
-		rel="icon"
-		href={props.base + '/static/images/favicons/96x96.png'}
-		sizes="96x96"
-		/>
-  <link
-		rel="icon"
-		href={props.base + '/static/images/favicons/144x144.png'}
-		sizes="144x144"
-		/>
-  <link
-		rel="icon"
-		href={props.base + '/static/images/favicons/192x192.png'}
-		sizes="192x192"
-		/>
-  <link
-		rel="shortcut icon"
-		href={props.base + '/static/images/favicons/favicon.ico'}
-		type="image/x-icon"
-		/>
-
-	<link rel="preload" href={props.base + '/static/fonts/maisonweb-bold.woff2'}/>
-	<link rel="preload" href={props.base + '/static/css/font.css'}/>
-	<link rel="preload" href={props.base + '/static/css/app.css'}/>
-	<link rel="dns-prefetch" href={props.host}/>
-	<link rel="preconnect" href={props.host}/>
-	<link rel="preconnect" href="https://sinnerschrader.jobs"/>
-	<link rel="preconnect" href="https://sinnerschrader.news"/>
 	<link
-		rel="stylesheet"
-		href={props.base + '/static/css/app.css'}
-		media="screen,print"
-		/>
-  <link
-		rel="icon"
-		href={props.base + '/static/images/favicons/48x48.png'}
-		sizes="48x48"
-		/>
-  <link
 		rel="icon"
 		href={props.base + '/static/images/favicons/96x96.png'}
 		sizes="96x96"
 		/>
-  <link
+	<link
 		rel="icon"
 		href={props.base + '/static/images/favicons/144x144.png'}
 		sizes="144x144"
 		/>
-  <link
+	<link
 		rel="icon"
 		href={props.base + '/static/images/favicons/192x192.png'}
 		sizes="192x192"
 		/>
-  <link
+	<link
 		rel="apple-touch-icon"
 		href={props.base + '/static/images/favicons/57x57.png'}
 		sizes="57x57"
 		/>
-  <link
+	<link
 		rel="apple-touch-icon"
 		href={props.base + '/static/images/favicons/72x72.png'}
 		sizes="72x72"
 		/>
-  <link
+	<link
 		rel="apple-touch-icon"
 		href={props.base + '/static/images/favicons/76x76.png'}
 		sizes="76x76"
 		/>
-  <link
+	<link
 		rel="apple-touch-icon"
 		href={props.base + '/static/images/favicons/114x114.png'}
 		sizes="114x114"
 		/>
-  <link
+	<link
 		rel="apple-touch-icon"
 		href={props.base + '/static/images/favicons/120x120.png'}
 		sizes="120x120"
 		/>
-  <link
+	<link
 		rel="apple-touch-icon"
 		href={props.base + '/static/images/favicons/144x144.png'}
 		sizes="144x144"
 		/>
-  <link
+	<link
 		rel="apple-touch-icon"
 		href={props.base + '/static/images/favicons/152x152.png'}
 		sizes="152x152"
 		/>
-  <link
+	<link
 		rel="apple-touch-icon"
 		href={props.base + '/static/images/favicons/180x180.png'}
 		sizes="180x180"
 		/>
-  <link
+	<link
 		rel="shortcut icon"
 		href={props.base + '/static/images/favicons/favicon.ico'}
 		type="image/x-icon"
