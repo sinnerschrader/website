@@ -3,24 +3,16 @@ name: SocialMediaNetwork
 ---
 <ul className="smn">
 	{
-	(props.linkedInUrl && props.linkedInTitle) &&
-	<li className="smn-item"><a href={props.linkedInUrl} title={props.linkedInTitle} className="network"></a></li>
-	}
-	{
-	(props.xingUrl && props.xingTitle) &&
-	<li className="smn-item"><a href={props.xingUrl} title={props.xingTitle} className="network"></a></li>
-	}
-	{
 	(props.twitterUrl && props.twitterTitle) &&
-		<li className="smn-item"><a href={props.twitterUrl} title={props.twitterTitle} className="network"></a></li>
+	<li className="smn-item"><a href={props.twitterUrl} title={props.twitterTitle} className="network"></a></li>
 	}
 	{
 	(props.facebookUrl && props.facebookTitle) &&
 		<li className="smn-item"><a href={props.facebookUrl} title={props.facebookTitle} className="network"></a></li>
 	}
 	{
-	(props.youtubeUrl && props.youtubeTitle) &&
-		<li className="smn-item"><a href={props.youtubeUrl} title={props.youtubeTitle} className="network">youtube</a></li>
+	(props.linkedInUrl && props.linkedInTitle) &&
+	<li className="smn-item"><a href={props.linkedInUrl} title={props.linkedInTitle} className="network"></a></li>
 	}
 	{
 	props.children &&
