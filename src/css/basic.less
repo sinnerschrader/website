@@ -41,13 +41,6 @@ a {
 		  text-decoration: none;
 		}
 	}
-	@media @s2-mq-window-tablet {
-//		margin-bottom: 32px;
-	}
-	@media @s2-mq-window-desktop {
-//		margin-bottom: 36px;
-	}
-
 }
 .scopy {
 	font-size: 15px;
@@ -172,14 +165,10 @@ a {
 	font-family: s2websiteicons;
 }
 
-// for toggle and other js stuff
-// don't be overwritten
-.is-active {
-	display: block !important;
-}
-
 .main,
 .footer {
+	overflow-x: hidden;
+	width: 100%;
 	> section {
 		// avoid hairline on hidpi displays
 		margin-top: -1px;
