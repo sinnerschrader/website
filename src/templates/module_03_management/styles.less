@@ -8,11 +8,9 @@
 
 	.cards {
 		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
 
-		.item {
-			flex: 1 0 auto;
-			width: 100%; // FIX IE 11
-		}
 		.teaser {
 			min-width: 217px;
 		}
@@ -24,20 +22,21 @@
 	}
 
 	@media @s2-mq-window-tablet {
-		padding: @s2-moduleGap-m-1;
+		padding: @s2-moduleGap-m-1 0;
 
 		.h {
 			max-width: 80%;
+			padding: 0 0 0 @s2-moduleGap-m-1;
 			margin-bottom: @s2-moduleGap-m-1;
 		}
 
 		.cards {
+			flex-direction: row;
 			justify-content: space-between;
 			flex-wrap: wrap;
 			.item {
-				flex: 0 1 auto;
-				width: auto; // FIX IE 11
-				margin: 0 @s2-moduleGap-m-1 @s2-moduleGap-m-1;
+				flex: 0 1 50%;
+				padding: 0 0 0 @s2-moduleGap-m-1;
 			}
 		}
 
@@ -51,7 +50,15 @@
 
 		.h {
 			max-width: 60%;
+			padding-left: @s2-moduleGap-l-1;
 			margin-bottom: @s2-moduleGap-l-1;
+		}
+
+		.cards {
+			.item {
+				flex-basis: 33.33%;
+				padding: 0 @s2-moduleGap-l-1;
+			}
 		}
 
 	}
