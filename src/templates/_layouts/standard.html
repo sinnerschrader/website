@@ -2,7 +2,7 @@
 name: StandardLayout
 ---
 <html lang="de-DE">
-<Head base={props.base} title={props.title}/>
+<Head host={props.host} href={props.href} base={props.base} title={props.title}/>
 <body className={helpers.classNames({bodyClass: props.bodyClass})} data-theme={props.theme}>
 	<div className="container">
 		<Navigation base={props.base}/>

@@ -2,7 +2,7 @@
 route: /index.html
 title: SinnerSchrader
 ---
-<StandardLayout title={frontmatter.title} base="." theme="blue">
+<StandardLayout title={frontmatter.title} host={global.host} href={frontmatter.route} base="." theme="blue">
 	<Hero
 		teaser
 		blend

@@ -2,6 +2,7 @@
 name: Head
 ---
 <head>
+	<link rel="canonical" href={props.host + props.href} />
 	<meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
 	<meta charSet="UTF-8" />
 	<title>{props.title || 'SinnerSchrader'}</title>
@@ -20,10 +21,10 @@ name: Head
 	<meta property="fb:page_id" content="SinnerSchrader" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="SinnerSchrader" />
-	<meta property="og:url" content="https://sinnerschrader.com" />
+	<meta property="og:url" content={props.host} />
 
 	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:url" content="https://sinnerschrader.com" />
+	<meta name="twitter:url" content={props.host} />
 	<meta name="twitter:site" content="@sinnerschrader" />
 	<meta name="twitter:creator" content="@sinnerschrader" />
 	<meta name="twitter:title" content="sinnerschrader" />
@@ -75,7 +76,8 @@ name: Head
 	<link rel="preload" href={props.base + '/static/fonts/maisonweb-bold.woff2'}/>
 	<link rel="preload" href={props.base + '/static/css/font.css'}/>
 	<link rel="preload" href={props.base + '/static/css/app.css'}/>
-	<link rel="preconnect" href="https://sinnerschrader.com"/>
+	<link rel="dns-prefetch" href={props.host}/>
+	<link rel="preconnect" href={props.host}/>
 	<link rel="preconnect" href="https://sinnerschrader.jobs"/>
 	<link rel="preconnect" href="https://sinnerschrader.news"/>
 	<link
