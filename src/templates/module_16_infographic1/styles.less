@@ -1,9 +1,9 @@
 .mod-infographic1 {
 	padding: @s2-moduleGap-s-1;
-	min-height: 80vh;
-	background-color: @s2-black;
+	min-height: 65vh;
 	background: url('@{s2-image-path}/elements/infographic1.svg');
-	background-position: 50% 10%;
+	background-color: @s2-black;
+	background-position: 50% 30px;
 	background-repeat: no-repeat;
 	background-size: 75%;
 
@@ -14,11 +14,17 @@
 	}
 
 	.listMenu {
-		padding-top: 264px;
+		padding-top: 123px;
+		padding-left: 64px;
+	}
+
+	.listMenuEntry {
+		margin-bottom: 15px;
 	}
 
 	.listMenuLabel {
 		&:extend(.h3);
+		text-transform: uppercase;
 	}
 
 	.listMenuInput {
@@ -36,11 +42,12 @@
 
 	@media @s2-mq-window-tablet {
 		padding: @s2-moduleGap-m-1;
+		min-height: 80vh;
 		background-position: 50% 20%;
 		background-size: 50%;
 
 		.listMenu {
-			padding: 264px 0 0;
+			padding: 200px 0 0;
 		}
 
 		.listMenuEntry {
