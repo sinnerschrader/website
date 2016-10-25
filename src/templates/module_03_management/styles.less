@@ -7,18 +7,11 @@
 	}
 
 	.cards {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-
-		.teaser {
-			min-width: 217px;
-		}
+		margin-left: @s2-moduleGap-s-1;
 	}
 
-	.pager {
-		padding-top: 40px;
-		padding-bottom: 0;
+	.item {
+		display: flex;
 	}
 
 	@media @s2-mq-window-tablet {
@@ -31,17 +24,15 @@
 		}
 
 		.cards {
-			flex-direction: row;
-			justify-content: space-between;
+			display: flex;
 			flex-wrap: wrap;
-			.item {
-				flex: 0 1 50%;
-				padding: 0 0 0 @s2-moduleGap-m-1;
-			}
+			justify-content: space-between;
+			margin-left: 0;
 		}
 
-		.pager {
-			display: none;
+		.item {
+			flex: 0 1 50%;
+			padding: 0 0 0 @s2-moduleGap-m-1;
 		}
 	}
 
@@ -54,13 +45,9 @@
 			margin-bottom: @s2-moduleGap-l-1;
 		}
 
-		.cards {
-			.item {
-				flex-basis: 33.33%;
-				padding: 0 @s2-moduleGap-l-1;
-			}
+		.item {
+			flex-basis: 33.33%;
+			padding: 0 @s2-moduleGap-l-1;
 		}
-
 	}
-
 }
