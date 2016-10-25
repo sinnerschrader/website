@@ -10,7 +10,7 @@
 		left: 50%;
 		transform: translateX(-50%);
 		z-index: 1;
-		max-width: 50%;
+		max-width: 445px;
 		max-height: 75%;
 		fill: currentColor;
 	}
@@ -74,8 +74,7 @@
 		}
 
 		.infographic-no {
-			top: 50%;
-			transform: translate(-50%,-50%);
+			top: 120px;
 		}
 	}
 
@@ -101,7 +100,10 @@
 	}
 
 	@media @s2-mq-window-tablet {
-		padding: @s2-moduleGap-m;
+		padding: @s2-moduleGap-m 20px;
+		.mod-hero {
+			width: 100%;
+		}
 		.h,
 		.copy {
 			margin-bottom: @s2-moduleGap-m-1;
@@ -109,7 +111,11 @@
 	}
 
 	@media @s2-mq-window-desktop {
-		padding: @s2-moduleGap-l;
+		padding-top: @s2-moduleGap-l-2;
+		padding-bottom: @s2-moduleGap-l-2 ;
+		.mod-hero {
+			top: 310px;
+		}
 		.h,
 		.copy {
 			margin-bottom: @s2-moduleGap-l-1;
