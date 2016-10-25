@@ -3,17 +3,47 @@ name: SocialMediaNetwork
 ---
 <ul className="smn">
 	{
-	(props.twitterUrl && props.twitterTitle) &&
-	<li className="smn-item"><a href={props.twitterUrl} title={props.twitterTitle} className="network"></a></li>
-	}
+		(props.twitterUrl && props.twitterTitle) &&
+			<li className="smn-item">
+					<a
+						className="network"
+						href={props.twitterUrl}
+						rel="noopener noreferrer"
+						target="_blank"
+						title={props.twitterTitle}
+						>
+						
+					</a>
+			</li>
+		}
 	{
-	(props.facebookUrl && props.facebookTitle) &&
-		<li className="smn-item"><a href={props.facebookUrl} title={props.facebookTitle} className="network"></a></li>
-	}
+		(props.facebookUrl && props.facebookTitle) &&
+			<li className="smn-item">
+				<a
+					className="network"
+					href={props.facebookUrl}
+					rel="noopener noreferrer"
+					target="_blank"
+					title={props.facebookTitle}
+					>
+					
+				</a>
+			</li>
+		}
 	{
-	(props.linkedInUrl && props.linkedInTitle) &&
-	<li className="smn-item"><a href={props.linkedInUrl} title={props.linkedInTitle} className="network"></a></li>
-	}
+		(props.linkedInUrl && props.linkedInTitle) &&
+			<li className="smn-item">
+				<a
+					className="network"
+					href={props.linkedInUrl}
+					rel="noopener noreferrer"
+					target="_blank"
+					title={props.linkedInTitle}
+					>
+					
+				</a>
+			</li>
+		}
 	{
 	props.children &&
 		React.Children.map(props.children, child => (
