@@ -33,8 +33,9 @@ SHA=`git rev-parse --verify HEAD`
 doCompile
 
 # Now let's go have some fun with the cloned repo
-git config user.name "Travis CI"
-git config user.email "$COMMIT_AUTHOR_EMAIL"
+git config user.name "SinnerSchrader sucht Talente"
+#git config user.email "$COMMIT_AUTHOR_EMAIL"
+git config user.email "jobs@sinnerschrader.com"
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [ $(git status --porcelain | wc -l) -lt 1 ]; then
