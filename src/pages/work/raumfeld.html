@@ -1,7 +1,7 @@
 ---
 route: /work/raumfeld
 ---
-<StandardLayout host={global.host} href={frontmatter.route} base="../.." theme="green">
+<StandardLayout host={props.host} href={frontmatter.route} base="../.." theme="green">
 	<Hero
 		headline="We made music move to your groove."
 		copy="Raumfeld, enriching the way consumers listen to music at home."
@@ -46,5 +46,5 @@ route: /work/raumfeld
 		copy="The Raumfeld Multi Room home music entertainment app is a truly transformational product. It enriches the way consumers could listen to music in their homes and transforms the Raumfeld wireless audio systems into a music ecosystem."
 		cite="Christoph Mörl"
 		/>
-	<Locations withMap={true}/>
+	<Locations base="../.." withMap={true}/>
 </StandardLayout>

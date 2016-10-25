@@ -1,7 +1,7 @@
 ---
 route: /work/ep-guide
 ---
-<StandardLayout host={global.host} href={frontmatter.route} base="../.." theme="green">
+<StandardLayout host={props.host} href={frontmatter.route} base="../.." theme="green">
 	<Hero
 		headline="We enhanced the theme park experience."
 		copy="Having fun at Europa-Park even without roller coasters."
@@ -32,10 +32,10 @@ route: /work/ep-guide
 		/>
 	{/*<Gallery/>*/}
 	<Image
-		imageSrcSetS="../../../static/images/contents/module_10_bild_palm_ep.jpg"
-		imageSrcSetM="../../../static/images/contents/module_10_bild_lap_ep.jpg"
-		imageSrcSetL="../../../static/images/contents/module_10_bild_desk_ep.jpg"
-		imageSrc="../../../static/images/contents/module_10_bild_palm_ep.jpg"
+		imageSrcSetS="../../static/images/contents/module_10_bild_palm_ep.jpg"
+		imageSrcSetM="../../static/images/contents/module_10_bild_lap_ep.jpg"
+		imageSrcSetL="../../static/images/contents/module_10_bild_desk_ep.jpg"
+		imageSrc="../../static/images/contents/module_10_bild_palm_ep.jpg"
 		/>
 	<Story1
 		headline="Tackling `complexity` with collaboration."
@@ -46,5 +46,5 @@ route: /work/ep-guide
 		copy="The Europa-Park app is a truly transformative product. By equipping customers with contextualised content, it changed the way they experienced the theme park, giving them more time for fun without franticness."
 		cite="Sven Schmiede"
 		/>
-	<Locations withMap={true}/>
+	<Locations base="../.." withMap={true}/>
 </StandardLayout>

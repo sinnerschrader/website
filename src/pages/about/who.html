@@ -1,7 +1,7 @@
 ---
 route: /about/who
 ---
-<StandardLayout host={global.host} href={frontmatter.route} base="../.." theme="blue">
+<StandardLayout host={props.host} href={frontmatter.route} base="../.." theme="blue">
 	<Hero
 		headline="About us."
 		copy="Get to know our most important thinkers, our offices and a selection of our clients."
@@ -94,5 +94,5 @@ route: /about/who
 		headline="Investor Relations"
 		textBold="*SinnerSchrader AG shares (WKN 514 190 / ISIN DE0005141907) were admitted to the Frankfurt Stock Exchange in 1999.* They are traded in the Regulated Market subsection and since 2003 in the Prime Standard section. Trust, transparency and constancy are the guidelines for shareholder relations at SinnerSchrader. They are based on the rules of good and transparent corporate governance, in accordance with the standards laid down in the German Corporate Governance Code."
 		/>
-	<Locations withMap={true} />
+	<Locations base="../.." withMap={true} />
 </StandardLayout>

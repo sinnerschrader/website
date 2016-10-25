@@ -1,7 +1,7 @@
 ---
 route: /about/how
 ---
-<StandardLayout host={global.host} href={frontmatter.route} base="../.." theme="blue">
+<StandardLayout host={props.host} href={frontmatter.route} base="../.." theme="blue">
 	<Hero
 		headline="We serve full stack. Full stop."
 		copy="We are a tech company, we design to make things work. Our aim is to deliver. From meeting to market."
@@ -39,15 +39,15 @@ route: /about/how
 		invert
 		/>
 	<Image
-		imageSrcSetS="../../static/images/backgrounds/module_11_About_How_Image_Mobile.jpg"
-		imageSrcSetM="../../static/images/backgrounds/module_11_About_How_Image_Tablet.jpg"
-		imageSrcSetL="../../static/images/backgrounds/module_11_About_How_Image_Desktop.jpg"
-		imageSrc="../../static/images/backgrounds/module_11_About_How_Image_Mobile.jpg"
+		imageSrcSetS="../../static/images/contents/module_11_image_palm_about_how.jpg"
+		imageSrcSetM="../../static/images/contents/module_11_image_lap_about_how.jpg"
+		imageSrcSetL="../../static/images/contents/module_11_image_desk_about_how.jpg"
+		imageSrc="../../static/images/contents/module_11_image_palm_about_how.jpg"
 		/>
 	<Story1
 		headline="We are in this `together`!"
 		copy="*We think that good things come out from good partnerships* – which is why the words ‘accountability’, ‘honesty’ and ‘passion’ are not taken lightly around here. Simply put, we are all in this together."
 		gradient
 		/>
-	<Locations withMap={true}/>
+	<Locations base="../.." withMap={true}/>
 </StandardLayout>

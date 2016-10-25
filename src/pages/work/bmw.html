@@ -1,7 +1,7 @@
 ---
 route: /work/bmw
 ---
-<StandardLayout host={global.host} href={frontmatter.route} base="../.." theme="blue">
+<StandardLayout host={props.host} href={frontmatter.route} base="../.." theme="blue">
 	<Hero
 		headline="We carried on the tradition of innovation."
 		copy="BMW transforms car buying with the world's first end-to-end ecommerce platform."
@@ -51,5 +51,5 @@ route: /work/bmw
 		copy="The BMW end-to-end ecommerce platform is a truly transformational product. Because, it changed consumer car purchasing behaviours, whilst being scaled across the global market."
 		cite="Matthias Schrader"
 		/>
-	<Locations withMap={true}/>
+	<Locations base="../.." withMap={true}/>
 </StandardLayout>

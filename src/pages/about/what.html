@@ -1,7 +1,7 @@
 ---
 route: /about/what
 ---
-<StandardLayout host={global.host} href={frontmatter.route} base="../.." theme="blue">
+<StandardLayout host={props.host} href={frontmatter.route} base="../.." theme="blue">
 	<Hero
 		headline="We deliver transformational products."
 		copy="They bond with customers, reshape user behaviours and transform business reality."
@@ -38,5 +38,5 @@ route: /about/what
 			text="This is the only true transformation."
 			/>
 	</Statement>
-	<Locations withMap={true}/>
+	<Locations base="../.." withMap={true}/>
 </StandardLayout>

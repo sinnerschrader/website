@@ -1,7 +1,7 @@
 ---
 route: /work/maxblue
 ---
-<StandardLayout host={global.host} href={frontmatter.route} base="../.." theme="red">
+<StandardLayout host={props.host} href={frontmatter.route} base="../.." theme="red">
 	<Hero
 		headline="We pioneered online trading services."
 		copy="The answer to the questions of the FinTech world: maxblue."
@@ -58,5 +58,5 @@ route: /work/maxblue
 		copy="maxblue is a truly transformational product. Because true transformation starts with the user and ends simply with true value."
 		cite="Matthias Schrader"
 		/>
-	<Locations withMap={true}/>
+	<Locations base="../.." withMap={true}/>
 </StandardLayout>

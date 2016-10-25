@@ -1,7 +1,7 @@
 ---
 route: /work
 ---
-<StandardLayout host={global.host} href={frontmatter.route} base=".." theme="red">
+<StandardLayout host={props.host} href={frontmatter.route} base=".." theme="red">
 	<Hero
 		headline="Take a look at how we help our clients."
 		copy="Explore what we do and imagine what we could do for you."
@@ -102,5 +102,5 @@ route: /work
 		theme="green"
 		blend
 		/>
-	<Locations withMap={true}/>
+	<Locations base=".." withMap={true}/>
 </StandardLayout>

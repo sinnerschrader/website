@@ -1,7 +1,7 @@
 ---
 route: /work/curved
 ---
-<StandardLayout host={global.host} href={frontmatter.route} base="../.." theme="green">
+<StandardLayout host={props.host} href={frontmatter.route} base="../.." theme="green">
 	<Hero
 		headline="We transformed content marketing."
 		copy="CURVED turns content into a fast growing business."
@@ -58,5 +58,5 @@ route: /work/curved
 		We transform users daily lifes with meaningful content. We transform the marketing logic of Telefonica.
 		And we redefined and transform Content Marketing. This is true transformation."
 		/>
-	<Locations withMap={true}/>
+	<Locations base="../.." withMap={true}/>
 </StandardLayout>
