@@ -7,7 +7,7 @@ name: Text
 			case '`':
 				return <span key={index} className="sctntxtclr">{part[0]}</span>
 			case '*':
-				return <strong key={index}>{part[0]}</strong>;
+				return <span key={index} className="strong">{part[0]}</span>;
 			default:
 				return part[0];
 		}
