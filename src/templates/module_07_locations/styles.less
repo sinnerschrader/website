@@ -54,10 +54,7 @@
 		font-size: inherit;
 		text-transform: uppercase;
 		cursor: pointer;
-
-		&:after {
-			display: none;
-		}
+		text-decoration: none;
 	}
 
 	.location-address {
@@ -227,10 +224,7 @@
 		}
 
 		& ~ .locnav .locnav-btn-@{n} {
-			&:after {
-				display: block;
-				background-color: currentColor;
-			}
+			text-decoration: underline;
 		}
 	}
 }

@@ -35,12 +35,6 @@ a {
 	&:last-child {
 		margin-bottom: 0;
 	}
-	a {
-		text-decoration: none;
-		&:hover {
-		  text-decoration: none;
-		}
-	}
 }
 .scopy {
 	font-size: 15px;
@@ -64,15 +58,7 @@ a {
 	display: inline-block;
 	font-weight: bold;
 	word-break: break-all;
-	&::after{
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 2px;
-		background: @s2-black;
-	}
+	text-decoration: underline;
 }
 
 .frame {
