@@ -5,6 +5,13 @@ name: ElementContact
 	<h4 className="h h4">{props.caption}</h4>
 	{props.name}<br/>
 	{props.phone}<br/>
-	<a href="mailto:{props.email}">{props.email}</a>
+	{/* use two blocks since we cannot return two children from one expression */}
+	{
+		props.url && <a className="link" href={props.url}>{props.url}</a>
+	}
+	{
+		props.url && <br/>
+	}
+	<a className="link" href={'mailto:' + props.email}>{props.email}</a>
 	<Schema {...props} />
 </div>
