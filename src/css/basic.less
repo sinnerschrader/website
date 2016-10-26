@@ -1,8 +1,9 @@
 html {
-	text-rendering: optimizeLegibility; // may cause render issues
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	// text-rendering: optimizeLegibility; // may cause render issues
+	// -webkit-font-smoothing: antialiased;
+	// -moz-osx-font-smoothing: grayscale;
 	font: @s2-font-basesize/@s2-base-lineheight @s2-font-base;
+	font-feature-settings: "liga" 0;
 	letter-spacing: @s2-base-letterspacing;
 	@media @s2-mq-window-tablet {
 		font-size: 20px;
