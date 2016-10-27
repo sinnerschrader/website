@@ -10,7 +10,16 @@ name: Infographic2
 		className="copy subline"
 		text="`3 eras` of innovative digital products in the past `20 years`."
 		/>
-	<img className="graphic" src={props.base + '/static/images/elements/infographic2.svg'}/>
+
+	<ResponsiveImage
+		imageSrcSet= '../../../static/images/elements/about_why_infographic_mobile.svg'
+		imageSrcSetS= '../../../static/images/elements/about_why_infographic_mobile.svg'
+		imageSrcSetM= '../../../static/images/elements/about_why_infographic_tablet.svg'
+		imageSrcSetL='../../../static/images/elements/infographic2.svg'
+		freeForm
+		/>
+
+
 	<Text
 		Tagname="p"
 		className="copy text"

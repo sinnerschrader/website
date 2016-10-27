@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 373 281" style="enable-background:new 0 0 373 281;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F7F7F7;}
+	.st1{stroke:#000000;stroke-width:2;stroke-linecap:square;}
+	.st2{font-family:'Maison-Bold';}
+	.st3{font-size:15px;}
+	.st4{letter-spacing:1;}
+	.st5{font-family:'Maison-Regular';}
+	.st6{fill:#FF0052;}
+	.st7{fill:none;stroke:#000000;stroke-width:4;stroke-linecap:round;stroke-linejoin:bevel;}
+	.st8{fill:none;stroke:#000000;stroke-width:4;stroke-linecap:round;}
+	.st9{fill:none;stroke:#FF0354;stroke-width:4;stroke-linecap:round;}
+	.st10{fill:none;stroke:#FF0354;stroke-width:2;stroke-linecap:square;stroke-dasharray:1,10,1,10;}
+</style>
+<title>grafik_smartphone</title>
+<desc>Created with Sketch.</desc>
+<g id="Assets">
+	<g id="Module_17_Infographik2_Palm-Copy" transform="translate(-11.000000, -315.000000)">
+		<g id="Module_Infographic" transform="translate(-16.000000, 67.000000)">
+			<g id="grafik_smartphone" transform="translate(0.000000, 241.000000)">
+				<g id="rect_eras" transform="translate(95.890025, 47.621111)">
+					<rect id="Rectangle-326" x="8.3" y="10.1" class="st0" width="65.6" height="182.2"/>
+					<rect id="Rectangle-326-Copy" x="79.6" y="10.1" class="st0" width="106.4" height="182.2"/>
+					<rect id="Rectangle-326-Copy-2" x="191.5" y="10.1" class="st0" width="82" height="182.2"/>
+				</g>
+				<path id="y-achse" class="st1" d="M58.4,244.1v-196"/>
+				<path id="y-achse-decoration-1" class="st1" d="M58.4,48.1l-3,10.8h6L58.4,48.1z"/>
+				<path id="x-achse" class="st1" d="M63,251.4h307.5"/>
+				<path id="x-achse-decoration-1" class="st1" d="M370.5,251.4l-10.8-3v6L370.5,251.4z"/>
+				<g id="Benennungen" transform="translate(17.290191, 0.398047)">
+					<text transform="matrix(1 0 0 1 20.6235 25.3882)" class="st2 st3 st4">USER</text>
+					<text transform="matrix(1 0 0 1 18.3217 277.0655)" class="st2 st3 st4">1980</text>
+					<text transform="matrix(1 0 0 1 72.2423 277.0655)" class="st2 st3 st4">1995</text>
+					<text transform="matrix(1 0 0 1 142.5501 277.0655)" class="st2 st3 st4">2000</text>
+					<text transform="matrix(1 0 0 1 264.7473 277.0655)" class="st2 st3 st4">2015</text>
+					<text transform="matrix(1 0 0 1 332.7271 277.0655)" class="st2 st3 st4">2020</text>
+					<text transform="matrix(1 0 0 1 73.5428 222.0655)" class="st5 st3 st4">Office</text>
+					<text transform="matrix(1 0 0 1 196.4378 222.0655)" class="st5 st3 st4">Web</text>
+					<text transform="matrix(1 0 0 1 285.8225 222.0655)" class="st6 st5 st3 st4">Mobile</text>
+				</g>
+				<g id="Kurven" transform="translate(29.000000, 21.032558)">
+					<path id="Path-2031-office" class="st7" d="M7.5,183.5c0,0,16.2,1.5,35.7-0.7c19.6-2.2,42.6-8,56.1-22.7
+						c27.1-29.4,82.1-29.4,82.1-29.4"/>
+					<path id="Path-2031-web" class="st8" d="M142.4,154.4c0,0,45.9,7.4,65.1-28.9s58.2-36.2,58.2-36.2"/>
+					<path id="Path-2031-mobile" class="st9" d="M242.5,112c0,0,29.3,11.6,41.6-45.2c12.2-56.7,37.1-56.7,37.1-56.7"/>
+				</g>
+				<g id="_x31_" transform="translate(0.646786, 33.952402)">
+					<text transform="matrix(1 0 0 1 132.3414 25.0654)" class="st2 st3 st4">1</text>
+					<text transform="matrix(1 0 0 1 142.0974 25.0654)" class="st2 st3 st4"> </text>
+					<text transform="matrix(1 0 0 1 105.6008 45.0654)" class="st2 st3 st4">EXPERI-</text>
+					<text transform="matrix(1 0 0 1 168.8377 45.0654)" class="st2 st3 st4"> </text>
+					<text transform="matrix(1 0 0 1 91.8847 65.0654)" class="st2 st3 st4">MENTATION</text>
+				</g>
+				<g id="_x32_" transform="translate(183.514299, 34.219918)">
+					<text transform="matrix(1 0 0 1 40.4118 25.0654)" class="st2 st3 st4">2</text>
+					<text transform="matrix(1 0 0 1 50.8727 25.0654)" class="st2 st3 st4"> </text>
+					<text transform="matrix(1 0 0 1 8.2801 45.0654)" class="st2 st3 st4">DIGITALI-</text>
+					<text transform="matrix(1 0 0 1 83.0038 45.0654)" class="st2 st3 st4"> </text>
+					<text transform="matrix(1 0 0 1 16.7867 65.0654)" class="st2 st3 st4">SATION</text>
+				</g>
+				<g id="_x33_" transform="translate(269.000000, 109.000000)">
+					<text transform="matrix(1 0 0 1 54.2127 25.0654)" class="st2 st3 st4">3</text>
+					<text transform="matrix(1 0 0 1 64.7487 25.0654)" class="st2 st3 st4"> </text>
+					<text transform="matrix(1 0 0 1 29.1176 45.0654)" class="st2 st3 st4">TRANS-</text>
+					<text transform="matrix(1 0 0 1 89.8431 45.0654)" class="st2 st3 st4"> </text>
+					<text transform="matrix(1 0 0 1 13.696 65.0654)" class="st2 st3 st4">FORMATION</text>
+				</g>
+				<path id="_x37_0-Mio-Line" class="st10" d="M101.9,21.8h238.6"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
