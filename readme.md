@@ -1,6 +1,6 @@
 # ReadMe
 
-This is the SinnerSchrader "s2 Website" Project.
+This is the SinnerSchrader Website.
 
 [![Build Status](https://travis-ci.org/sinnerschrader/sinnerschrader-website.svg?branch=master)](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
 
@@ -27,8 +27,6 @@ This step is only required once.
 npm start
 ```
 
-open [http://localhost:3000]()
-
 ### Build process (watch tasks)
 
 ```shell
@@ -37,31 +35,6 @@ npm start
 ```
 
 Afterwards open your editor and start hacking.
-
-------------------------------------------------------------------
-
-## Browsermatrix
-
-The projects supports the S2 default Browsermatrix:
-
-* Desktop
-* - Chrome, Safari, Opera, Firefox, IE: current and previous
-* Mobile
-* - Android, iOS, IEMobile: current and previous
-* - NO Blackberry and no Android stock browsers
-
-## Used PreProcessors
-
-* LessCSS for CSS
-
-### Included Libs are
-
-* Less v2.x.x
-
-### Used PostProcessors
-
-* Autoprefixer for CSS (NodeJS and Grunt)
-* ClosureCompiler and Uglify for JS/CSS (Grunt)
 
 ------------------------------------------------------------------
 
@@ -100,3 +73,11 @@ HTTPUSER="<username>;<password>" mvn package -P frontend,docker,marathon,twiri
 # Convert static maps to interlaced png
 ./scripts/interlace.sh  "static/images/contents/sinnerschrader-*.png png"
 ```
+
+------------------------------------------------------------------
+
+## Browsermatrix
+
+* Desktop: Chrome, Safari, Opera, Firefox, Edge: current and previous
+* Mobile: Android, iOS: current and previous
+
