@@ -3,6 +3,18 @@
 	overflow: hidden;
 	position: relative;
 	padding: @s2-moduleGap-s-1 @s2-moduleGap-s-1;
+	background-repeat: no-repeat;
+	background-size: 70% auto;
+	background-position: 50% 60%;
+
+	&.text-bigger {
+		.h5,
+		.copy {
+			&:extend(.h3);
+			text-transform: uppercase;
+			font-family: @s2-font-base;
+		}
+	}
 
 	&::before {
 		content: "";
@@ -73,12 +85,13 @@
 			.item {
 				text-align: center;
 				&:nth-child(1) {
+					left: -50px;
 					top: 50%;
 					transform: translateY(-50%);
 				}
 				&:nth-child(2) {
 					top: auto;
-					bottom: 0;
+					bottom: -50px;
 					left: 50%;
 					transform: translateX(-50%);
 				}
