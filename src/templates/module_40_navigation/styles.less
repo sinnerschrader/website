@@ -17,6 +17,20 @@
 	padding: 0 12px;
 	margin: 0 auto;
 	background: @s2-darkblack;
+
+	// some visualisation to show that something on the page happend
+	&::after {
+		content: '';
+		height: 2px;
+		width: 0;
+		background-color: #fff;
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+
+		animation: shake 2s linear 1s;
+	}
+
 	@media @s2-mq-window-tablet {
 		max-width: @s2-MaxPageWidth;
 		padding: 0 30px;
@@ -29,6 +43,23 @@
 		width: 0;
 		height: 0;
 		transform: translate(-100%, -100%);
+	}
+}
+
+
+@keyframes shake {
+	0% {
+		width: 0;
+	}
+
+	50% {
+		width: 100%;
+		opacity: 1;
+	}
+
+	100% {
+		width: 100%;
+		opacity: 0;
 	}
 }
 
