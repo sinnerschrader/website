@@ -8,6 +8,7 @@
 }
 
 .mod-navigation {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -28,7 +29,7 @@
 		bottom: -2px;
 		left: 0;
 
-		animation: shake 2s linear 1s;
+		animation: shake 1.5s linear 0.25s;
 	}
 
 	@media @s2-mq-window-tablet {
@@ -45,7 +46,6 @@
 		transform: translate(-100%, -100%);
 	}
 }
-
 
 @keyframes shake {
 	0% {

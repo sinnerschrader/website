@@ -1,3 +1,13 @@
+@keyframes heroHeight {
+	0% {
+		min-height: 90vh;
+	}
+
+	100% {
+		min-height: 65vh;
+	}
+}
+
 .mod-hero {
 	overflow: hidden;
 	position: relative;
@@ -12,6 +22,8 @@
 	background-position: 50% 0;
 	background-size: cover;
 
+	animation: heroHeight 0.75s linear;
+
 	&[data-explode] {
 		padding: 60px 30px;
 		.h {
@@ -21,6 +33,7 @@
 
 	&[data-teaser] {
 		min-height: 90vh;
+		animation: none;
 	}
 
 	&[data-halfling] {
