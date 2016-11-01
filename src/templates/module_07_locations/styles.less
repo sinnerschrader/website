@@ -101,7 +101,7 @@
 
 	@media @s2-mq-window-tablet {
 		display: block;
-		padding: @s2-moduleGap-m-1;
+		padding: @s2-moduleGap-m-1 0 @s2-moduleGap-m-1 @s2-moduleGap-m-1;
 
 		.locations-wrapper {
 			display: flex;
@@ -130,16 +130,34 @@
 			flex: 0 1 64%;
 		}
 
+		.map-image {
+			padding-bottom: 70%;
+		}
+
 		.map {
 			margin-bottom: @s2-moduleGap-m-2;
 
-			&:before {
-				transform: translate(-50%,-100%);
+			&::before,
+			&::after {
+				top: 70%;
+			}
+
+			&::before {
+				transform: translate(-50%,-50%);
 				max-width: 50%;
-				margin-top: -16px;
+				margin-top: -30px;
 
 				white-space: pre-wrap;
 				text-align: center;
+			}
+
+			&::after {
+				@dim: 10px;
+				content: "";
+				width: @dim;
+				height: @dim;
+				border-radius: 100%;
+				transform: translate(-50%,-50%);
 			}
 		}
 
@@ -149,7 +167,7 @@
 	}
 
 	@media @s2-mq-window-desktop {
-		padding: @s2-moduleGap-l-2;
+		padding: @s2-moduleGap-l-2 0 @s2-moduleGap-l-2 @s2-moduleGap-l-2;
 
 		.locnav {
 			left: -@s2-moduleGap-l-2;
@@ -180,6 +198,8 @@
 	}
 
 	@media screen and (min-width: 1190px) {
+		padding-right: @s2-moduleGap-l-2;
+
 		.figure {
 			display: flex;
 			padding-top: 75px;
@@ -190,11 +210,20 @@
 			margin-top: -15px;
 		}
 
+		.map-image {
+			padding-bottom: 100%;
+		}
+
 		.map {
 			flex: 1 0 60%;
 			margin-top: 0;
 			margin-right: 5%;
 			margin-bottom: 0;
+
+			&::before,
+			&::after {
+				top: 50%;
+			}
 
 			&::after {
 				@dim: 12px;
