@@ -19,22 +19,19 @@
 		margin-top: -15px;
 	}
 
-	.location-address-item {
-		margin-bottom: (@s2-moduleGap-s-1/2);
-	}
-
 	.locnav {
 		display: inline-block;
 		position: absolute;
 		top: 0;
 		left: -@s2-moduleGap-s-1;
 		z-index: 10;
-		width: 10em; // "ruckeling" false for webfont loading
+		width: 10em; // "+ruckeling" false for webfont loading
 		padding: @s2-moduleGap-s-1;
 		background-color: @s2-locnav-bg;
 		color: @s2-locnav-color;
 
 		&:extend(.h4);
+		font-weight: 400;
 	}
 
 	.locnav-item {
@@ -63,13 +60,13 @@
 
 	.figure {
 		position: relative;
-		padding: @s2-moduleGap-s-2 0 0 @s2-moduleGap-s-1;
+		padding: @s2-moduleGap-s-3 0 0 @s2-moduleGap-s-1;
 	}
 
 	.map {
 		position: relative;
 		display: none;
-		margin: 0 0 @s2-moduleGap-s-1 0;
+		margin: 0 0 @s2-moduleGap-s-2 0;
 		height: auto;
 		align-self: flex-start;
 
@@ -88,9 +85,8 @@
 
 		&::before {
 			content: attr(data-marker);
-			margin-top: -16px;
 			padding: 0 20px;
-			transform: translate(-50%,-100%);
+			transform: translate(-50%,25%);
 		}
 
 		&::after {
@@ -129,14 +125,22 @@
 		}
 
 		.location-address {
-			padding-top: @s2-moduleGap-m-2;
 			padding-left: 0;
 			margin: 0;
 			flex: 0 1 64%;
 		}
 
-		.location-address-item {
-			margin-bottom: (@s2-moduleGap-m-1/2);
+		.map {
+			margin-bottom: @s2-moduleGap-m-2;
+
+			&:before {
+				transform: translate(-50%,-100%);
+				max-width: 50%;
+				margin-top: -16px;
+
+				white-space: pre-wrap;
+				text-align: center;
+			}
 		}
 
 		.figure {
@@ -166,32 +170,30 @@
 			margin-bottom: @s2-moduleGap-l-1;
 		}
 
+		.figure {
+			padding-left: 0;
+		}
+
 		.location-address {
 			padding-top: 0;
 		}
+	}
 
-		.location-address-list {
-			columns: 2;
-		}
-
-		.location-address-item {
-			display: inline-block;
-			width: 100%;
-			margin-bottom: (@s2-moduleGap-l-1/2);
-			vertical-align: top;
-			break-inside: avoid;
-		}
-
+	@media screen and (min-width: 1190px) {
 		.figure {
 			display: flex;
-			padding-top: 0;
+			padding-top: 75px;
 			padding-left: 0;
+		}
+
+		.h2-1 {
+			margin-top: -15px;
 		}
 
 		.map {
 			flex: 1 0 60%;
-			margin-top: @s2-moduleGap-l-2;
-			margin-right: @s2-moduleGap-l-1;
+			margin-top: 0;
+			margin-right: 5%;
 			margin-bottom: 0;
 
 			&::after {
@@ -202,7 +204,7 @@
 		}
 
 		.location-address {
-			width: 40%;
+			width: 45%;
 		}
 	}
 }
