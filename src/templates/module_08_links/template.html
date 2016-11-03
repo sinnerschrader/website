@@ -13,20 +13,37 @@ name: Links
 	</div>
 	<ul className="linklist">
 		<li className="linklist-item">
-			<a href={props.base + '/contact/'} className="linklist-link" data-icon="">Contact</a>
+			<a href={props.base + '/contact/'} className="linklist-link">
+				<svg className="icon" viewBox="0 0 20 20">
+					<use xlinkHref={props.base + '/static/icons/sprite.svg#arrow'} />
+				</svg>
+				Contact
+			</a>
 		</li>
 		<li className="linklist-item">
-			<a href={props.base + '/imprint/'} className="linklist-link" data-icon="">Imprint</a>
+			<a href={props.base + '/imprint/'} className="linklist-link">
+				<svg className="icon" viewBox="0 0 20 20">
+					<use xlinkHref={props.base + '/static/icons/sprite.svg#arrow'} />
+				</svg>
+				Imprint
+			</a>
 		</li>
 		<li className="linklist-item">
-			<a href={props.base + '/data-policy/'} className="linklist-link" data-icon="">Data Policy</a>
+			<a href={props.base + '/data-policy/'} className="linklist-link">
+				<svg className="icon" viewBox="0 0 20 20">
+					<use xlinkHref={props.base + '/static/icons/sprite.svg#arrow'} />
+				</svg>
+				Data Policy
+			</a>
 		</li>
 		<li className="linklist-item">
 			<a
 				href="https://github.com/sinnerschrader/sinnerschrader-website"
 				className="linklist-link"
-				data-icon=""
 				>
+				<svg className="icon" viewBox="0 0 20 20">
+					<use xlinkHref={props.base + '/static/icons/sprite.svg#arrow'} />
+				</svg>
 				Improve this site
 			</a>
 		</li>

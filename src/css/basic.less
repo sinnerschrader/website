@@ -154,7 +154,15 @@ a {
 }
 
 .icon {
-	font-family: s2websiteicons;
+	//font-family: s2websiteicons;
+	display: inline-block;
+	width: 20px;
+	vertical-align: middle;
+	fill: @s2-black;
+
+	.invert & {
+		fill: @s2-white;
+	}
 }
 
 .main,

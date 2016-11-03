@@ -12,7 +12,9 @@ name: SocialMediaNetwork
 						target="_blank"
 						title={props.twitterTitle}
 						>
-						
+						<svg className="icon" viewBox="0 0 20 20">
+							<use xlinkHref={props.base + '/static/icons/sprite.svg#twitter'} />
+						</svg>
 					</a>
 			</li>
 		}
@@ -26,7 +28,9 @@ name: SocialMediaNetwork
 					target="_blank"
 					title={props.facebookTitle}
 					>
-					
+					<svg className="icon" viewBox="0 0 20 20">
+						<use xlinkHref={props.base + '/static/icons/sprite.svg#facebook'} />
+					</svg>
 				</a>
 			</li>
 		}
@@ -40,7 +44,57 @@ name: SocialMediaNetwork
 					target="_blank"
 					title={props.linkedInTitle}
 					>
-					
+					<svg className="icon" viewBox="0 0 20 20">
+						<use xlinkHref={props.base + '/static/icons/sprite.svg#linked-in'} />
+					</svg>
+				</a>
+			</li>
+		}
+	{
+		(props.dribbbleUrl && props.dribbbleTitle) &&
+			<li className="smn-item">
+				<a
+					className="network"
+					href={props.dribbbleUrl}
+					rel="noopener noreferrer"
+					target="_blank"
+					title={props.dribbbleTitle}
+					>
+					<svg className="icon" viewBox="0 0 20 20">
+						<use xlinkHref={props.base + '/static/icons/sprite.svg#dribbble'} />
+					</svg>
+				</a>
+			</li>
+		}
+	{
+		(props.mediumUrl && props.mediumTitle) &&
+			<li className="smn-item">
+				<a
+					className="network"
+					href={props.mediumUrl}
+					rel="noopener noreferrer"
+					target="_blank"
+					title={props.mediumTitle}
+					>
+					<svg className="icon" viewBox="0 0 20 20">
+						<use xlinkHref={props.base + '/static/icons/sprite.svg#medium'} />
+					</svg>
+				</a>
+			</li>
+		}
+	{
+		(props.githubUrl && props.githubTitle) &&
+			<li className="smn-item">
+				<a
+					className="network"
+					href={props.githubUrl}
+					rel="noopener noreferrer"
+					target="_blank"
+					title={props.githubTitle}
+					>
+					<svg className="icon" viewBox="0 0 20 20">
+						<use xlinkHref={props.base + '/static/icons/sprite.svg#github'} />
+					</svg>
 				</a>
 			</li>
 		}

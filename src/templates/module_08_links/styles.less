@@ -22,20 +22,25 @@
 	}
 
 	.linklist-link {
+		position: relative;
 		display: inline-block;
-		padding: 0 0 10px 0;
 		text-transform: uppercase;
 		&:extend(.h4);
 
-		&::before {
-			display: inline-block;
-			content: "\e909";
-			&:extend(.icon);
-			padding: 0 5px 0 0;
-			color: @s2-darkgrey;
-			font-size: 15px;
-			font-weight: normal;
-		}
+		padding: 0 0 0 30px;
+	}
+
+	.linklist-item {
+		padding: 0 0 10px 0;
+	}
+
+	.icon {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+
+		fill: #d8d8d8;
 	}
 
 	@media @s2-mq-window-tablet {
@@ -52,12 +57,6 @@
 		.linklist {
 			flex: 0 0 auto;
 		}
-
-		.linklist-link {
-			&::before {
-				padding-right: 15px;
-			}
-		}
 	}
 
 	@media @s2-mq-window-desktop {
@@ -73,7 +72,7 @@
 			padding-right: @s2-moduleGap-l-1;
 		}
 
-		.linklist-link {
+		.linklist-item {
 			padding-bottom: 20px;
 		}
 	}
