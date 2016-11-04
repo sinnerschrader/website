@@ -50,7 +50,11 @@ name: Hero
 	{
 		(props.buttonLabel && props.buttonHref) &&
 			<div className="buttonrow">
-				<ElementButton label={props.buttonLabel} href={props.buttonHref}/>
+				<ElementButton
+					label={props.buttonLabel}
+					href={props.buttonHref}
+					buttonBg={props.buttonBg}
+				/>
 			</div>
 	}
 </section>

@@ -1,4 +1,6 @@
 ---
 name: ElementButton
 ---
-<a href={props.href} className="button">{props.label}</a>
+<a href={props.href} className={helpers.classNames({'button': true, 'button-bg': props.buttonBg})}>
+    {props.label}
+</a>
