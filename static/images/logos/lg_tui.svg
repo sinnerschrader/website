@@ -1,1 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 38" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="0" d="m8.204.188h-8.17v8.291h8.17v-8.291"/><mask id="1" style="fill:#fff"><use xlink:href="#0"/></mask></defs><g style="fill:#fefefe;fill-rule:evenodd"><path d="m0 13.614c0 1.088.09 3.044 2.374 2.877l2.807-.206c4.616 28.917 28.14 26.746 35.14 5.093.947-2.931.676-3.969-1.314-4.471-1.468-.37-1.906.16-3.247 3.067-8.096 17.565-22.966 12.249-25.509-4.06l3.455-.25c1.918-.138 2.064-1.341 1.708-3.071-.32-1.555-1.134-1.902-2.213-1.902h-11.01c-1.413 0-2.2.771-2.2 2.922"/><path d="m.034 4.334c0 2.29 1.829 4.146 4.085 4.146 2.256 0 4.085-1.856 4.085-4.146 0-2.29-1.829-4.146-4.085-4.146-2.256 0-4.085 1.856-4.085 4.146" transform="translate(38.1.033)" style="mask:url(#1)"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 134 60" style="enable-background:new 0 0 134 60;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FEFEFE;}
+	.st1{filter:url(#Adobe_OpacityMaskFilter);}
+	.st2{fill:none;}
+	.st3{mask:url(#b);fill:#FEFEFE;}
+</style>
+<title>Tui</title>
+<desc>Created with Sketch.</desc>
+<g>
+	<path class="st0" d="M43.5,24.6c0,1.1,0.1,3,2.4,2.9l2.8-0.2c4.6,28.9,28.1,26.7,35.1,5.1c0.9-2.9,0.7-4-1.3-4.5
+		c-1.5-0.4-1.9,0.2-3.2,3.1c-8.1,17.6-23,12.2-25.5-4.1l3.5-0.2c1.9-0.1,2.1-1.3,1.7-3.1c-0.3-1.6-1.1-1.9-2.2-1.9h-11
+		C44.3,21.7,43.5,22.5,43.5,24.6"/>
+	<g transform="translate(38.097 .033)">
+		<defs>
+			<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="43.5" y="11.2" width="8.2" height="8.3">
+				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+			</filter>
+		</defs>
+		<mask maskUnits="userSpaceOnUse" x="43.5" y="11.2" width="8.2" height="8.3" id="b">
+			<g class="st1">
+				<path id="a" class="st2" d="M51.7,11.2h-8.2v8.3h8.2C51.7,19.5,51.7,11.2,51.7,11.2z"/>
+			</g>
+		</mask>
+		<path class="st3" d="M43.5,15.3c0,2.3,1.8,4.1,4.1,4.1s4.1-1.9,4.1-4.1s-1.8-4.1-4.1-4.1S43.5,13,43.5,15.3"/>
+	</g>
+</g>
+</svg>
