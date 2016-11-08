@@ -1,0 +1,10 @@
+# replace default config
+
+# multipass: true
+# full: true
+
+plugins:
+
+  - removeDoctype: true
+  - cleanupIDs: true
+  - removeUselessDefs: false
