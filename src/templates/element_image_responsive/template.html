@@ -19,12 +19,12 @@ name: ResponsiveImage
 						<source srcSet={props.imageSrcSetS} media="(max-width: 719px)"/>
 				}
 				{
-					props.imageSrcSetM &&
-						<source srcSet={props.imageSrcSetM} media="(min-width: 720px)"/>
-				}
-				{
 					props.imageSrcSetL &&
 						<source srcSet={props.imageSrcSetL} media="(min-width: 1024px)"/>
+				}
+				{
+					props.imageSrcSetM &&
+						<source srcSet={props.imageSrcSetM} media="(min-width: 720px)"/>
 				}
 				<img
 					alt={props.alt}
