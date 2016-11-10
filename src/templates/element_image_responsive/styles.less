@@ -28,9 +28,18 @@
 	}
 }
 
+
 .responsive-image[data-ratio="0.26"],
 .responsive-image[data-ratio-s="0.26"] {
 	padding-bottom: 384% // 432x1649 => 0,26 => 384%
+}
+
+.responsive-image[data-ratio="0.32"] {
+	padding-bottom: 307% // 440x1354 => 0,32 => 307%
+}
+
+.responsive-image[data-ratio="0.36"] {
+	padding-bottom: 264% // 880x2320 => 0,26 => 264%
 }
 
 .responsive-image[data-ratio="0.6"],
@@ -68,6 +77,10 @@
 }
 
 @media @s2-mq-window-tablet {
+	.responsive-image[data-ratio-m="0.32"] {
+		padding-bottom: 307% // 440x1354 => 0,32 => 307%
+	}
+
 	.responsive-image[data-ratio-m="0.6"] {
 		padding-bottom: 168% // 456x770 => 0.59 => ~168%
 	}
@@ -92,6 +105,10 @@
 }
 
 @media @s2-mq-window-desktop {
+
+	.responsive-image[data-ratio-l="0.38"] {
+		padding-bottom: 261% // 880x2300 => 0,38 => 261%
+	}
 	.responsive-image[data-ratio-l="0.6"] {
 		padding-bottom: 168% // 456x770 => 0.59 => ~168%
 	}
