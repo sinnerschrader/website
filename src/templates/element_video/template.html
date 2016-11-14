@@ -2,7 +2,11 @@
 name: ElementVideo
 ---
 <div className="video" style={{paddingTop: (props.height / props.width *10000 / 100) + '%'}}>
-	<video src={props.videoUrl} preload controls>
+	<video
+		src={props.videoUrl}
+		controls
+		poster={props.posterUrl}
+		>
 		Sorry, your browser doesn't support embedded videos,
 		but don't worry, you can ...
 		and watch it with your favorite video player!
