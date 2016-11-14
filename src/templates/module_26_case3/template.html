@@ -4,9 +4,10 @@ name: Case3
 <section className={helpers.classNames({'mod-case3': true, gradient: true, invert: props.invert})}>
 	<div className="disruptor">
 		<ElementVideo
-			width={610}
-			height={1080}
-			url="https://www.youtube.com/embed/owNL-X9nra4?modestbranding=1&showinfo=0&rel=0&&autohide=1#controls=0"
+			width={props.width}
+			height={props.height}
+			videoUrl={props.videoUrl}
+			posterUrl={props.posterUrl}
 			/>
 	</div>
 
