@@ -5,9 +5,6 @@ set -e # Exit with nonzero exit code if anything fails
 # Based on https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
 #
 
-SOURCE_BRANCH="master"
-TARGET_BRANCH="master"
-
 function doCompile {
     /bin/bash -c "npm run build"
 }
@@ -17,9 +14,8 @@ if [ $(git log  -n 1 --oneline |grep "Deploy to GitHub Pages" |wc -l) -eq 1 ] ; 
     exit 0
 fi
 
-# Pull requests and commits to other branches shouldn't try to deploy, just build to verify
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
-    echo "Skipping deploy; just doing a build."
+if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+    echo "Skipping deploy - this is not a pull request; just doing a build."
     doCompile
     exit 0
 fi
@@ -59,4 +55,4 @@ eval `ssh-agent -s`
 ssh-add deploy_key
 
 # Now that we're all set up, we can push.
-git push $SSH_REPO HEAD:$TARGET_BRANCH
+git push $SSH_REPO HEAD:$TRAVIS_PULL_REQUEST_BRANCH
