@@ -39,6 +39,11 @@ if [ $(git status --porcelain | wc -l) -lt 1 ]; then
     exit 0
 fi
 
+if [ "$TRAVIS_SECURE_ENV_VARS" = "false" ]; then
+    echo "Encryption not available; failing."
+    exit 1
+fi
+
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
 git add --all docs
