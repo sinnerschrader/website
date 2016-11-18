@@ -12,7 +12,7 @@
 
 This repository contains
 
-1. [The sources](./sources) required to build the markup for `sinnerschrader.com`
+1. [The sources](./src) required to build the markup for `sinnerschrader.com`
 2. [Static assets](./static) used on the site
 3. [The generated content](./docs) deployed to `sinnerschrader.com`
 4. Sources for a Continiuous Integration setup on [TravisCI](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
