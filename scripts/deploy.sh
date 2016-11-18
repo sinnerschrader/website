@@ -15,7 +15,7 @@ if [ $(git log  -n 1 --oneline |grep "Deploy to GitHub Pages" |wc -l) -eq 1 ] ; 
     exit 0
 fi
 
-if [ "$TRAVIS_PULL_REQUEST" != "true" ]; then
+if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     echo "Skipping deploy - this is not a pull request; skipping."
     exit 0
 fi
@@ -31,12 +31,12 @@ SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
 # Now let's go have some fun with the cloned repo
-git config user.name "SinnerSchrader sucht Talente"
+git config user.name "SinnerSchrader"
 #git config user.email "$COMMIT_AUTHOR_EMAIL"
 git config user.email "jobs@sinnerschrader.com"
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
-if [ $(git status --porcelain | wc -l) -lt 1 ]; then
+if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
     echo "No changes to the output on this push; exiting."
     exit 0
 fi
