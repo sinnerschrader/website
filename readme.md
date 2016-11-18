@@ -1,83 +1,59 @@
-# ReadMe
+# sinnerschrader-website [![sinnerschrader.com status](https://img.shields.io/badge/status-live-green.svg?style=flat-square)](https://sinnerschrader.com/)
 
-This is the SinnerSchrader Website.
+[![Made by SinnerSchrader](https://img.shields.io/badge/made%20by-SinnerSchrader-orange.svg?style=flat-square)](https://sinnerschrader.com/)
+[![Travis](https://img.shields.io/travis/sinnerschrader/sinnerschrader-website.svg?style=flat-square)](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
+[![standard-readme compliant](https://img.shields.io/badge/readme-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-[![Build Status](https://travis-ci.org/sinnerschrader/sinnerschrader-website.svg?branch=master)](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
+> :earth_africa: Source project for https://www.sinnerschrader.com
 
-## Starting the Prototype Server
 
-### Get the most stable NodeJS-Server
+![Screenshot of sinnschrader.com](./sinnerschradercom.jpg)
 
-```shell
-nave use stable
-```
 
-### Install all NodeJS modules and grunt-cli for build tools
+This repository contains
 
-```shell
+1. [The sources](./sources) required to build the markup for `sinnerschrader.com`
+2. [Static assets](./static) used on the site
+3. [The generated content](./docs) deployed to `sinnerschrader.com`
+4. Sources for a Continiuous Integration setup on [TravisCI](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
+
+## Install
+
+This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go check them out if you don't have them locally installed.
+
+
+```sh
+$ git clone https://github.com/sinnerschrader/sinnerschrader-website.git
+cd sinnerschrader-website
 npm install
-npm run build
 ```
 
-This step is only required once.
+## Usage
 
-### Run the Server
+This serves as project to maintain sinnerschrader.com.
+To develop frontend sources you start the local development
+setup like this:
 
-```shell
-npm start
+```sh
+$ npm run build:watch &
+$ npm start
+# Development server running on http://localhost:3000
 ```
 
-### Build process (watch tasks)
+## Contribute
 
-```shell
-npm run build:watch
-npm start
-```
+Feel free to dive in! [Open an issue](https://github.com/sinnerschrader/sinnerschrader-website/issues/new) or submit a [Pull Request](https://github.com/sinnerschrader/sinnerschrader-website/pull/new/master). :heart:
 
-Afterwards open your editor and start hacking.
+`sinnerschrader-website` follows the [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) Code of Conduct.
 
-------------------------------------------------------------------
+You do not need to be a techie to help out – there is the superawesome Github Interface to edit files! Learn about this at the [Github Help](https://help.github.com/articles/editing-files-in-your-repository/).
 
-## Docker + Mesos deployment
+## Related things
 
-Run docker container:
+We build all kinds of awesome stuff at SinnerSchrader. Be sure to check out our [Github Org](https://github.com/sinnerschrader).
 
-```shell
-docker build --tag <docker-tag> .
-docker run -it --rm -e "BASIC=/" -e "HTTPUSER=user;pass" -p 8080:80 <docker-tag>
-```
+* [schlump](https://github.com/sinnerschrader/schlump) - A static site generator utilizing React.js
+* [Free Radical Specification](https://github.com/sinnerschrader/free-radical-specification) – Specification for the team that built the initial release
 
-Deploy docker container to mesos cluster:
-
-```shell
-docker push <docker-tag>
-HTTPUSER="user;pass" envsubst < marathon.json |curl -X POST http://<marathon-host>:8080/v2/apps -d @- -H "Content-type: application/json"
-```
-
-## Use Maven as alternative
-
-```shell
-HTTPUSER="<username>;<password>" mvn package -P frontend,docker,marathon,twiri
-```
-
-## Image conversion and optimization scripts
-
-* interlace
-
-```shell
-./scripts/interlace.sh
-
-# Convert hero backgrounds to progressive jpgs
-./scripts/interlace.sh  "static/images/backgrounds/**/*.jpg jpg"
-
-# Convert static maps to interlaced png
-./scripts/interlace.sh  "static/images/contents/sinnerschrader-*.png png"
-```
-
-------------------------------------------------------------------
-
-## Browsermatrix
-
-* Desktop: Chrome, Safari, Opera, Firefox, Edge: current and previous
-* Mobile: Android, iOS: current and previous
-
+## License
+(c) SinnerSchrader
