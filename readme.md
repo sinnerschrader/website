@@ -80,4 +80,4 @@ HTTPUSER="<username>;<password>" mvn package -P frontend,docker,marathon,twiri
 
 * Desktop: Chrome, Safari, Opera, Firefox, Edge: current and previous
 * Mobile: Android, iOS: current and previous
-
+test
