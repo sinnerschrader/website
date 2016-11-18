@@ -137,6 +137,20 @@
 	background: transparent;
 	transition: background-color 300ms 300ms ease-in-out,
 		transform 1ms 600ms;
+
+	/**
+	 * Fill the gap on mobile devices when native navigation bars
+	 * shrink on scroll-behavior
+	 */
+	&::after {
+		content: '';
+		position: absolute;
+		height: 50%;
+		top: 100%;
+		right: inherit;
+		left: inherit;
+		background-color: inherit;
+	}
 }
 
 .mainnav {
