@@ -5,18 +5,23 @@ set -e # Exit with nonzero exit code if anything fails
 # Based on https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
 #
 
-function doCompile {
-    /bin/bash -c "npm run build"
-}
+if [ "$TRAVIS" != "true" ]; then
+	echo "Skipping deploy - this is not running on Travis; skipping."
+	exit 0
+fi
 
 if [ $(git log  -n 1 --oneline |grep "Deploy to GitHub Pages" |wc -l) -eq 1 ] ; then
     echo "Last commit done by travis itself; skipping."
     exit 0
 fi
 
-if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
-    echo "Skipping deploy - this is not a pull request; just doing a build."
-    doCompile
+if [ "$TRAVIS_PULL_REQUEST" != "true" ]; then
+    echo "Skipping deploy - this is not a pull request; skipping."
+    exit 0
+fi
+
+if [ "$TRAVIS_SECURE_ENV_VARS" != "true" ]; then
+    echo "Skipping deploy - this has no access to secure env vars; skipping."
     exit 0
 fi
 
@@ -24,9 +29,6 @@ fi
 REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
-
-# Run our compile script
-doCompile
 
 # Now let's go have some fun with the cloned repo
 git config user.name "SinnerSchrader sucht Talente"
@@ -37,11 +39,6 @@ git config user.email "jobs@sinnerschrader.com"
 if [ $(git status --porcelain | wc -l) -lt 1 ]; then
     echo "No changes to the output on this push; exiting."
     exit 0
-fi
-
-if [ "$TRAVIS_SECURE_ENV_VARS" = "false" ]; then
-    echo "Encryption not available; failing."
-    exit 1
 fi
 
 # Commit the "changes", i.e. the new version.
