@@ -29,13 +29,13 @@ fi
 
 # Save some useful information
 SHA=`git rev-parse --verify HEAD`
-git config user.name "SinnerSchrader"
-git config user.email "jobs@sinnerschrader.com"
 
 git clone "https://$GH_TOKEN@github.com/sinnerschrader/sinnerschrader-website-staging.git" .stage
-cp -r ./docs ./stage/$TRAVIS_PULL_REQUEST
+cp -r ./docs ./.stage/$TRAVIS_PULL_REQUEST
 
 cd .stage/
 git add --all .
+git config user.name "SinnerSchrader"
+git config user.email "jobs@sinnerschrader.com"
 git commit -m "Deploy to GitHub Pages: ${SHA}" --author "$(git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT)"
-git push -q upstream HEAD:refs/heads/master
+git push -q origin HEAD:refs/heads/master
