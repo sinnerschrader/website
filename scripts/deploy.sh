@@ -47,9 +47,9 @@ git commit -m "Deploy to GitHub Pages: ${SHA}" --author "$(git --no-pager show -
 # Now that we're all set up, we can push.
 git push -q upstream "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
 pull-request \
-	-b "$TRAVIS_REPO_SLUG:master" \
-	-h "$TRAVIS_REPO_SLUG:deploy-$TRAVIS_COMMIT" \
-	--title "Deploy to GitHub Pages: ${SHA}"
-	--body "Deploy to GitHub Pages: ${SHA}"
-	--message "Deploy to GitHub Pages: ${SHA}"
-	-t $GH_TOKEN
+	--base "$TRAVIS_REPO_SLUG:master" \
+	--head "$TRAVIS_REPO_SLUG:deploy-$TRAVIS_COMMIT" \
+	--title "Deploy to GitHub Pages: ${SHA}" \
+	--body "Deploy to GitHub Pages: ${SHA}" \
+	--message "Deploy to GitHub Pages: ${SHA}"  \
+	--token "$GH_TOKEN"
