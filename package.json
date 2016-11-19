@@ -29,6 +29,7 @@
     "build:watch:js": "chokidar \"src/js/**/*\" --initial --command \"npm run build:js\"",
     "build:watch:css": "chokidar \"src/**/*.less\" --initial --command \"npm run build:css\"",
     "build:watch:pages": "chokidar \"src/pages/**/*\" \"src/templates/**/*.html\" \"src/helpers/**/*\" \"static/**\" --initial --command \"npm run build:pages\"",
+    "deploy": "bash ./scripts/deploy.sh",
     "serve": "browser-sync start --config bs-config.js"
   },
   "devDependencies": {

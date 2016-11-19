@@ -8,10 +8,7 @@ cache:
 notifications:
   email:
     on_success: never
-
-env:
-  global:
-  - ENCRYPTION_LABEL: "68be772c97c4"
-  - COMMIT_AUTHOR_EMAIL: "markus.wolf@sinnerschrader.com"
-
-script: bash ./deploy.sh
+script:
+  - npm run build
+after_success:
+  - npm run deploy
