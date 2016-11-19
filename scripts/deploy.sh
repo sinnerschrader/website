@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 
 if [ "$TRAVIS" != "true" ]; then
@@ -49,7 +49,7 @@ git push -q upstream "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
 pull-request \
 	--base "$TRAVIS_REPO_SLUG:master" \
 	--head "$TRAVIS_REPO_SLUG:deploy-$TRAVIS_COMMIT" \
-	--title "Deploy to GitHub Pages: ${SHA}" \
+	--title "Deploy to GitHub Pages" \
 	--body "Deploy to GitHub Pages: ${SHA}" \
 	--message "Deploy to GitHub Pages: ${SHA}"  \
 	--token "$GH_TOKEN"
