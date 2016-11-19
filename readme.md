@@ -48,6 +48,20 @@ Feel free to dive in! [Open an issue](https://github.com/sinnerschrader/sinnersc
 
 You do not need to be a techie to help out – there is the superawesome Github Interface to edit files! Learn about this at the [Github Help](https://help.github.com/articles/editing-files-in-your-repository/).
 
+## Browser matrix
+
+We do our best to make sinnerschrader.com work on all browsers. When you see something
+fishy with a OS / browser combination below, [let us know](https://github.com/sinnerschrader/sinnerschrader-website/issues/new).
+
+* Chrome `last 2 version`
+* Chrome Mobile `last 2 versions`
+* Edge `last 2 versions`
+* Firefox `last 2 Versions`
+* Internet Explorer `11`
+* iOS Safari `last 2 versions`
+* Opera `last 2 versions`
+* Safari `last 2 versions`
+
 ## Related things
 
 We build all kinds of awesome stuff at SinnerSchrader. Be sure to check out our [Github Org](https://github.com/sinnerschrader).
