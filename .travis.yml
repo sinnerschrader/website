@@ -11,4 +11,5 @@ notifications:
 script:
   - npm run build
 after_success:
+  - npm run deploy-staging
   - npm run deploy
