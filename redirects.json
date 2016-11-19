@@ -108,5 +108,7 @@
 	"/en/job/it-consultant-mw": "https://sinnerschrader.jobs/en/it-consultant-mw",
 	"/en/job/student-content-management-mf": "https://sinnerschrader.jobs/en/student-content-management-mf",
 	"/en/job/student-assistant-frontend-development-mf": "https://sinnerschrader.jobs/en/student-assistant-frontend-development-mf",
-	"/de/": "https://sinnerschrader.com"
+	"/de/": "https://sinnerschrader.com",
+	"/en/": "https://sinnerschrader.com",
+	"/en/agency/news/": "https://sinnerschrader.news/en/"
 }

@@ -13,7 +13,7 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
-	max-width: 425px;
+	max-width: @s2-MaxPageWidth;
 	height: @s2-headerHeight-s;
 	padding: 0 12px;
 	margin: 0 auto;
@@ -33,9 +33,9 @@
 	}
 
 	@media @s2-mq-window-tablet {
-		max-width: @s2-MaxPageWidth;
 		padding: 0 30px;
 	}
+
 	[data-navigation-state] {
 		position: fixed;
 		top: 0;

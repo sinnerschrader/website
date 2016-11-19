@@ -1,10 +1,10 @@
 {
-  "name": "s2",
-  "description": "This is the SinnerSchrader 's2 3' Project. It enables all S2 Frontend Developers to start quickly a new project hazzle-free with the basic stuff.",
-  "version": "v3.0.0",
+  "name": "sinnerschrader-website",
+  "description": "Source project for https://www.sinnerschrader.com",
+  "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "git@git.sinnerschrader.com:helgri/website2016.git"
+    "url": "sinnerschrader/sinnerschrader-website"
   },
   "author": "SinnerSchrader",
   "license": "MIT",
@@ -29,6 +29,8 @@
     "build:watch:js": "chokidar \"src/js/**/*\" --initial --command \"npm run build:js\"",
     "build:watch:css": "chokidar \"src/**/*.less\" --initial --command \"npm run build:css\"",
     "build:watch:pages": "chokidar \"src/pages/**/*\" \"src/templates/**/*.html\" \"src/helpers/**/*\" \"static/**\" --initial --command \"npm run build:pages\"",
+    "deploy": "bash ./scripts/deploy.sh",
+    "deploy-staging": "bash ./scripts/deploy-staging.sh",
     "serve": "browser-sync start --config bs-config.js"
   },
   "devDependencies": {
@@ -41,6 +43,8 @@
     "classnames": "^2.2.5",
     "common-tags": "^1.3.1",
     "fontfaceobserver": "^2.0.5",
+    "gh": "^1.12.8",
+    "github-remote-commit": "^1.0.1",
     "globby": "^6.0.0",
     "gray-matter": "^2.0.2",
     "less": "2.7.1",
