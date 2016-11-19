@@ -45,7 +45,7 @@ git add --all docs
 git commit -m "Deploy to GitHub Pages: ${SHA}" --author "$(git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT)"
 
 # Now that we're all set up, we can push.
-git push -q upstream "HEAD:deploy-$TRAVIS_COMMIT"
+git push -q upstream "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
 pull-request \
 	-b "$TRAVIS_REPO_SLUG:master" \
 	-h "$TRAVIS_REPO_SLUG:deploy-$TRAVIS_COMMIT" \
