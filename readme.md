@@ -13,9 +13,11 @@
 This repository contains
 
 1. [The sources](./src) required to build the markup for `sinnerschrader.com`
-2. [Static assets](./static) used on the site
-3. [The generated content](./docs) deployed to `sinnerschrader.com`
-4. Sources for a Continiuous Integration setup on [TravisCI](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
+2. [The generated content](./docs) deployed to `sinnerschrader.com`
+3. Sources for a Continiuous Integration setup on [TravisCI](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
+
+---
+Static assets are placeholders. The unlicensable content assets are available at [sinnerschrader/sinnerschrader-website-static](https://github.com/sinnerschrader/sinnerschrader-website-static)
 
 ## Install
 
@@ -70,4 +72,4 @@ We build all kinds of awesome stuff at SinnerSchrader. Be sure to check out our 
 * [Free Radical Specification](https://github.com/sinnerschrader/free-radical-specification) – Specification for the team that built the initial release
 
 ## License
-(c) SinnerSchrader
+MIT (c) SinnerSchrader
