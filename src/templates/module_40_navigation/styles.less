@@ -160,36 +160,38 @@
 	padding: 0 0 10px 0;
 	color: @s2-white;
 
-	& > a {
-		font-weight: bold;
-	}
-	a {
+	.nav-item {
 		display: inline-block;
+		font-weight: bold;
+		font-family: @s2-font-high1;
+
 		transform: translate(30%, 20%);
 		opacity: 0;
 		transition: 200ms ease-in-out transform,
 			150ms ease-in-out opacity;
+
+		&:hover {
+			color: inherit;
+		}
 	}
-	a:hover {
-		color: inherit;
-	}
+
 	&:first-child {
-		a {
+		.nav-item {
 			transition-delay: 100ms;
 		}
 	}
 	&:nth-child(2) {
-		a {
+		.nav-item {
 			transition-delay: 150ms;
 		}
 	}
 	&:nth-child(3) {
-		a {
+		.nav-item {
 			transition-delay: 200ms;
 		}
 	}
 	&:nth-child(4) {
-		a {
+		.nav-item {
 			transition-delay: 250ms;
 		}
 	}
@@ -206,29 +208,31 @@
 .aboutnav-item {
 	font-size: 28px;
 	line-height: 42px;
-	a {
+
+	.nav-item {
+		font-weight: normal;
 		transform: translate(30%, 20%);
 		opacity: 0;
 		transition: 200ms ease-in-out transform,
 			150ms ease-in-out opacity;
 	}
 	&:first-child {
-		a {
+		.nav-item {
 			transition-delay: 85ms;
 		}
 	}
 	&:nth-child(2) {
-		a {
+		.nav-item {
 			transition-delay: 135ms;
 		}
 	}
 	&:nth-child(3) {
-		a {
+		.nav-item {
 			transition-delay: 185ms;
 		}
 	}
 	&:nth-child(4) {
-		a {
+		.nav-item {
 			transition-delay: 235ms;
 		}
 	}
@@ -260,7 +264,7 @@
 			overflow: auto;
 		}
 		.mainnav-item {
-			a {
+			.nav-item {
 				opacity: 1;
 				transform: none;
 			}
