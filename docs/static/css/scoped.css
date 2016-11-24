@@ -1,0 +1,25 @@
+.standard-layout--679892353-html {
+  --s2-black: rgb( 30,  33,  42);
+  --s2-white: rgb(255, 255, 255);
+  --s2-white-fade: rgba(255, 255, 255, 0.25);
+  --s2-button-color: rgb( 30,  33,  42);
+  --s2-button-hover-color: rgb(255, 255, 255);
+  --s2-button-hover-background-color: rgb( 30,  33,  42);}
+.hero-183769554-invert {
+  --s2-button-color: rgb(255, 255, 255);
+  --s2-button-hover-background-color: rgba(255, 255, 255, 0.25);}
+.element-button-1572238838-button {
+  display: inline-block;
+  min-width: 175px;
+  padding: 12px 24px;
+  border: 2px solid currentColor;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+  color: var(--s2-white);}
+.element-button-1572238838-button:hover {
+  color: var(--s2-white);
+  background: var(--s2-white-fade);}
+.element-button-1572238838-button-bg {
+  background-color: rgb(255, 255, 255);}
+}

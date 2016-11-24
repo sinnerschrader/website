@@ -1,6 +1,17 @@
 ---
 name: StandardLayout
 ---
+<style scoped>
+html {
+	--s2-black: rgb( 30,  33,  42);
+	--s2-white: rgb(255, 255, 255);
+	--s2-white-fade: rgba(255, 255, 255, 0.25);
+
+	--s2-button-color: var(--s2-black);
+	--s2-button-hover-color: var(--s2-white);
+	--s2-button-hover-background-color: var(--s2-black);
+}
+</style>
 <html lang="de-DE">
 <Head host={props.host} href={props.href} base={props.base} title={props.title}/>
 <body className={helpers.classNames({bodyClass: props.bodyClass})} data-theme={props.theme}>
