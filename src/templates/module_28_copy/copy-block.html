@@ -2,7 +2,11 @@
 name: CopyBlock
 ---
 <section className="mod-copy-block">
-	<h3 className="h h3">{props.headline}</h3>
+	<Headline
+		level={props.level}
+		className="h h3"
+		text={props.headline}
+		/>
 	<Text
 		Tagname="p"
 		className="copy"

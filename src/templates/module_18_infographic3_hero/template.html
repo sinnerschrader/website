@@ -2,21 +2,42 @@
 name: Infographic3Hero
 ---
 <section className="mod-infographic3-hero" data-theme={props.theme}>
+	<Hero
+		teaser={props.teaser}
+		buttonHref={props.buttonHref}
+		buttonLabel={props.buttonLabel}
+		copy={props.copy}
+		headline={props.headline}
+		level={props.level}
+		buttonBg
+	/>
 	<ul className="facts sctntxtclr">
 		<li className="item">
-			<h2 className="h4">{props.headlineLeft} </h2>
+			<Headline
+				level={props.level+1}
+				className="h4"
+				text={props.headlineLeft}
+				/>
 			<p>
 				{props.copyLeft}
 			</p>
 		</li>
 		<li className="item">
-			<h2 className="h4">{props.headlineRight}</h2>
+			<Headline
+				level={props.level+1}
+				className="h4"
+				text={props.headlineRight}
+				/>
 			<p>
 				{props.copyRight}
 			</p>
 		</li>
 		<li className="item">
-			<h2 className="h4">{props.headlineBottom}</h2>
+			<Headline
+				level={props.level+1}
+				className="h4"
+				text={props.headlineBottom}
+				/>
 			<p>
 				{props.copyBottom}
 			</p>
@@ -29,12 +50,4 @@ name: Infographic3Hero
 			<path d="m219.2 79.7c0 11.1 7.8 19.9 19.2 19.9s19.4-8.4 19.4-19.9c0-11.3-8-20.2-19.4-20.2-10.8.1-19.2 9.2-19.2 20.2m14.4 0c0-4.6 2.5-5.8 4.8-5.8 2.4 0 4.8 1.2 4.8 5.8 0 4.5-2.5 5.6-4.8 5.6-2.3.1-4.8-1.1-4.8-5.6"/>
 		</g>
 	</svg>
-	<Hero
-		teaser={props.teaser}
-		buttonHref={props.buttonHref}
-		buttonLabel={props.buttonLabel}
-		copy={props.copy}
-		headline={props.headline}
-		buttonBg
-	/>
 </section>
