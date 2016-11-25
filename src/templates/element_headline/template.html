@@ -1,11 +1,7 @@
 ---
 name: Headline
 ---
-
-(function(){
-	const tagName = props.level? "h"+props.level : "p";
-	return <Text
-		Tagname={tagName}
-		{...props}
-		/>
-}());
+<Text
+	Tagname={props.level ? `h${props.level}` : 'p'}
+	{...props}
+	/>
