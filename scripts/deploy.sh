@@ -57,11 +57,11 @@ OUTPUT=$(pull-request \
 	--head "$TRAVIS_REPO_SLUG:deploy-$TRAVIS_COMMIT" \
 	--title "Deploy to GitHub Pages" \
 	--body "Deploy to GitHub Pages: #${TRAVIS_PULL_REQUEST} - ${SHA}" \
-	--message "Deploy to GitHub Pages: #${TRAVIS_PULL_REQUEST} - ${SHA}"  \
+	--message "Deploy to GitHub Pages: ${SHA}"  \
 	--token "$GH_TOKEN")
 
 TRIMMED=${OUTPUT#Success}
-URL=$(node -e "console.log(($TRIMMED).url)")
+URL=$(node -e "console.log(($TRIMMED).html_url)")
 
 # - GITHUB_USERNAME
 # - GITHUB_ACCESS_TOKEN
