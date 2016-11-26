@@ -50,7 +50,7 @@ git commit -m "Deploy to GitHub Pages: ${SHA}" --author "$(git --no-pager show -
 git push -q origin "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
 
 # - GH_TOKEN
-OUTPUT=(pull-request \
+OUTPUT=$(pull-request \
 	--base "$TRAVIS_REPO_SLUG:master" \
 	--head "$TRAVIS_REPO_SLUG:deploy-$TRAVIS_COMMIT" \
 	--title "Deploy to GitHub Pages" \
