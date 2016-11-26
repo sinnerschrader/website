@@ -54,8 +54,8 @@ OUTPUT=(pull-request \
 	--base "$TRAVIS_REPO_SLUG:master" \
 	--head "$TRAVIS_REPO_SLUG:deploy-$TRAVIS_COMMIT" \
 	--title "Deploy to GitHub Pages" \
-	--body "Deploy to GitHub Pages: ${SHA}" \
-	--message "Deploy to GitHub Pages: ${SHA}"  \
+	--body "Deploy to GitHub Pages: #${TRAVIS_PULL_REQUEST} - ${SHA}" \
+	--message "Deploy to GitHub Pages: #${TRAVIS_PULL_REQUEST} - ${SHA}"  \
 	--token "$GH_TOKEN")
 
 TRIMMED=${OUTPUT#Success}
@@ -66,4 +66,4 @@ URL=$(node -e "console.log(($TRIMMED).url)")
 issue-comment \
 	--once \
 	"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST"
-	"Deployed [$TRAVIS_PULL_REQUEST](https://sinnerschrader.github.io/sinnerschrader-website-staging/$TRAVIS_PULL_REQUEST) via $URL"
+	"Deploy by merging $URL"
