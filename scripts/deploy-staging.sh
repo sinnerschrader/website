@@ -54,12 +54,12 @@ OUTPUT=$(pull-request \
 	--base "sinnerschrader/sinnerschrader-website-staging:master" \
 	--head "sinnerschrader/sinnerschrader-website-staging:deploy-$TRAVIS_COMMIT" \
 	--title "Deploy to GitHub Pages" \
-	--body "Deploy to GitHub Pages: #${TRAVIS_PULL_REQUEST} - ${SHA}" \
-	--message "Deploy to GitHub Pages: #${TRAVIS_PULL_REQUEST} - ${SHA}"  \
+	--body "Deploy to GitHub Pages: sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST} - ${SHA}" \
+	--message "Deploy to GitHub Pages: ${SHA}"  \
 	--token "$GH_TOKEN")
 
 TRIMMED=${OUTPUT#Success}
-URL=$(node -e "console.log(($TRIMMED).url)")
+URL=$(node -e "console.log(($TRIMMED).html_url)")
 
 # - GITHUB_USERNAME
 # - GITHUB_ACCESS_TOKEN
