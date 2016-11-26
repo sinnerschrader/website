@@ -1,12 +1,6 @@
 ---
 name: Hero
 ---
-<style scoped>
-.invert {
-	--s2-button-color: var(--s2-white);
-	--s2-button-hover-background-color: var(--s2-white-fade);
-}
-</style>
 <section
 	className={helpers.classNames({'mod-hero': true, 'invert': props.invert, [style.invert]: props.invert})}
 	data-explode={props.explode}
@@ -60,6 +54,8 @@ name: Hero
 					label={props.buttonLabel}
 					href={props.buttonHref}
 					buttonBg={props.buttonBg}
+					invert={props.invert}
+					theme={props.theme}
 				/>
 			</div>
 	}
