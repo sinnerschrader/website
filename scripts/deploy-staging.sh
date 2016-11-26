@@ -1,5 +1,12 @@
 #!/bin/bash
-set -e # Exit with nonzero exit code if anything fails
+##
+# Assumes to be run in npm context:
+# - node_modules/.bin in $PATH
+# - GH_TOKEN
+# - GITHUB_USERNAME
+# - GITHUB_PASSWORD
+##
+set -e
 
 if [ "$TRAVIS" != "true" ]; then
     echo "Skipping deploy - this is not running on Travis; skipping."
@@ -38,4 +45,25 @@ git add --all .
 git config user.name "SinnerSchrader"
 git config user.email "jobs@sinnerschrader.com"
 git commit -m "Deploy to GitHub Pages: ${SHA}" --author "$(git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT)"
-git push -q origin HEAD:refs/heads/master
+
+# Now that we're all set up, we can push.
+git push -q origin "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
+
+# - GH_TOKEN
+OUTPUT=$(pull-request \
+	--base "sinnerschrader/sinnerschrader-website-staging:master" \
+	--head "sinnerschrader/sinnerschrader-website-staging:deploy-$TRAVIS_COMMIT" \
+	--title "Deploy to GitHub Pages" \
+	--body "Deploy to GitHub Pages: sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST} - ${SHA}" \
+	--message "Deploy to GitHub Pages: ${SHA}"  \
+	--token "$GH_TOKEN")
+
+TRIMMED=${OUTPUT#Success}
+URL=$(node -e "console.log(($TRIMMED).html_url)")
+
+# - GITHUB_USERNAME
+# - GITHUB_ACCESS_TOKEN
+issue-comment \
+	--once \
+	"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST" \
+	"Deploy to staging by merging $URL"
