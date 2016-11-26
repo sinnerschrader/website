@@ -62,7 +62,7 @@ TRIMMED=${OUTPUT#Success}
 URL=$(node -e "console.log(($TRIMMED).url)")
 
 # - GITHUB_USERNAME
-# - GITHUB_PASSWORD
+# - GITHUB_ACCESS_TOKEN
 issue-comment \
 	--once \
 	"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST" \
