@@ -67,5 +67,5 @@ URL=$(node -e "console.log(($TRIMMED).url)")
 # - GITHUB_PASSWORD
 issue-comment \
 	--once \
-	"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST"
-	"Deploy by merging $URL"
+	"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST" \
+	"Deploy to production by merging $URL"
