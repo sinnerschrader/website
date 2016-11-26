@@ -51,8 +51,8 @@ git push -q origin "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
 
 # - GH_TOKEN
 OUTPUT=$(pull-request \
-	--base "$TRAVIS_REPO_SLUG:master" \
-	--head "$TRAVIS_REPO_SLUG:deploy-$TRAVIS_COMMIT" \
+	--base "sinnerschrader/sinnerschrader-website-staging:master" \
+	--head "sinnerschrader/sinnerschrader-website-staging:deploy-$TRAVIS_COMMIT" \
 	--title "Deploy to GitHub Pages" \
 	--body "Deploy to GitHub Pages: #${TRAVIS_PULL_REQUEST} - ${SHA}" \
 	--message "Deploy to GitHub Pages: #${TRAVIS_PULL_REQUEST} - ${SHA}"  \
