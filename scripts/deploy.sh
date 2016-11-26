@@ -1,5 +1,9 @@
- #!/bin/bash
-set -e # Exit with nonzero exit code if anything fails
+#!/bin/bash
+##
+# Assumes to be run in npm context:
+# - node_modules/.bin in $PATH
+##
+set -e
 
 if [ "$TRAVIS" != "true" ]; then
     echo "Skipping deploy - this is not running on Travis; skipping."
@@ -46,10 +50,22 @@ git commit -m "Deploy to GitHub Pages: ${SHA}" --author "$(git --no-pager show -
 
 # Now that we're all set up, we can push.
 git push -q upstream "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
-pull-request \
+
+# - GH_TOKEN
+OUTPUT=(pull-request \
 	--base "$TRAVIS_REPO_SLUG:master" \
 	--head "$TRAVIS_REPO_SLUG:deploy-$TRAVIS_COMMIT" \
 	--title "Deploy to GitHub Pages" \
 	--body "Deploy to GitHub Pages: ${SHA}" \
 	--message "Deploy to GitHub Pages: ${SHA}"  \
-	--token "$GH_TOKEN"
+	--token "$GH_TOKEN")
+
+TRIMMED=${OUTPUT#Success}
+URL=$(node -e "console.log(($TRIMMED).url)")
+
+# - GITHUB_USERNAME
+# - GITHUB_PASSWORD
+issue-comment \
+	--once \
+	"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST"
+	"Deployed [$TRAVIS_PULL_REQUEST](https://sinnerschrader.github.io/sinnerschrader-website/$TRAVIS_PULL_REQUEST) via $URL"
