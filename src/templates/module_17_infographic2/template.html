@@ -2,24 +2,23 @@
 name: Infographic2
 ---
 <section className="mod-infographic2">
-	<h2 className="headline h h2-1">
-		Staying ahead of the curve.
-	</h2>
+	<Headline
+		level={props.level}
+		className="headline h h2-1"
+		text="Staying ahead of the curve."
+		/>
 	<Text
 		Tagname="p"
 		className="copy subline"
 		text="`Three eras` of innovative digital products in the past `20 years`."
 		/>
-
 	<ResponsiveImage
-		imageSrcSet= '../../../static/images/elements/about_why_infographic_mobile.svg'
-		imageSrcSetS= '../../../static/images/elements/about_why_infographic_mobile.svg'
-		imageSrcSetM= '../../../static/images/elements/about_why_infographic_tablet.svg'
-		imageSrcSetL='../../../static/images/elements/infographic2.svg'
+		imageSrcSet= '../../static/images/elements/about_why_infographic_mobile.svg'
+		imageSrcSetS= '../../static/images/elements/about_why_infographic_mobile.svg'
+		imageSrcSetM= '../../static/images/elements/about_why_infographic_tablet.svg'
+		imageSrcSetL='../../static/images/elements/infographic2.svg'
 		freeForm
 		/>
-
-
 	<Text
 		Tagname="p"
 		className="copy text"

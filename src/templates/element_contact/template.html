@@ -2,7 +2,11 @@
 name: ElementContact
 ---
 <div>
-	<h4 className="h h4">{props.caption}</h4>
+	<Headline
+		level={props.level}
+		className="h h4"
+		text={props.caption}
+		/>
 	{props.name}<br/>
 	{props.phone}<br/>
 	{/* use two blocks since we cannot return two children from one expression */}

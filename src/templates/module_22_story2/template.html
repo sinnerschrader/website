@@ -5,16 +5,16 @@ name: Story2
 	<div className="details">
 		{
 			props.headline &&
-				<Text
-					Tagname="h2"
+				<Headline
+					level={props.level}
 					className="h h2-2"
 					text={props.headline}
 					/>
 		}
 		{
 			props.subline &&
-				<Text
-					Tagname="h3"
+				<Headline
+					level={props.level+1}
 					className="sub h4"
 					text={props.subline}
 					/>

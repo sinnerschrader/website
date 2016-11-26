@@ -4,25 +4,31 @@ name: Infographic3
 <section className={helpers.classNames({'mod-infographic3': true, ' text-bigger': props.textBigger})} style={{backgroundImage: `url(${props.backgroundSvg})`}}>
 	<ul className="facts">
 		<li className="item">
-			<h2 className="h3">
-				{props.headlineOne}
-			</h2>
+			<Headline
+				level={props.level}
+				className="h3"
+				text={props.headlineOne}
+				/>
 			<p className="copy">
 				{props.copyOne}
 			</p>
 		</li>
 		<li className="item">
-			<h2 className="h3">
-				{props.headlineTwo}
-			</h2>
+			<Headline
+				level={props.level}
+				className="h3"
+				text={props.headlineTwo}
+				/>
 			<p className="copy">
 				{props.copyTwo}
 			</p>
 		</li>
 		<li className="item">
-			<h2 className="h3">
-				{props.headlineThree}
-			</h2>
+			<Headline
+				level={props.level}
+				className="h3"
+				text={props.headlineThree}
+				/>
 			<p className="copy">
 				{props.copyThree}
 			</p>

@@ -4,9 +4,11 @@ name: Clients
 <section className="mod-clients invert">
 	{
 		props.headline &&
-			<h2 className="h h2-2">
-				{props.headline}
-			</h2>
+			<Headline
+				level={props.level}
+				className="h h2-2"
+				text={props.headline}
+				/>
 	}
 	<ul className="clientslist">
 		<li className="item" style={{backgroundImage: `url(${props.base}/static/images/logos/lg_deutschebank.svg)`}}>Deutsche Bank</li>

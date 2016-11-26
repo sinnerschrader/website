@@ -3,7 +3,7 @@ route: /about/what
 ---
 <StandardLayout host={props.host} href={frontmatter.route} base="../.." theme="blue">
 	<Hero
-		headline="We deliver transformational products."
+		headline="We deliver trans&shy;formational products."
 		copy="They bond with customers, reshape user behaviour and transform business reality."
 		imageSrcS="../../static/images/backgrounds/module_01_hero_palm_about_what_r.jpg"
 		imageSrcM="../../static/images/backgrounds/module_01_hero_lap_about_what_r.jpg"
@@ -12,6 +12,7 @@ route: /about/what
 		imageHeight={560}
 		blend
 		invert
+		level={1}
 		/>
 	<Story1
 		headline="Great products `change` everything. Behaviour. Business. Markets."
@@ -19,6 +20,7 @@ route: /about/what
 		reshape usage and transform business reality. Products that deliver unique value propositions powered by well crafted software,
 		well thought out UX and inspiring designs."
 		gradient
+		level={2}
 		/>
 	<AboutWhat/>
 	<Statement>
