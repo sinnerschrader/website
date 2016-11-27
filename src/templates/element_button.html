@@ -1,0 +1,54 @@
+---
+name: ElementButton
+---
+<style scoped>
+.button {
+	display: inline-block;
+	min-width: 175px;
+	padding: 12px 24px;
+	border: 2px solid currentColor;
+	font-weight: bold;
+	line-height: 40px;
+	text-align: center;
+	color: var(--s2-black);
+}
+.button:hover {
+	color: var(--s2-white);
+	background: var(--s2-black);
+}
+
+.button-bg {
+	background-color: var(--s2-white);
+}
+
+.invert {
+	color: var(--s2-white);
+}
+.invert:hover {
+	background: var(--s2-white-fade);
+}
+
+[data-theme=white]:hover {
+	background-color: var(--s2-white);
+	border-color: var(--s2-white);
+}
+[data-theme=green]:hover {
+	background-color: var(--s2-green);
+	border-color: var(--s2-green);
+}
+[data-theme=blue]:hover {
+	background-color: var(--s2-blue);
+	border-color: var(--s2-blue);
+}
+[data-theme=red]:hover {
+	background-color: var(--s2-red);
+	border-color: var(--s2-red);
+}
+</style>
+<a
+		href={props.href}
+		className={helpers.classNames(style.button, {[style.buttonBg]: props.buttonBg, [style.invert]: props.invert})}
+		data-theme={props.theme}
+		>
+	{props.label}
+</a>
