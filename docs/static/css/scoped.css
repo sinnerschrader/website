@@ -1,14 +1,37 @@
-.standard-layout--679892353-html {
+.standard-layout--2023552574-html {
+  /* base colors */
   --s2-black: rgb( 30,  33,  42);
+  --s2-darkblack: rgb( 22,  24,  30);
+  /* Very dark (mostly black) blue */
+  --s2-darkgrey3: rgb(133, 133, 134);
+  /* Dark greyish */
+  --s2-darkgrey2: rgb(163, 163, 163);
+  /* Dark grey */
+  --s2-darkgrey: rgb(179, 179, 179);
+  /* Grey */
+  --s2-grey: rgb(244, 247, 250);
+  /* Light greyish blue */
+  --s2-lightgrey: rgb(247, 247, 247);
+  /* Very light grey (mostly white) */
   --s2-white: rgb(255, 255, 255);
-  --s2-white-fade: rgba(255, 255, 255, 0.25);
-  --s2-button-color: rgb( 30,  33,  42);
-  --s2-button-hover-color: rgb(255, 255, 255);
-  --s2-button-hover-background-color: rgb( 30,  33,  42);}
-.hero-183769554-invert {
-  --s2-button-color: rgb(255, 255, 255);
-  --s2-button-hover-background-color: rgba(255, 255, 255, 0.25);}
-.element-button-1572238838-button {
+  /* White */
+  --s2-red: rgb(255,   3,  84);
+  /* Vivid pink */
+  --s2-green: rgb(  3, 255, 183);
+  /* Vivid cyan - lime green */
+  --s2-verydarkblue: rgb( 30,  33,  42);
+  /* Very dark (mostly black) blue */
+  --s2-blue: rgb( 69,   2, 218);
+  /* Vivid violet */
+  /* color refs */
+  --s2-body: #000000;
+  --s2-locnav-bg: rgb(255, 255, 255);
+  --s2-locnav-color: rgb(255, 255, 255);
+  /* hover-colors */
+  --s2-black-hover: #495066;
+  /* less: lighten(--s2-black, 20%); */
+  --s2-white-fade: rgba(255, 255, 255, 0.25);}
+.element-button-44592592-button {
   display: inline-block;
   min-width: 175px;
   padding: 12px 24px;
@@ -16,10 +39,25 @@
   font-weight: bold;
   line-height: 40px;
   text-align: center;
-  color: var(--s2-white);}
-.element-button-1572238838-button:hover {
-  color: var(--s2-white);
-  background: var(--s2-white-fade);}
-.element-button-1572238838-button-bg {
+  color: rgb( 30,  33,  42);}
+.element-button-44592592-button:hover {
+  color: rgb(255, 255, 255);
+  background: rgb( 30,  33,  42);}
+.element-button-44592592-button-bg {
   background-color: rgb(255, 255, 255);}
-}
+.element-button-44592592-invert {
+  color: rgb(255, 255, 255);}
+.element-button-44592592-invert:hover {
+  background: rgba(255, 255, 255, 0.25);}
+.element-button-44592592[data-theme=white]:hover {
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);}
+.element-button-44592592[data-theme=green]:hover {
+  background-color: rgb(  3, 255, 183);
+  border-color: rgb(  3, 255, 183);}
+.element-button-44592592[data-theme=blue]:hover {
+  background-color: rgb( 69,   2, 218);
+  border-color: rgb( 69,   2, 218);}
+.element-button-44592592[data-theme=red]:hover {
+  background-color: rgb(255,   3,  84);
+  border-color: rgb(255,   3,  84);}
