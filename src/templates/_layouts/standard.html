@@ -14,6 +14,8 @@ name: StandardLayout
 	</noscript>
 	{/*<!-- End Google Tag Manager (noscript) -->*/}
 	<div className="container">
+		<input type="checkbox" id="navigation-state" data-navigation-state autoComplete="off"/>
+		<div className="global-overlay"></div>
 		<Navigation base={props.base}/>
 		<main className="main">
 			{props.children}

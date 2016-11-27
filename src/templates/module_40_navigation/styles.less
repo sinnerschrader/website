@@ -1,3 +1,13 @@
+[data-navigation-state] {
+	position: fixed;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+	transform: translate(-100%, -100%);
+}
+
 .mod-navigation-container {
 	position: fixed;
 	left: 0;
@@ -34,16 +44,6 @@
 
 	@media @s2-mq-window-tablet {
 		padding: 0 30px;
-	}
-
-	[data-navigation-state] {
-		position: fixed;
-		top: 0;
-		left: 0;
-		visibility: hidden;
-		width: 0;
-		height: 0;
-		transform: translate(-100%, -100%);
 	}
 }
 
@@ -133,10 +133,21 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	transform: translateY(-100%);
-	background: transparent;
-	transition: background-color 300ms 300ms ease-in-out,
-		transform 1ms 600ms;
+	transform: translate3d(0, 1, 0, -100%); // Fixes Rendering bug in Chrome
+	transition: transform 1ms 600ms;
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		height: @s2-headerHeight-s;
+		background-color: fadeout(#16181e, 10%);
+		transition: opacity 300ms 300ms ease-in-out,
+	                transform 1ms 600ms;
+		transform: translateY(-100%);
+		opacity: 0;
+	}
 }
 
 .mainnav {
@@ -238,35 +249,60 @@
 	}
 }
 
+.global-overlay {
+	position: absolute;
+	top: -100vh;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	opacity: 0;
+	background-color: fadeout(#16181e, 10%);
+	transform: translateX(-100%);
+	transition: opacity 300ms 300ms ease-in-out,
+	            transform 1ms 600ms;
+}
+
 [data-navigation-state]:checked {
-	~ .burger {
-		.layer {
-			background: @s2-white;
-		}
-		.layer:first-child {
-			transform: scaleX(0) translateY(8.5px);
-		}
-		.layer:last-child {
-			transform: scaleX(0) translateY(-8.5px);
-		}
-		.layer:nth-child(2) {
-			transform: rotate(-45deg);
-		}
-		.layer:nth-child(3) {
-			transform: rotate(45deg);
-		}
-	}
-	~ .nav {
+	 ~ .global-overlay {
 		transform: none;
-		transition: background-color 300ms ease-in-out;
-		background-color: fadeout(#16181e, 10%);
-		.mainnav {
-			overflow: auto;
+		opacity: 1;
+		transition: opacity 300ms ease-in-out;
+	}
+
+	~ .mod-navigation-container {
+		.burger {
+			.layer {
+				background: @s2-white;
+			}
+			.layer:first-child {
+				transform: scaleX(0) translateY(8.5px);
+			}
+			.layer:last-child {
+				transform: scaleX(0) translateY(-8.5px);
+			}
+			.layer:nth-child(2) {
+				transform: rotate(-45deg);
+			}
+			.layer:nth-child(3) {
+				transform: rotate(45deg);
+			}
 		}
-		.mainnav-item {
-			.nav-item {
+		.nav {
+			transform: none;
+			&::before {
+				transition: opacity 300ms ease-in-out;
+				transform: inherit;
 				opacity: 1;
-				transform: none;
+			}
+			.mainnav {
+				overflow: auto;
+			}
+			.mainnav-item {
+				.nav-item {
+					opacity: 1;
+					transform: none;
+				}
 			}
 		}
 	}
