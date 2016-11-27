@@ -1,8 +1,9 @@
 ---
 route: /index.html
 title: SinnerSchrader
+theme: blue
 ---
-<StandardLayout title={frontmatter.title} host={props.host} href={frontmatter.route} base="." theme="blue">
+<StandardLayout title={frontmatter.title} host={props.host} href={frontmatter.route} base="." theme={frontmatter.theme}>
 	<Hero
 		teaser
 		blend
@@ -14,7 +15,7 @@ title: SinnerSchrader
 		imageSrcM="./static/images/backgrounds/module_01_hero_lap_about_what_r.jpg"
 		imageSrcS="./static/images/backgrounds/module_01_hero_palm_about_what_r.jpg"
 		invert
-		theme="blue"
+		theme={frontmatter.theme}
 		level={1}
 		/>
 	<Infographic3Hero
@@ -57,6 +58,7 @@ title: SinnerSchrader
 		imageUrl="//placehold.it/2880x560/4502da/730028/&text=1440x865"
 		invert
 		level={2}
+		theme={frontmatter.theme}
 		/>
 	<Clients base="."/>
 	<Hero
@@ -99,6 +101,7 @@ title: SinnerSchrader
 		imageSrcS="./static/images/backgrounds/module_01_hero_palm_next.jpg"
 		invert
 		level={2}
+		theme={frontmatter.theme}
 		/>
 	<Locations base="." withMap={true}/>
 </StandardLayout>
