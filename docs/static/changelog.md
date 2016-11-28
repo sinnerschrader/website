@@ -1,0 +1,1 @@
+<a name="1.0.2"></a> ## [1.0.2](https://github.com/sinnerschrader/sinnerschrader-website-static/compare/v1.0.2...v1.0.2) (2016-11-24) ### Bug Fixes changelog.md fonts icons images index.js node_modules package.json readme.md sinnerschradercom.jpg videos correct work images (#5) ([64386aa](https://github.com/sinnerschrader/sinnerschrader-website-static/commit/64386aa))
