@@ -1,0 +1,96 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "sinnerschrader-website-static@1.0.5",
+        "scope": null,
+        "escapedName": "sinnerschrader-website-static",
+        "name": "sinnerschrader-website-static",
+        "rawSpec": "1.0.5",
+        "spec": "1.0.5",
+        "type": "version"
+      },
+      "/home/travis/build/sinnerschrader/sinnerschrader-website"
+    ]
+  ],
+  "_from": "sinnerschrader-website-static@1.0.5",
+  "_id": "sinnerschrader-website-static@1.0.5",
+  "_inCache": true,
+  "_location": "/sinnerschrader-website-static",
+  "_nodeVersion": "6.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/sinnerschrader-website-static-1.0.5.tgz_1480348510975_0.09184753056615591"
+  },
+  "_npmUser": {
+    "name": "marionebl",
+    "email": "root@mario-nebl.de"
+  },
+  "_npmVersion": "3.10.8",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "sinnerschrader-website-static@1.0.5",
+    "scope": null,
+    "escapedName": "sinnerschrader-website-static",
+    "name": "sinnerschrader-website-static",
+    "rawSpec": "1.0.5",
+    "spec": "1.0.5",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/sinnerschrader-website-static/-/sinnerschrader-website-static-1.0.5.tgz",
+  "_shasum": "6172995aff6bcc68f514e9ef2604377b58bb2928",
+  "_shrinkwrap": null,
+  "_spec": "sinnerschrader-website-static@1.0.5",
+  "_where": "/home/travis/build/sinnerschrader/sinnerschrader-website",
+  "author": {
+    "name": "SinnerSchrader"
+  },
+  "bugs": {
+    "url": "https://github.com/sinnerschrader/sinnerschrader-website-static/issues"
+  },
+  "dependencies": {},
+  "description": "Source project for https://www.sinnerschrader.com",
+  "devDependencies": {
+    "ci-publish": "^1.3.0",
+    "conventional-changelog-cli": "^1.2.0",
+    "conventional-recommended-bump": "^0.3.0",
+    "jsontool": "^7.0.2",
+    "publish-release": "^1.3.2",
+    "standard-changelog": "0.0.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "6172995aff6bcc68f514e9ef2604377b58bb2928",
+    "tarball": "https://registry.npmjs.org/sinnerschrader-website-static/-/sinnerschrader-website-static-1.0.5.tgz"
+  },
+  "files": [
+    "**",
+    "!.stage",
+    "!.scripts",
+    "!sinnerschrader-website-static*.tar.gz"
+  ],
+  "gitHead": "9589916af4740bcf94ea17495760a9521498a231",
+  "homepage": "https://github.com/sinnerschrader/sinnerschrader-website-static#readme",
+  "license": "UNLICENSED",
+  "maintainers": [
+    {
+      "name": "marionebl",
+      "email": "root@mario-nebl.de"
+    }
+  ],
+  "name": "sinnerschrader-website-static",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinnerschrader/sinnerschrader-website-static.git"
+  },
+  "scripts": {
+    "release": "./.scripts/release.sh",
+    "test": "./.scripts/test.sh"
+  },
+  "version": "1.0.5"
+}
