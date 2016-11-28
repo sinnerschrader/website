@@ -37,8 +37,8 @@ To develop frontend sources you start the local development
 setup like this:
 
 ```sh
-$ npm run build:watch &
-$ npm start
+$ npm run build:development &
+$ npm start:development
 # Development server running on http://localhost:3000
 ```
 
