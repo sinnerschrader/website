@@ -9,8 +9,7 @@ notifications:
   email:
     on_success: never
 script:
-  - npm run taint
-  - npm run build
+  - STATICS='--src-statics node_modules/sinnerschrader-website-static' npm run build
 after_success:
   - npm run deploy-staging
   - npm run deploy
