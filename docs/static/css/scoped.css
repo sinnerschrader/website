@@ -1,4 +1,4 @@
-.standard-layout--2023552574-html {
+.standard-layout--2023552574-thtml {
   /* base colors */
   --s2-black: rgb( 30,  33,  42);
   --s2-darkblack: rgb( 22,  24,  30);
@@ -61,3 +61,12 @@
 .element-button-44592592[data-theme=red]:hover {
   background-color: rgb(255,   3,  84);
   border-color: rgb(255,   3,  84);}
+.element-video-38515682-video {
+  position: relative;
+  background: #000;}
+.element-video-38515682-tvideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;}
