@@ -23,6 +23,11 @@ if [ "$TRAVIS_SECURE_ENV_VARS" != "true" ]; then
 	exit 0
 fi
 
+if [[ "$(git log --format=%s -n 1 $TRAVIS_COMMIT)" == *"[skip-ci]"* ]]; then
+	echo "Commit subject ends with \"[skip-ci]\", skipping."
+	exit 0
+fi
+
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
 	echo "No changes to the output on this push; exiting."
