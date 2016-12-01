@@ -34,7 +34,13 @@ if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
 	issue-comment \
 		--once \
 		"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST" \
-		"Hello!\n This contains changes to `docs`, so I created no Pull Request to sinnerschrader/sinnerschrader-website-staging. Hope that's okay!"
+		"Hello!<br/>
+		<br/>
+		I built $TRAVIS_COMMIT and found out it produces no changes to the website \`docs\`.<br/>
+		Because of this I decided to create no Pull Request to sinnerschrader/sinnerschrader-website-staging. <br/>
+		<br/>
+		Cheers"
+
 	exit 0
 fi
 
@@ -53,21 +59,39 @@ git commit -m "Deploy to GitHub Pages: ${SHA}" --author "$(git --no-pager show -
 # Now that we're all set up, we can push.
 git push -q origin "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
 
+read -d '' BODY << EOF || true
+Hey there,<br />
+<br/>
+This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST}.<br/>
+When you merge this the changes will be deployed to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}).<br/>
+<br/>
+Cheers
+EOF
+
 # - GH_TOKEN
 OUTPUT=$(pull-request \
 	--base "sinnerschrader/sinnerschrader-website-staging:master" \
 	--head "sinnerschrader/sinnerschrader-website-staging:deploy-$TRAVIS_COMMIT" \
 	--title "Deploy #${TRAVIS_PULL_REQUEST} to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST})" \
-	--body "Hey there,\n this pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST}.\nWhen you merge this the changes will be deployed to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST})." \
+	--body "$BODY" \
 	--message "Deploy #${TRAVIS_PULL_REQUEST} to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST})" \
 	--token "$GH_TOKEN")
 
 TRIMMED=${OUTPUT#Success}
 URL=$(node -e "console.log(($TRIMMED).html_url)")
 
+read -d '' COMMENT << EOF || true
+Hey there,<br/>
+<br/>
+I created a Pull Reqest at [sinnerschrader-website-static]($URL) for you.<br/>
+Merging it will make your changes available at the staging Github Page. :rocket:<br/>
+<br/>
+Cheers
+EOF
+
 # - GITHUB_USERNAME
 # - GITHUB_ACCESS_TOKEN
 issue-comment \
 	--once \
 	"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST" \
-	"Hey there,\n I created a Pull Reqest at [sinnerschrader-website-static]($URL) for you.\n Merging it will make your changes available at the staging Github Page. :rocket:"
+	"$COMMENT"
