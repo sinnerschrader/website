@@ -25,7 +25,7 @@ if [ "$TRAVIS_SECURE_ENV_VARS" != "true" ]; then
     exit 0
 fi
 
-if [[ "$(git log --format=%s -n 1 $TRAVIS_COMMIT)" == *"[skip-ci]"* ]]; then
+if [[ "$(git log --format=%s -n 1)" == *"[skip-ci]"* ]]; then
 	echo "Commit subject ends with \"[skip-ci]\", skipping."
 	exit 0
 fi
@@ -40,6 +40,7 @@ git config user.name "SinnerSchrader"
 git config user.email "jobs@sinnerschrader.com"
 git remote add upstream "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG.git"
 
+SHORT_COMMIT=$(git log --format=%h -n 1 $TRAVIS_COMMIT)
 PULL_REQUEST_ID="$(git log --format=%s -n 1 $TRAVIS_COMMIT | perl -nle 'print $1 if /#(\d+)/' | tail -n 1)"
 
 # Commit the "changes", i.e. the new version.
@@ -56,8 +57,7 @@ if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
 			"Hello!<br/>
 			I built the commit $TRAVIS_COMMIT caused by this pull request and found out it produces no changes to the website \`docs\`.<br/>
 			Because of this I decided to create no Pull Request to sinnerschrader/sinnerschrader-website to deploy changes to production.<br/>
-			Cheers<br />
-			:sleep:"
+			Cheers"
 	fi
 	exit 0
 fi
@@ -65,13 +65,13 @@ fi
 AUTHOR="$(git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT)"
 
 if [ -n "$PULL_REQUEST_ID" ]; then
-	git commit -m "Deploy build changes for ${TRAVIS_COMMIT} of #${PULL_REQUEST_ID} [skip-ci]" --author "$AUTHOR"
+	git commit -m "Deploy build changes for ${SHORT_COMMIT} of #${PULL_REQUEST_ID} [skip-ci]" --author "$AUTHOR"
 else
-	git commit -m "Deploy build changes for ${TRAVIS_COMMIT} [skip-ci]" --author "$AUTHOR"
+	git commit -m "Deploy build changes for ${SHORT_COMMIT} [skip-ci]" --author "$AUTHOR"
 fi
 
 # Now that we're all set up, we can push.
-git push -q upstream "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
+git push -q upstream "HEAD:refs/heads/deploy-$SHORT_COMMIT"
 
 if [ -n "$PULL_REQUEST_ID" ]; then
 	read -d '' BODY << EOF || true
@@ -98,13 +98,13 @@ fi
 if [ -n "$PULL_REQUEST_ID" ]; then
 	MESSAGE="Deploy changes for #$PULL_REQUEST_ID"
 else
-	MESSAGE="Deploy changes for $(git log --format=%h -n 1 $TRAVIS_COMMIT)"
+	MESSAGE="Deploy changes for $SHORT_COMMIT"
 fi
 
 # - GH_TOKEN
 OUTPUT=$(pull-request \
 	--base "$TRAVIS_REPO_SLUG:master" \
-	--head "$TRAVIS_REPO_SLUG:deploy-$TRAVIS_COMMIT" \
+	--head "$TRAVIS_REPO_SLUG:deploy-$SHORT_COMMIT" \
 	--title "$MESSAGE" \
 	--body "$BODY" \
 	--message "$MESSAGE" \
