@@ -23,7 +23,11 @@ if [ "$TRAVIS_SECURE_ENV_VARS" != "true" ]; then
 	exit 0
 fi
 
-if [[ "$(git log --format=%s -n 1)" == *"[skip-ci]"* ]]; then
+COMMIT_MESSAGE="$(git log --format=%s -n 1)"
+
+echo $COMMIT_MESSAGE
+
+if [[ "$COMMIT_MESSAGE" == *"[skip-ci]"* ]]; then
 	echo "Commit subject ends with \"[skip-ci]\", skipping."
 	exit 0
 fi
@@ -61,7 +65,7 @@ PR_EXISTS=$((git show-ref --quiet --verify -- "refs/remotes/origin/deploy-$TRAVI
 # Now that we're all set up, we can push.
 git push -f -q origin "HEAD:refs/heads/deploy-$TRAVIS_PULL_REQUEST"
 
-if [ PR_EXISTS == "true"]; then
+if [ PR_EXISTS == "true" ]; then
 	echo "Pull request for staging changes of $TRAVIS_PULL_REQUEST already exists."
 	exit 0
 fi
