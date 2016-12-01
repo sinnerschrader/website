@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-if [[ "$(git log --format=%s -n 1)" == *"[skip-ci]"* ]]; then
+COMMIT_MESSAGE="$(git log --format=%s -n 1)"
+
+if [[ "$COMMIT_MESSAGE" == *"[skip-ci]"* ]]; then
 	echo "Commit subject ends with \"[skip-ci]\", skipping."
 	exit 0
 fi
