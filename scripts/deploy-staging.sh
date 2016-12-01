@@ -9,29 +9,33 @@
 set -e
 
 if [ "$TRAVIS" != "true" ]; then
-    echo "Skipping deploy - this is not running on Travis; skipping."
-    exit 0
+	echo "Skipping deploy - this is not running on Travis; skipping."
+	exit 0
 fi
 
 if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-    echo "Skipping deploy - this is not a Pull Request; skipping."
-    exit 0
+	echo "Skipping deploy - this is not a Pull Request; skipping."
+	exit 0
 fi
 
 if [ "$TRAVIS_SECURE_ENV_VARS" != "true" ]; then
-    echo "Skipping deploy - this has no access to secure env vars; skipping."
-    exit 0
+	echo "Skipping deploy - this has no access to secure env vars; skipping."
+	exit 0
 fi
 
 if [ $(git log  -n 1 --oneline |grep "Deploy to GitHub Pages" |wc -l) -eq 1 ] ; then
-    echo "Last commit done by travis itself; skipping."
-    exit 0
+	echo "Last commit done by travis itself; skipping."
+	exit 0
 fi
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
-    echo "No changes to the output on this push; exiting."
-    exit 0
+	echo "No changes to the output on this push; exiting."
+	issue-comment \
+		--once \
+		"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST" \
+		"Hello!\n This contains changes to `docs`, so I created no Pull Request to sinnerschrader/sinnerschrader-website-staging. Hope that's okay!"
+	exit 0
 fi
 
 # Save some useful information
@@ -53,9 +57,9 @@ git push -q origin "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
 OUTPUT=$(pull-request \
 	--base "sinnerschrader/sinnerschrader-website-staging:master" \
 	--head "sinnerschrader/sinnerschrader-website-staging:deploy-$TRAVIS_COMMIT" \
-	--title "Deploy to GitHub Pages" \
-	--body "Deploy to GitHub Pages: sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST} - ${SHA}" \
-	--message "Deploy to GitHub Pages: ${SHA}"  \
+	--title "Deploy #${TRAVIS_PULL_REQUEST} to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST})" \
+	--body "Hey there,\n this pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST}.\nWhen you merge this the changes will be deployed to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST})." \
+	--message "Deploy #${TRAVIS_PULL_REQUEST} to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST})" \
 	--token "$GH_TOKEN")
 
 TRIMMED=${OUTPUT#Success}
@@ -66,4 +70,4 @@ URL=$(node -e "console.log(($TRIMMED).html_url)")
 issue-comment \
 	--once \
 	"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST" \
-	"Deploy to staging by merging $URL"
+	"Hey there,\n I created a Pull Reqest at [sinnerschrader-website-static]($URL) for you.\n Merging it will make your changes available at the staging Github Page. :rocket:"
