@@ -53,12 +53,19 @@ cp -r ./docs ./.stage/$TRAVIS_PULL_REQUEST
 
 cd .stage/
 git add --all .
-git config user.name "SinnerSchrader"
+git config user.name "Patternplate Hubot"
 git config user.email "jobs@sinnerschrader.com"
-git commit -m "Deploy to GitHub Pages: ${SHA}" --author "$(git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT)"
+git commit -m "Stage changes for #${TRAVIS_PULL_REQUEST}" --author "$(git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT)"
+
+PR_EXISTS=$((git show-ref --quiet --verify -- "refs/remotes/origin/deploy-$TRAVIS_PULL_REQUEST" && echo "true") || echo "false")
 
 # Now that we're all set up, we can push.
-git push -q origin "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
+git push -f -q origin "HEAD:refs/heads/deploy-$TRAVIS_PULL_REQUEST"
+
+if [ PR_EXISTS == "true"]; then
+	echo "Pull request for staging changes of $TRAVIS_PULL_REQUEST already exists."
+	exit 0
+fi
 
 read -d '' BODY << EOF || true
 Hey there,<br />
@@ -72,10 +79,10 @@ EOF
 # - GH_TOKEN
 OUTPUT=$(pull-request \
 	--base "sinnerschrader/sinnerschrader-website-staging:master" \
-	--head "sinnerschrader/sinnerschrader-website-staging:deploy-$TRAVIS_COMMIT" \
-	--title "Stage #${TRAVIS_PULL_REQUEST} to sinnerschrader/sinnerschrader-website-staging" \
+	--head "sinnerschrader/sinnerschrader-website-staging:deploy-$TRAVIS_PULL_REQUEST" \
+	--title "Stage changes for #${TRAVIS_PULL_REQUEST}" \
 	--body "$BODY" \
-	--message "Deploy #${TRAVIS_PULL_REQUEST} to $DEPLOYMENT_LINK" \
+	--message "Stage changes for #${TRAVIS_PULL_REQUEST}" \
 	--token "$GH_TOKEN")
 
 TRIMMED=${OUTPUT#Success}

@@ -98,13 +98,19 @@ else
 	EOF
 fi
 
+if [ -n "$PULL_REQUEST_ID" ]; then
+	MESSAGE="Deploy changes for #$PULL_REQUEST_ID"
+else
+	MESSAGE="Deploy changes for $TRAVIS_COMMIT"
+fi
+
 # - GH_TOKEN
 OUTPUT=$(pull-request \
 	--base "$TRAVIS_REPO_SLUG:master" \
 	--head "$TRAVIS_REPO_SLUG:deploy-$TRAVIS_COMMIT" \
-	--title "Deploy $TRAVIS_COMMIT to production at sinnerschrader/sinnerschrader-website" \
+	--title "$MESSAGE" \
 	--body "$BODY" \
-	--message "Deploy $TRAVIS_COMMIT to production at sinnerschrader/sinnerschrader-website" \
+	--message "$MESSAGE" \
 	--token "$GH_TOKEN")
 
 TRIMMED=${OUTPUT#Success}
