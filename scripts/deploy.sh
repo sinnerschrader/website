@@ -78,24 +78,24 @@ git push -q upstream "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
 
 if [ -n "$PULL_REQUEST_ID" ]; then
 	read -d '' BODY << EOF || true
-	Hey there,<br />
-	This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST}.<br/>
-	When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>
-	Cheers<br/>
-	---<br />
-	**Target**: Production :rotating_light:<br />
-	**Source**: Pull Request
-	EOF
+Hey there,<br />
+This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST}.<br/>
+When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>
+Cheers<br/>
+---<br />
+**Target**: Production :rotating_light:<br />
+**Source**: Pull Request
+EOF
 else
 	read -d '' BODY << EOF || true
-	Hey there,<br />
-	This pull requests contains the build changes caused by $TRAVIS_COMMIT.<br/>
-	When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>
-	Cheers<br/>
-	---<br />
-	**Target**: Production :rotating_light:<br />
-	**Source**: Commit to master
-	EOF
+Hey there,<br />
+This pull requests contains the build changes caused by $TRAVIS_COMMIT.<br/>
+When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>
+Cheers<br/>
+---<br />
+**Target**: Production :rotating_light:<br />
+**Source**: Commit to master
+EOF
 fi
 
 if [ -n "$PULL_REQUEST_ID" ]; then
