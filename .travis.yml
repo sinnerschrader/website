@@ -9,7 +9,14 @@ notifications:
   email:
     on_success: never
 script:
-  - STATICS='--src-statics node_modules/sinnerschrader-website-static/statics' npm run build
+  - if [[ "$(git log --format=%s -n 1 $TRAVIS_COMMIT)" != *"[skip-ci]"* ]]; then
+      STATICS='--src-statics node_modules/sinnerschrader-website-static/statics' npm run build
+    else
+      if [[ "$(git log --format=%s -n 1 $TRAVIS_COMMIT)" == *"[skip-ci]"* ]]; then
+        echo "Commit subject ends with \"[skip-ci]\", skipping."
+        exit 0
+      fi
+    fi
 after_success:
   - npm run deploy-staging
   - npm run deploy

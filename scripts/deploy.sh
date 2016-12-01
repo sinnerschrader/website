@@ -25,6 +25,11 @@ if [ "$TRAVIS_SECURE_ENV_VARS" != "true" ]; then
     exit 0
 fi
 
+if [[ "$(git log --format=%s -n 1 $TRAVIS_COMMIT)" == *"[skip-ci]"* ]]; then
+	echo "Commit subject ends with \"[skip-ci]\", skipping."
+	exit 0
+fi
+
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
     echo "No changes to the output on this push; exiting."
@@ -60,9 +65,9 @@ fi
 AUTHOR="$(git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT)"
 
 if [ -n "$PULL_REQUEST_ID" ]; then
-	git commit -m "Deploy build changes for ${TRAVIS_COMMIT} of #${PULL_REQUEST_ID} [skip ci]" --author "$AUTHOR"
+	git commit -m "Deploy build changes for ${TRAVIS_COMMIT} of #${PULL_REQUEST_ID} [skip-ci]" --author "$AUTHOR"
 else
-	git commit -m "Deploy build changes for ${TRAVIS_COMMIT} [skip ci]" --author "$AUTHOR"
+	git commit -m "Deploy build changes for ${TRAVIS_COMMIT} [skip-ci]" --author "$AUTHOR"
 fi
 
 # Now that we're all set up, we can push.
