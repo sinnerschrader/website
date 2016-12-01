@@ -44,6 +44,9 @@ fi
 
 # Save some useful information
 SHA=`git rev-parse --verify HEAD`
+DEPLOYMENT_ID="sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}"
+DEPLOYMENT_URL="https://sinnerschrader.github.io/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}/index.html"
+DEPLOYMENT_LINK="[$DEPLOYMENT_ID]($DEPLOYMENT_URL)"
 
 git clone "https://$GH_TOKEN@github.com/sinnerschrader/sinnerschrader-website-staging.git" .stage
 cp -r ./docs ./.stage/$TRAVIS_PULL_REQUEST
@@ -60,7 +63,7 @@ git push -q origin "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
 read -d '' BODY << EOF || true
 Hey there,<br />
 This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST}.<br/>
-When you merge this the changes will be deployed to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}).<br/>
+When you merge this the changes will be deployed to $DEPLOYMENT_LINK.<br/>
 Cheers<br />
 **Target**: Staging :construction:<br />
 **Source**: Pull request
@@ -70,9 +73,9 @@ EOF
 OUTPUT=$(pull-request \
 	--base "sinnerschrader/sinnerschrader-website-staging:master" \
 	--head "sinnerschrader/sinnerschrader-website-staging:deploy-$TRAVIS_COMMIT" \
-	--title "Deploy #${TRAVIS_PULL_REQUEST} to sinnerschrader-website-staging" \
+	--title "Deploy #${TRAVIS_PULL_REQUEST} to $DEPLOYMENT_LINK" \
 	--body "$BODY" \
-	--message "Deploy #${TRAVIS_PULL_REQUEST} to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST})" \
+	--message "Deploy #${TRAVIS_PULL_REQUEST} to $DEPLOYMENT_LINK" \
 	--token "$GH_TOKEN")
 
 TRIMMED=${OUTPUT#Success}
@@ -82,7 +85,7 @@ NUMBER=$(node -e "console.log(($TRIMMED).number)")
 read -d '' COMMENT << EOF || true
 Hey there,<br/>
 I created pull request [sinnerschrader/sinnerschrader-website-staging\#$NUMBER]($URL) for you.<br/>
-Merging it will make the changes of sinnerschrader/sinnerschrader-website#$TRAVIS_PULL_REQUEST available at the [sinnerschrader-website-staging/$TRAVIS_PULL_REQUEST](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}). :rocket:<br/>
+Merging it will make the changes of sinnerschrader/sinnerschrader-website#$TRAVIS_PULL_REQUEST available at $DEPLOYMENT_LINK. :rocket:<br/>
 Cheers<br />
 **Target**: Staging :construction:<br />
 **Source**: Pull request
