@@ -23,8 +23,8 @@ if [ "$TRAVIS_SECURE_ENV_VARS" != "true" ]; then
 	exit 0
 fi
 
-if [ $(git log  -n 1 --oneline |grep "Deploy to GitHub Pages" |wc -l) -eq 1 ] ; then
-	echo "Last commit done by travis itself; skipping."
+if [[ "$(git log --format=%s -n 1)" == *"[skip-ci]"* ]]; then
+	echo "Commit subject ends with \"[skip-ci]\", skipping."
 	exit 0
 fi
 
