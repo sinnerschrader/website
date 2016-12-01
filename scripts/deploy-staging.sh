@@ -73,7 +73,7 @@ EOF
 OUTPUT=$(pull-request \
 	--base "sinnerschrader/sinnerschrader-website-staging:master" \
 	--head "sinnerschrader/sinnerschrader-website-staging:deploy-$TRAVIS_COMMIT" \
-	--title "Deploy #${TRAVIS_PULL_REQUEST} to $DEPLOYMENT_LINK" \
+	--title "Stage #${TRAVIS_PULL_REQUEST} to sinnerschrader/sinnerschrader-website-staging" \
 	--body "$BODY" \
 	--message "Deploy #${TRAVIS_PULL_REQUEST} to $DEPLOYMENT_LINK" \
 	--token "$GH_TOKEN")
@@ -87,6 +87,7 @@ Hey there,<br/>
 I created pull request [sinnerschrader/sinnerschrader-website-staging\#$NUMBER]($URL) for you.<br/>
 Merging it will make the changes of sinnerschrader/sinnerschrader-website#$TRAVIS_PULL_REQUEST available at $DEPLOYMENT_LINK. :rocket:<br/>
 Cheers<br />
+---<br />
 **Target**: Staging :construction:<br />
 **Source**: Pull request
 EOF

@@ -82,6 +82,7 @@ if [ -n "$PULL_REQUEST_ID" ]; then
 	This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST}.<br/>
 	When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>
 	Cheers<br/>
+	---<br />
 	**Target**: Production :rotating_light:<br />
 	**Source**: Pull Request
 	EOF
@@ -91,6 +92,7 @@ else
 	This pull requests contains the build changes caused by $TRAVIS_COMMIT.<br/>
 	When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>
 	Cheers<br/>
+	---<br />
 	**Target**: Production :rotating_light:<br />
 	**Source**: Commit to master
 	EOF
@@ -114,6 +116,7 @@ Hey there,<br/>
 I created pull request [sinnerschrader/sinnerschrader-website\#$NUMBER]($URL) for you.<br/>
 Merging it will make the changes of sinnerschrader/sinnerschrader-website#$PULL_REQUEST_ID available at [sinnerschrader.com](https://sinnerschrader.com).<br/>
 Cheers<br />
+---<br />
 **Target**: Production :rotating_light:<br />
 **Source**: Pull Request
 EOF
@@ -124,5 +127,5 @@ if [ -n "$PULL_REQUEST_ID" ]; then
 	issue-comment \
 		--once \
 		"$TRAVIS_REPO_SLUG#$PULL_REQUEST_ID" \
-		"Deploy to production by merging $URL"
+		"$COMMENT"
 fi
