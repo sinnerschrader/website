@@ -35,12 +35,9 @@ if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
 		--once \
 		"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST" \
 		"Hello!<br/>
-		<br/>
 		I built $TRAVIS_COMMIT and found out it produces no changes to the website \`docs\`.<br/>
-		Because of this I decided to create no Pull Request to sinnerschrader/sinnerschrader-website-staging. <br/>
-		<br/>
+		Because of this I decided to create no Pull Request to sinnerschrader/sinnerschrader-website-staging.<br/>
 		Cheers"
-
 	exit 0
 fi
 
@@ -82,10 +79,8 @@ URL=$(node -e "console.log(($TRIMMED).html_url)")
 
 read -d '' COMMENT << EOF || true
 Hey there,<br/>
-<br/>
 I created a Pull Reqest at [sinnerschrader-website-static]($URL) for you.<br/>
 Merging it will make your changes available at the staging Github Page. :rocket:<br/>
-<br/>
 Cheers
 EOF
 
