@@ -37,7 +37,8 @@ if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
 		"Hello!<br/>
 		I built $TRAVIS_COMMIT and found out it produces no changes to the website \`docs\`.<br/>
 		Because of this I decided to create no Pull Request to sinnerschrader/sinnerschrader-website-staging.<br/>
-		Cheers"
+		Cheers<br />
+		:sleep:"
 	exit 0
 fi
 
@@ -58,30 +59,33 @@ git push -q origin "HEAD:refs/heads/deploy-$TRAVIS_COMMIT"
 
 read -d '' BODY << EOF || true
 Hey there,<br />
-<br/>
 This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST}.<br/>
 When you merge this the changes will be deployed to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}).<br/>
-<br/>
-Cheers
+Cheers<br />
+**Target**: Staging :construction:<br />
+**Source**: Pull request
 EOF
 
 # - GH_TOKEN
 OUTPUT=$(pull-request \
 	--base "sinnerschrader/sinnerschrader-website-staging:master" \
 	--head "sinnerschrader/sinnerschrader-website-staging:deploy-$TRAVIS_COMMIT" \
-	--title "Deploy #${TRAVIS_PULL_REQUEST} to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST})" \
+	--title "Deploy #${TRAVIS_PULL_REQUEST} to sinnerschrader-website-staging" \
 	--body "$BODY" \
 	--message "Deploy #${TRAVIS_PULL_REQUEST} to [sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST})" \
 	--token "$GH_TOKEN")
 
 TRIMMED=${OUTPUT#Success}
 URL=$(node -e "console.log(($TRIMMED).html_url)")
+NUMBER=$(node -e "console.log(($TRIMMED).number)")
 
 read -d '' COMMENT << EOF || true
 Hey there,<br/>
-I created a Pull Reqest at [sinnerschrader-website-static]($URL) for you.<br/>
-Merging it will make your changes available at the staging Github Page. :rocket:<br/>
-Cheers
+I created pull request [sinnerschrader/sinnerschrader-website-staging\#$NUMBER]($URL) for you.<br/>
+Merging it will make the changes of sinnerschrader/sinnerschrader-website#$TRAVIS_PULL_REQUEST available at the [sinnerschrader-website-staging/$TRAVIS_PULL_REQUEST](https://sinnerschrader.github.io/sinnerschrader/sinnerschrader-website-staging/${TRAVIS_PULL_REQUEST}). :rocket:<br/>
+Cheers<br />
+**Target**: Staging :construction:<br />
+**Source**: Pull request
 EOF
 
 # - GITHUB_USERNAME
