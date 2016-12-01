@@ -78,7 +78,7 @@ git push -q upstream "HEAD:refs/heads/deploy-$SHORT_COMMIT"
 if [ -n "$PULL_REQUEST_ID" ]; then
 	read -d '' BODY << EOF || true
 Hey there,<br />
-This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${TRAVIS_PULL_REQUEST}.<br/>
+This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${$PULL_REQUEST_ID}.<br/>
 When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>
 Cheers<br/>
 ---<br />
