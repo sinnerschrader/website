@@ -23,7 +23,7 @@ if [ "$TRAVIS_SECURE_ENV_VARS" != "true" ]; then
 	exit 0
 fi
 
-if [[ "$(git log --format=%s -n 1 $TRAVIS_COMMIT)" == *"[skip-ci]"* ]]; then
+if [[ "$(git log --format=%s -n 1)" == *"[skip-ci]"* ]]; then
 	echo "Commit subject ends with \"[skip-ci]\", skipping."
 	exit 0
 fi
@@ -37,8 +37,7 @@ if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
 		"Hello!<br/>
 		I built $TRAVIS_COMMIT and found out it produces no changes to the website \`docs\`.<br/>
 		Because of this I decided to create no Pull Request to sinnerschrader/sinnerschrader-website-staging.<br/>
-		Cheers<br />
-		:sleep:"
+		Cheers"
 	exit 0
 fi
 
