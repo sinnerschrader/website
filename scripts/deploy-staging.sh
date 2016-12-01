@@ -23,7 +23,11 @@ if [ "$TRAVIS_SECURE_ENV_VARS" != "true" ]; then
 	exit 0
 fi
 
-if [[ "$(git log --format=%s -n 1)" == *"[skip-ci]"* ]]; then
+COMMIT_MESSAGE="$(git log --format=%s -n 1)"
+
+echo $COMMIT_MESSAGE
+
+if [[ "$COMMIT_MESSAGE" == *"[skip-ci]"* ]]; then
 	echo "Commit subject ends with \"[skip-ci]\", skipping."
 	exit 0
 fi
