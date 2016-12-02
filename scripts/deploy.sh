@@ -76,25 +76,9 @@ fi
 git push -q upstream "HEAD:refs/heads/deploy-$SHORT_COMMIT"
 
 if [ -n "$PULL_REQUEST_ID" ]; then
-	read -d '' BODY << EOF || true
-Hey there,<br />
-This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${$PULL_REQUEST_ID}.<br/>
-When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>
-Cheers<br/>
----<br />
-**Target**: Production :rotating_light:<br />
-**Source**: Pull Request
-EOF
+	BODY="Hey there,<br />This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${PULL_REQUEST_ID}.<br/>When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>Cheers<br/>---<br />**Target**: Production :rotating_light:<br />**Source**: Pull Request"
 else
-	read -d '' BODY << EOF || true
-Hey there,<br />
-This pull requests contains the build changes caused by $TRAVIS_COMMIT.<br/>
-When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>
-Cheers<br/>
----<br />
-**Target**: Production :rotating_light:<br />
-**Source**: Commit to master
-EOF
+	BODY="Hey there,<br />This pull requests contains the build changes caused by $TRAVIS_COMMIT.<br/>When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>Cheers<br/>---<br />**Target**: Production :rotating_light:<br />**Source**: Commit to master"
 fi
 
 if [ -n "$PULL_REQUEST_ID" ]; then
@@ -116,15 +100,7 @@ TRIMMED=${OUTPUT#Success}
 URL=$(node -e "console.log(($TRIMMED).html_url)")
 NUMBER=$(node -e "console.log(($TRIMMED).number)")
 
-read -d '' COMMENT << EOF || true
-Hey there,<br/>
-I created pull request [sinnerschrader/sinnerschrader-website\#$NUMBER]($URL) for you.<br/>
-Merging it will make the changes of sinnerschrader/sinnerschrader-website#$PULL_REQUEST_ID available at [sinnerschrader.com](https://sinnerschrader.com).<br/>
-Cheers<br />
----<br />
-**Target**: Production :rotating_light:<br />
-**Source**: Pull Request
-EOF
+COMMENT="Hey there,<br/>I created pull request [sinnerschrader/sinnerschrader-website\#$NUMBER]($URL) for you.<br/>Merging it will make the changes of sinnerschrader/sinnerschrader-website#$PULL_REQUEST_ID available at [sinnerschrader.com](https://sinnerschrader.com).<br/>Cheers<br />---<br />**Target**: Production :rotating_light:<br />**Source**: Pull Request"
 
 if [ -n "$PULL_REQUEST_ID" ]; then
 	# - GITHUB_USERNAME
