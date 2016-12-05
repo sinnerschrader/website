@@ -1,9 +1,6 @@
 #!/bin/bash
 set -e
 
-# fix timestamp issue with gh-pages and set it to be in the future (10 minutes)
-date --set="10min"
-
 COMMIT_MESSAGE="$(git log --format=%s -n 1)"
 
 if [[ "$COMMIT_MESSAGE" == *"[skip-ci]"* ]]; then
@@ -12,3 +9,6 @@ if [[ "$COMMIT_MESSAGE" == *"[skip-ci]"* ]]; then
 fi
 
 STATICS='--src-statics node_modules/sinnerschrader-website-static/statics' npm run build
+
+# fix timestamp issue with gh-pages and set it to be in the future (10 minutes)
+find docs/ -exec touch -d "+10min" {} \;
