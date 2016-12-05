@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -x
+set -E
 set -e
 
 COMMIT_MESSAGE="$(git log --format=%s -n 1)"
