@@ -11,4 +11,4 @@ fi
 STATICS='--src-statics node_modules/sinnerschrader-website-static/statics' npm run build
 
 # fix timestamp issue with gh-pages and set it to be in the future (10 minutes)
-find docs/ -exec touch -d "+10min" {} \;
+find docs/ -exec /usr/bin/touch -d "+10min" {} \;
