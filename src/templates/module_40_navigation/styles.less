@@ -255,7 +255,7 @@
 
 [data-navigation-state]:focus {
 	~ .burger{
-		outline: 2px solid Highlight;
+		outline: 2px solid Highlight; // Fallback if -webkit-foxus-ring-color is not supported
 		outline: 5px auto -webkit-focus-ring-color;
 	}
 }
