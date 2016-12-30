@@ -37,13 +37,12 @@
 	}
 
 	[data-navigation-state] {
-		position: fixed;
-		top: 0;
-		left: 0;
-		visibility: hidden;
+		position: absolute;
 		width: 0;
 		height: 0;
-		transform: translate(-100%, -100%);
+		right: 100%;
+		bottom: 100%;
+		opacity: 0;
 	}
 }
 
@@ -251,5 +250,12 @@
 				transform: none;
 			}
 		}
+	}
+}
+
+[data-navigation-state]:focus {
+	~ .burger{
+		outline: 2px solid Highlight;
+		outline: 5px auto -webkit-focus-ring-color;
 	}
 }
