@@ -11,7 +11,7 @@ name: ElementContact
 	{props.phone}<br/>
 	{/* use two blocks since we cannot return two children from one expression */}
 	{
-		props.url && <a className="link" href={props.url}>{props.url}</a>
+		props.url && <a className="link" href={props.url}>{props.linktext || props.url}</a>
 	}
 	{
 		props.url && <br/>
