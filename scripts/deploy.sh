@@ -38,16 +38,21 @@ if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
     exit 0
 fi
 
+## get into the docs folder -> the published page just needs this data
+cd docs
+git init .
+
 git config user.name "SinnerSchrader"
 git config user.email "jobs@sinnerschrader.com"
-git remote add upstream "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG.git"
+#git remote add upstream "https://$GH_TOKEN@github.com/$TRAVIS_REPO_SLUG.git"
+git remote add upstream "git@github.com:sinnerschrader/sinnerschrader-website-githubpage.git"
 
 SHORT_COMMIT=$(git log --format=%h -n 1 $TRAVIS_COMMIT)
 PULL_REQUEST_ID="$(git log --format=%s -n 1 $TRAVIS_COMMIT | perl -nle 'print $1 if /#(\d+)/' | tail -n 1)"
 
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
-git add --all docs
+git add --all .
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
@@ -73,7 +78,8 @@ else
 fi
 
 # Now that we're all set up, we can push.
-git push -q upstream "HEAD:refs/heads/deploy-$SHORT_COMMIT"
+#git push --force --quiet upstream "HEAD:refs/heads/deploy-$SHORT_COMMIT"
+git push --force --quiet upstream master
 
 if [ -n "$PULL_REQUEST_ID" ]; then
 	BODY="Hey there,<br />This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${PULL_REQUEST_ID}.<br/>When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>Cheers<br/>---<br />**Target**: Production :rotating_light:<br />**Source**: Pull Request"
