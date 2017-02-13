@@ -4,6 +4,7 @@
 # - node_modules/.bin in $PATH
 ##
 set -e
+set -x
 
 if [ "$TRAVIS" != "true" ]; then
     echo "Skipping deploy - this is not running on Travis; skipping."
@@ -33,10 +34,11 @@ if [[ "$COMMIT_MESSAGE" == *"[skip-ci]"* ]]; then
 fi
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
-if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
-    echo "No changes to the output on this push; exiting."
-    exit 0
-fi
+# disabled for now, because status is not enough for remote repo diff
+#if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
+#    echo "No changes to the output on this push; exiting."
+#    exit 0
+#fi
 
 ## get into the docs folder -> the published page just needs this data
 cd docs
