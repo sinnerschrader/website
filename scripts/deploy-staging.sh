@@ -33,17 +33,18 @@ if [[ "$COMMIT_MESSAGE" == *"[skip-ci]"* ]]; then
 fi
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
-if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
-	echo "No changes to the output on this push; exiting."
-	issue-comment \
-		--once \
-		"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST" \
-		"Hello!<br/>
-		I built $TRAVIS_COMMIT and found out it produces no changes to the website \`docs\`.<br/>
-		Because of this I decided to create no Pull Request to sinnerschrader/sinnerschrader-website-staging.<br/>
-		Cheers"
-	exit 0
-fi
+# currently disabled
+#if [ $(git status --porcelain docs | wc -l) -lt 1 ]; then
+#	echo "No changes to the output on this push; exiting."
+#	issue-comment \
+#		--once \
+#		"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST" \
+#		"Hello!<br/>
+#		I built $TRAVIS_COMMIT and found out it produces no changes to the website \`docs\`.<br/>
+#		Because of this I decided to create no Pull Request to sinnerschrader/sinnerschrader-website-staging.<br/>
+#		Cheers"
+#	exit 0
+#fi
 
 # Save some useful information
 SHA=`git rev-parse --verify HEAD`
