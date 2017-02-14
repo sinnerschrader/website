@@ -1,0 +1,58 @@
+---
+route: /people/people1
+---
+<StandardLayout host={props.host} href={frontmatter.route} base="../.." theme="red">
+	<Hero
+		headline="Name Name"
+		copy="Senior Art Director SinnerSchrader Swipe Hamburg"
+		imageSrcS="../../static/images/backgrounds/module_01_hero_palm_about_what_r.jpg"
+		imageSrcM="../../static/images/backgrounds/module_01_hero_lap_about_what_r.jpg"
+		imageSrcL="../../static/images/backgrounds/module_01_hero_desk_about_what_r.jpg"
+		imageWidth={2880}
+		imageHeight={560}
+		blend
+		invert
+		level={1}
+		/>
+	<Story1
+		headline="We are proud to offer the `full` discipline stack."
+		copy="*In doing so, you get one team who works towards one goal.* A team who harmonises like an orchestra and jams like a rock band. Who designs innovative solutions with user simplicity at the forefront of every development loop. And genuinely appreciates how the entire process works."
+		gradient
+		invert
+		level={2}
+		/>
+	<Infographic1/>
+	<Story1
+		headline="Good stuff comes from `good` teamplay."
+		copy="*We are serious about routines.* But even more serious about keeping them flowing for different situations and projects. As partners, you play a huge role - whether it be for scrum, agile, lean or the good old waterfall - in helping us evolve and continuously adapt to your needs. This way of working guarantees the constant exchange of knowledge and learnings, and sets you on a path to independence when needed."
+		gradient
+		level={2}
+		/>
+	<QuoteImage
+		copy="I only design for people. Not for Apples, Windows, Androids or any other stuff like that."
+		credits="Till Kressin, Senior Art Director"
+		imageSrcSetS="../../static/images/contents/about_what_quote_mobile.jpg"
+		imageSrcSetM="../../static/images/contents/about_what_quote_tablet.jpg"
+		imageSrcSetL="../../static/images/contents/about_what_quote_desktop.jpg"
+		imageUrl="../../static/images/contents/about_what_quote_mobile.jpg"
+		/>
+	<Story3
+		headline="Sustainable products stem from a `good` foundation."
+		copy="*Processes not only guide people and steer efficiency, they also safeguard quality work.* We like to raise the bar with every project, simply because it’s challenging - and fun! But more importantly, because every one of our disciplines – whether UX, design or technology – knows that sustainable products stem from a good foundation. And it is here where opportunities grow."
+		invert
+		level={2}
+		/>
+	<Image
+		imageSrcSetS="../../static/images/contents/about_what_image_mobile.jpg"
+		imageSrcSetM="../../static/images/contents/about_what_image_tablet.jpg"
+		imageSrcSetL="../../static/images/contents/about_what_image_desktop.jpg"
+		imageSrc="../../static/images/contents/about_what_image_mobile.jpg"
+		/>
+	<Story1
+		headline="We are in this `together`!"
+		copy="*We think that good things come out of good partnerships* – which is why the words ‘accountability’, ‘honesty’ and ‘passion’ are not taken lightly around here. Simply put, we are all in this together."
+		gradient
+		level={2}
+		/>
+	<Locations base="../.." withMap={true}/>
+</StandardLayout>
