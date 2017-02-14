@@ -5,6 +5,11 @@
 
 	&.gradient {
 		background: linear-gradient(-20deg, @s2-lightgrey 0%, @s2-lightgrey 50%, transparent 50%, transparent 100%), @s2-white;
+
+		// don't like this
+		&.invert {
+			background: linear-gradient(-20deg, @s2-black 0%, @s2-black 50%, transparent 50%, transparent 100%), @s2-darkblack;
+		}
 	}
 
 	.mod-gradient & {
