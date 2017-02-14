@@ -23,28 +23,33 @@ name: Navigation
 			<nav className="nav">
 				<ul className="mainnav">
 					<li className="mainnav-item">
-						<a className="nav-item" href={props.base + '/about/why/'}>Why</a>
-					</li>
-					<li className="mainnav-item">
-						<a className="nav-item" href={props.base + '/about/how/'}>How</a>
-					</li>
-					<li className="mainnav-item">
-						<a className="nav-item" href={props.base + '/about/what/'}>What</a>
-					</li>
-					<li className="mainnav-item">
-						<a className="nav-item" href={props.base + '/about/who/'}>Who</a>
+						<div className="nav-item">About</div>
+						<ul className="aboutnav">
+							<li className="aboutnav-item">
+								<a className="nav-item" href={props.base + '/about/why/'}>Why us</a>
+							</li>
+							<li className="aboutnav-item">
+								<a className="nav-item" href={props.base + '/about/how/'}>How we work</a>
+							</li>
+							<li className="aboutnav-item">
+								<a className="nav-item" href={props.base + '/about/what/'}>What we do</a>
+							</li>
+							<li className="aboutnav-item">
+								<a className="nav-item" href={props.base + '/about/who/'}>Who we are</a>
+							</li>
+						</ul>
 					</li>
 					<li className="mainnav-item">
 						<a className="nav-item" href="https://sinnerschrader.jobs/en/" rel="noopener noreferrer">Talent</a>
 					</li>
 					<li className="mainnav-item">
-						<a className="nav-item" href={props.base + '/work/'}>Work</a>
-					</li>
-					<li className="mainnav-item">
-						<a className="nav-item" href="https://sinnerschrader.news" rel="noopener noreferrer">News</a>
+						<a className="nav-item" href={props.base + '/work/'}>Cases</a>
 					</li>
 					<li className="mainnav-item">
 						<a className="nav-item" href={props.base + '/contact/'}>Contact</a>
+					</li>
+					<li className="mainnav-item">
+						<a className="nav-item" href="https://sinnerschrader.news" rel="noopener noreferrer">News</a>
 					</li>
 				</ul>
 			</nav>
