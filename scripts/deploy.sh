@@ -67,7 +67,7 @@ AUTHOR="$(git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT)"
 git init .
 git config user.name "SinnerSchrader"
 git config user.email "jobs@sinnerschrader.com"
-git remote add upstream "git@github.com:sinnerschrader/sinnerschrader-website-githubpage.git"
+git remote add upstream "git@github-deploy:sinnerschrader/sinnerschrader-website-githubpage.git"
 git add --all .
 
 if [ -n "$PULL_REQUEST_ID" ]; then
@@ -77,7 +77,7 @@ else
 fi
 
 # Now that we're all set up, we can push.
-GIT_SSH="ssh -i /tmp/deploy_key" git push --force --quiet upstream master
+git push --force --quiet upstream master
 
 if [ -n "$PULL_REQUEST_ID" ]; then
 	BODY="Hey there,<br />This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${PULL_REQUEST_ID}.<br/>When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>Cheers<br/>---<br />**Target**: Production :rotating_light:<br />**Source**: Pull Request"
