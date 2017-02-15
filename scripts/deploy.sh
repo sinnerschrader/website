@@ -77,7 +77,7 @@ else
 fi
 
 # Now that we're all set up, we can push.
-GIT_SSH_COMMAND="ssh -i /tmp/deploy_key" git push --force --quiet upstream master
+GIT_SSH="ssh -i /tmp/deploy_key" git push --force --quiet upstream master
 
 if [ -n "$PULL_REQUEST_ID" ]; then
 	BODY="Hey there,<br />This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${PULL_REQUEST_ID}.<br/>When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>Cheers<br/>---<br />**Target**: Production :rotating_light:<br />**Source**: Pull Request"

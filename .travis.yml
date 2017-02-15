@@ -11,6 +11,7 @@ notifications:
 before_install:
   - openssl aes-256-cbc -K $encrypted_6b7ea0692d18_key -iv $encrypted_6b7ea0692d18_iv -in deploy_key.enc -out /tmp/deploy_key -d
   - chmod 600 /tmp/deploy_key
+  - ssh-add /tmp/deploy_key
   - openssl aes-256-cbc -K $encrypted_68be772c97c4_key -iv $encrypted_68be772c97c4_iv -in install_key.enc -out /tmp/install_key -d
   - chmod 600 /tmp/install_key
   - eval "$(ssh-agent -s)"
