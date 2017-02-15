@@ -219,7 +219,11 @@
 }
 
 .aboutnav {
-	margin: 0 0 10px 0;
+	margin: 0 0 (@s2-moduleGap-s-1/2) 0;
+
+	@media @s2-mq-window-tablet {
+		margin-bottom: (@s2-moduleGap-l-1/2);
+	}
 }
 
 .aboutnav-item {
