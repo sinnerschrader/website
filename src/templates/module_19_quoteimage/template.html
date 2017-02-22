@@ -1,7 +1,7 @@
 ---
 name: QuoteImage
 ---
-<section className="mod-quoteimage">
+<section className={helpers.classNames({'mod-quoteimage': true, 'invert': props.invert})}>
 	<blockquote className="quote styleline sctnbrdrclr">
 		<Text
 			Tagname="p"
