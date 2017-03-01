@@ -83,6 +83,6 @@
     "xo": "^0.17.1"
   },
   "optionalDependencies": {
-    "sinnerschrader-website-static": "github:sinnerschrader/sinnerschrader-website-static#a8b090d388572395cd2f965da1c235f84be90caf"
+    "sinnerschrader-website-static": "git+ssh://git@github.com:sinnerschrader/sinnerschrader-website-static.git#e57c1d6b28e6bea64ed5643d9f2d63260eb3d9cd"
   }
 }
