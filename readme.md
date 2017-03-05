@@ -1,5 +1,7 @@
 # sinnerschrader-website [![sinnerschrader.com status](https://img.shields.io/badge/status-live-green.svg?style=flat-square)](https://sinnerschrader.com/)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sinnerschrader/sinnerschrader-website.svg)](https://greenkeeper.io/)
+
 [![Made by SinnerSchrader](https://img.shields.io/badge/made%20by-SinnerSchrader-orange.svg?style=flat-square)](https://sinnerschrader.com/)
 [![Travis](https://img.shields.io/travis/sinnerschrader/sinnerschrader-website.svg?style=flat-square)](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
 [![standard-readme compliant](https://img.shields.io/badge/readme-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
