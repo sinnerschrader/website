@@ -38,7 +38,7 @@ setup like this:
 
 ```sh
 $ npm run build:development &
-$ npm start:development
+$ npm run start:development
 # Development server running on http://localhost:3000
 ```
 
