@@ -78,39 +78,3 @@ fi
 
 # Now that we're all set up, we can push.
 git push --force --quiet upstream master
-
-if [ -n "$PULL_REQUEST_ID" ]; then
-	BODY="Hey there,<br />This pull requests contains the changes proposed by sinnerschrader/sinnerschrader-website#${PULL_REQUEST_ID}.<br/>When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>Cheers<br/>---<br />**Target**: Production :rotating_light:<br />**Source**: Pull Request"
-else
-	BODY="Hey there,<br />This pull requests contains the build changes caused by $TRAVIS_COMMIT.<br/>When you merge this the changes will be deployed to production on [sinnerschrader.com](https://sinnerschrader.com).<br/>Cheers<br/>---<br />**Target**: Production :rotating_light:<br />**Source**: Commit to master"
-fi
-
-if [ -n "$PULL_REQUEST_ID" ]; then
-	MESSAGE="Deploy changes for #$PULL_REQUEST_ID"
-else
-	MESSAGE="Deploy changes for $SHORT_COMMIT"
-fi
-
-# - GH_TOKEN
-OUTPUT=$(pull-request \
-	--base "$TRAVIS_REPO_SLUG:master" \
-	--head "$TRAVIS_REPO_SLUG:deploy-$SHORT_COMMIT" \
-	--title "$MESSAGE" \
-	--body "$BODY" \
-	--message "$MESSAGE" \
-	--token "$GH_TOKEN")
-
-TRIMMED=${OUTPUT#Success}
-URL=$(node -e "console.log(($TRIMMED).html_url)")
-NUMBER=$(node -e "console.log(($TRIMMED).number)")
-
-COMMENT="Hey there,<br/>I created pull request [sinnerschrader/sinnerschrader-website\#$NUMBER]($URL) for you.<br/>Merging it will make the changes of sinnerschrader/sinnerschrader-website#$PULL_REQUEST_ID available at [sinnerschrader.com](https://sinnerschrader.com).<br/>Cheers<br />---<br />**Target**: Production :rotating_light:<br />**Source**: Pull Request"
-
-if [ -n "$PULL_REQUEST_ID" ]; then
-	# - GITHUB_USERNAME
-	# - GITHUB_ACCESS_TOKEN
-	issue-comment \
-		--once \
-		"$TRAVIS_REPO_SLUG#$PULL_REQUEST_ID" \
-		"$COMMENT"
-fi
