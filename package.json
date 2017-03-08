@@ -19,7 +19,7 @@
     "build": "cross-env OUTDIR=docs npm run build:all",
     "build-ci": "bash ./scripts/build-ci.sh",
     "prebuild:development": "mkdirp local-docs && ncp ./CNAME ./local-docs/CNAME",
-    "build:development": "cross-env OUTDIR=local-docs STATICS='--src-statics node_modules/sinnerschrader-website-static/statics' npm run build:watch",
+    "build:development": "cross-env OUTDIR=local-docs STATICS=static npm run build:watch",
     "build:all": "bash ./scripts/prepare-static.sh && npm run taint:fonts && npm run build:js && npm run build:css && npm run build:pages",
     "build:svg": "npm run build:svg:opt && npm run build:svg:sprite",
     "build:svg:opt": "svgo --disable=removeUselessDefs -f static/icons -o /static/icons",

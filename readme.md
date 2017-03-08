@@ -14,7 +14,7 @@ This repository contains
 
 1. [The sources](./src) required to build the markup for `sinnerschrader.com`
 2. [The generated content](./docs) deployed to `sinnerschrader.com`
-3. Sources for a Continiuous Integration setup on [TravisCI](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
+3. Sources for a Continuous Integration setup on [TravisCI](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
 
 ---
 Static assets are placeholders. The unlicensable content assets are available at [sinnerschrader/sinnerschrader-website-static](https://github.com/sinnerschrader/sinnerschrader-website-static)
@@ -37,10 +37,16 @@ To develop frontend sources you start the local development
 setup like this:
 
 ```sh
-$ npm run build:development &
-$ npm start:development
+# In first terminal session
+$ npm run build:development
+
+# In second terminal session
+$ npm run taint # optional, pull in private static files: fonts, images
+$ npm run start:development
 # Development server running on http://localhost:3000
 ```
+
+**Please note:** To
 
 ## Contribute
 
