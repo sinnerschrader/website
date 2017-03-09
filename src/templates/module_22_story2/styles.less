@@ -1,8 +1,11 @@
 .mod-story2 {
 	position: relative;
+	display: flex;
 	padding: @s2-moduleGap-m 0 @s2-moduleGap-xl;
 	background-color: @s2-white;
 
+	@paddingBottom: @s2-moduleGap-xl;
+	@paddingBottom-tablet: 140px;
 
 	&.invert {
 		background-color: @s2-black;
@@ -10,7 +13,7 @@
 
 	.details {
 		box-sizing: border-box;
-		display: inline-block;
+		// display: inline-block;
 		width: 75%;
 		padding:  0 @s2-moduleGap-s;
 		vertical-align: top;
@@ -21,14 +24,16 @@
 	}
 
 	.teaser {
-		position: absolute;
-		display: inline-block;
+		// position: absolute;
+		// display: inline-block;
 		width: 25%;
 		margin-top: -54px;
+		margin-bottom: (-54px - @paddingBottom);
 	}
 
 	@media @s2-mq-window-tablet {
-		padding: @s2-moduleGap-xl 0 140px;
+		padding: @s2-moduleGap-xl 0 @paddingBottom-tablet;
+
 
 		.details {
 			padding:  0 @s2-moduleGap-l-2 0 @s2-moduleGap-l;
@@ -40,6 +45,7 @@
 
 		.teaser {
 			margin-top: -98px;
+			margin-bottom: (-98px - @paddingBottom-tablet);
 		}
 	}
 
@@ -62,6 +68,7 @@
 		.teaser {
 			width: 30%;
 			margin-top: -101px;
+			margin-bottom: (-101px - @paddingBottom-tablet);
 		}
 	}
 
