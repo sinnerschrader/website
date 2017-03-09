@@ -38,11 +38,11 @@ setup like this:
 
 ```sh
 # In first terminal session
-$ npm run build:development
+$ npm run taint
+$ npm run watch
 
 # In second terminal session
-$ npm run taint # optional, pull in private static files: fonts, images
-$ npm run start:development
+$ npm start
 # Development server running on http://localhost:3000
 ```
 
