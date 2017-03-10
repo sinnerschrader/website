@@ -40,21 +40,7 @@ git config user.email "jobs@sinnerschrader.com"
 git remote add upstream "git@github.com:sinnerschrader/website-production.git"
 git add --all .
 
-git commit -m "Deploy build changes for ${SHORT_COMMIT} [skip-ci]" --author "$AUTHOR"
+git commit -m "Deploy sinnerschrader/sinnerschrader-website#${SHORT_COMMIT}: ${COMMIT_MESSAGE}" --author "$AUTHOR"
 
 # Now that we're all set up, we can push.
 git push --force --quiet upstream master
-
-read -d '' COMMENT << EOF || true
-Hey there,<br/>
-I pushed the effects of your changes to sinnerschrader/website-production for you.
-They are now available at [sinnerschrader.com](https://www.sinnerschrader.com) :rocket:<br/>
-Cheers<br />
-EOF
-
-# - GITHUB_USERNAME
-# - GITHUB_ACCESS_TOKEN
- $(npm bin)/issue-comment \
-	--once \
-	"$TRAVIS_REPO_SLUG#$TRAVIS_PULL_REQUEST" \
-	"$COMMENT"
