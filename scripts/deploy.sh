@@ -29,6 +29,9 @@ if [[ "$COMMIT_MESSAGE" == *"[skip-ci]"* ]]; then
 	exit 0
 fi
 
+SHORT_COMMIT=$(git log --format=%h -n 1 $TRAVIS_COMMIT)
+AUTHOR="$(git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT)"
+
 cd docs
 
 git init .
@@ -36,6 +39,8 @@ git config user.name "SinnerSchrader"
 git config user.email "jobs@sinnerschrader.com"
 git remote add upstream "git@github.com:sinnerschrader/website-production.git"
 git add --all .
+
+git commit -m "Deploy build changes for ${SHORT_COMMIT} [skip-ci]" --author "$AUTHOR"
 
 # Now that we're all set up, we can push.
 git push --force --quiet upstream master
