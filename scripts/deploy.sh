@@ -34,7 +34,7 @@ cd docs
 git init .
 git config user.name "SinnerSchrader"
 git config user.email "jobs@sinnerschrader.com"
-git remote add upstream "git@github-deploy:sinnerschrader/website-production.git"
+git remote add upstream "git@github.com:sinnerschrader/website-production.git"
 git add --all .
 
 # Now that we're all set up, we can push.
