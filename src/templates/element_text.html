@@ -8,6 +8,8 @@ name: Text
 				return <span key={index} className="sctntxtclr">{part[0]}</span>
 			case '*':
 				return <span key={index} className="strong">{part[0]}</span>;
+			case '\\':
+				return <span key={index} className="linebreak">{part[0]}</span>;
 			default:
 				return part[0];
 		}
