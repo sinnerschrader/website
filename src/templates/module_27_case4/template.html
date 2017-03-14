@@ -22,6 +22,36 @@ name: Case4
 	}
 	<div className="mod-case4__funfact">
 
+	{
+    props.name &&
+    <Headline
+        level={props.namelevel}
+        className="h h5"
+        text={props.name}
+        />
+	}
+	<dl>
+		<dt>Job Title</dt>
+		<dd>{props.jobtitle}</dd>
+
+		<dt>Company</dt>
+		<dd>{props.company}</dd>
+		
+		<dt>Location</dt>
+		<dd>{props.location}</dd>
+		
+		<dt>Milestones</dt>
+		{
+		props.milestones &&
+			React.Children.map(props.milestones, milestone => (
+				<dd>{milestone}</dd>
+			))
+		}
+
+		<dt>Fun Fact</dt>
+		<dd>{props.funfact}</dd>
+	</dl>
+		
 	</div>
 	{
 		props.text2 &&
