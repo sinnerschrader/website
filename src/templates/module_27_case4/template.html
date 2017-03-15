@@ -2,24 +2,26 @@
 name: Case4
 ---
 <section className={helpers.classNames({'mod-case4': true, gradient: props.gradient, invert: props.invert})} data-theme={props.theme}>
-	{
-		props.headline &&
-		<Headline
-			level={props.level}
-			className="h h2-2"
-			text={props.headline}
-			highlight
-			/>
-	}
-	{
-		props.text1 &&
-		<Text
-			Tagname="p"
-			className="copy copyTop"
-			text={props.text1}
-			bold
-			/>
-	}
+	<div className="details">
+		{
+			props.headline &&
+			<Headline
+				level={props.level}
+				className="h h2-2"
+				text={props.headline}
+				highlight
+				/>
+		}
+		{
+			props.text1 &&
+			<Text
+				Tagname="p"
+				className="copy copyTop"
+				text={props.text1}
+				bold
+				/>
+		}
+	</div>
 	<div className="mod-case4__funfact">
 
 	{
@@ -31,24 +33,13 @@ name: Case4
         />
 	}
 	<dl>
-		<dt>Job Title</dt>
+		<dt className="hide">Job Title</dt>
 		<dd>{props.jobTitle}</dd>
-
-		<dt>Company</dt>
-		<dd>{props.company}</dd>
-		
-		<dt>Location</dt>
-		<dd>{props.location}</dd>
 		
 		<dt>Milestones</dt>
-		{
-		props.milestones &&
-			React.Children.map(props.milestones, milestone => (
-				<dd>{milestone}</dd>
-			))
-		}
+		<dd>{props.milestones}</dd>
 
-		<dt>Fun Fact</dt>
+		<dt className="hide">Fun Fact</dt>
 		<dd>{props.funFact}</dd>
 	</dl>
 		
