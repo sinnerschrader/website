@@ -1,9 +1,16 @@
 .mod-case4 {
+	display: flex;
+	flex-direction: column;
 	padding: @s2-moduleGap-s @s2-moduleGap-s @s2-moduleGap-s-3;
 	background-color: @s2-white;
 
 	&.gradient {
 		background: linear-gradient(-20deg, transparent 0%, transparent 33%, @s2-lightgrey 33%, @s2-lightgrey 66%, transparent 66%, transparent 100%), @s2-white;
+
+		// don't like this
+		&.invert {
+			background: linear-gradient(-20deg, @s2-black 0%, @s2-black 50%, transparent 50%, transparent 100%), @s2-darkblack;
+		}
 	}
 
 	&.invert {
@@ -12,6 +19,7 @@
 
 	.h2-2 {
 		margin: 0 0 @s2-moduleGap-s 0;
+		// change to margin-bottom
 	}
 
 	.h4 {
@@ -20,9 +28,10 @@
 
 	&__funfact {
 		position: relative;
+		bottom: 90px;
 		left: 46px;
 		order: -1;
-		padding: 15px @s2-moduleGap-s @s2-moduleGap-s;
+		padding: 15px @s2-moduleGap-s 5px;
 		border-width: 6px;
 		border-style: solid;
 
@@ -73,9 +82,18 @@
 		.copyRight {
 			padding: 0 0 0 20%;
 		}
+
+		&__funfact {
+			bottom: 110px;
+			max-width: 60%;
+			margin-left: auto;
+		}
 	}
 
 	@media @s2-mq-window-desktop {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
 		padding: @s2-moduleGap-l-2;
 
 		.h2-2 {
@@ -85,16 +103,26 @@
 
 		.copyTop {
 			min-height: 240px;
+			width: auto;
 		}
 
 		.copyRight {
+			flex: 0 1 100%;
 			padding-left: 40%;
 		}
-	}
 
-	@media @s2-mq-window-desktop-l {
-		.copyTop {
-			width: 50%;
+		.details {
+			flex: 1 0 60%;
+			max-width: 60%;
+		}
+
+		&__funfact {
+			flex: 1 0 35%;			
+  			align-self: flex-start;
+			order: 0;
+			max-width: 35%;
+			left: 0;
+			bottom: 215px;
 		}
 	}
 }
