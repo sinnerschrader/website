@@ -91,6 +91,9 @@
 	}
 
 	@media @s2-mq-window-desktop {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
 		padding: @s2-moduleGap-l-2;
 
 		.h2-2 {
@@ -100,16 +103,26 @@
 
 		.copyTop {
 			min-height: 240px;
+			width: auto;
 		}
 
 		.copyRight {
+			flex: 0 1 100%;
 			padding-left: 40%;
 		}
-	}
 
-	@media @s2-mq-window-desktop-l {
-		.copyTop {
-			width: 50%;
+		.details {
+			flex: 1 0 60%;
+			max-width: 60%;
+		}
+
+		&__funfact {
+			flex: 1 0 35%;			
+  			align-self: flex-start;
+			order: 0;
+			max-width: 35%;
+			left: 0;
+			bottom: 215px;
 		}
 	}
 }
