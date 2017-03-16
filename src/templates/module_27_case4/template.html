@@ -32,15 +32,15 @@ name: Case4
         text={props.name}
         />
 	}
-	<dl>
+	<dl className="mod-case4__details">
 		<dt className="hide">Job Title</dt>
-		<dd>{props.jobTitle}</dd>
+		<dd className="mod-case4__details-item">{props.jobTitle}</dd>
 		
-		<dt>Milestones</dt>
-		<dd>{props.milestones}</dd>
+		<dt className="mod-case4__details-heading">Milestones</dt>
+		<dd className="mod-case4__details-item">{props.milestones}</dd>
 
 		<dt className="hide">Fun Fact</dt>
-		<dd>{props.funFact}</dd>
+		<dd className="mod-case4__details-item">{props.funFact}</dd>
 	</dl>
 		
 	</div>
