@@ -2,26 +2,24 @@
 name: Case4
 ---
 <section className={helpers.classNames({'mod-case4': true, gradient: props.gradient, invert: props.invert})} data-theme={props.theme}>
-	<div className="details">
-		{
-			props.headline &&
-			<Headline
-				level={props.level}
-				className="h h2-2"
-				text={props.headline}
-				highlight
-				/>
-		}
-		{
-			props.text1 &&
-			<Text
-				Tagname="p"
-				className="copy copyTop"
-				text={props.text1}
-				bold
-				/>
-		}
-	</div>
+	{
+		props.headline &&
+		<Headline
+			level={props.level}
+			className="h h2-2"
+			text={props.headline}
+			highlight
+			/>
+	}
+	{
+		props.text1 &&
+		<Text
+			Tagname="p"
+			className="copy"
+			text={props.text1}
+			bold
+			/>
+	}
 	<div className="mod-case4__funfact">
 
 	{
@@ -48,7 +46,7 @@ name: Case4
 		props.text2 &&
 		<Text
 			Tagname="p"
-			className="copy copyRight"
+			className="copy"
 			text={props.text2}
 			bold
 			/>
