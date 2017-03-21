@@ -1,54 +1,55 @@
 ---
 name: Case4
 ---
+
 <section className={helpers.classNames({'mod-case4': true, gradient: props.gradient, invert: props.invert})} data-theme={props.theme}>
-	{
-		props.headline &&
-		<Headline
-			level={props.level}
-			className="h h2-2"
-			text={props.headline}
-			highlight
-			/>
-	}
-	{
-		props.text1 &&
-		<Text
-			Tagname="p"
-			className="copy"
-			text={props.text1}
-			bold
-			/>
-	}
-	<div className="mod-case4__funfact">
-
-	{
-    props.name &&
-    <Headline
-        level={props.nameLevel}
-        className="h h3"
-        text={props.name}
-        />
-	}
-	<dl className="mod-case4__details">
-		<dt className="hide">Job Title</dt>
-		<dd className="mod-case4__details-item">{props.jobTitle}</dd>
-		
-		<dt className="mod-case4__details-heading">Milestones</dt>
-		<dd className="mod-case4__details-item">{props.milestones}</dd>
-
-		<dt className="hide">Fun Fact</dt>
-		<dd className="mod-case4__details-item">{props.funFact}</dd>
-	</dl>
-		
+	<div className="funfact-header">
+		{
+			props.name &&
+			<Headline
+				level={props.nameLevel}
+				className="h h3"
+				text={props.name}
+				/>
+		}
 	</div>
-	{
-		props.text2 &&
-		<Text
-			Tagname="p"
-			className="copy"
-			text={props.text2}
-			bold
-			/>
-	}
+	<div className="mod-case4__content">
+		<dl className="funfact">
+			<dt className="hide">Job Title</dt>
+			<dd className="funfact__description">{props.jobTitle}</dd>
+			
+			<dt className="funfact__term">Milestones</dt>
+			<dd className="funfact__description">{props.milestones}</dd>
+
+			<dt className="hide">Fun Fact</dt>
+			<dd className="funfact__description">{props.funFact}</dd>
+		</dl>
+		{
+			props.headline &&
+			<Headline
+				level={props.level}
+				className="h h2-2"
+				text={props.headline}
+				highlight
+				/>
+		}
+		{
+			props.text1 &&
+			<Text
+				Tagname="p"
+				className="copy"
+				text={props.text1}
+				bold
+				/>
+		}
+		{
+			props.text2 &&
+			<Text
+				Tagname="p"
+				className="copy"
+				text={props.text2}
+				bold
+				/>
+		}
+	</div>
 </section>
