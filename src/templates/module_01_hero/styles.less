@@ -58,6 +58,15 @@
 
 	@media @s2-mq-window-tablet {
 		padding: @s2-moduleGap-m;
+
+		&[data-contentdown] {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: center;
+			padding-bottom: (@s2-moduleGap-m + @s2-moduleGap-s-2);
+		}
+
 		.h,
 		.copy {
 			margin-bottom: @s2-moduleGap-m-1;
@@ -66,6 +75,7 @@
 
 	@media @s2-mq-window-desktop {
 		padding: @s2-moduleGap-l-2;
+
 		.h,
 		.copy {
 			margin-bottom: @s2-moduleGap-l-1;
