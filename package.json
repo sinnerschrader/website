@@ -77,7 +77,7 @@
     "svgo": "^0.7.1",
     "upper-case-first": "^1.1.2",
     "watchify": "^3.7.0",
-    "xo": "^0.17.1"
+    "xo": "^0.19.0"
   },
   "optionalDependencies": {
     "website-static": "github:sinnerschrader/website-static#627c9cc804017c1f9e1641094017d117e820903a"
