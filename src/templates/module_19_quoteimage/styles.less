@@ -39,7 +39,6 @@
 
 	@media @s2-mq-window-desktop {
 		display: flex;
-		flex-direction: row;
 		padding-top: @s2-moduleGap-l-2;
 
 		.quote,
@@ -49,11 +48,9 @@
 		}
 
 		.quote {
-			align-self: center;
-			position: relative;
-			z-index: 1;
 			margin: 0;
-			transform: translateX(@s2-moduleGap-l-2);
+			padding: @s2-moduleGap-l-2 @s2-moduleGap-l-2 0;
+			z-index: 1;
 		}
 		.teaser {
 			margin: @s2-moduleGap-l-1 0 0 0;
