@@ -19,9 +19,14 @@
 		padding: 0 @s2-moduleGap-s;
 	}
 
+
 	.copy {
 		margin-bottom: @s2-moduleGap-l;
 		padding: 0 @s2-moduleGap-s;
+
+		& + .h2-2 { 
+			margin-top: @s2-moduleGap-s-3;
+		} 
 	}
 
 	@media @s2-mq-window-tablet {
@@ -35,6 +40,10 @@
 
 		.copy {
 			padding: 0 @s2-moduleGap-m;
+
+			& + .h2-2 { 
+				margin-top: @s2-moduleGap-l-3;
+			} 
 		}
 	}
 	@media @s2-mq-window-desktop {
