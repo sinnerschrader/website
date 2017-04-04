@@ -8,7 +8,45 @@ name: QuoteImage
 			className="h3"
 			text={props.copy}
 			/>
-		<cite className="cite xscopy">{props.credits}</cite>
+
+		<cite className="cite xscopy">
+			{
+				props.creditsLink &&
+					<a className="cite__link" href={props.creditsLink}>
+						<svg className="icon" viewBox="0 0 20 20">
+							<use xlinkHref="/static/icons/sprite.svg#arrow" />
+						</svg>
+						{props.creditsName}
+					</a>
+			}
+			{
+				!props.creditsLink &&
+					<span className="cite__name">{props.creditsName}</span>
+			}
+			<span className="cite__title">{props.creditsTitle}</span>
+		</cite>
+
+		<div className="crosslinks cite xscopy">
+			{
+				props.linkUrl1 && props.linkText1 &&
+					<a className="cite__link" href={props.linkUrl1}>
+						<svg className="icon" viewBox="0 0 20 20">
+							<use xlinkHref="/static/icons/sprite.svg#arrow" />
+						</svg>
+						{props.linkText1}
+					</a>
+			}
+			{
+				props.linkUrl2 && props.linkText2 &&
+					<a className="cite__link" href={props.linkUrl2}>
+						<svg className="icon" viewBox="0 0 20 20">
+							<use xlinkHref="/static/icons/sprite.svg#arrow" />
+						</svg>
+						{props.linkText2}
+					</a>
+			}
+		</div>
+
 	</blockquote>
 	<div className="teaser sctnbgclr">
 		<ResponsiveImage

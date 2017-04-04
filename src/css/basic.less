@@ -57,6 +57,25 @@ a {
 
 .cite {
 	color: @s2-darkgrey;
+
+	&__link,
+	&__name,
+	&__title {
+		display: block;
+	}
+
+	&__link {
+		position: relative;
+		
+		.icon {
+			position: absolute;
+			top: 50%;
+			left: -33px;
+			width: 13px;
+			transform: translateY(-50%);
+			fill: @s2-darkgrey;
+		}
+	}
 }
 
 .link {
