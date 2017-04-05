@@ -4,6 +4,7 @@
 
 	.quote {
 		margin: 0 @s2-moduleGap-s-1 @s2-moduleGap-s-2;
+		line-height: @s2-base-lineheight;
 	}
 
 	.teaser {
@@ -20,9 +21,24 @@
 		}
 	}
 
-	.crosslinks {
-		margin-top: @s2-moduleGap-s;
+	.cite {
+		display: block;
+		margin-bottom: 25px;
 	}
+		
+	.link {
+		text-decoration: none;
+	}
+		
+	.icon {
+		position: absolute;
+		top: 50%;
+		left: -33px;
+		width: 13px;
+		transform: translateY(-50%);
+		fill: @s2-darkgrey;
+	}
+
 
 	@media @s2-mq-window-tablet {
 		padding-top: @s2-moduleGap-m-2;
