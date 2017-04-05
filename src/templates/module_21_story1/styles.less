@@ -14,6 +14,7 @@
 	@media @s2-mq-window-tablet {
 		padding: @s2-moduleGap-m-2 @s2-moduleGap-m-1 @s2-moduleGap-m-3;
 		.h {
+
 			margin-bottom: @s2-moduleGap-m-2;
 			max-width: 700px;
 		}
@@ -25,13 +26,16 @@
 
 	@media @s2-mq-window-desktop {
 		padding: @s2-moduleGap-l-2 @s2-moduleGap-l-2 @s2-moduleGap-l-3 @s2-moduleGap-l-2;
+
+		&__wrap {
+			max-width: 1400px;
+		}
+
 		.h {
-			width: 60%;
-			margin-bottom: auto 0 @s2-moduleGap-l-2 0;
+			margin: auto 0 @s2-moduleGap-l-2 0;
 		}
 		.copy {
-			width: 60%;
-			margin: 0 0 0 auto;
+			margin: 0 0 0 700px;
 			padding-left:  0;
 		}
 	}
