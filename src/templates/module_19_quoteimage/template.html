@@ -10,26 +10,27 @@ name: QuoteImage
 			/>
 
 		<cite className="cite xscopy">
-			{
-				props.creditsLink &&
-					<a className="cite__link" href={props.creditsLink}>
-						<svg className="icon" viewBox="0 0 20 20">
-							<use xlinkHref="/static/icons/sprite.svg#arrow" />
-						</svg>
-						{props.creditsName}
-					</a>
-			}
-			{
-				!props.creditsLink &&
-					<span className="cite__name">{props.creditsName}</span>
-			}
-			<span className="cite__title">{props.creditsTitle}</span>
+				{
+					props.creditsLink &&
+						<a className="link" href={props.creditsLink}>
+							<svg className="icon" viewBox="0 0 20 20">
+								<use xlinkHref="/static/icons/sprite.svg#arrow" />
+							</svg>
+							{props.creditsName}
+						</a>
+				}
+				{
+					!props.creditsLink &&
+						<span className="cite__name">{props.creditsName}</span>
+				}
+				<span className="linebreak"></span>
+				{props.creditsTitle}
 		</cite>
 
 		<div className="crosslinks cite xscopy">
 			{
 				props.linkUrl1 && props.linkText1 &&
-					<a className="cite__link" href={props.linkUrl1}>
+					<a className="link" href={props.linkUrl1}>
 						<svg className="icon" viewBox="0 0 20 20">
 							<use xlinkHref="/static/icons/sprite.svg#arrow" />
 						</svg>
@@ -37,8 +38,12 @@ name: QuoteImage
 					</a>
 			}
 			{
+				props.linkUrl1 && props.linkText1 && props.linkUrl2 && props.linkText2 &&
+					<span className="linebreak"></span>
+			}
+			{
 				props.linkUrl2 && props.linkText2 &&
-					<a className="cite__link" href={props.linkUrl2}>
+					<a className="link" href={props.linkUrl2}>
 						<svg className="icon" viewBox="0 0 20 20">
 							<use xlinkHref="/static/icons/sprite.svg#arrow" />
 						</svg>
