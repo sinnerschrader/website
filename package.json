@@ -35,11 +35,8 @@
     "deploy": "bash ./scripts/deploy.sh",
     "deploy:staging": "bash ./scripts/deploy-staging.sh",
     "serve": "browser-sync start --config bs-config.js --serveStatic docs --files docs",
-    "taint": "bash ./scripts/prepare-static.sh && rm -rf static && mkdir static && npm run taint:fonts && npm run taint:icons && npm run taint:images && npm run taint:videos",
+    "taint": "bash ./scripts/prepare-static.sh && rm -rf static/fonts && mkdir static/fonts && npm run taint:fonts",
     "taint:fonts": "ncp $(node -e \"console.log(require('website-static'))\")/fonts/ static/fonts",
-    "taint:icons": "ncp $(node -e \"console.log(require('website-static'))\")/icons/ static/icons",
-    "taint:images": "ncp $(node -e \"console.log(require('website-static'))\")/images/ static/images",
-    "taint:videos": "ncp $(node -e \"console.log(require('website-static'))\")/videos/ static/videos",
     "clean": "git checkout -- static && git clean -d -f static"
   },
   "devDependencies": {
