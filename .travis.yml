@@ -11,8 +11,7 @@ notifications:
 before_install:
   - npm install @alrra/travis-scripts
   - npm run auth
-install:
-  - git fetch --unshallow --tags
+install: git fetch --unshallow --tags
 script:
   - npm run build:ci
 deploy:
