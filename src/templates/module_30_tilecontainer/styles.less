@@ -1,0 +1,224 @@
+.mod-tilecontainer {
+    padding-bottom: @s2-moduleGap-s-1;
+    background: @s2-black;
+    color: @s2-white;
+
+    .teaser,
+    .cite {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+        }
+    }
+
+    .teaser {
+        &::after {
+            bottom: -@s2-moduleGap-s-1;
+            height: @s2-moduleGap-s-1;
+            background-color: inherit;
+        }
+	}
+
+    .cite {
+        margin: 0 @s2-moduleGap-s-2;
+        padding: @s2-moduleGap-s-2 0 15px;
+
+        &::after {
+            bottom: 0;
+            display: block;
+            width: 100px;
+            height: 3px;
+        }
+    }
+
+    .crosslink {
+        position: relative;
+        font-weight: 700;
+        color: @s2-white;
+	    word-break: break-all;
+
+        &:hover {
+            color: @s2-white-hover;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        width: 13px;
+        transform: translateY(-50%);
+        fill: @s2-white;
+    }
+
+    &__item {
+        padding-bottom: @s2-moduleGap-s-1;
+
+        &--left {
+            .teaser {
+                margin-right: @s2-moduleGap-s-2;
+
+                &::after {
+                    right: 0;
+                    left: @s2-moduleGap-s-2;
+                }
+            }
+            
+            .cite {
+                &::after {
+                    left: 0;
+                }
+            }
+
+            .icon {
+                left: -40px;
+            }
+        }
+
+        &--right {
+            .teaser {
+                margin-left: @s2-moduleGap-s-2;
+
+                &::after {
+                    right: @s2-moduleGap-s-2;
+                    left: 0;
+                }
+            }
+            
+            .cite {
+                text-align: right;
+                
+                &::after {
+                    right: 0;
+                }
+            }
+
+            .icon {
+                right: -40px;
+            }
+        }
+
+    }
+
+    .tile {
+        position: relative;
+        margin-bottom: @s2-moduleGap-s-1;
+        min-height: 260px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 65% 65%;
+    }
+
+    @media @s2-mq-window-tablet {
+        display: flex;
+        flex-direction: column;
+
+        .teaser {
+            width: 41%;
+        }
+
+        .details {
+            display: flex;
+            padding: 0;
+            width: 59%;
+        }
+
+        &__item {
+            display: flex;
+            padding-bottom: @s2-moduleGap-s-2;
+
+            &--left {
+                .teaser {
+                    margin-right: 0;
+                }
+
+                .cite {
+                    align-self: flex-end;
+                    margin: 0 70px 0;
+                }
+
+                .icon {
+                    left: -20px;
+                }
+            }
+
+            &--right {
+                flex-direction: row-reverse;
+
+                .teaser {
+                    margin-left: 0;
+                }
+
+                .details {
+                    justify-content: flex-end;
+                }
+
+                .cite {
+                    align-self: flex-end;
+                    margin: 0 70px 0;
+
+                    &::after {
+                        right: 0;
+                        left: auto;
+                    }
+                }
+
+                .icon {
+                    right: -35px;
+                }
+            }
+        }
+
+        .tile {
+            margin: 0 @s2-moduleGap-s-2 @s2-moduleGap-s-1;
+        }
+    }
+
+    @media @s2-mq-window-desktop {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .teaser,
+        .details {
+            width: 100%;
+        }
+
+        .icon {
+            width: 16px;
+        }
+
+        &__item {
+            display: block;
+            flex-basis: (100% / 3);
+
+            .teaser {
+                margin: 0;
+            }
+
+            .cite {
+                padding: @s2-moduleGap-m-2 0 @s2-moduleGap-l-1;
+            }
+
+            &--left {
+                .cite {
+                    margin: 0 0 45px @s2-moduleGap-s-2;
+                }
+            }
+
+            &--right {
+                .cite {
+                    margin: 0 @s2-moduleGap-s-2 45px 0;
+                }
+            }
+        }
+
+        .tile {
+            flex-basis: (100% / 3);
+            margin: 0;
+            background-position-y: -25%;
+            background-size: 75% 75%;
+        }
+    }
+}

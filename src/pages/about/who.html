@@ -14,22 +14,64 @@ route: /about/who
 		blend
 		level={1}
 	/>
-	<Infographic3
-		textBigger
-		headlineOne="125+"
-		copyOne="Consultants"
-		headlineTwo="125+"
-		copyTwo="Creatives"
-		headlineThree="250+"
-		copyThree="Developers"
-		backgroundSvg="../../static/images/backgrounds/talents.svg"
-		level={2}
-		/>
-	<Clients
-		headline="Clients"
-		base="../../"
-		level={2}
-		/>
+	<TileContainer>
+		<ElementCrosslink
+			className="mod-tilecontainer__item mod-tilecontainer__item--left"
+			imageSrcSetS="../../static/images/contents/module_30_tilecontainer_palm_katharina.jpg"
+	        imageUrl="../../static/images/contents/module_30_tilecontainer_palm_katharina.jpg"
+	        name="Katharina Stoltze"
+	        link="/people/katharina-stoltze/"
+	        title="Senior Art Director"
+			/>
+		<ElementTileImage
+			className="tile"
+			imageSrc="../../static/images/backgrounds/500.svg"
+			/>
+		<ElementCrosslink
+			className="mod-tilecontainer__item mod-tilecontainer__item--right"
+			imageSrcSetS="../../static/images/contents/module_30_tilecontainer_palm_chris.jpg"
+	        imageUrl="../../static/images/contents/module_30_tilecontainer_palm_chris.jpg"
+	        name="Chris Rowe"
+	        link="/people/chris-rowe/"
+	        title="Executive Director"
+			/>
+		<ElementTileImage
+			className="tile"
+			imageSrc="../../static/images/backgrounds/creative.svg"
+			/>
+		<ElementCrosslink
+			className="mod-tilecontainer__item mod-tilecontainer__item--left"
+			imageSrcSetS="../../static/images/contents/module_30_tilecontainer_palm_uli.jpg"
+	        imageUrl="../../static/images/contents/module_30_tilecontainer_palm_uli.jpg"
+	        name="Uli Schumacher"
+	        link="/people/uli-schumacher/"
+	        title="Technical Director"
+			/>
+		<ElementTileImage
+			className="tile"
+			imageSrc="../../static/images/backgrounds/technology.svg"
+			/>
+		<ElementCrosslink
+			className="mod-tilecontainer__item mod-tilecontainer__item--right"
+			imageSrcSetS="../../static/images/contents/module_30_tilecontainer_palm_julie.jpg"
+	        imageUrl="../../static/images/contents/module_30_tilecontainer_palm_julie.jpg"
+	        name="Julie-Anne Sievers"
+	        link="/people/julie-anne-sievers/"
+	        title="Consultant"
+			/>
+		<ElementTileImage
+			className="tile"
+			imageSrc="../../static/images/backgrounds/consulting.svg"
+			/>
+		<ElementCrosslink
+			className="mod-tilecontainer__item mod-tilecontainer__item--left"
+			imageSrcSetS="../../static/images/contents/module_30_tilecontainer_palm_ina.jpg"
+	        imageUrl="../../static/images/contents/module_30_tilecontainer_palm_ina.jpg"
+	        name="Ina Feistritzer"
+	        link="/people/ina-feistritzer/"
+	        title="Head of Next, Chief Editor"
+			/>
+	</TileContainer>
 	<Management
 		headline="The heads supporting our `great` teams."
 		level={2}
@@ -101,6 +143,11 @@ route: /about/who
 			twitterTitle="Follow Martin Gassner on Twitter"
 			/>
 	</Management>
+	<Clients
+		headline="Clients"
+		base="../../"
+		level={2}
+		/>
 	<InvestorRelations
 		headline="Investor Relations"
 		textBold="*SinnerSchrader AG shares (WKN 514 190 / ISIN DE0005141907) were floated on to the Frankfurt Stock Exchange in 1999.* They are traded in the Regulated Market subsection and, since 2003, in the Prime Standard section. Trust, transparency and constancy are the guidelines for shareholder relations at SinnerSchrader. They are based on the rules of good and transparent corporate governance, in accordance with the standards laid down in the German Corporate Governance Code."

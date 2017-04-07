@@ -1,0 +1,27 @@
+---
+name: ElementCrosslink
+---
+<div className={props.className}>
+    <div className="teaser sctnbgclr">
+        <ResponsiveImage
+            imageSrcSetS={props.imageSrcSetS}
+            imageSrc={props.imageUrl || props.imageSrc}
+            ratio="1.2"
+            />
+    </div>
+    <div className="details">
+    {
+        props.name && props.link && props.title &&
+            <div className="cite xscopy sctnbgclrAfter">
+                        <a className="crosslink" href={props.link}>
+                            <svg className="icon" viewBox="0 0 20 20">
+                                <use xlinkHref="/static/icons/sprite.svg#arrow" />
+                            </svg>
+                            {props.name}
+                        </a>
+                <span className="linebreak"></span>
+                {props.title}
+            </div>
+    }
+    </div>
+</div>
