@@ -1,0 +1,48 @@
+.mod-calltoaction {
+    display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: @s2-moduleGap-s-2 @s2-moduleGap-s;
+	// min-height: 45vh;
+    
+    .h {
+		margin-bottom: @s2-moduleGap-s-1;
+	}
+
+	.copy {
+		font-family: @s2-font-high1;
+	}
+
+    .buttonrow {
+        text-align: center,
+    }
+
+	.copy,
+	.h,
+	.buttonrow {
+		position: relative;
+	}
+
+    &.invert {
+        background: @s2-black;
+    }
+
+	@media @s2-mq-window-tablet {
+		padding: @s2-moduleGap-xl @s2-moduleGap-m;
+
+		.h,
+		.copy {
+			margin-bottom: @s2-moduleGap-m-1;
+            text-align: center;
+		}
+	}
+
+	@media @s2-mq-window-desktop {
+		padding: 130px @s2-moduleGap-l-2;
+
+		.h,
+		.copy {
+			margin-bottom: @s2-moduleGap-l-1;
+		}
+	}
+}
