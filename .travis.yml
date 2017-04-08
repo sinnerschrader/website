@@ -14,6 +14,5 @@ before_install:
 install: git fetch --unshallow --tags
 script:
   - npm run build:ci
-after_success:
   - npm run deploy:staging
   - npm run deploy
