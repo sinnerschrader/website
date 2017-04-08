@@ -1,0 +1,36 @@
+---
+name: CallToAction
+---
+<section
+    className={helpers.classNames({'mod-calltoaction': true, 'invert': props.invert})}
+	data-theme={props.theme}
+>
+    {
+		props.headline &&
+			<Headline
+				level={props.level}
+				className="h h2-1"
+				text={props.headline}
+				/>
+	}
+	{
+		props.copy &&
+			<Text
+				Tagname="p"
+				className="copy"
+				text={props.copy}
+				/>
+	}
+	{
+		(props.buttonLabel && props.buttonHref) &&
+			<div className="buttonrow">
+				<ElementButton
+					label={props.buttonLabel}
+					href={props.buttonHref}
+					buttonBg={props.buttonBg}
+					invert={props.invert}
+					theme={props.theme}
+				/>
+			</div>
+	}
+</section>
