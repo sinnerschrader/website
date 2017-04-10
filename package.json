@@ -36,7 +36,7 @@
     "deploy:staging": "bash ./scripts/deploy-staging.sh",
     "serve": "browser-sync start --config bs-config.js --serveStatic docs --files docs",
     "taint": "bash ./scripts/prepare-static.sh && rm -rf static/fonts && mkdir static/fonts && npm run taint:fonts",
-    "taint:fonts": "ncp $(node -e \"console.log(require('website-static'))\")/fonts/ static/fonts"
+    "taint:fonts": "ncp $(node -e \"console.log(require('website-static'))\")/fonts/ static/fonts",
     "clean": "git checkout -- static && git clean -d -f static"
   },
   "devDependencies": {
