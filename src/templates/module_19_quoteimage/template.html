@@ -13,9 +13,10 @@ name: QuoteImage
 				{
 					props.creditsLink &&
 						<a className="link" href={props.creditsLink}>
-							<svg className="icon" viewBox="0 0 20 20">
-								<use xlinkHref="/static/icons/sprite.svg#arrow" />
-							</svg>
+							<Icon
+								base="../.."
+								href="/static/icons/sprite.svg#arrow"
+								/>
 							{props.creditsName}
 						</a>
 				}
@@ -31,9 +32,10 @@ name: QuoteImage
 			{
 				props.linkUrl1 && props.linkText1 &&
 					<a className="link" href={props.linkUrl1}>
-						<svg className="icon" viewBox="0 0 20 20">
-							<use xlinkHref="/static/icons/sprite.svg#arrow" />
-						</svg>
+						<Icon
+							base="../.."
+							href="/static/icons/sprite.svg#arrow"
+							/>
 						{props.linkText1}
 					</a>
 			}
@@ -44,9 +46,10 @@ name: QuoteImage
 			{
 				props.linkUrl2 && props.linkText2 &&
 					<a className="link" href={props.linkUrl2}>
-						<svg className="icon" viewBox="0 0 20 20">
-							<use xlinkHref="/static/icons/sprite.svg#arrow" />
-						</svg>
+						<Icon
+							base="../.."
+							href="/static/icons/sprite.svg#arrow"
+							/>
 						{props.linkText2}
 					</a>
 			}
