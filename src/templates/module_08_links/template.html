@@ -14,25 +14,28 @@ name: Links
 	<ul className="linklist">
 		<li className="linklist-item">
 			<a href={props.base + '/contact/'} className="linklist-link">
-				<svg className="icon" viewBox="0 0 20 20">
-					<use xlinkHref={props.base + '/static/icons/sprite.svg#arrow'} />
-				</svg>
+				<Icon
+					base={props.base}
+					href="/static/icons/sprite.svg#arrow"
+					/>
 				Contact
 			</a>
 		</li>
 		<li className="linklist-item">
 			<a href={props.base + '/imprint/'} className="linklist-link">
-				<svg className="icon" viewBox="0 0 20 20">
-					<use xlinkHref={props.base + '/static/icons/sprite.svg#arrow'} />
-				</svg>
+				<Icon
+					base={props.base}
+					href="/static/icons/sprite.svg#arrow"
+					/>
 				Imprint
 			</a>
 		</li>
 		<li className="linklist-item">
 			<a href={props.base + '/data-policy/'} className="linklist-link">
-				<svg className="icon" viewBox="0 0 20 20">
-					<use xlinkHref={props.base + '/static/icons/sprite.svg#arrow'} />
-				</svg>
+				<Icon
+					base={props.base}
+					href="/static/icons/sprite.svg#arrow"
+					/>
 				Data Policy
 			</a>
 		</li>
@@ -41,9 +44,10 @@ name: Links
 				href="https://github.com/sinnerschrader/sinnerschrader-website"
 				className="linklist-link"
 				>
-				<svg className="icon" viewBox="0 0 20 20">
-					<use xlinkHref={props.base + '/static/icons/sprite.svg#arrow'} />
-				</svg>
+				<Icon
+					base={props.base}
+					href="/static/icons/sprite.svg#arrow"
+					/>
 				Improve this site
 			</a>
 		</li>
