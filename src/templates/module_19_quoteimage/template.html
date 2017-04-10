@@ -27,33 +27,35 @@ name: QuoteImage
 				<span className="linebreak"></span>
 				{props.creditsTitle}
 		</cite>
-
-		<div className="crosslinks cite xscopy">
-			{
-				props.linkUrl1 && props.linkText1 &&
-					<a className="link" href={props.linkUrl1}>
-						<Icon
-							base="../.."
-							href="/static/icons/sprite.svg#arrow"
-							/>
-						{props.linkText1}
-					</a>
-			}
-			{
-				props.linkUrl1 && props.linkText1 && props.linkUrl2 && props.linkText2 &&
-					<span className="linebreak"></span>
-			}
-			{
-				props.linkUrl2 && props.linkText2 &&
-					<a className="link" href={props.linkUrl2}>
-						<Icon
-							base="../.."
-							href="/static/icons/sprite.svg#arrow"
-							/>
-						{props.linkText2}
-					</a>
-			}
-		</div>
+		{
+			(props.linkUrl1 && props.linkText1) &&
+				<div className="crosslinks cite xscopy">
+					{
+						props.linkUrl1 && props.linkText1 &&
+							<a className="link" href={props.linkUrl1}>
+								<Icon
+									base="../.."
+									href="/static/icons/sprite.svg#arrow"
+									/>
+								{props.linkText1}
+							</a>
+					}
+					{
+						props.linkUrl1 && props.linkText1 && props.linkUrl2 && props.linkText2 &&
+							<span className="linebreak"></span>
+					}
+					{
+						props.linkUrl2 && props.linkText2 &&
+							<a className="link" href={props.linkUrl2}>
+								<Icon
+									base="../.."
+									href="/static/icons/sprite.svg#arrow"
+									/>
+								{props.linkText2}
+							</a>
+					}
+				</div>
+		}
 
 	</blockquote>
 	<div className="teaser sctnbgclr">
