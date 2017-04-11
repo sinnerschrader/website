@@ -14,9 +14,10 @@ name: ElementCrosslink
         props.name && props.link && props.title &&
             <div className="cite xscopy sctnbgclrAfter">
                         <a className="crosslink" href={props.link}>
-                            <svg className="icon" viewBox="0 0 20 20">
-                                <use xlinkHref="/static/icons/sprite.svg#arrow" />
-                            </svg>
+                            <Icon 
+                                base="../.."
+                                href="/static/icons/sprite.svg#arrow"
+                            />
                             {props.name}
                         </a>
                 <span className="linebreak"></span>
