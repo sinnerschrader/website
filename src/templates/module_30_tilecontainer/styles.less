@@ -38,10 +38,6 @@
         font-weight: 700;
         color: @s2-white;
 	    word-break: break-all;
-
-        &:hover {
-            color: @s2-white-hover;
-        }
     }
 
     .icon {
@@ -54,6 +50,13 @@
 
     &__item {
         padding-bottom: @s2-moduleGap-s-1;
+
+        &:hover {
+
+            .crosslink {
+                color: @s2-white-hover;
+            }
+        }
 
         &--left {
             .teaser {
