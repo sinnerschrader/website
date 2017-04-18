@@ -1,12 +1,12 @@
 .card {
 	position: relative;
-	width: 100%;
-	padding: 0 20px @s2-moduleGap-s 50px;
 	margin: 0 0 @s2-moduleGap-s-2 0;
+	padding: 0 25px @s2-moduleGap-s 50px;
+	width: 100%;
+	max-width: 355px;
 	background: linear-gradient(to bottom, transparent 0%, transparent (@smnDim*4), @s2-lightgrey (@smnDim*4), @s2-lightgrey 100%);
 
 	.teaser {
-		max-width: 280px;
 		margin-bottom: (@s2-moduleGap-s*.5);
 	}
 
@@ -32,13 +32,5 @@
 			margin-bottom: 0;
 		}
 	}
-
-	@media @s2-mq-window-desktop {
-
-		.teaser {
-			max-width: 280px;
-		}
-	}
-
-
+	
 }
