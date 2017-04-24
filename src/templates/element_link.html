@@ -1,0 +1,10 @@
+---
+name: ElementLink
+---
+<a {...props}>
+   {
+    props.hiddenText && 
+        <span className="hide">{props.hiddenText}</span>
+   }
+    {props.children}
+</a>
