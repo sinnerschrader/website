@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 set -x
+set -u
 
 if [ "$TRAVIS" != "true" ]; then
     echo "Skipping deploy - this is not running on Travis; skipping."
