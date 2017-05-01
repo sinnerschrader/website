@@ -17,4 +17,5 @@ install:
 script:
   - npm run build:ci
   - npm run deploy:staging
+  - npm run clean:staging
   - npm run deploy
