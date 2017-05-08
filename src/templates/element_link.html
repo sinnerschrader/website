@@ -3,8 +3,8 @@ name: ElementLink
 ---
 <a {...props}>
    {
-    props.hiddenText && 
-        <span className="hide">{props.hiddenText}</span>
+    props.a11yText && 
+        <span className="hide">{props.a11yText}</span>
    }
     {props.children}
 </a>
