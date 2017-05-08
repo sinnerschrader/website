@@ -9,7 +9,42 @@ name: Quote
 		}
 		{
 			props.cite &&
-			<cite className="cite xscopy">{props.cite}</cite>
+			<cite className="cite xscopy">
+
+				{
+					!props.citeLink &&		
+						<span>{props.cite}</span>
+
+				}
+
+				{
+					props.citeLink &&
+						<a className="link" href={props.citeLink}>
+							<Icon
+								base="../.."
+								href="/static/icons/sprite.svg#arrow"
+								/>
+							{props.cite}
+						</a>
+				}
+
+				{
+					props.cite && props.linkText &&
+						<span className="linebreak"></span>
+				}
+
+				{
+					props.linkText && props.linkUrl &&
+						<a className="link" href={props.linkUrl}>
+							<Icon
+								base="../.."
+								href="/static/icons/sprite.svg#arrow"
+								/>
+							{props.linkText}
+						</a>
+				}
+				
+			</cite>
 		}
 	</blockquote>
 </section>

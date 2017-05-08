@@ -4,15 +4,33 @@
 
 	&.invert {
 		background: @s2-darkblack no-repeat 50% 0/cover;
+
+		.quote {
+			.cite {
+				color: @s2-white;
+			}
+		}
 	}
 
 	.quote {
 		text-align: center;
 
 		.cite {
+			display: block;
+			margin-top: 32px;
 			color: inherit;
 			font-family: @s2-font-high1;
 		}
+	}
+
+	.link {
+		text-decoration: none;
+		word-break: unset;
+	}
+
+	.icon {
+		margin-right: 16px; 
+		width: 13px;
 	}
 
 	.copy {
@@ -26,6 +44,12 @@
 
 	@media @s2-mq-window-tablet {
 		padding: @s2-moduleGap-m-3 @s2-moduleGap-m-2;
+
+		.quote {
+			.cite {
+				margin-top: 52px;
+			}
+		}
 	}
 
 	@media @s2-mq-window-desktop {
@@ -35,6 +59,10 @@
 			margin: auto;
 			max-width: 1000px;
 			font-size: @s2-h2-1-size-desktop;
+
+			.cite {
+				margin-top: 68px;
+			}
 		}
 	}
 }
