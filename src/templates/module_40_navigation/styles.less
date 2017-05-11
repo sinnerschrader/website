@@ -133,8 +133,9 @@
 	left: 0;
 	transform: translateY(-100%);
 	background: transparent;
-	transition: background-color 300ms 300ms ease-in-out,
+	transition: background-color 300ms 300ms ease-in-out, visibility 300ms 300ms,
 		transform 1ms 600ms;
+	visibility: hidden;
 }
 
 .mainnav {
@@ -258,6 +259,7 @@
 		transform: none;
 		transition: background-color 300ms ease-in-out;
 		background-color: fadeout(#16181e, 10%);
+		visibility: visible;
 		.mainnav {
 			overflow: auto;
 		}
