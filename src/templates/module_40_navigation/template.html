@@ -11,8 +11,7 @@ name: Navigation
 			</svg>
 		</ElementLink>
 		<input type="checkbox" id="navigation-state" data-navigation-state autoComplete="off" aria-hidden="true"/>
-		<label className="burger" title="Show navigation" htmlFor="navigation-state">
-			<span className="hide">Menu</span>
+		<label className="burger js-burger" title="Show navigation" htmlFor="navigation-state" role="button" aria-controls="nav" aria-label="Toggle Navigation">
 			<div className="layer-wrapper">
 				<span className="layer"/>
 				<span className="layer"/>
@@ -21,11 +20,11 @@ name: Navigation
 			</div>
 		</label>
 		{
-			<nav className="nav" role="navigation">
-				<ul className="mainnav">
-					<li className="mainnav-item">
-						<div className="nav-item">About</div>
-						<ul className="aboutnav">
+			<nav className="nav" id="nav" role="navigation">
+				<ul className="mainnav" role="none">
+					<li className="mainnav-item" role="none">
+						<div className="nav-item" aria-hidden="true">About</div>
+						<ul className="aboutnav" role="none">
 							<li className="aboutnav-item">
 								<a className="nav-item" href={props.base + '/about/why/'}>Why us</a>
 							</li>
