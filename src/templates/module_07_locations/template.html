@@ -4,11 +4,11 @@ name: Locations
 <section className={helpers.classNames({'mod-locations': true, 'mod-locations-map': props.withMap})} data-locations>
 	<h2 className="h h2-2">Locations</h2>
 	<figure className="figure" role="tablist">
-		<input type="radio" name="location" hidden id="hamburg" className="location-check" role="tab" aria-controls="hamburg-panel" defaultChecked />
-		<input type="radio" name="location" hidden id="berlin" className="location-check" role="tab" aria-controls="berlin-panel" />
-		<input type="radio" name="location" hidden id="frankfurt" className="location-check" role="tab" aria-controls="frankfurt-panel" />
-		<input type="radio" name="location" hidden id="munich" className="location-check" role="tab" aria-controls="munich-panel" />
-		<input type="radio" name="location" hidden id="prague" className="location-check" role="tab" aria-controls="prague-panel" />
+		<input type="radio" name="location" id="hamburg" className="location-check hide" title="Hamburg" role="tab" aria-controls="hamburg-panel" defaultChecked />
+		<input type="radio" name="location" id="berlin" className="location-check hide" role="tab" title="Berlin" aria-controls="berlin-panel" />
+		<input type="radio" name="location" id="frankfurt" className="location-check hide" role="tab" title="Frankfurt" aria-controls="frankfurt-panel" />
+		<input type="radio" name="location" id="munich" className="location-check hide" role="tab" title="Munich" aria-controls="munich-panel" />
+		<input type="radio" name="location" id="prague" className="location-check hide" role="tab" title="Prague" aria-controls="prague-panel" />
 
 		<ol className="locnav sctnbgclr" aria-hidden="true">
 			<li className="locnav-item">
@@ -33,10 +33,7 @@ name: Locations
 			rel="noopener noreferrer"
 			href="https://www.google.de/maps/place/SinnerSchrader/@53.5571452,9.9241842,17z/data=!3m1!4b1!4m5!3m4!1s0x47b18591e7504141:0x1a57cf875d28e604!8m2!3d53.557142!4d9.9263729"
 			target="_blank"
-			id="hamburg-panel"
-			role="tabpanel"
-			aria-labelledby="hamburg-tab"
-			a11yText=""
+			aria-hidden="true"
 			>
 			<ResponsiveImage
 				className="map-image"
@@ -52,7 +49,7 @@ name: Locations
 				].join(', ')}
 				imageSrc={props.base + '/static/sinnerschrader-ham_600.jpg'}
 				ratio="1"
-				alt=""
+				alt={props.alt}
 				/>
 		</ElementLink>
 		<ElementLink
@@ -61,10 +58,7 @@ name: Locations
 			rel="noopener noreferrer"
 			href="https://www.google.de/maps/place/SinnerSchrader+Swipe+GmbH/@52.5220212,13.4347613,17z/data=!3m1!4b1!4m5!3m4!1s0x47a84e14bda6c651:0xc73c246aab106454!8m2!3d52.522018!4d13.43695"
 			target="_blank"
-			id="berlin-panel"
-			role="tabpanel"
-			aria-labelledby="berlin-tab"
-			a11yText=""
+			aria-hidden="true"
 			>
 			<ResponsiveImage
 				imageSizes={[
@@ -89,10 +83,7 @@ name: Locations
 			href="https://www.google.de/maps/place/SinnerSchrader/@48.1520745,11.581572,17z/data=!3m1!4b1!4m5!3m4!1s0x479e744a64524ba5:0xdae97b91020bb279!8m2!3d48.1520709!4d11.5837607"
 			target="_blank"
 			rel="nofollow"
-			id="munich-panel"
-			role="tabpanel"
-			aria-labelledby="munich-tab"
-			a11yText=""
+			aria-hidden="true"
 			>
 			<ResponsiveImage
 				imageSizes={[
@@ -116,10 +107,7 @@ name: Locations
 			rel="noopener noreferrer"
 			href="https://www.google.de/maps/place/SinnerSchrader/@50.1084454,14.4526135,15z"
 			target="_blank"
-			id="prague-panel"
-			role="tabpanel"
-			aria-labelledby="prague-tab"
-			a11yText=""
+			aria-hidden="true"
 			>
 			<ResponsiveImage
 				imageSizes={[
@@ -143,10 +131,7 @@ name: Locations
 			rel="noopener noreferrer"
 			href="https://www.google.de/maps/place/SinnerSchrader/@50.1136884,8.7149786,17z/data=!3m1!4b1!4m5!3m4!1s0x47bd0bfa1014b789:0xe4bed44fc61a4e8f!8m2!3d50.113685!4d8.7171673"
 			target="_blank"
-			id="frankfurt-panel"
-			role="tabpanel"
-			aria-labelledby="frankfurt-tab"
-			a11yText=""
+			aria-hidden="true"
 			>
 			<ResponsiveImage
 				imageSizes={[
@@ -164,7 +149,10 @@ name: Locations
             	alt={props.alt}
 				/>
 		</ElementLink>
-		<div className="location-address location-hamburg">
+		<div className="location-address location-hamburg"
+			id="hamburg-panel"
+			role="tabpanel"
+			aria-labelledby="hamburg-tab">
 			<h3 className="city h2-1">Hamburg</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
@@ -194,7 +182,10 @@ name: Locations
 				<a href="mailto:commerce@sinnerschrader.com" className="h4 link">commerce@sinnerschrader.com</a>
 			</p>
 		</div>
-		<div className="location-address location-berlin" data-location="berlin">
+		<div className="location-address location-berlin" data-location="berlin"
+			id="berlin-panel"
+			role="tabpanel"
+			aria-labelledby="berlin-tab">
 			<h3 className="city  h2-1">Berlin</h3>
 			<h4 className="h4">SinnerSchrader Swipe</h4>
 			<p className="copy">
@@ -204,7 +195,10 @@ name: Locations
 				<a href="mailto:swipe@sinnerschrader.com" className="h4 link">swipe@sinnerschrader.com</a>
 			</p>
 		</div>
-		<div className="location-address location-frankfurt">
+		<div className="location-address location-frankfurt"
+			id="frankfurt-panel"
+			role="tabpanel"
+			aria-labelledby="frankfurt-tab">
 			<h3 className="city  h2-1">Frankfurt</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
@@ -214,7 +208,10 @@ name: Locations
 				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
 			</p>
 		</div>
-		<div className="location-address location-munich">
+		<div className="location-address location-munich"
+			id="munich-panel"
+			role="tabpanel"
+			aria-labelledby="munich-tab">
 			<h3 className="city  h2-1">Munich</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
@@ -224,7 +221,10 @@ name: Locations
 				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
 			</p>
 		</div>
-		<div className="location-address location-prague">
+		<div className="location-address location-prague"
+			id="prague-panel"
+			role="tabpanel"
+			aria-labelledby="prague-tab">
 			<h3 className="city h2-1">Prague</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
