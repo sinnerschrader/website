@@ -14,3 +14,19 @@ document.addEventListener('keydown', function(e){
         navigationButton.focus();
     }
 });
+
+
+const tabs = document.querySelectorAll('[role="tab"]');
+console.log(document);
+// set first tab to aria-selected true
+for (var i=0; i < tabs.length; i++) {
+    tabs[i].addEventListener('change', function(){                         
+        this.parentElement.querySelectorAll('[role="tab"]').forEach.call(tabs, function(tab) {
+            if(tab.checked) {
+                tab.setAttribute('aria-selected', 'true');
+            } else {
+                tab.removeAttribute('aria-selected');
+            }
+        });
+    });
+}
