@@ -40,7 +40,7 @@
     "clean": "git checkout -- static && git clean -d -f static"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.3",
+    "autoprefixer": "^7.1.0",
     "babel-core": "^6.14.0",
     "babel-plugin-transform-react-jsx": "^6.8.0",
     "browser-sync": "^2.16.0",
