@@ -10,6 +10,21 @@ name: Head
 	<link rel="stylesheet" href="https://fonts.sinnerschrader.com/sinnerschrader.com.min.css"/>
 	<link rel="canonical" href={props.host + props.href} />
 	<meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
+	<meta httpEquiv="Content-Security-Policy" content={[
+		`base-uri 'none'`,
+		`block-all-mixed-content`,
+		`child-src www.googletagmanager.com`,
+		`connect-src 'self' ${props.host}`,
+		`default-src 'self' ${props.host}`,
+		`font-src https://fonts.sinnerschrader.com`,
+		`form-action 'none'`,
+		`img-src 'self' ${props.host}`,
+		`manifest-src 'none'`,
+		`media-src 'self' ${props.host}`,
+		`object-src 'none'`,
+		`script-src 'self' ${props.host}`,
+		`style-src 'self' ${props.host} https://fonts.sinnerschrader.com 'unsafe-inline'`
+		].join('; ')} />
 	<meta charSet="UTF-8" />
 	<title>{props.title || 'SinnerSchrader'}</title>
 	<meta name="format-detection" content="telephone=no" />
