@@ -410,3 +410,23 @@
 	height: 1px;
 	overflow: hidden;
 }
+
+// !WARNING: this style is only for development/testing and must be discussed with the designer
+.skiptomain { 
+	position: absolute;
+	top: -42px;
+	left: 12px;
+	padding: 5px 10px;
+	z-index: 3;
+	background: @s2-red;
+	color: @s2-white;
+	font-weight: bold;
+	
+	&:focus {
+		top: @s2-headerHeight-s;
+	}
+
+	@media @s2-mq-window-tablet {
+		left: 30px;
+	}
+}

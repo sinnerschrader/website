@@ -32,8 +32,11 @@ html {
 <Head host={props.host} href={props.href} base={props.base} title={props.title}/>
 <body className={helpers.classNames({bodyClass: props.bodyClass})} data-theme={props.theme}>
 	<div className="container">
+		<ElementLink href="#main" className="skiptomain">
+			Skip to main content
+		</ElementLink>
 		<Navigation base={props.base}/>
-		<main className="main">
+		<main className="main" id="main" role="main">
 			{props.children}
 		</main>
 		<footer className="footer">
