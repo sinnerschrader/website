@@ -12,24 +12,23 @@ name: Hero
 	>
 	<div
 		className={helpers.classNames({'blend-picture': true, blend: props.blend})}
-		role="presentation"
 		>
 		{
 			props.imageSrcS &&
 				<div className="picture-s">
-					<div className="motive" style={{backgroundImage: `url(${props.imageSrcS})`}}/>
+					<div className="motive" style={{backgroundImage: `url(${props.imageSrcS})`}} aria-hidden/>
 				</div>
 		}
 		{
 			props.imageSrcM &&
 				<div className="picture-m">
-					<div className="motive" style={{backgroundImage: `url(${props.imageSrcM})`}}/>
+					<div className="motive" style={{backgroundImage: `url(${props.imageSrcM})`}} aria-hidden/>
 				</div>
 		}
 		{
 			props.imageSrcL &&
 				<div className="picture-l">
-					<div className="motive" style={{backgroundImage: `url(${props.imageSrcL})`}}/>
+					<div className="motive" style={{backgroundImage: `url(${props.imageSrcL})`}} aria-hidden/>
 				</div>
 		}
 	</div>
