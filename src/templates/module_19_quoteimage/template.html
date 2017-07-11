@@ -24,7 +24,7 @@ name: QuoteImage
 					!props.creditsLink &&
 						<span className="cite__name">{props.creditsName}</span>
 				}
-				<span className="linebreak" aria-hidden></span>
+				<span className="linebreak" aria-hidden="true"></span>
 				{props.creditsTitle}
 		</cite>
 		{
@@ -42,7 +42,7 @@ name: QuoteImage
 					}
 					{
 						props.linkUrl1 && props.linkText1 && props.linkUrl2 && props.linkText2 &&
-							<span className="linebreak" aria-hidden></span>
+							<span className="linebreak" aria-hidden="true"></span>
 					}
 					{
 						props.linkUrl2 && props.linkText2 &&
