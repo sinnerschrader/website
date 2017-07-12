@@ -9,7 +9,6 @@ if [[ "$COMMIT_MESSAGE" == *"[skip-ci]"* ]]; then
 	exit 0
 fi
 
-STATPATH=$(node -e 'console.log(require("website-static"))')
 STATICS="--src-statics $STATPATH" npm run build
 
 # fix timestamp issue with gh-pages and set it to be in the future (10 minutes)
