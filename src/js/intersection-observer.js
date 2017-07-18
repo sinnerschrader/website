@@ -1,13 +1,22 @@
-var options = {
-    root: document.querySelector('.main'),
-    rootMargin: '0px',
-    threshold: 1.0 // trigger only when element comes into view completely
-};
-var ob = new IntersectionObserver((entries, observer) => {
-  entries[0].target.classList.toggle('red');
-}, options);
+const observerTarget = document.querySelector('.intersection-video video');
 
-// observe all paragraphs, when coming into view, change color
-document.querySelectorAll('p').forEach((item) => {
-  ob.observe(item);
-});
+if(observerTarget) {
+	const observerOptions = {
+		root: null,
+		rootMargin: '0px',
+		threshold: [0.5,0.75,1.0]
+	}
+
+	const observer = new IntersectionObserver(observerCallback, observerOptions);
+	observer.observe(observerTarget);
+}
+
+function observerCallback(entries, observer) {
+		entries.forEach(entry => {
+		if(entry.intersectionRatio>=.75){
+			entry.target.play();
+		} else {
+			entry.target.pause();
+		}
+	});
+};

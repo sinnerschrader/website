@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
 	var simple_dots       = document.querySelector('.js_simple_dots');
+
+	if(!simple_dots) {
+		return;
+	}
+
 	var dot_count         = simple_dots.querySelectorAll('.js_slide').length;
 	var dot_container     = simple_dots.querySelector('.js_dots');
 	var dot_list_item     = document.createElement('li');
