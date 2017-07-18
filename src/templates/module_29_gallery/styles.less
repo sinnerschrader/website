@@ -1,63 +1,58 @@
 .slider {
-	position: relative;
 	background: linear-gradient(var(--s2-white) 10%, var(--s2-black) 10%);
 }
 
+// viewport div
 .frame {
-	width: 100%;
 	position: relative;
+	margin: 0;
+	width: 100%;
 	overflow: hidden;
 	white-space: nowrap;
 	font-size: 0;
 	line-height: 0;
-	margin: 0;
 }
 
+// slide (js_slide)
 .slides {
-	display: block;
-
 	> li {
-		padding: 0 2.5%;
-		width: 80%;
-		position: relative;
 		display: inline-block;
-		z-index: 1;
+		width: 100%;
+
+		@media @s2-mq-window-tablet {
+			padding: 0 30px;
+			width: 90%;
+			box-sizing: border-box;
+		}
 	}
 }
 
+// slide inner container
 .slide__content {
+	padding: 0 20px;
 	height: 100%;
 	width: 100%;
-	background: red;
+	box-sizing: border-box;
+
+	@media @s2-mq-window-tablet {
+		padding: 0;
+	}
 }
 
-.prev, .next {
-	font-size: 1rem;
-	position: absolute;
-	top: 50%;
-}
-
-.prev {
-	left: 2rem;
-}
-
-.next {
-	right: 2rem;
-}
-
+// pager dots
 .dots {
-    margin: 50px 0;
-    padding: 0;
+	margin: 0;
+    padding: 50px 0;
+	width: 100%;
     text-align: center;
-    width: 100%;
 
 	> li {
+		display: inline-block;
+		margin: 0 5px;
+		width: 10px;
+		height: 10px;
 		background-color: var(--s2-darkgrey3);
 		border-radius: 50%;
-		display: inline-block;
-		height: 10px;
-		width: 10px;
-		margin: 0 5px;
 		cursor: pointer;
 		text-align: center;
 
