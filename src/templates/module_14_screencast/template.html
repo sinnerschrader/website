@@ -1,7 +1,7 @@
 ---
 name: Screencast
 ---
-<section className={helpers.classNames({'mod-screencast': true, fullwidth: props.fullWidth, intersection: props.interSection})}>
+<section className={helpers.classNames({'mod-screencast': true, fullwidth: props.fullWidth, [props.className]: props.className})}>
 	<div className="disruptor">
 		<ElementVideo
 			width={props.width}

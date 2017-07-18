@@ -3,8 +3,12 @@
 	flex-direction: column;
 
 	&.fullwidth {
+		margin-top: 60px;
 		width: 100%;
-		border: 2px;
+
+		@media @s2-mq-window-tablet {
+			margin-top: 100px;
+		}
 
 		.disruptor {
 			margin: 0;
