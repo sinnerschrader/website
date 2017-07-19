@@ -20,7 +20,7 @@ if(observerTarget) {
 }
 
 function observerCallback(entries, observer) {
-		entries.forEach(entry => {
+	entries.forEach(entry => {
 
 		/**
 		 * Whenever the target meets a threshold
