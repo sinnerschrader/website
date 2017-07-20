@@ -1,21 +1,15 @@
-document.addEventListener('DOMContentLoaded', function () {
-	var simple_dots       = document.querySelector('.js_simple_dots');
+var lory = require('lory.js').lory;
 
-	/**
-	 * if slider is not on the page return
-	 */
-	if(!simple_dots) {
+module.exports = function slider(el) {
+	if (!(el instanceof HTMLElement)) {
+		console.warn('slider() expects an HTMLElement. Received', el, 'of type', typeof el);
 		return;
 	}
 
-	var dot_count         = simple_dots.querySelectorAll('.js_slide').length;
-	var dot_container     = simple_dots.querySelector('.js_dots');
-	var dot_list_item     = document.createElement('li');
+	var dot_count = el.querySelectorAll('.js_slide').length;
+	var dot_container = el.querySelector('.js_dots');
+	var dot_list_item = document.createElement('li');
 
-	/**
-	 * dot naviagtion init function
-	 * @param {*} e
-	 */
 	function handleDotEvent(e) {
 		if (e.type === 'before.lory.init') {
 			for (var i = 0, len = dot_count; i < len; i++) {
@@ -45,16 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	simple_dots.addEventListener('before.lory.init', handleDotEvent);
-	simple_dots.addEventListener('after.lory.init', handleDotEvent);
-	simple_dots.addEventListener('after.lory.slide', handleDotEvent);
-	simple_dots.addEventListener('on.lory.resize', handleDotEvent);
+	el.addEventListener('before.lory.init', handleDotEvent);
+	el.addEventListener('after.lory.init', handleDotEvent);
+	el.addEventListener('after.lory.slide', handleDotEvent);
+	el.addEventListener('on.lory.resize', handleDotEvent);
 
-	/**
-	 * lory dot slider options
-	 */
-	var dot_navigation_slider = lory(simple_dots, {
+	console.log(lory, typeof lory);
+	return lory(el, {
 		infinite: 1,
 		enableMouseEvents: true
 	});
-});
+};
