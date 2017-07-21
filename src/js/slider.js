@@ -44,7 +44,6 @@ module.exports = function slider(el) {
 	el.addEventListener('after.lory.slide', handleDotEvent);
 	el.addEventListener('on.lory.resize', handleDotEvent);
 
-	console.log(lory, typeof lory);
 	return lory(el, {
 		infinite: 1,
 		enableMouseEvents: true
