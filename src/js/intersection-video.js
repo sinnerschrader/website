@@ -1,4 +1,4 @@
-var IntersectionObserver = require('intersection-observer-polyfill');
+var IntersectionObserver = require('intersection-observer-polyfill/dist/IntersectionObserver');
 
 module.exports = function intersectionVideo(el) {
 	if (!(el instanceof HTMLVideoElement)) {
