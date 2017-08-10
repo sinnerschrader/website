@@ -6,8 +6,8 @@ module.exports = function slider(el) {
 		return;
 	}
 
-	var dot_count = el.querySelectorAll('.js_slide').length;
-	var dot_container = el.querySelector('.js_dots');
+	var dot_count = el.querySelectorAll('[data-js="slide"]').length;
+	var dot_container = el.querySelector('[data-js="dots"]');
 	var dot_list_item = document.createElement('li');
 
 	function handleDotEvent(e) {
@@ -44,8 +44,10 @@ module.exports = function slider(el) {
 	el.addEventListener('after.lory.slide', handleDotEvent);
 	el.addEventListener('on.lory.resize', handleDotEvent);
 
-	return lory(el, {
+	var dot_navigation_slider = lory(el, {
 		infinite: 1,
 		enableMouseEvents: true
 	});
+
+	return dot_navigation_slider;
 };
