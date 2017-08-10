@@ -9,7 +9,7 @@ name: Gallery
 				{
 				props.children &&
 					React.Children.map(props.children, child => (
-						<li className="js_slide">
+						<li data-js="slide">
 							<div className="slide__content">
 								{child}
 							</div>
@@ -18,7 +18,7 @@ name: Gallery
 				}
 			</ul>
 		</div>
-		<ul className="dots js_dots">
+		<ul className="dots" data-js="dots">
 		</ul>
 	</div>
 </section>
