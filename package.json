@@ -52,7 +52,7 @@
     "github-hotline": "^0.2.1",
     "github-remote-commit": "^1.0.1",
     "globby": "^6.0.0",
-    "gray-matter": "^2.0.2",
+    "gray-matter": "^3.0.5",
     "imagemin-cli": "^3.0.0",
     "imagemin-jpegoptim": "^5.0.0",
     "imagemin-jpegtran": "^5.0.2",
