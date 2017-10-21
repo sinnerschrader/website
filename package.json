@@ -37,7 +37,7 @@
     "watch": "npm run build:css && (npm run build:watch:js & npm run build:watch:css & npm run build:watch:pages)"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.3",
+    "autoprefixer": "^7.1.6",
     "babel-core": "^6.14.0",
     "babel-plugin-transform-react-jsx": "^6.8.0",
     "browser-sync": "^2.16.0",
