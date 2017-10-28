@@ -4,21 +4,21 @@ name: ElementCrosslink
 <a className={props.className} href={props.link}>
     <div className="teaser sctnbgclr">
         <ResponsiveImage
-            imageSrcSetS={props.imageSrcSetS}
-            imageSrc={props.imageUrl || props.imageSrc}
+            imageSrc={props.imageSrc}
             ratio="1.2"
+            alt={props.alt}
             />
     </div>
     <div className="details">
             <div className="cite xscopy sctnbgclrAfter">
                 <div className="crosslink">
-                    <Icon 
+                    <Icon
                         base="../.."
                         href="/static/icons/sprite.svg#arrow"
                     />
                     {props.name}
                 </div>
-                <span className="linebreak"></span>
+                <span className="linebreak" aria-hidden="true"></span>
                 {props.title}
             </div>
     </div>

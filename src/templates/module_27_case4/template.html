@@ -5,13 +5,13 @@ name: Case4
 <section className={helpers.classNames({'mod-case4': true, gradient: props.gradient, invert: props.invert})} data-theme={props.theme}>
 	<dl className="funfact">
 		<dt className="h h3">{props.name}</dt>
-		<dt className="hide">Job Title</dt>
+		<dt className="visually-hidden">Job Title</dt>
 		<dd className="funfact__description">{props.jobTitle}</dd>
 		
 		<dt className="funfact__term">Milestones</dt>
 		<dd className="funfact__description">{props.milestones}</dd>
 
-		<dt className="hide">Fun Fact</dt>
+		<dt className="visually-hidden">Fun Fact</dt>
 		<dd className="funfact__description">{props.funFact}</dd>
 	</dl>
 		{

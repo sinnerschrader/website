@@ -12,7 +12,7 @@ name: Quote
 			<cite className="cite xscopy">
 
 				{
-					!props.citeLink &&		
+					!props.citeLink &&
 						<span>{props.cite}</span>
 
 				}
@@ -30,7 +30,7 @@ name: Quote
 
 				{
 					props.cite && props.linkText &&
-						<span className="linebreak"></span>
+						<span className="linebreak" aria-hidden="true"></span>
 				}
 
 				{
@@ -43,7 +43,7 @@ name: Quote
 							{props.linkText}
 						</a>
 				}
-				
+
 			</cite>
 		}
 	</blockquote>

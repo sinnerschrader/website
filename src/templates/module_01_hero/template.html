@@ -1,7 +1,7 @@
 ---
 name: Hero
 ---
-<section
+<props.Tagname
 	className={helpers.classNames({'mod-hero': true, 'invert': props.invert})}
 	data-textBottom={props.textBottom}
 	data-halfling={props.halfling}
@@ -12,24 +12,23 @@ name: Hero
 	>
 	<div
 		className={helpers.classNames({'blend-picture': true, blend: props.blend})}
-		role="presentation"
 		>
 		{
 			props.imageSrcS &&
 				<div className="picture-s">
-					<div className="motive" style={{backgroundImage: `url(${props.imageSrcS})`}}/>
+					<div className="motive" style={{backgroundImage: `url(${props.imageSrcS})`}} aria-hidden="true"/>
 				</div>
 		}
 		{
 			props.imageSrcM &&
 				<div className="picture-m">
-					<div className="motive" style={{backgroundImage: `url(${props.imageSrcM})`}}/>
+					<div className="motive" style={{backgroundImage: `url(${props.imageSrcM})`}} aria-hidden="true"/>
 				</div>
 		}
 		{
 			props.imageSrcL &&
 				<div className="picture-l">
-					<div className="motive" style={{backgroundImage: `url(${props.imageSrcL})`}}/>
+					<div className="motive" style={{backgroundImage: `url(${props.imageSrcL})`}} aria-hidden="true"/>
 				</div>
 		}
 	</div>
@@ -61,4 +60,4 @@ name: Hero
 				/>
 			</div>
 	}
-</section>
+</props.Tagname>
