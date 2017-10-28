@@ -1,0 +1,10 @@
+---
+name: ElementLink
+---
+<a {...props}>
+   {
+    props.a11yText && 
+        <span className="visually-hidden">{props.a11yText}</span>
+   }
+    {props.children}
+</a>

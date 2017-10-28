@@ -34,5 +34,8 @@ name: Infographic3
 			</p>
 		</li>
 	</ul>
-	<img src={props.svg} />
+		{
+			props.svg &&
+			<img src={props.svg} />
+		}
 </section>

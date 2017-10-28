@@ -18,7 +18,7 @@
     "build:ci": "bash ./scripts/build-ci.sh",
     "build:css:app": "mkdirp docs/static/css && lessc --strict-math=on --clean-css='advanced' --autoprefix='last 2 versions, not ie < 11, last 2 ChromeAndroid versions, last 2 Android versions, last 1 ExplorerMobile versions' src/css/app.less > docs/static/css/app.css",
     "build:css": "npm run build:css:app",
-    "build:js": "mkdirp docs/static/js && browserify --entry src/js/main.js --outfile docs/static/js/app.js",
+    "build:js": "mkdirp docs/static/js && browserify src/js/index.js --outfile docs/static/js/app.js",
     "build:pages": "schlump --src-statics static --dest docs --dest-statics docs/static --var.host=https://sinnerschrader.com --redirect-map ./redirects.json --scoped-css=./docs/static/css/scoped.css --css-variables",
     "build:svg:opt": "rm -f docs/static/icons/*.svg && svgo --disable=removeUselessDefs -f src/icons -o docs/static/icons/src",
     "build:svg:sprite": "svg-sprite-generate -d docs/static/icons/src -o docs/static/icons/sprite.svg && rm -rf docs/static/icons/src",
@@ -77,5 +77,9 @@
     "upper-case-first": "^1.1.2",
     "watchify": "^3.7.0",
     "xo": "^0.18.0"
+  },
+  "dependencies": {
+    "intersection-observer-polyfill": "^0.1.0",
+    "lory.js": "^2.2.1"
   }
 }

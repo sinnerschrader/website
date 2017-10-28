@@ -2,12 +2,13 @@
 name: ElementCard
 ---
 <div className="card">
-	<figure>
+	<figure role="group">
 		<div className="teaser">
 			<ElementImage
 				url={props.url}
 				width={560}
 				height={750}
+				alt={props.alt}
 				/>
 		</div>
 

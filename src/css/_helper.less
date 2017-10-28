@@ -402,11 +402,23 @@
 	display: block;
 }
 
-.hide {
-	position: absolute;
-	top: -9999px;
-	left: -9999px;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+.visually-hidden {
+	position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding:0 !important;
+    border:0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+
+	body:hover & a,
+	body:hover & input, 
+	body:hover & button {
+		display: none !important;
+	}
 }

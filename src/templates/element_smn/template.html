@@ -5,103 +5,109 @@ name: SocialMediaNetwork
 	{
 		(props.twitterUrl && props.twitterTitle) &&
 			<li className="smn-item">
-					<a
+					<ElementLink
 						className="network"
 						href={props.twitterUrl}
 						rel="noopener noreferrer"
 						target="_blank"
 						title={props.twitterTitle}
+						a11yText={props.twitterTitle}
 						>
 						<Icon
 							base={props.base}
 							href="/static/icons/sprite.svg#twitter"
 							/>
-					</a>
+					</ElementLink>
 			</li>
 		}
 	{
 		(props.facebookUrl && props.facebookTitle) &&
 			<li className="smn-item">
-				<a
+				<ElementLink
 					className="network"
 					href={props.facebookUrl}
 					rel="noopener noreferrer"
 					target="_blank"
 					title={props.facebookTitle}
+					a11yText={props.facebookTitle}
 					>
 					<Icon
 						base={props.base}
 						href="/static/icons/sprite.svg#facebook"
 						/>
-				</a>
+				</ElementLink>
 			</li>
 		}
 	{
 		(props.linkedInUrl && props.linkedInTitle) &&
 			<li className="smn-item">
-				<a
+				<ElementLink
 					className="network"
 					href={props.linkedInUrl}
 					rel="noopener noreferrer"
 					target="_blank"
 					title={props.linkedInTitle}
+					a11yText={props.linkedInTitle}
 					>
 					<Icon
 						base={props.base}
 						href="/static/icons/sprite.svg#linked_in"
 						/>
-				</a>
+				</ElementLink>
 			</li>
 		}
 	{
 		(props.dribbbleUrl && props.dribbbleTitle) &&
 			<li className="smn-item">
-				<a
+				<ElementLink
 					className="network"
 					href={props.dribbbleUrl}
 					rel="noopener noreferrer"
 					target="_blank"
 					title={props.dribbbleTitle}
+					a11yText={props.dribbbleTitle}
 					>
 					<Icon
 						base={props.base}
 						href="/static/icons/sprite.svg#dribbble"
 						/>
-				</a>
+				</ElementLink>
 			</li>
 		}
 	{
 		(props.mediumUrl && props.mediumTitle) &&
 			<li className="smn-item">
-				<a
+				<ElementLink
 					className="network"
 					href={props.mediumUrl}
 					rel="noopener noreferrer"
 					target="_blank"
 					title={props.mediumTitle}
+					a11yText={props.mediumTitle}
 					>
 					<Icon
 						base={props.base}
 						href="/static/icons/sprite.svg#medium"
 						/>
-				</a>
+				</ElementLink>
 			</li>
 		}
 	{
 		(props.githubUrl && props.githubTitle) &&
 			<li className="smn-item">
-				<a
+				<ElementLink
 					className="network"
 					href={props.githubUrl}
 					rel="noopener noreferrer"
 					target="_blank"
 					title={props.githubTitle}
+					a11yText={props.githubTitle}
 					>
 					<Icon
 						base={props.base}
 						href="/static/icons/sprite.svg#github"
 						/>
-				</a>
+				</ElementLink>
 			</li>
 		}
 	{
