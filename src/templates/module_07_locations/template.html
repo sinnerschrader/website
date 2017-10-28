@@ -3,31 +3,31 @@ name: Locations
 ---
 <section className={helpers.classNames({'mod-locations': true, 'mod-locations-map': props.withMap})} data-locations>
 	<h2 className="h h2-2">Locations</h2>
-	<figure className="figure">
-		<input type="radio" name="location" hidden id="hamburg" className="location-check" defaultChecked />
-		<input type="radio" name="location" hidden id="berlin" className="location-check" />
-		<input type="radio" name="location" hidden id="frankfurt" className="location-check" />
-		<input type="radio" name="location" hidden id="munich" className="location-check" />
-		<input type="radio" name="location" hidden id="prague" className="location-check" />
+	<figure className="figure" role="group tablist">
+		<input type="radio" name="location" id="hamburg" className="location-check visually-hidden" title="Hamburg" role="tab" aria-controls="hamburg-panel" defaultChecked />
+		<input type="radio" name="location" id="berlin" className="location-check visually-hidden" role="tab" title="Berlin" aria-controls="berlin-panel" />
+		<input type="radio" name="location" id="frankfurt" className="location-check visually-hidden" role="tab" title="Frankfurt" aria-controls="frankfurt-panel" />
+		<input type="radio" name="location" id="munich" className="location-check visually-hidden" role="tab" title="Munich" aria-controls="munich-panel" />
+		<input type="radio" name="location" id="prague" className="location-check visually-hidden" role="tab" title="Prague" aria-controls="prague-panel" />
 
-		<ol className="locnav sctnbgclr">
+		<ol className="locnav sctnbgclr" aria-hidden="true">
 			<li className="locnav-item">
-				<label className="locnav-btn locnav-btn-berlin" htmlFor="berlin">Berlin</label>
+				<label className="locnav-btn locnav-btn-berlin" htmlFor="berlin" id="berlin-tab">Berlin</label>
 			</li>
 			<li className="locnav-item">
-				<label className="locnav-btn locnav-btn-frankfurt" htmlFor="frankfurt">Frankfurt</label>
+				<label className="locnav-btn locnav-btn-frankfurt" htmlFor="frankfurt" id="frankfurt-tab">Frankfurt</label>
 			</li>
 			<li className="locnav-item">
-				<label className="locnav-btn locnav-btn-hamburg" htmlFor="hamburg">Hamburg</label>
+				<label className="locnav-btn locnav-btn-hamburg" htmlFor="hamburg" id="hamburg-tab">Hamburg</label>
 			</li>
 			<li className="locnav-item">
-				<label className="locnav-btn locnav-btn-munich" htmlFor="munich">Munich</label>
+				<label className="locnav-btn locnav-btn-munich" htmlFor="munich" id="munich-tab">Munich</label>
 			</li>
 			<li className="locnav-item">
-				<label className="locnav-btn locnav-btn-prague" htmlFor="prague">Prague</label>
+				<label className="locnav-btn locnav-btn-prague" htmlFor="prague" id="prague-tab">Prague</label>
 			</li>
 		</ol>
-		<a
+		<ElementLink
 			data-marker="Völckersstr. 38"
 			className="map map-hamburg"
 			rel="noopener noreferrer"
@@ -42,15 +42,16 @@ name: Locations
 					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
 				].join(', ')}
 				imageSrcSet={[
-					props.base + '/static/images/contents/sinnerschrader-ham_300.jpg 300w',
-					props.base + '/static/images/contents/sinnerschrader-ham_600.jpg 600w',
-					props.base + '/static/images/contents/sinnerschrader-ham_1200.jpg 1200w'
+					props.base + '/static/sinnerschrader-ham_300.jpg 300w',
+					props.base + '/static/sinnerschrader-ham_600.jpg 600w',
+					props.base + '/static/sinnerschrader-ham_1200.jpg 1200w'
 				].join(', ')}
-				imageSrc={props.base + '/static/images/contents/sinnerschrader-ham_600.jpg'}
+				imageSrc={props.base + '/static/sinnerschrader-ham_600.jpg'}
 				ratio="1"
+				alt="Map of the location in hamburg"
 				/>
-		</a>
-		<a
+		</ElementLink>
+		<ElementLink
 			data-marker="Friedenstr. 91A"
 			className="map map-berlin"
 			rel="noopener noreferrer"
@@ -64,15 +65,16 @@ name: Locations
 					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
 				].join(', ')}
 				imageSrcSet={[
-					props.base + '/static/images/contents/sinnerschrader-ber_300.jpg 300w',
-					props.base + '/static/images/contents/sinnerschrader-ber_600.jpg 600w',
-					props.base + '/static/images/contents/sinnerschrader-ber_1200.jpg 1200w'
+					props.base + '/static/sinnerschrader-ber_300.jpg 300w',
+					props.base + '/static/sinnerschrader-ber_600.jpg 600w',
+					props.base + '/static/sinnerschrader-ber_1200.jpg 1200w'
 				].join(', ')}
-				imageSrc={props.base + '/static/images/contents/sinnerschrader-ber_600.jpg'}
+				imageSrc={props.base + '/static/sinnerschrader-ber_600.jpg'}
 				ratio="1"
+            	alt="Map of the location in berlin"
 				/>
-		</a>
-		<a
+		</ElementLink>
+		<ElementLink
 			data-marker="Schackstr. 3"
 			className="map map-munich"
 			rel="noopener noreferrer"
@@ -87,15 +89,16 @@ name: Locations
 					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
 				].join(', ')}
 				imageSrcSet={[
-					props.base + '/static/images/contents/sinnerschrader-muc_300.jpg 300w',
-					props.base + '/static/images/contents/sinnerschrader-muc_600.jpg 600w',
-					props.base + '/static/images/contents/sinnerschrader-muc_1200.jpg 1200w'
+					props.base + '/static/sinnerschrader-muc_300.jpg 300w',
+					props.base + '/static/sinnerschrader-muc_600.jpg 600w',
+					props.base + '/static/sinnerschrader-muc_1200.jpg 1200w'
 				].join(', ')}
-				imageSrc={props.base + '/static/images/contents/sinnerschrader-muc_600.jpg'}
+				imageSrc={props.base + '/static/sinnerschrader-muc_600.jpg'}
 				ratio="1"
+            	alt="Map of the location in munich"
 				/>
-		</a>
-		<a
+		</ElementLink>
+		<ElementLink
 			data-marker="U Pergamenky 1522/2"
 			className="map map-prague"
 			rel="noopener noreferrer"
@@ -109,15 +112,16 @@ name: Locations
 					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
 				].join(', ')}
 				imageSrcSet={[
-					props.base + '/static/images/contents/sinnerschrader-pra_300.jpg 300w',
-					props.base + '/static/images/contents/sinnerschrader-pra_600.jpg 600w',
-					props.base + '/static/images/contents/sinnerschrader-pra_1200.jpg 1200w'
+					props.base + '/static/sinnerschrader-pra_300.jpg 300w',
+					props.base + '/static/sinnerschrader-pra_600.jpg 600w',
+					props.base + '/static/sinnerschrader-pra_1200.jpg 1200w'
 				].join(', ')}
-				imageSrc={props.base + '/static/images/contents/sinnerschrader-pra_600.jpg'}
+				imageSrc={props.base + '/static/sinnerschrader-pra_600.jpg'}
 				ratio="1"
+            	alt="Map of the location in prague"
 				/>
-		</a>
-		<a
+		</ElementLink>
+		<ElementLink
 			data-marker="Hanauer Landstr. 181"
 			className="map map-frankfurt"
 			rel="noopener noreferrer"
@@ -131,15 +135,19 @@ name: Locations
 					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
 				].join(', ')}
 				imageSrcSet={[
-					props.base + '/static/images/contents/sinnerschrader-fra_300.jpg 300w',
-					props.base + '/static/images/contents/sinnerschrader-fra_600.jpg 600w',
-					props.base + '/static/images/contents/sinnerschrader-fra_1200.jpg 1200w'
+					props.base + '/static/sinnerschrader-fra_300.jpg 300w',
+					props.base + '/static/sinnerschrader-fra_600.jpg 600w',
+					props.base + '/static/sinnerschrader-fra_1200.jpg 1200w'
 				].join(', ')}
-				imageSrc={props.base + '/static/images/contents/sinnerschrader-fra_600.jpg'}
+				imageSrc={props.base + '/static/sinnerschrader-fra_600.jpg'}
 				ratio="1"
+            	alt="Map of the location in frankfurt"
 				/>
-		</a>
-		<div className="location-address location-hamburg">
+		</ElementLink>
+		<div className="location-address location-hamburg"
+			id="hamburg-panel"
+			role="tabpanel"
+			aria-labelledby="hamburg-tab">
 			<h3 className="city h2-1">Hamburg</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
@@ -153,8 +161,8 @@ name: Locations
 				SinnerSchrader Swipe
 			</a>
 			<p className="copy">
-				Pilatuspool 2<br />
-				20355 Hamburg<br />
+				Völckersstr. 14-20<br />
+				22765 Hamburg<br />
 				+49 40 60 94 56-40<br />
 				<a href="mailto:swipe@sinnerschrader.com" className="h4 link">swipe@sinnerschrader.com</a>
 			</p>
@@ -169,7 +177,10 @@ name: Locations
 				<a href="mailto:commerce@sinnerschrader.com" className="h4 link">commerce@sinnerschrader.com</a>
 			</p>
 		</div>
-		<div className="location-address location-berlin" data-location="berlin">
+		<div className="location-address location-berlin" data-location="berlin"
+			id="berlin-panel"
+			role="tabpanel"
+			aria-labelledby="berlin-tab">
 			<h3 className="city  h2-1">Berlin</h3>
 			<h4 className="h4">SinnerSchrader Swipe</h4>
 			<p className="copy">
@@ -179,7 +190,10 @@ name: Locations
 				<a href="mailto:swipe@sinnerschrader.com" className="h4 link">swipe@sinnerschrader.com</a>
 			</p>
 		</div>
-		<div className="location-address location-frankfurt">
+		<div className="location-address location-frankfurt"
+			id="frankfurt-panel"
+			role="tabpanel"
+			aria-labelledby="frankfurt-tab">
 			<h3 className="city  h2-1">Frankfurt</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
@@ -189,7 +203,10 @@ name: Locations
 				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
 			</p>
 		</div>
-		<div className="location-address location-munich">
+		<div className="location-address location-munich"
+			id="munich-panel"
+			role="tabpanel"
+			aria-labelledby="munich-tab">
 			<h3 className="city  h2-1">Munich</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
@@ -199,7 +216,10 @@ name: Locations
 				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
 			</p>
 		</div>
-		<div className="location-address location-prague">
+		<div className="location-address location-prague"
+			id="prague-panel"
+			role="tabpanel"
+			aria-labelledby="prague-tab">
 			<h3 className="city h2-1">Prague</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">

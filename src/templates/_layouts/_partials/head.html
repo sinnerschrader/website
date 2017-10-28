@@ -2,16 +2,18 @@
 name: Head
 ---
 <head>
-	{/*<!-- Google Tag Manager -->*/}
-	<script dangerouslySetInnerHTML={helpers.googleTagManager()} />
-	{/*<!-- End Google Tag Manager -->*/}
+	<link rel="preconnect" href="https://sinnerschrader.jobs"/>
+	<link rel="preconnect" href="https://sinnerschrader.news"/>
+	<link rel="preload" href="https://fonts.sinnerschrader.com/fonts/noe-text-regular.woff" as="font" type="font/woff"/>
+	<link rel="preload" href="https://fonts.sinnerschrader.com/fonts/maison-neue-light.woff2" as="font" type="font/woff2"/>
+	<link rel="preload" href="https://fonts.sinnerschrader.com/fonts/maison-neue-regular.woff2" as="font" type="font/woff2"/>
+	<link rel="stylesheet" href="https://fonts.sinnerschrader.com/sinnerschrader.com.min.css"/>
 	<link rel="canonical" href={props.host + props.href} />
 	<meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
-	<meta charSet="UTF-8" />
+	<meta charset="UTF-8" />
 	<title>{props.title || 'SinnerSchrader'}</title>
 	<meta name="format-detection" content="telephone=no" />
-	<meta name="viewport" content="width=device-width,user-scalable=no" />
-
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="language" content="en" />
 	<meta
 		name="description"
@@ -21,41 +23,30 @@ name: Head
 		].join(' ')}
 		/>
 	<meta name="robots" content="index,follow" />
-
 	<meta property="fb:page_id" content="358531227139" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="SinnerSchrader" />
-	<meta property="og:description" content="Great products change everything. Behaviour. Business. Markets. That’s why we build transformational products." />
+	<meta
+		property="og:description"
+		content={[
+			'Great products change everything. Behaviour. Business. Markets. ',
+			'That’s why we build transformational products.'
+			].join('')}
+		/>
 	<meta property="og:url" content={props.host + props.href} />
-	<meta property="og:image" content="https://sinnerschrader.com/static/images/sinnerschrader.png" />
-
+	<meta property="og:image" content="https://sinnerschrader.com/static/sinnerschrader.png" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:url" content={props.host + props.href} />
 	<meta name="twitter:site" content="@sinnerschrader" />
 	<meta name="twitter:creator" content="@sinnerschrader" />
 	<meta name="twitter:title" content="SinnerSchrader" />
-	<meta name="twitter:image" content="https://sinnerschrader.com/static/images/sinnerschrader_square.png" />
+	<meta name="twitter:image" content="https://sinnerschrader.com/static/sinnerschrader_square.png" />
 	<meta
 		name="twitter:description"
 		content={[
 			`Great products change everything. Behaviour. Business. Markets. `,
 			`That’s why we build transformational products.`
 		].join(' ')}
-		/>
-
-	<link rel="preload" href={props.base + '/static/fonts/maisonweb-regular.woff2'} as="font" type="font/woff2"/>
-	<link rel="preload" href={props.base + '/static/css/fonts.css'} as="style"/>
-	<link rel="preload" href={props.base + '/static/css/app.css'} as="style"/>
-	<link rel="preload" href={props.base + '/static/css/scoped.css'} as="style"/>
-	<link rel="dns-prefetch" href={props.host}/>
-	<link rel="preconnect" href={props.host}/>
-	<link rel="preconnect" href="https://sinnerschrader.jobs"/>
-	<link rel="preconnect" href="https://sinnerschrader.news"/>
-
-	<link
-		rel="stylesheet"
-		href={props.base + '/static/css/fonts.css'}
-		media="screen,print"
 		/>
 	<link
 		rel="stylesheet"
@@ -69,62 +60,22 @@ name: Head
 		/>
 	<link
 		rel="icon"
-		href={props.base + '/static/images/favicons/48x48.png'}
+		href={props.base + '/static/48x48.png'}
 		sizes="48x48"
 		/>
 	<link
-		rel="apple-touch-icon"
-		href={props.base + '/static/images/favicons/57x57.png'}
-		sizes="57x57"
-		/>
-	<link
-		rel="apple-touch-icon"
-		href={props.base + '/static/images/favicons/72x72.png'}
-		sizes="72x72"
-		/>
-	<link
-		rel="apple-touch-icon"
-		href={props.base + '/static/images/favicons/76x76.png'}
-		sizes="76x76"
-		/>
-	<link
 		rel="icon"
-		href={props.base + '/static/images/favicons/96x96.png'}
+		href={props.base + '/static/96x96.png'}
 		sizes="96x96"
 		/>
 	<link
-		rel="apple-touch-icon"
-		href={props.base + '/static/images/favicons/114x114.png'}
-		sizes="114x114"
-		/>
-	<link
-		rel="apple-touch-icon"
-		href={props.base + '/static/images/favicons/120x120.png'}
-		sizes="120x120"
-		/>
-	<link
-		rel="apple-touch-icon"
-		href={props.base + '/static/images/favicons/144x144.png'}
-		sizes="144x144"
-		/>
-	<link
-		rel="apple-touch-icon"
-		href={props.base + '/static/images/favicons/152x152.png'}
-		sizes="152x152"
-		/>
-	<link
-		rel="apple-touch-icon"
-		href={props.base + '/static/images/favicons/180x180.png'}
-		sizes="180x180"
-		/>
-	<link
 		rel="icon"
-		href={props.base + '/static/images/favicons/192x192.png'}
+		href={props.base + '/static/192x192.png'}
 		sizes="192x192"
 		/>
 	<link
 		rel="shortcut icon"
-		href={props.base + '/static/images/favicons/favicon.ico'}
+		href={props.base + '/static/favicon.ico'}
 		type="image/x-icon"
 		/>
 	{props.children}

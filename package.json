@@ -13,31 +13,28 @@
     "node": ">=6"
   },
   "scripts": {
-    "start": "npm run serve",
-    "watch": "npm run build:css && (npm run build:watch:js & npm run build:watch:css & npm run build:watch:pages)",
     "auth": "bash ./scripts/auth.sh",
-    "prebuild": "mkdirp docs && ncp ./CNAME ./docs/CNAME",
-    "build": "npm run build:all",
+    "build:all": "npm run build:js && npm run build:css && npm run build:pages && npm run build:svg",
     "build:ci": "bash ./scripts/build-ci.sh",
-    "build:all": "bash ./scripts/prepare-static.sh && npm run taint:fonts && npm run build:js && npm run build:css && npm run build:pages && npm run build:svg",
-    "build:svg": "npm run build:svg:opt && npm run build:svg:sprite",
+    "build:css:app": "mkdirp docs/static/css && lessc --strict-math=on --clean-css='advanced' --autoprefix='last 2 versions, not ie < 11, last 2 ChromeAndroid versions, last 2 Android versions, last 1 ExplorerMobile versions' src/css/app.less > docs/static/css/app.css",
+    "build:css": "npm run build:css:app",
+    "build:js": "mkdirp docs/static/js && browserify src/js/index.js --outfile docs/static/js/app.js",
+    "build:pages": "schlump --src-statics static --dest docs --dest-statics docs/static --var.host=https://sinnerschrader.com --redirect-map ./redirects.json --scoped-css=./docs/static/css/scoped.css --css-variables",
     "build:svg:opt": "rm -f docs/static/icons/*.svg && svgo --disable=removeUselessDefs -f src/icons -o docs/static/icons/src",
     "build:svg:sprite": "svg-sprite-generate -d docs/static/icons/src -o docs/static/icons/sprite.svg && rm -rf docs/static/icons/src",
-    "build:js": "mkdirp docs/static/js && browserify --entry src/js/main.js --outfile docs/static/js/app.js",
-    "build:css": "npm run build:css:app && npm run build:css:fonts",
-    "build:css:app": "mkdirp docs/static/css && lessc --strict-math=on --clean-css='advanced' --autoprefix='last 2 versions, not ie < 11, last 2 ChromeAndroid versions, last 2 Android versions, last 1 ExplorerMobile versions' src/css/app.less > docs/static/css/app.css",
-    "build:css:fonts": "mkdirp docs/static/css && lessc --strict-math=on --clean-css='advanced' --autoprefix='last 2 versions, not ie < 11, last 2 ChromeAndroid versions, last 2 Android versions, last 1 ExplorerMobile versions' src/css/fonts.less > docs/static/css/fonts.css",
-    "build:pages": "schlump --src-statics static $STATICS --dest docs --dest-statics docs/static --var.host=https://sinnerschrader.com --redirect-map ./redirects.json --scoped-css=./docs/static/css/scoped.css --css-variables",
-    "postbuild:pages": "postcss --use autoprefixer --autoprefixer.browsers 'last 2 versions, not ie < 11, last 2 ChromeAndroid versions, last 2 Android versions, last 1 ExplorerMobile versions' --use cssnano --local-plugins --replace ./docs/static/css/scoped.css",
-    "build:watch:js": "chokidar \"src/js/**/*\" --initial --command \"npm run build:js\"",
+    "build:svg": "npm run build:svg:opt && npm run build:svg:sprite",
     "build:watch:css": "chokidar \"src/**/*.less\" --initial --command \"npm run build:css\"",
+    "build:watch:js": "chokidar \"src/js/**/*\" --initial --command \"npm run build:js\"",
     "build:watch:pages": "chokidar \"src/pages/**/*\" \"src/templates/**/*.html\" \"src/helpers/**/*\" \"static/**\" --initial --command \"npm run build:pages\"",
-    "deploy": "bash ./scripts/deploy.sh",
+    "build": "npm run build:all && npm run minify",
     "deploy:staging": "bash ./scripts/deploy-staging.sh",
+    "deploy": "bash ./scripts/deploy.sh",
+    "minify": "imagemin static/images/* --out-dir=docs/static --plugin=jpegoptim --plugin=mozjpeg --plugin=jpegtran --plugin=pngout",
+    "postbuild:pages": "postcss --use autoprefixer --autoprefixer.browsers 'last 2 versions, not ie < 11, last 2 ChromeAndroid versions, last 2 Android versions, last 1 ExplorerMobile versions' --use cssnano --local-plugins --replace ./docs/static/css/scoped.css",
+    "prebuild": "mkdirp docs && ncp ./CNAME ./docs/CNAME",
     "serve": "browser-sync start --config bs-config.js --serveStatic docs --files docs",
-    "taint": "bash ./scripts/prepare-static.sh && rm -rf static/fonts && mkdir static/fonts && npm run taint:fonts",
-    "taint:fonts": "ncp $(node -e \"console.log(require('website-static'))\")/fonts/ static/fonts",
-    "clean": "git checkout -- static && git clean -d -f static"
+    "start": "npm run serve",
+    "watch": "npm run build:css && (npm run build:watch:js & npm run build:watch:css & npm run build:watch:pages)"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.3",
@@ -56,6 +53,11 @@
     "github-remote-commit": "^1.0.1",
     "globby": "^6.0.0",
     "gray-matter": "^2.0.2",
+    "imagemin-cli": "^3.0.0",
+    "imagemin-jpegoptim": "^5.0.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-pngout": "^2.0.0",
     "json": "^9.0.4",
     "less": "2.7.2",
     "less-plugin-autoprefix": "1.5.1",
@@ -76,7 +78,8 @@
     "watchify": "^3.7.0",
     "xo": "^0.18.0"
   },
-  "optionalDependencies": {
-    "website-static": "github:sinnerschrader/website-static#627c9cc804017c1f9e1641094017d117e820903a"
+  "dependencies": {
+    "intersection-observer-polyfill": "^0.1.0",
+    "lory.js": "^2.2.1"
   }
 }

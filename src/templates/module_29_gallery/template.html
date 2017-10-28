@@ -1,33 +1,24 @@
 ---
 name: Gallery
 ---
+
 <section className="mod-gallery">
-	<div className="frame">
-		<ul className="images" style="transform: translate(-100%)">
-			{
-			props.children &&
-				React.Children.map(props.children, child => (
-					<li className="item">
-						<figure className="figure">
-							<ElementImage
-								width={1300}
-								height={740}
-								bgcolor="B3CFCF"
-								fgcolor="23364F"
-								/>
-							<figcaption className="caption h2-1">Lorem ipsum sit dolor amet</figcaption>
-						</figure>
-					</li>
-				))
-			}
+	<div className="slider" data-js="simple-dots">
+		<div className="frame js_frame">
+			<ul className="slides js_slides">
+				{
+				props.children &&
+					React.Children.map(props.children, child => (
+						<li data-js="slide">
+							<div className="slide__content">
+								{child}
+							</div>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<ul className="dots" data-js="dots">
 		</ul>
 	</div>
-	<div className="controls">
-		<li className="prev">Zurück</li>
-		<li className="next">Vor</li>
-	</div>
-	<div className="info">Info</div>
-	<ElementPager>
-		{props.children}
-	</ElementPager>
 </section>

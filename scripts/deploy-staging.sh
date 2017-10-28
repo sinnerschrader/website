@@ -5,6 +5,7 @@
 # - TRAVIS_COMMIT
 set -e
 set -x
+set -u
 
 if [ "$TRAVIS" != "true" ]; then
 	echo "Skipping deploy - this is not running on Travis; skipping."
@@ -39,7 +40,7 @@ DEPLOYMENT_URL="https://sinnerschrader.github.io/website-staging/${TRAVIS_PULL_R
 DEPLOYMENT_LINK="[$DEPLOYMENT_ID]($DEPLOYMENT_URL)"
 
 git clone "https://$GH_TOKEN@github.com/sinnerschrader/website-staging.git" .stage
-cp -r ./docs ./.stage/$TRAVIS_PULL_REQUEST
+cp -a ./docs/. ./.stage/$TRAVIS_PULL_REQUEST/
 
 cd .stage/
 git add --all .

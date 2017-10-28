@@ -4,14 +4,14 @@ name: Links
 <section className="mod-links">
 	<div className="conf">
 		<h2 className="h h4">Conferences</h2>
-		<a href="http://nextconf.eu/" className="conf-logo" target="_blank" rel="noopener noreferrer">
-			<img src={props.base + '/static/images/logos/next.svg'} title="Next Conf EU" width="60" height="61" />
-		</a>
-		<a href="http://www.jsconf.eu" className="conf-logo" target="_blank" rel="noopener noreferrer">
-			<img src={props.base + '/static/images/logos/js.svg'} title="JSConf EU" width="40" height="40" />
-		</a>
+		<ElementLink href="http://nextconf.eu/" className="conf-logo" target="_blank" rel="noopener noreferrer" hiddenText="Next Conf EU">
+			<img src={props.base + '/static/next.svg'} alt="" title="Next Conf EU" width="102" height="40" />
+		</ElementLink>
+		<ElementLink href="http://www.jsconf.eu" className="conf-logo" target="_blank" rel="noopener noreferrer" hiddenText="JSConf EU">
+			<img src={props.base + '/static/js.svg'} alt="" title="JSConf EU" width="40" height="40" />
+		</ElementLink>
 	</div>
-	<ul className="linklist">
+	<ul className="linklist" role="contentinfo">
 		<li className="linklist-item">
 			<a href={props.base + '/contact/'} className="linklist-link">
 				<Icon
