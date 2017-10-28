@@ -130,7 +130,9 @@
 .nav {
 	position: fixed;
 	width: 100%;
-	height: 100%;
+	// Set height to 200vh to ensure that the navigation background 
+	// doesn't cut off on scrolling when browser navigation bars shrink
+	height: 200vh;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -260,7 +262,7 @@
 		}
 	}
 	~ .nav {
-		transform: none;
+		transform: translate3d(0,0,0);
 		transition: background-color 300ms ease-in-out;
 		background-color: fadeout(#16181e, 10%);
 		visibility: visible;
