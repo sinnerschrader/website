@@ -3,6 +3,22 @@
 		width: 100%;
 		height: auto;
 	}
+	&.border-top {
+		border-top: 2px solid;
+
+		[data-theme=white] & {
+			border-color: var(--s2-white);
+		}
+		[data-theme=green] & {
+			border-color: var(--s2-green);
+		}
+		[data-theme=blue] & {
+			border-color: var(--s2-blue);
+		}
+		[data-theme=red] & {
+			border-color: var(--s2-red);
+		}
+	}
 }
 
 

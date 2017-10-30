@@ -1,7 +1,7 @@
 ---
 name: Image
 ---
-<section className="mod-image">
+<section className={helpers.classNames({'mod-image': true, 'border-top': props.borderTop})}>
 	<ResponsiveImage
 		imageSrc={props.imageSrcSetM}
 		imageSrcSetS={props.imageSrcSetS}
