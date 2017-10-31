@@ -1,0 +1,6 @@
+# Hey there! Please follow responsible disclosure.
+
+Contact: security@sinnerschrader.com
+Encryption: https://pgp.mit.edu/pks/lookup?op=get&search=0x51E4E22B107D719A
+Disclosure: Full
+
