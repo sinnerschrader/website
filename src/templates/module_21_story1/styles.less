@@ -24,15 +24,24 @@
 		margin-bottom: @s2-moduleGap-s-2;
 	}
 
+	.buttonrow {
+		margin-top: @s2-moduleGap-s-2;
+	}
+
 	@media @s2-mq-window-tablet {
 		padding: @s2-moduleGap-m-2 @s2-moduleGap-m-1 @s2-moduleGap-m-3;
 		.h {
 			margin-bottom: @s2-moduleGap-m-2;
 			max-width: 700px;
 		}
-		.copy {
+		.copy,
+		.buttonrow {
 			padding-left:  @s2-moduleGap-m-2;
 			max-width: 800px;
+		}
+
+		.buttonrow {
+			margin-top: @s2-moduleGap-m-2;
 		}
 	}
 
@@ -42,10 +51,15 @@
 			width: 60%;
 			margin-bottom: auto 0 @s2-moduleGap-l-2 0;
 		}
-		.copy {
+		.copy,
+		.buttonrow {
 			width: 60%;
 			margin: 0 0 0 auto;
 			padding-left:  0;
+		}
+
+		.buttonrow {
+			margin-top: @s2-moduleGap-l-2;
 		}
 	}
 }
