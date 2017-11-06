@@ -18,4 +18,17 @@ name: Story1
 			text={props.copy}
 			/>
 	}
+	{
+		(props.buttonLabel && props.buttonHref) &&
+		<div className="buttonrow">
+			<ElementButton
+				label={props.buttonLabel}
+				href={props.buttonHref}
+				target={props.buttonTarget}
+				buttonBg={props.buttonBg}
+				invert={props.buttonInvert}
+				theme={props.theme}
+			/>
+		</div>
+	}
 </section>
