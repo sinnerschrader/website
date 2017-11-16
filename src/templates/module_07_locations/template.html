@@ -1,6 +1,14 @@
 ---
 name: Locations
 ---
+
+{/*
+	Maps source img can be generated via:
+	https://api.mapbox.com/styles/v1/mapbox/light-v9/static/14.4869078,50.1049607,16.05,0,0/1200x1200?access_token=pk.eyJ1Ijoic2thY3oiLCJhIjoiY2phMmIza2RvM2FmdDJycGNya28yMTFyMiJ9.pXFm2_50vyIgzsfYyxW69Q
+
+	Docs: https://www.mapbox.com/api-documentation/?language=cURL#static
+*/}
+
 <section className={helpers.classNames({'mod-locations': true, 'mod-locations-map': props.withMap})} data-locations>
 	<h2 className="h h2-2">Locations</h2>
 	<figure className="figure" role="group tablist">
@@ -99,10 +107,10 @@ name: Locations
 				/>
 		</ElementLink>
 		<ElementLink
-			data-marker="U Pergamenky 1522/2"
+			data-marker="Drahobejlova 2400/15"
 			className="map map-prague"
 			rel="noopener noreferrer"
-			href="https://www.google.de/maps/place/SinnerSchrader/@50.1084454,14.4526135,15z"
+			href="https://www.google.de/maps/place/Drahobejlova+2400%2F15,+190+00+Praha+9-Libe%C5%88/@50.1050115,14.4846621,17z/data=!3m1!4b1!4m5!3m4!1s0x470becb2d95bdb41:0xf6abbe7239a5b55!8m2!3d50.1050115!4d14.4868508"
 			target="_blank"
 			>
 			<ResponsiveImage
@@ -230,9 +238,9 @@ name: Locations
 			<h3 className="city h2-1">Prague</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
-				U Pergamenky 1522/2<br />
-				Czech Republic 7 Prague<br />
-				+420 77 67 74 727<br />
+				Drahobejlova 2400/15<br />
+				Czech Republic Prague 9<br />
+				+420 776 16 32 58<br />
 				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
 			</p>
 		</div>
