@@ -1,7 +1,7 @@
-# sinnerschrader-website [![sinnerschrader.com status](https://img.shields.io/badge/status-live-green.svg?style=flat-square)](https://sinnerschrader.com/)
+# website [![sinnerschrader.com status](https://img.shields.io/badge/status-live-green.svg?style=flat-square)](https://sinnerschrader.com/)
 
 [![Made by SinnerSchrader](https://img.shields.io/badge/made%20by-SinnerSchrader-orange.svg?style=flat-square)](https://sinnerschrader.com/)
-[![Travis](https://img.shields.io/travis/sinnerschrader/sinnerschrader-website.svg?style=flat-square)](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
+[![Travis](https://img.shields.io/travis/sinnerschrader/website.svg?style=flat-square)](https://travis-ci.org/sinnerschrader/website)
 [![standard-readme compliant](https://img.shields.io/badge/readme-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
 > :earth_africa: Source project for https://www.sinnerschrader.com
@@ -14,10 +14,10 @@ This repository contains
 
 1. [The sources](./src) required to build the markup for `sinnerschrader.com`
 2. [The generated content](./docs) deployed to `sinnerschrader.com`
-3. Sources for a Continuous Integration setup on [TravisCI](https://travis-ci.org/sinnerschrader/sinnerschrader-website)
+3. Sources for a Continuous Integration setup on [TravisCI](https://travis-ci.org/sinnerschrader/website)
 
 ---
-Static assets are placeholders. The unlicensable content assets are available at [sinnerschrader/sinnerschrader-website-static](https://github.com/sinnerschrader/sinnerschrader-website-static)
+Static assets are placeholders. The unlicensable content assets are available at [sinnerschrader/website-static](https://github.com/sinnerschrader/website-static)
 
 ## Install
 
@@ -25,8 +25,8 @@ This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go che
 
 
 ```sh
-$ git clone https://github.com/sinnerschrader/sinnerschrader-website.git
-cd sinnerschrader-website
+$ git clone https://github.com/sinnerschrader/website.git
+cd website
 npm install
 ```
 
@@ -38,7 +38,6 @@ setup like this:
 
 ```sh
 # In first terminal session
-$ npm run taint
 $ npm run watch
 
 # In second terminal session
@@ -50,16 +49,16 @@ $ npm start
 
 ## Contribute
 
-Feel free to dive in! [Open an issue](https://github.com/sinnerschrader/sinnerschrader-website/issues/new) or submit a [Pull Request](https://github.com/sinnerschrader/sinnerschrader-website/pull/new/master). :heart:
+Feel free to dive in! [Open an issue](https://github.com/sinnerschrader/website/issues/new) or submit a [Pull Request](https://github.com/sinnerschrader/website/pull/new/master). :heart:
 
-`sinnerschrader-website` follows the [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) Code of Conduct.
+`website` follows the [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) Code of Conduct.
 
 You do not need to be a techie to help out – there is the superawesome Github Interface to edit files! Learn about this at the [Github Help](https://help.github.com/articles/editing-files-in-your-repository/).
 
 ## Browser matrix
 
 We do our best to make sinnerschrader.com work on all browsers. When you see something
-fishy with a OS / browser combination below, [let us know](https://github.com/sinnerschrader/sinnerschrader-website/issues/new).
+fishy with a OS / browser combination below, [let us know](https://github.com/sinnerschrader/website/issues/new).
 
 * Chrome `last 2 version`
 * Chrome Mobile `last 2 versions`
