@@ -4,7 +4,13 @@
 	padding: 0 (@s2-moduleGap-l / 2) @s2-moduleGap-s @s2-moduleGap-l;
 	width: 100%;
 	max-width: 355px;
-	background: linear-gradient(to bottom, transparent 0%, transparent (@smnDim*4), @s2-lightgrey (@smnDim*4), @s2-lightgrey 100%);
+	background: linear-gradient(
+		to bottom,
+		transparent 0%,
+		transparent (@smnDim*4),
+		@s2-lightgrey (@smnDim*4),
+		@s2-lightgrey 100%
+	);
 
 	.teaser {
 		margin-bottom: (@s2-moduleGap-s*.5);
@@ -13,8 +19,15 @@
 	.figcaption {
 		color: @s2-darkgrey2;
 		.sub {
+			font-size: 20px;
+			line-height: 32px;
 			color: @s2-black;
-			line-height: 1.5;
+			letter-spacing: 0.6px;
+
+			@media @s2-mq-window-desktop {
+				font-size: 24px;
+				line-height: 40px;
+			}
 		}
 	}
 
@@ -32,5 +45,4 @@
 			margin-bottom: 0;
 		}
 	}
-	
 }
