@@ -1,5 +1,5 @@
----
-name: ElementCard
+--- 
+name: ElementCard 
 ---
 <div className="card">
 	<figure role="group">
@@ -12,12 +12,11 @@ name: ElementCard
 				/>
 		</div>
 
-		{
-		props.name && props.jobTitle &&
-			<figcaption className="figcaption">
-				<h3 className="sub h5">{props.name}</h3>
-				<p className="scopy">{props.jobTitle}</p>
-			</figcaption>
+		{ props.name && props.jobTitle &&
+		<figcaption className="figcaption">
+			<h3 className="sub h5">{props.name}</h3>
+			<p className="scopy">{props.jobTitle}</p>
+		</figcaption>
 		}
 	</figure>
 	<SocialMediaNetwork
