@@ -2,14 +2,19 @@
 name: CopyBlock
 ---
 <section className="mod-copy-block">
-	<Headline
-		level={props.level}
-		className="h h3"
-		text={props.headline}
-		/>
-	<Text
-		Tagname="p"
-		className="copy"
-		text={props.copy}
-		/>
+	{props.headline &&
+		<Headline
+			level={props.level}
+			className="h h3"
+			text={props.headline}
+			/>
+	}
+	{props.copy &&
+		<Text
+			Tagname="p"
+			className="copy"
+			text={props.copy}
+			/>
+	}
+	{props.children}
 </section>
