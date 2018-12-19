@@ -4,10 +4,7 @@ name: Head
 <head>
 	<link rel="preconnect" href="https://sinnerschrader.jobs"/>
 	<link rel="preconnect" href="https://sinnerschrader.news"/>
-	<link rel="preload" href="https://fonts.sinnerschrader.com/fonts/noe-text-regular.woff" as="font" type="font/woff"/>
-	<link rel="preload" href="https://fonts.sinnerschrader.com/fonts/maison-neue-light.woff2" as="font" type="font/woff2"/>
-	<link rel="preload" href="https://fonts.sinnerschrader.com/fonts/maison-neue-regular.woff2" as="font" type="font/woff2"/>
-	<link rel="stylesheet" href="https://fonts.sinnerschrader.com/sinnerschrader.com.min.css"/>
+	<link rel="stylesheet" href="https://d34ev2ieocxh04.cloudfront.net/sinnerschrader.com.css"/>
 	<link rel="canonical" href={props.host + props.href} />
 	<meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
 	<meta httpEquiv="Content-Security-Policy" content={[
@@ -16,14 +13,14 @@ name: Head
 		`child-src www.googletagmanager.com`,
 		`connect-src 'self' ${props.host}`,
 		`default-src 'self' ${props.host}`,
-		`font-src https://fonts.sinnerschrader.com`,
+		`font-src https://d34ev2ieocxh04.cloudfront.net/`,
 		`form-action 'none'`,
 		`img-src 'self' ${props.host}`,
 		`manifest-src 'none'`,
 		`media-src 'self' ${props.host}`,
 		`object-src 'none'`,
 		`script-src 'self' ${props.host}`,
-		`style-src 'self' ${props.host} https://fonts.sinnerschrader.com 'unsafe-inline'`
+		`style-src 'self' ${props.host} https://d34ev2ieocxh04.cloudfront.net/ 'unsafe-inline'`
 		].join('; ')} />
 	<meta charSet="UTF-8" />
 	<title>{props.title || 'SinnerSchrader'}</title>
