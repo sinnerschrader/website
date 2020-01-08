@@ -1,0 +1,575 @@
+---
+name: Roadshow
+---
+
+{/*
+	Maps source img can be generated via:
+	https://api.mapbox.com/styles/v1/mapbox/light-v9/static/50.1104432,8.7084437,17,0,0/1200x1200?access_token=pk.eyJ1Ijoic2thY3oiLCJhIjoiY2phMmIza2RvM2FmdDJycGNya28yMTFyMiJ9.pXFm2_50vyIgzsfYyxW69Q
+
+	Docs: https://www.mapbox.com/api-documentation/?language=cURL#static
+*/}
+
+<section className={helpers.classNames({'mod-roadshow': true, 'mod-locations-map': props.withMap})} data-locations>
+
+	<figure className="figure" role="group tablist">
+		<input type="radio" name="location" id="hamburg" className="location-check visually-hidden" title="Hamburg" role="tab" aria-controls="hamburg-panel" defaultChecked />
+		<input type="radio" name="location" id="berlin" className="location-check visually-hidden" role="tab" title="Berlin" aria-controls="berlin-panel" />
+		<input type="radio" name="location" id="frankfurt" className="location-check visually-hidden" role="tab" title="Frankfurt" aria-controls="frankfurt-panel" />
+		<input type="radio" name="location" id="munich" className="location-check visually-hidden" role="tab" title="Munich" aria-controls="munich-panel" />
+		<input type="radio" name="location" id="prague" className="location-check visually-hidden" role="tab" title="Prague" aria-controls="prague-panel" />
+		<input type="radio" name="location" id="dortmund" className="location-check visually-hidden" role="tab" title="Dortmund" aria-controls="dortmund-panel" />
+
+		<ol className="locnav sctnbgclr" aria-hidden="true">
+			<li className="locnav-item">
+				<label className="locnav-btn locnav-btn-berlin" htmlFor="berlin" id="berlin-tab">Berlin</label>
+			</li>
+			<li className="locnav-item">
+				<label className="locnav-btn locnav-btn-frankfurt" htmlFor="frankfurt" id="frankfurt-tab">Frankfurt</label>
+			</li>
+			<li className="locnav-item">
+				<label className="locnav-btn locnav-btn-hamburg" htmlFor="hamburg" id="hamburg-tab">Hamburg</label>
+			</li>
+			<li className="locnav-item">
+				<label className="locnav-btn locnav-btn-munich" htmlFor="munich" id="munich-tab">Munich</label>
+			</li>
+			<li className="locnav-item">
+				<label className="locnav-btn locnav-btn-prague" htmlFor="prague" id="prague-tab">Prague</label>
+			</li>
+			<li className="locnav-item">
+				<label className="locnav-btn locnav-btn-dortmund" htmlFor="dortmund" id="dortmund-tab">Dortmund</label>
+			</li>
+		</ol>
+		<div className="timetable timetable-berlin"
+			id="berlin-timetable"
+			role="tabpanel"
+			aria-labelledby="berlin-tab">
+			<h2 className="h h2-2">Meetup am 30.02.2020</h2>
+			<p className="intent-content">Join us at at the co.up on the ........ </p>
+			<p className="intent-content">please RSVP <a className="sctntxtclr" rel="noopener norefferer" target="_blank" href="https://meetup.com">here</a></p>
+			<h3  className="h h3">Schedule</h3>
+			<dl>
+				<dt className="sctntxtclr">18:30</dt>
+				<dd>🏢 Doors open</dd>
+				<dt className="sctntxtclr">19:00</dt>
+				<dd>👋 Welcome & Housekeeping</dd>
+				<div>Optional more Info</div>
+				<dt className="sctntxtclr">19:05</dt>
+				<dd>🎤 Software Development at agencies for clients by Holger Blank</dd>
+				<dt className="sctntxtclr">19:30</dt>
+				<dd>🎤 Machine Learning Music (& Art)</dd>
+				<div>Optional more Info about this amazing talk by Tamara Kis</div>
+				<dt className="sctntxtclr">20:00</dt>
+				<dd>⏸ Break - enjoy some fresh air or nice conversations</dd>
+				<dt className="sctntxtclr">20:15</dt>
+				<dd>🎤 You can’t read this sentence - A11y automation</dd>
+				<div>Optional more Info about this amazing talk by Mauricio Palma</div>
+				<dt className="sctntxtclr">20:45</dt>
+				<dd>🗣 Q&A Session with speakers</dd>
+				<dt className="sctntxtclr">21:00</dt>
+				<dd>👋 Farwell & networking</dd>
+				<dt className="sctntxtclr">21:45</dt>
+				<dd>🏢 Doors closed</dd>
+			</dl>
+			<h3  className="h h3">Food and Beverage</h3>
+			<p>
+				We will provide snacks, water, soft drinks, Mate, wine and beer.
+			</p>
+			<h3  className="h h3">Code of Conduct</h3>
+			<p>
+				🚨 SinnerSchrader is committed to providing a harassment-free event experience for everyone.
+				All participants are expected to read and abide by the
+				<a href="http://berlincodeofconduct.org/" rel="noopener noreferrer" target="_blank">http://berlincodeofconduct.org/</a>
+			</p>
+			<h3  className="h h3">Any Questions?</h3>
+			<p>
+				Feel free to get in touch with Feli: <a href="mailto:felicitas.kugland@sinnerschrader.com">felicitas.kugland@sinnerschrader.com</a>,
+				<a href="https://twitter.com/kotzendekrabbe" rel="noopener noreferrer" target="_blank">@kotzendekrabbe</a>
+			</p>
+		</div>
+		<div className="timetable timetable-frankfurt"
+			 id="frankfurt-timetable"
+			 role="tabpanel"
+			 aria-labelledby="frankfurt-tab">
+			<h2 className="h h2-2">Meetup am 31.02.2020</h2>
+			<p className="intent-content">Join us at at our office on the ........ </p>
+			<p className="intent-content">please RSVP <a className="sctntxtclr" rel="noopener norefferer" target="_blank" href="https://meetup.com">here</a></p>
+			<h3  className="h h3">Schedule</h3>
+			<dl>
+				<dt className="sctntxtclr">18:30</dt>
+				<dd>🏢 Doors open</dd>
+				<dt className="sctntxtclr">19:00</dt>
+				<dd>👋 Welcome & Housekeeping</dd>
+				<div>Optional more Info</div>
+				<dt className="sctntxtclr">19:05</dt>
+				<dd>🎤 Software Development at agencies for clients by Holger Blank</dd>
+				<dt className="sctntxtclr">19:30</dt>
+				<dd>🎤 Constructing Promises (live coding)</dd>
+				<div>Optional more Info about this amazing talk by Nikolaus Rademacher & Oliver Klee</div>
+				<dt className="sctntxtclr">20:00</dt>
+				<dd>⏸ Break - enjoy some fresh air or nice conversations</dd>
+				<dt className="sctntxtclr">20:15</dt>
+				<dd>🎤 Microfrontends. The Good, The Bad and The Ugly</dd>
+				<div>Optional more Info about this amazing talk by Vanessa Böhner</div>
+				<dt className="sctntxtclr">20:45</dt>
+				<dd>🗣 Q&A Session with speakers</dd>
+				<dt className="sctntxtclr">21:00</dt>
+				<dd>👋 Farwell & networking</dd>
+				<dt className="sctntxtclr">21:45</dt>
+				<dd>🏢 Doors closed</dd>
+			</dl>
+			<h3  className="h h3">Food and Beverage</h3>
+			<p>
+				We will provide snacks, water, soft drinks, Mate, wine and beer.
+			</p>
+			<h3  className="h h3">Code of Conduct</h3>
+			<p>
+				🚨 SinnerSchrader is committed to providing a harassment-free event experience for everyone.
+				All participants are expected to read and abide by the
+				<a href="http://berlincodeofconduct.org/" rel="noopener noreferrer" target="_blank">http://berlincodeofconduct.org/</a>
+			</p>
+			<h3  className="h h3">Any Questions?</h3>
+			<p>
+				Feel free to get in touch with Feli: <a href="mailto:felicitas.kugland@sinnerschrader.com">felicitas.kugland@sinnerschrader.com</a>,
+				<a href="https://twitter.com/kotzendekrabbe" rel="noopener noreferrer" target="_blank">@kotzendekrabbe</a>
+			</p>
+		</div>
+		<div className="timetable timetable-hamburg"
+			 id="hamburg-timetable"
+			 role="tabpanel"
+			 aria-labelledby="hamburg-tab">
+			<h2 className="h h2-2">Meetup am 32.02.2020</h2>
+			<p className="intent-content">Join us at at our office on the ........ </p>
+			<p className="intent-content">please RSVP <a className="sctntxtclr" rel="noopener norefferer" target="_blank" href="https://meetup.com">here</a></p>
+			<h3  className="h h3">Schedule</h3>
+			<dl>
+				<dt className="sctntxtclr">18:30</dt>
+				<dd>🏢 Doors open</dd>
+				<dt className="sctntxtclr">19:00</dt>
+				<dd>👋 Welcome & Housekeeping</dd>
+				<div>Optional more Info</div>
+				<dt className="sctntxtclr">19:05</dt>
+				<dd>🎤 Software Development at agencies for clients by Holger Blank</dd>
+				<dt className="sctntxtclr">19:30</dt>
+				<dd>🎤 You don‘t know web development</dd>
+				<div>Optional more Info about this amazing talk by Arnd Ißler</div>
+				<dt className="sctntxtclr">20:00</dt>
+				<dd>⏸ Break - enjoy some fresh air or nice conversations</dd>
+				<dt className="sctntxtclr">20:15</dt>
+				<dd>🎤 Exploring AssemblyScript</dd>
+				<div>Optional more Info about this amazing talk by Lea Rosema</div>
+				<dt className="sctntxtclr">20:45</dt>
+				<dd>🗣 Q&A Session with speakers</dd>
+				<dt className="sctntxtclr">21:00</dt>
+				<dd>👋 Farwell & networking</dd>
+				<dt className="sctntxtclr">21:45</dt>
+				<dd>🏢 Doors closed</dd>
+			</dl>
+			<h3  className="h h3">Food and Beverage</h3>
+			<p>
+				We will provide snacks, water, soft drinks, Mate, wine and beer.
+			</p>
+			<h3  className="h h3">Code of Conduct</h3>
+			<p>
+				🚨 SinnerSchrader is committed to providing a harassment-free event experience for everyone.
+				All participants are expected to read and abide by the
+				<a href="http://berlincodeofconduct.org/" rel="noopener noreferrer" target="_blank">http://berlincodeofconduct.org/</a>
+			</p>
+			<h3  className="h h3">Any Questions?</h3>
+			<p>
+				Feel free to get in touch with Feli: <a href="mailto:felicitas.kugland@sinnerschrader.com">felicitas.kugland@sinnerschrader.com</a>,
+				<a href="https://twitter.com/kotzendekrabbe" rel="noopener noreferrer" target="_blank">@kotzendekrabbe</a>
+			</p>
+		</div>
+		<div className="timetable timetable-munich"
+			 id="munich-timetable"
+			 role="tabpanel"
+			 aria-labelledby="munich-tab">
+			<h2 className="h h2-2">Meetup am 33.02.2020</h2>
+			<p className="intent-content">Join us at at our office on the ........ </p>
+			<p className="intent-content">please RSVP <a className="sctntxtclr" rel="noopener norefferer" target="_blank" href="https://meetup.com">here</a></p>
+			<h3  className="h h3" className="h h3">Schedule</h3>
+			<dl>
+				<dt className="sctntxtclr">18:30</dt>
+				<dd>🏢 Doors open</dd>
+				<dt className="sctntxtclr">19:00</dt>
+				<dd>👋 Welcome & Housekeeping</dd>
+				<div>Optional more Info</div>
+				<dt className="sctntxtclr">19:05</dt>
+				<dd>🎤 Software Development at agencies for clients by Holger Blank</dd>
+				<dt className="sctntxtclr">19:30</dt>
+				<dd>🎤 You don‘t know web development</dd>
+				<div>Optional more Info about this amazing talk by Arnd Ißler</div>
+				<dt className="sctntxtclr">20:00</dt>
+				<dd>⏸ Break - enjoy some fresh air or nice conversations</dd>
+				<dt className="sctntxtclr">20:15</dt>
+				<dd>🎤 Exploring AssemblyScript</dd>
+				<div>Optional more Info about this amazing talk by Lea Rosema</div>
+				<dt className="sctntxtclr">20:45</dt>
+				<dd>🗣 Q&A Session with speakers</dd>
+				<dt className="sctntxtclr">21:00</dt>
+				<dd>👋 Farwell & networking</dd>
+				<dt className="sctntxtclr">21:45</dt>
+				<dd>🏢 Doors closed</dd>
+			</dl>
+			<h3  className="h h3">Food and Beverage</h3>
+			<p>
+				We will provide snacks, water, soft drinks, Mate, wine and beer.
+			</p>
+			<h3  className="h h3">Code of Conduct</h3>
+			<p>
+				🚨 SinnerSchrader is committed to providing a harassment-free event experience for everyone.
+				All participants are expected to read and abide by the
+				<a href="http://berlincodeofconduct.org/" rel="noopener noreferrer" target="_blank">http://berlincodeofconduct.org/</a>
+			</p>
+			<h3  className="h h3">Any Questions?</h3>
+			<p>
+				Feel free to get in touch with Feli: <a href="mailto:felicitas.kugland@sinnerschrader.com">felicitas.kugland@sinnerschrader.com</a>,
+				<a href="https://twitter.com/kotzendekrabbe" rel="noopener noreferrer" target="_blank">@kotzendekrabbe</a>
+			</p>
+		</div>
+		<div className="timetable timetable-prague"
+			 id="prague-timetable"
+			 role="tabpanel"
+			 aria-labelledby="prague-tab">
+			<h2 className="h h2-2">Meetup am 34.02.2020</h2>
+			<p className="intent-content">Join us at at our office on the ........ </p>
+			<p className="intent-content">please RSVP <a className="sctntxtclr" rel="noopener norefferer" target="_blank" href="https://meetup.com">here</a></p>
+			<h3  className="h h3">Schedule</h3>
+			<dl>
+				<dt className="sctntxtclr">18:30</dt>
+				<dd>🏢 Doors open</dd>
+				<dt className="sctntxtclr">19:00</dt>
+				<dd>👋 Welcome & Housekeeping</dd>
+				<div>Optional more Info</div>
+				<dt className="sctntxtclr">19:05</dt>
+				<dd>🎤 Software Development at agencies for clients by Holger Blank</dd>
+				<dt className="sctntxtclr">19:30</dt>
+				<dd>🎤 Microfrontends. The Good, The Bad and The Ugly</dd>
+				<div>Optional more Info about this amazing talk by Vanessa Böhner</div>
+				<dt className="sctntxtclr">20:00</dt>
+				<dd>⏸ Break - enjoy some fresh air or nice conversations</dd>
+				<dt className="sctntxtclr">20:15</dt>
+				<dd>🎤 The theming you never thought of</dd>
+				<div>Optional more Info about this amazing talk by Silvia Milde</div>
+				<dt className="sctntxtclr">20:45</dt>
+				<dd>🗣 Q&A Session with speakers</dd>
+				<dt className="sctntxtclr">21:00</dt>
+				<dd>👋 Farwell & networking</dd>
+				<dt className="sctntxtclr">21:45</dt>
+				<dd>🏢 Doors closed</dd>
+			</dl>
+			<h3  className="h h3">Food and Beverage</h3>
+			<p>
+				We will provide snacks, water, soft drinks, Mate, wine and beer.
+			</p>
+			<h3  className="h h3">Code of Conduct</h3>
+			<p>
+				🚨 SinnerSchrader is committed to providing a harassment-free event experience for everyone.
+				All participants are expected to read and abide by the
+				<a href="http://berlincodeofconduct.org/" rel="noopener noreferrer" target="_blank">http://berlincodeofconduct.org/</a>
+			</p>
+			<h3  className="h h3">Any Questions?</h3>
+			<p>
+				Feel free to get in touch with Feli: <a href="mailto:felicitas.kugland@sinnerschrader.com">felicitas.kugland@sinnerschrader.com</a>,
+				<a href="https://twitter.com/kotzendekrabbe" rel="noopener noreferrer" target="_blank">@kotzendekrabbe</a>
+			</p>
+		</div>
+		<div className="timetable timetable-dortmund"
+			 id="dortmund-timetable"
+			 role="tabpanel"
+			 aria-labelledby="dortmund-tab">
+			<h2 className="h h2-2">Meetup am 35.02.2020</h2>
+			<p className="intent-content">Join us at at our office on the ........ </p>
+			<p className="intent-content">please RSVP <a className="sctntxtclr" rel="noopener norefferer" target="_blank" href="https://meetup.com">here</a></p>
+			<h3  className="h h3">Schedule</h3>
+			<dl>
+				<dt className="sctntxtclr">18:30</dt>
+				<dd>🏢 Doors open</dd>
+				<dt className="sctntxtclr">19:00</dt>
+				<dd>👋 Welcome & Housekeeping</dd>
+				<div>Optional more Info</div>
+				<dt className="sctntxtclr">19:05</dt>
+				<dd>🎤 Software Development at agencies for clients by Holger Blank</dd>
+				<dt className="sctntxtclr">19:30</dt>
+				<dd>🎤 From Idea to Value in Weeks: The Why, What and How of Serverless and Cloud-native</dd>
+				<div>Optional more Info about this amazing talk by Jens Eickmeyer</div>
+				<dt className="sctntxtclr">20:00</dt>
+				<dd>⏸ Break - enjoy some fresh air or nice conversations</dd>
+				<dt className="sctntxtclr">20:15</dt>
+				<dd>🎤 TBD</dd>
+				<div>Optional more Info about this amazing talk by ...</div>
+				<dt className="sctntxtclr">20:45</dt>
+				<dd>🗣 Q&A Session with speakers</dd>
+				<dt className="sctntxtclr">21:00</dt>
+				<dd>👋 Farwell & networking</dd>
+				<dt className="sctntxtclr">21:45</dt>
+				<dd>🏢 Doors closed</dd>
+			</dl>
+			<h3  className="h h3">Food and Beverage</h3>
+			<p>
+				We will provide snacks, water, soft drinks, Mate, wine and beer.
+			</p>
+			<h3  className="h h3">Code of Conduct</h3>
+			<p>
+				🚨 SinnerSchrader is committed to providing a harassment-free event experience for everyone.
+				All participants are expected to read and abide by the
+				<a href="http://berlincodeofconduct.org/" rel="noopener noreferrer" target="_blank">http://berlincodeofconduct.org/</a>
+			</p>
+			<h3  className="h h3">Any Questions?</h3>
+			<p>
+				Feel free to get in touch with Feli: <a href="mailto:felicitas.kugland@sinnerschrader.com">felicitas.kugland@sinnerschrader.com</a>,
+				<a href="https://twitter.com/kotzendekrabbe" rel="noopener noreferrer" target="_blank">@kotzendekrabbe</a>
+			</p>
+		</div>
+		<ElementLink
+			data-marker="Völckersstr. 38"
+			className="map map-hamburg"
+			rel="noopener noreferrer"
+			href="https://www.google.de/maps/place/SinnerSchrader/@53.5571452,9.9241842,17z/data=!3m1!4b1!4m5!3m4!1s0x47b18591e7504141:0x1a57cf875d28e604!8m2!3d53.557142!4d9.9263729"
+			target="_blank"
+			>
+			<ResponsiveImage
+				className="map-image"
+				imageSizes={[
+					'(max-width: 720px) calc(100vw - 60px)',
+					'(min-width: 720px) calc(100vw - 70px)',
+					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
+				].join(', ')}
+				imageSrcSet={[
+					props.base + '/static/sinnerschrader-ham_300.jpg 300w',
+					props.base + '/static/sinnerschrader-ham_600.jpg 600w',
+					props.base + '/static/sinnerschrader-ham_1200.jpg 1200w'
+				].join(', ')}
+				imageSrc={props.base + '/static/sinnerschrader-ham_600.jpg'}
+				ratio="1"
+				alt="Map of the location in hamburg"
+				/>
+		</ElementLink>
+		<ElementLink
+			data-marker="Boxhagener Str. 76-78"
+			className="map map-berlin"
+			rel="noopener noreferrer"
+			href="https://www.google.de/maps/place/Boxhagener+Str.+76,+10245+Berlin/@52.507722,13.46665,17z/data=!3m1!4b1!4m5!3m4!1s0x47a84ef6a52124eb:0xb484c63e91995348!8m2!3d52.507722!4d13.4688387"
+			target="_blank"
+			>
+			<ResponsiveImage
+                className="map-image"
+				imageSizes={[
+					'(max-width: 720px) calc(100vw - 60px)',
+					'(min-width: 720px) calc(100vw - 70px)',
+					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
+				].join(', ')}
+				imageSrcSet={[
+					props.base + '/static/sinnerschrader-ber_300.jpg 300w',
+					props.base + '/static/sinnerschrader-ber_600.jpg 600w',
+					props.base + '/static/sinnerschrader-ber_1200.jpg 1200w'
+				].join(', ')}
+				imageSrc={props.base + '/static/sinnerschrader-ber_600.jpg'}
+				ratio="1"
+            	alt="Map of the location in berlin"
+				/>
+		</ElementLink>
+		<ElementLink
+			data-marker="Schackstr. 3"
+			className="map map-munich"
+			rel="noopener noreferrer"
+			href="https://www.google.de/maps/place/SinnerSchrader/@48.1520745,11.581572,17z/data=!3m1!4b1!4m5!3m4!1s0x479e744a64524ba5:0xdae97b91020bb279!8m2!3d48.1520709!4d11.5837607"
+			target="_blank"
+			rel="nofollow"
+			>
+			<ResponsiveImage
+                className="map-image"
+				imageSizes={[
+					'(max-width: 720px) calc(100vw - 60px)',
+					'(min-width: 720px) calc(100vw - 70px)',
+					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
+				].join(', ')}
+				imageSrcSet={[
+					props.base + '/static/sinnerschrader-muc_300.jpg 300w',
+					props.base + '/static/sinnerschrader-muc_600.jpg 600w',
+					props.base + '/static/sinnerschrader-muc_1200.jpg 1200w'
+				].join(', ')}
+				imageSrc={props.base + '/static/sinnerschrader-muc_600.jpg'}
+				ratio="1"
+            	alt="Map of the location in munich"
+				/>
+		</ElementLink>
+		<ElementLink
+			data-marker="Drahobejlova 2400/15"
+			className="map map-prague"
+			rel="noopener noreferrer"
+			href="https://www.google.de/maps/place/Drahobejlova+2400%2F15,+190+00+Praha+9-Libe%C5%88/@50.1050115,14.4846621,17z/data=!3m1!4b1!4m5!3m4!1s0x470becb2d95bdb41:0xf6abbe7239a5b55!8m2!3d50.1050115!4d14.4868508"
+			target="_blank"
+			>
+			<ResponsiveImage
+                className="map-image"
+				imageSizes={[
+					'(max-width: 720px) calc(100vw - 60px)',
+					'(min-width: 720px) calc(100vw - 70px)',
+					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
+				].join(', ')}
+				imageSrcSet={[
+					props.base + '/static/sinnerschrader-pra_300.jpg 300w',
+					props.base + '/static/sinnerschrader-pra_600.jpg 600w',
+					props.base + '/static/sinnerschrader-pra_1200.jpg 1200w'
+				].join(', ')}
+				imageSrc={props.base + '/static/sinnerschrader-pra_600.jpg'}
+				ratio="1"
+            	alt="Map of the location in prague"
+				/>
+		</ElementLink>
+		<ElementLink
+			data-marker="Mayfarthstraße 15"
+			className="map map-frankfurt"
+			rel="noopener noreferrer"
+			href="https://www.google.de/maps/place/SinnerSchrader/@50.1136884,8.7149786,17z/data=!3m1!4b1!4m5!3m4!1s0x47bd0bfa1014b789:0xe4bed44fc61a4e8f!8m2!3d50.113685!4d8.7171673"
+			target="_blank"
+			>
+			<ResponsiveImage
+                className="map-image"
+				imageSizes={[
+					'(max-width: 720px) calc(100vw - 60px)',
+					'(min-width: 720px) calc(100vw - 70px)',
+					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
+				].join(', ')}
+				imageSrcSet={[
+					props.base + '/static/sinnerschrader-fra_300.jpg 300w',
+					props.base + '/static/sinnerschrader-fra_600.jpg 600w',
+					props.base + '/static/sinnerschrader-fra_1200.jpg 1200w'
+				].join(', ')}
+				imageSrc={props.base + '/static/sinnerschrader-fra_600.jpg'}
+				ratio="1"
+            	alt="Map of the location in frankfurt"
+				/>
+		</ElementLink>
+		<ElementLink
+		data-marker="Mayfarthstraße 15"
+		className="map map-dortmund"
+		rel="noopener noreferrer"
+		href="https://www.google.de/maps/place/SinnerSchrader/@50.1136884,8.7149786,17z/data=!3m1!4b1!4m5!3m4!1s0x47bd0bfa1014b789:0xe4bed44fc61a4e8f!8m2!3d50.113685!4d8.7171673"
+		target="_blank"
+		>
+		<ResponsiveImage
+			className="map-image"
+			imageSizes={[
+				'(max-width: 720px) calc(100vw - 60px)',
+				'(min-width: 720px) calc(100vw - 70px)',
+				'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
+			].join(', ')}
+			imageSrcSet={[
+				props.base + '/static/sinnerschrader-fra_300.jpg 300w',
+				props.base + '/static/sinnerschrader-fra_600.jpg 600w',
+				props.base + '/static/sinnerschrader-fra_1200.jpg 1200w'
+			].join(', ')}
+			imageSrc={props.base + '/static/sinnerschrader-fra_600.jpg'}
+			ratio="1"
+			alt="Map of the location in dortmund"
+			/>
+	</ElementLink>
+		<div className="location-address location-hamburg"
+			id="hamburg-panel"
+			role="tabpanel"
+			aria-labelledby="hamburg-tab">
+			<h3  className="h h3" className="city h2-1">Hamburg</h3>
+			<h4 className="h4">SinnerSchrader Deutschland GmbH</h4>
+			<p className="copy">
+				Völckersstr. 38<br />
+				22765 Hamburg<br />
+				+49 40 39 88 55-0<br />
+				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
+			</p>
+
+			<a href="https://www.sinnerschraderswipe.com/" target="_blank" rel="noopener noreferrer" className="h4">
+				SinnerSchrader Studio Swipe
+			</a>
+			<p className="copy">
+				Völckersstr. 14-20<br />
+				22765 Hamburg<br />
+				+49 40 60 94 56-40<br />
+				<a href="mailto:swipe@sinnerschrader.com" className="h4 link">swipe@sinnerschrader.com</a>
+			</p>
+
+			<a href="https://sinnerschradercommerce.com" target="_blank" rel="noopener noreferrer" className="h4">
+				SinnerSchrader Studio Commerce
+			</a>
+			<p className="copy">
+				Völckersstr. 38<br />
+				22765 Hamburg<br />
+				+49 40 39 88 55-0<br />
+				<a href="mailto:commerce@sinnerschrader.com" className="h4 link">commerce@sinnerschrader.com</a>
+			</p>
+		</div>
+		<div className="location-address location-berlin" data-location="berlin"
+			id="berlin-panel"
+			role="tabpanel"
+			aria-labelledby="berlin-tab">
+			<h3  className="h h3" className="city  h2-1">Berlin</h3>
+			<a className="h4">SinnerSchrader</a>
+			<p className="copy">
+				Boxhagener Str. 76-78<br />
+				10245 Berlin<br />
+				+49 30 34 65 59 45 - 0<br />
+				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
+			</p>
+			<a href="https://www.sinnerschraderswipe.com/" target="_blank" rel="noopener noreferrer" className="h4">SinnerSchrader Swipe</a>
+			<p className="copy">
+				Boxhagener Str. 76-78<br />
+				10245 Berlin<br />
+				+49 30 34 65 59 45 - 0<br />
+				<a href="mailto:swipe@sinnerschrader.com" className="h4 link">swipe@sinnerschrader.com</a>
+			</p>
+		</div>
+		<div className="location-address location-frankfurt"
+			id="frankfurt-panel"
+			role="tabpanel"
+			aria-labelledby="frankfurt-tab">
+			<h3  className="h h3" className="city  h2-1">Frankfurt</h3>
+			<h4 className="h4">SinnerSchrader</h4>
+			<p className="copy">
+				Mayfarthstraße 15<br />
+				60314 Frankfurt am Main<br />
+				+49 69 42 72 64 50 - 0<br />
+				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
+			</p>
+		</div>
+		<div className="location-address location-munich"
+			id="munich-panel"
+			role="tabpanel"
+			aria-labelledby="munich-tab">
+			<h3  className="h h3" className="city  h2-1">Munich</h3>
+			<h4 className="h4">SinnerSchrader</h4>
+			<p className="copy">
+				Schackstr. 3<br />
+				80539 Munich<br />
+				+49 89 20 60 26 - 800<br />
+				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
+			</p>
+		</div>
+		<div className="location-address location-prague"
+			id="prague-panel"
+			role="tabpanel"
+			aria-labelledby="prague-tab">
+			<h3  className="h h3" className="city h2-1">Prague</h3>
+			<a href="https://www.sinnerschrader.cz/" target="_blank" rel="noopener noreferrer" className="h4">SinnerSchrader</a>
+			<p className="copy">
+				Drahobejlova 2400/15<br />
+				Czech Republic Prague 9<br />
+				+420 776 16 32 58<br />
+				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
+			</p>
+		</div>
+		<div className="location-address location-dortmund"
+			id="dortmund-panel"
+			role="tabpanel"
+			aria-labelledby="dortmund-tab">
+			<h3  className="h h3" className="city h2-1">Dortmund</h3>
+			<a href="https://www.sinnerschrader.cz/" target="_blank" rel="noopener noreferrer" className="h4">SinnerSchrader</a>
+			<p className="copy">
+				Drahobejlova 2400/15<br />
+				Czech Republic Prague 9<br />
+				+420 776 16 32 58<br />
+				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
+			</p>
+		</div>
+	</figure>
+</section>

@@ -1,0 +1,24 @@
+---
+route: /road-show
+---
+<StandardLayout host={props.host} href={frontmatter.route} base=".." theme="red">
+	<Hero
+		Tagname="section"
+		headline="Meetup Roadshow"
+		copy="We have a subline here"
+		imageSrcL="../static/module_01_hero_desk_work_intro.jpg"
+		imageSrcM="../static/module_01_hero_lap_work_intro.jpg"
+		imageSrcS="../static/module_01_hero_palm_work_intro.jpg"
+		imageWidth={2880}
+		imageHeight={560}
+		invert
+		level={1}
+		/>
+	<Story1
+		headline="We believe in the community."
+		copy="*And that's why we love meetups.* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		gradient
+		level={2}
+		/>
+	<Roadshow base=".." withMap={true}/>
+</StandardLayout>
