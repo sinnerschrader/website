@@ -17,7 +17,6 @@ function main() {
 
 	const tabs = query('[role="tablist"]')
 		.map(el => initTabList(el));
-	console.log('tabs', tabs);
 }
 
 function query(q) {
