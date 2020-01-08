@@ -32,7 +32,7 @@ if [[ "$COMMIT_MESSAGE" == *"[skip-ci]"* ]]; then
 fi
 
 # Save some useful information
-AUTHOR=`git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT`
+AUTHOR=`git --no-pager show -s --format='%an <%ae>' -n 1`
 SHA=`git rev-parse --verify HEAD`
 REPOSITORY_ID="sinnerschrader/website-staging"
 DEPLOYMENT_ID="$REPOSITORY_ID/${TRAVIS_PULL_REQUEST}"
