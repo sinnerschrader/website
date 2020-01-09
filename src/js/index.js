@@ -15,9 +15,8 @@ function main() {
 	const ariaExpandedList = query('[data-js="aria-expanded"]')
 		.map(el => initAriaExpanded(el));
 
-	const tabs = query('[role="tablist"]')
+	const tabs = query('[role*="tablist"]')
 		.map(el => initTabList(el));
-	console.log('tabs', tabs);
 }
 
 function query(q) {
