@@ -44,8 +44,8 @@ cp -a ./docs/. ./.stage/$TRAVIS_PULL_REQUEST/
 
 cd .stage/
 git add --all .
-git config user.name "Patternplate Hubot"
-git config user.email "jobs@sinnerschrader.com"
+git config user.name "S2 Github Bot"
+git config user.email "s2-github-bot@sinnerschrader.com"
 git commit -m "chore: stage changes for #${TRAVIS_PULL_REQUEST}" --author "$AUTHOR"
 
 git push -q origin master

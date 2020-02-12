@@ -36,8 +36,8 @@ AUTHOR="$(git --no-pager show -s --format='%an <%ae>' $TRAVIS_COMMIT)"
 cd docs
 
 git init .
-git config user.name "SinnerSchrader"
-git config user.email "jobs@sinnerschrader.com"
+git config user.name "S2 Github Bot"
+git config user.email "s2-github-bot@sinnerschrader.com"
 git remote add upstream "git@github.com:sinnerschrader/website-production.git"
 git add --all .
 
