@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 48 48" style="enable-background:new 0 0 48 48;" xml:space="preserve">
 <style type="text/css">
-	#logo-200{fill:#FEFEFE;}
+	.st0{fill:#FEFEFE;}
 </style>
 <title>vw</title>
 <desc>Created with Sketch.</desc>
-<g id="Page-1">
-	<g id="_x33_00-breakpoint-0960">
-		<path id="logo-200" d="M24,45.2C12.4,45.2,2.9,35.6,2.9,24c0-2.4,0.4-4.7,1.2-6.9l12.3,24c0.2,0.3,0.3,0.6,0.8,0.6
+<g>
+	<g>
+		<path class="st0" d="M24,45.2C12.4,45.2,2.9,35.6,2.9,24c0-2.4,0.4-4.7,1.2-6.9l12.3,24c0.2,0.3,0.3,0.6,0.8,0.6
 			s0.6-0.3,0.8-0.6l5.7-12.8c0.1-0.2,0.2-0.3,0.3-0.3c0.2,0,0.2,0.2,0.3,0.3l5.8,12.8c0.2,0.3,0.3,0.6,0.8,0.6s0.6-0.3,0.8-0.6
 			l12.3-24c0.8,2.1,1.2,4.5,1.2,6.9C45.1,35.6,35.6,45.2,24,45.2z M24,18.5c-0.2,0-0.2-0.2-0.3-0.3L17.1,4c2.1-0.8,4.5-1.2,6.9-1.2
 			s4.7,0.4,6.9,1.2l-6.6,14.2C24.2,18.3,24.2,18.5,24,18.5z M17.1,33.9c-0.2,0-0.2-0.2-0.3-0.3L6,12.9c1.9-3.1,4.6-5.7,7.8-7.5
