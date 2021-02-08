@@ -6,7 +6,7 @@ name: Locations
 	Maps source img can be generated via:
 	https://api.mapbox.com/styles/v1/mapbox/light-v10/static/14.486302,50.104893,17,0/1200x1200?access_token=pk.eyJ1Ijoic2thY3oiLCJhIjoiY2tkaGh3bXYxMzB0ajJ5czhxaWZxNnR6ZiJ9.XrlJw-6yXymJTvhURbBasg
 
-	Docs: https://www.mapbox.com/api-documentation/?language=cURL#static
+	Docs: https://www.mapbox.com/api-documentation/?language=cURL#static and https://docs.mapbox.com/playground/static/
 */}
 
 <section className={helpers.classNames({'mod-locations': true, 'mod-locations-map': props.withMap})} data-locations>
@@ -67,20 +67,20 @@ name: Locations
 			target="_blank"
 			>
 			<ResponsiveImage
-                className="map-image"
+				className="map-image"
 				imageSizes={[
 					'(max-width: 720px) calc(100vw - 60px)',
 					'(min-width: 720px) calc(100vw - 70px)',
 					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
 				].join(', ')}
 				imageSrcSet={[
-					props.base + '/static/sinnerschrader-ber_300.jpg 300w',
-					props.base + '/static/sinnerschrader-ber_600.jpg 600w',
-					props.base + '/static/sinnerschrader-ber_1200.jpg 1200w'
+					props.base + '/static/sinnerschrader-ber_300.png 300w',
+					props.base + '/static/sinnerschrader-ber_600.png 600w',
+					props.base + '/static/sinnerschrader-ber_1200.png 1200w'
 				].join(', ')}
-				imageSrc={props.base + '/static/sinnerschrader-ber_600.jpg'}
+				imageSrc={props.base + '/static/sinnerschrader-ber_600.png'}
 				ratio="1"
-            	alt="Map of the location in berlin"
+				alt="Map of the location in berlin"
 				/>
 		</ElementLink>
 		<ElementLink
@@ -92,7 +92,7 @@ name: Locations
 			rel="nofollow"
 			>
 			<ResponsiveImage
-                className="map-image"
+				className="map-image"
 				imageSizes={[
 					'(max-width: 720px) calc(100vw - 60px)',
 					'(min-width: 720px) calc(100vw - 70px)',
@@ -105,7 +105,7 @@ name: Locations
 				].join(', ')}
 				imageSrc={props.base + '/static/sinnerschrader-muc_600.jpg'}
 				ratio="1"
-            	alt="Map of the location in munich"
+				alt="Map of the location in munich"
 				/>
 		</ElementLink>
 		<ElementLink
@@ -116,7 +116,7 @@ name: Locations
 			target="_blank"
 			>
 			<ResponsiveImage
-                className="map-image"
+				className="map-image"
 				imageSizes={[
 					'(max-width: 720px) calc(100vw - 60px)',
 					'(min-width: 720px) calc(100vw - 70px)',
@@ -129,7 +129,7 @@ name: Locations
 				].join(', ')}
 				imageSrc={props.base + '/static/sinnerschrader-pra_600.jpg'}
 				ratio="1"
-            	alt="Map of the location in prague"
+				alt="Map of the location in prague"
 				/>
 		</ElementLink>
 		<ElementLink
@@ -140,7 +140,7 @@ name: Locations
 			target="_blank"
 			>
 			<ResponsiveImage
-                className="map-image"
+				className="map-image"
 				imageSizes={[
 					'(max-width: 720px) calc(100vw - 60px)',
 					'(min-width: 720px) calc(100vw - 70px)',
@@ -153,7 +153,7 @@ name: Locations
 				].join(', ')}
 				imageSrc={props.base + '/static/sinnerschrader-fra_600.jpg'}
 				ratio="1"
-            	alt="Map of the location in frankfurt"
+				alt="Map of the location in frankfurt"
 				/>
 		</ElementLink>
 		<div className="location-address location-hamburg"
@@ -193,7 +193,7 @@ name: Locations
 			id="berlin-panel"
 			role="tabpanel"
 			aria-labelledby="berlin-tab">
-			<h3 className="city  h2-1">Berlin</h3>
+			<h3 className="city h2-1">Berlin</h3>
 			<a className="h4">SinnerSchrader</a>
 			<p className="copy">
 				Bergmannstraße 72<br />
@@ -213,7 +213,7 @@ name: Locations
 			id="frankfurt-panel"
 			role="tabpanel"
 			aria-labelledby="frankfurt-tab">
-			<h3 className="city  h2-1">Frankfurt</h3>
+			<h3 className="city h2-1">Frankfurt</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
 				Mayfarthstraße 15<br />
@@ -226,7 +226,7 @@ name: Locations
 			id="munich-panel"
 			role="tabpanel"
 			aria-labelledby="munich-tab">
-			<h3 className="city  h2-1">Munich</h3>
+			<h3 className="city h2-1">Munich</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
 				Schackstr. 3<br />
