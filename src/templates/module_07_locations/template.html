@@ -6,7 +6,7 @@ name: Locations
 	Maps source img can be generated via:
 	https://api.mapbox.com/styles/v1/mapbox/light-v10/static/14.486302,50.104893,17,0/1200x1200?access_token=pk.eyJ1Ijoic2thY3oiLCJhIjoiY2tkaGh3bXYxMzB0ajJ5czhxaWZxNnR6ZiJ9.XrlJw-6yXymJTvhURbBasg
 
-	Docs: https://www.mapbox.com/api-documentation/?language=cURL#static
+	Docs: https://www.mapbox.com/api-documentation/?language=cURL#static and https://docs.mapbox.com/playground/static/
 */}
 
 <section className={helpers.classNames({'mod-locations': true, 'mod-locations-map': props.withMap})} data-locations>
@@ -60,27 +60,27 @@ name: Locations
 				/>
 		</ElementLink>
 		<ElementLink
-			data-marker="Boxhagener Str. 76-78"
+			data-marker="Bergmannstraße 72"
 			className="map map-berlin"
 			rel="noopener noreferrer"
-			href="https://www.google.de/maps/place/Boxhagener+Str.+76,+10245+Berlin/@52.507722,13.46665,17z/data=!3m1!4b1!4m5!3m4!1s0x47a84ef6a52124eb:0xb484c63e91995348!8m2!3d52.507722!4d13.4688387"
+			href="https://www.google.com/maps/place/Bergmannstra%C3%9Fe+72,+10961+Berlin/@52.4890179,13.3956613,17z/data=!3m1!4b1!4m5!3m4!1s0x47a84fd9fac0878d:0xe9bef49eb283ad8f!8m2!3d52.4890179!4d13.3978553"
 			target="_blank"
 			>
 			<ResponsiveImage
-                className="map-image"
+				className="map-image"
 				imageSizes={[
 					'(max-width: 720px) calc(100vw - 60px)',
 					'(min-width: 720px) calc(100vw - 70px)',
 					'(min-width: 1240px) calc((100vw - 200px) * 0.6)'
 				].join(', ')}
 				imageSrcSet={[
-					props.base + '/static/sinnerschrader-ber_300.jpg 300w',
-					props.base + '/static/sinnerschrader-ber_600.jpg 600w',
-					props.base + '/static/sinnerschrader-ber_1200.jpg 1200w'
+					props.base + '/static/sinnerschrader-ber_300.png 300w',
+					props.base + '/static/sinnerschrader-ber_600.png 600w',
+					props.base + '/static/sinnerschrader-ber_1200.png 1200w'
 				].join(', ')}
-				imageSrc={props.base + '/static/sinnerschrader-ber_600.jpg'}
+				imageSrc={props.base + '/static/sinnerschrader-ber_600.png'}
 				ratio="1"
-            	alt="Map of the location in berlin"
+				alt="Map of the location in berlin"
 				/>
 		</ElementLink>
 		<ElementLink
@@ -92,7 +92,7 @@ name: Locations
 			rel="nofollow"
 			>
 			<ResponsiveImage
-                className="map-image"
+				className="map-image"
 				imageSizes={[
 					'(max-width: 720px) calc(100vw - 60px)',
 					'(min-width: 720px) calc(100vw - 70px)',
@@ -105,7 +105,7 @@ name: Locations
 				].join(', ')}
 				imageSrc={props.base + '/static/sinnerschrader-muc_600.jpg'}
 				ratio="1"
-            	alt="Map of the location in munich"
+				alt="Map of the location in munich"
 				/>
 		</ElementLink>
 		<ElementLink
@@ -116,7 +116,7 @@ name: Locations
 			target="_blank"
 			>
 			<ResponsiveImage
-                className="map-image"
+				className="map-image"
 				imageSizes={[
 					'(max-width: 720px) calc(100vw - 60px)',
 					'(min-width: 720px) calc(100vw - 70px)',
@@ -129,7 +129,7 @@ name: Locations
 				].join(', ')}
 				imageSrc={props.base + '/static/sinnerschrader-pra_600.jpg'}
 				ratio="1"
-            	alt="Map of the location in prague"
+				alt="Map of the location in prague"
 				/>
 		</ElementLink>
 		<ElementLink
@@ -140,7 +140,7 @@ name: Locations
 			target="_blank"
 			>
 			<ResponsiveImage
-                className="map-image"
+				className="map-image"
 				imageSizes={[
 					'(max-width: 720px) calc(100vw - 60px)',
 					'(min-width: 720px) calc(100vw - 70px)',
@@ -153,7 +153,7 @@ name: Locations
 				].join(', ')}
 				imageSrc={props.base + '/static/sinnerschrader-fra_600.jpg'}
 				ratio="1"
-            	alt="Map of the location in frankfurt"
+				alt="Map of the location in frankfurt"
 				/>
 		</ElementLink>
 		<div className="location-address location-hamburg"
@@ -193,18 +193,18 @@ name: Locations
 			id="berlin-panel"
 			role="tabpanel"
 			aria-labelledby="berlin-tab">
-			<h3 className="city  h2-1">Berlin</h3>
+			<h3 className="city h2-1">Berlin</h3>
 			<a className="h4">SinnerSchrader</a>
 			<p className="copy">
-				Boxhagener Str. 76-78<br />
-				10245 Berlin<br />
+				Bergmannstraße 72<br />
+				10961 Berlin<br />
 				+49 30 34 65 59 45 - 0<br />
 				<a href="mailto:info@sinnerschrader.com" className="h4 link">info@sinnerschrader.com</a>
 			</p>
 			<a href="https://www.sinnerschraderswipe.com/" target="_blank" rel="noopener noreferrer" className="h4">SinnerSchrader Swipe</a>
 			<p className="copy">
-				Boxhagener Str. 76-78<br />
-				10245 Berlin<br />
+				Bergmannstraße 72<br />
+				10961 Berlin<br />
 				+49 30 34 65 59 45 - 0<br />
 				<a href="mailto:swipe@sinnerschrader.com" className="h4 link">swipe@sinnerschrader.com</a>
 			</p>
@@ -213,7 +213,7 @@ name: Locations
 			id="frankfurt-panel"
 			role="tabpanel"
 			aria-labelledby="frankfurt-tab">
-			<h3 className="city  h2-1">Frankfurt</h3>
+			<h3 className="city h2-1">Frankfurt</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
 				Mayfarthstraße 15<br />
@@ -226,7 +226,7 @@ name: Locations
 			id="munich-panel"
 			role="tabpanel"
 			aria-labelledby="munich-tab">
-			<h3 className="city  h2-1">Munich</h3>
+			<h3 className="city h2-1">Munich</h3>
 			<h4 className="h4">SinnerSchrader</h4>
 			<p className="copy">
 				Schackstr. 3<br />
