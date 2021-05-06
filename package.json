@@ -58,7 +58,7 @@
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngout": "^2.0.0",
-    "json": "^9.0.4",
+    "json": "^10.0.0",
     "less": "2.7.2",
     "less-plugin-autoprefix": "1.5.1",
     "less-plugin-clean-css": "1.5.1",
